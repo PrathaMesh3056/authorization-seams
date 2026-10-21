@@ -14,6 +14,7 @@ This directory mixes two kinds of material:
 | `ARTIFACT_SCOPE.md` | new | What is and is not included, and why |
 | `RELEASE_CHECKLIST.md` | new | Open gates before publishing/submitting |
 | `RELEASE_SANITIZATION.md` | new | Machine-local path and input review procedure |
+| `REPO_BUILD_QA.md` | new | Local build, integrity, and packaging validation record |
 | `RESEARCH_STATUS.md` | copied | Internal status snapshot and open gates |
 | `FINAL_BUILD_QA.md` | copied | Build, font, reference, and export QA |
 | `FONT_QA_REPORT.md` | copied | Font embedding and fallback checks |

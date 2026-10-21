@@ -26,3 +26,15 @@ artifacts themselves are frozen; changes to them are never made in place.
   or compared.
 - License selection, final public email, repository URL, archival DOI, and
   venue metadata remain open release gates (`docs/RELEASE_CHECKLIST.md`).
+
+### Validation
+
+Recorded in `docs/REPO_BUILD_QA.md`:
+
+- artifact manifest verifies for 294 tracked files;
+- 9 repository QA tests and 52 TraceGrant Task D tests pass;
+- E1, SentinelAgent (`672` rows), and boundary (`1,152` rows) lock checks pass;
+- the paper builds to 24 pages with zero missing glyphs, zero LaTeX errors, and
+  zero overfull hboxes;
+- a local clone verifies byte-identical content and rebuilds the paper;
+- the sanitized tree and review zip both re-verify after extraction.
