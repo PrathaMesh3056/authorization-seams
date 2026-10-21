@@ -1,0 +1,104 @@
+{
+  "id": "02_report_owner",
+  "trusted_request": "Send report text to the unique owner of Project A",
+  "MAY": {
+    "read_directory": {
+      "budget": 1,
+      "allowed_args": [
+        "project"
+      ],
+      "constraints": {},
+      "trusted_payloads": {}
+    },
+    "send_email": {
+      "budget": 1,
+      "allowed_args": [
+        "recipient",
+        "body"
+      ],
+      "constraints": {},
+      "trusted_payloads": {
+        "body": "Report text"
+      }
+    }
+  },
+  "MUST": [
+    {
+      "id": "E1",
+      "kind": "evidence",
+      "tool": "read_directory",
+      "dependencies": [],
+      "hard": true,
+      "enabled": true,
+      "evidence": {
+        "query_args": {
+          "project": "A"
+        },
+        "fields": {
+          "records": {
+            "type": "array",
+            "equals": null,
+            "has_equals": false,
+            "choices": null,
+            "minimum": null,
+            "maximum": null
+          }
+        },
+        "integrity": {}
+      },
+      "output_equals": null,
+      "waiver_code": null
+    },
+    {
+      "id": "F1",
+      "kind": "effect",
+      "tool": "send_email",
+      "dependencies": [
+        "E1"
+      ],
+      "hard": true,
+      "enabled": true,
+      "evidence": null,
+      "output_equals": null,
+      "waiver_code": null
+    }
+  ],
+  "BIND": {
+    "F1": {
+      "recipient": {
+        "source": "evidence",
+        "constant": null,
+        "evidence_obligation": "E1",
+        "field": "email",
+        "derivation": "copy",
+        "multiplier": 1,
+        "offset": 0,
+        "selector": {
+          "collection": "records",
+          "where": {
+            "role": "owner"
+          },
+          "allowed_fields": [
+            "email",
+            "role"
+          ]
+        },
+        "constraints": {
+          "type": "string",
+          "equals": null,
+          "has_equals": false,
+          "choices": null,
+          "minimum": null,
+          "maximum": null
+        }
+      }
+    }
+  },
+  "VERIFY": {
+    "F1": {
+      "postconditions": {
+        "status": "sent"
+      }
+    }
+  }
+}

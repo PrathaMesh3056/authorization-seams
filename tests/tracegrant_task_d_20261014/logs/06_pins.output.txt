@@ -1,0 +1,36 @@
+{
+  "python": "3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941 64 bit (AMD64)]",
+  "executable": "C:\\Users\\prath\\Downloads\\RPaper\\tracegrant_task_d_20261014\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python_requirement": "3.12",
+  "direct_and_transitive_dependencies": {
+    "pydantic": "2.12.5",
+    "pydantic_core": "2.41.5",
+    "annotated-types": "0.7.0",
+    "typing_extensions": "4.15.0",
+    "typing-inspection": "0.4.2",
+    "pytest": "9.0.2",
+    "colorama": "0.4.6",
+    "iniconfig": "2.3.0",
+    "packaging": "26.0",
+    "pluggy": "1.6.0",
+    "Pygments": "2.19.2",
+    "pypdf": "6.14.2"
+  },
+  "sources_sha256": {
+    "page-05.png": "2a3f6329e02a4b677e0e95b52c8077deae16e7ca6198a609f0f8fee926c01f5c",
+    "page-06.png": "7e1e1dee0eb4b4be5c39de9e8af1bf6808241da6177934c718e20944cbef30bd",
+    "page-07.png": "5ea7d6122b4064b900dc0ac1025ff19de7b137248b5cce41f47c7578f9fb2c7a",
+    "page-08.png": "4beb06573561be9f31e4ee41080109276da0a2c0ea4617d1c89b4f7c28c14002",
+    "paper-pages.json": "649692e9d8e984f893fce737142c9b2c2fc8b765d8203883ffc21bd4aeb158b3",
+    "paper.txt": "ac6a0f5342227f20bf0f22779bc4a2755427d60f8e2d315f96e36fb8ec536a07",
+    "tracegrant-2608.21126v1.pdf": "792b43409241ec642203d85b4c11b01040efed86cd40cb3c05a22a795166331b",
+    "TraceGrant_Step_by_Step_Guide.md": "042f69fdadd35513cf84d2edf869539f130953885a1681ff3e817fff5daf42ff"
+  },
+  "paper_url": "https://arxiv.org/pdf/2608.21126v1",
+  "paper_version": "v1",
+  "upstream_repo_url": null,
+  "upstream_commit": null,
+  "upstream_status": "NOT DONE: no author implementation repository obtained; independent implementation",
+  "environment_policy": "venv inherits local system packages; pytest plugin autoload disabled; no package download"
+}

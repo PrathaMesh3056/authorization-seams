@@ -1,0 +1,308 @@
+{
+  "controls": [
+    {
+      "arm": "apc_alone",
+      "control": "benign_admission",
+      "case": "narrowed_scope-0-b",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_alone",
+      "control": "recipient_attack_denied",
+      "case": "recipient_substitution-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "tracegrant_alone",
+      "control": "benign_admission",
+      "case": "narrowed_scope-0-b",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": true
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "tracegrant_alone",
+      "control": "recipient_attack_denied",
+      "case": "recipient_substitution-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_apc_preserved",
+      "control": "benign_admission",
+      "case": "narrowed_scope-0-b",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_apc_preserved",
+      "control": "recipient_attack_denied",
+      "case": "recipient_substitution-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_apc_reset",
+      "control": "benign_admission",
+      "case": "narrowed_scope-0-b",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_apc_reset",
+      "control": "recipient_attack_denied",
+      "case": "recipient_substitution-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_scope_only",
+      "control": "benign_admission",
+      "case": "narrowed_scope-0-b",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": true
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_scope_only",
+      "control": "recipient_attack_denied",
+      "case": "recipient_substitution-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_retained",
+      "control": "benign_admission",
+      "case": "narrowed_scope-0-b",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": true
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_retained",
+      "control": "recipient_attack_denied",
+      "case": "recipient_substitution-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_fail_closed",
+      "control": "benign_admission",
+      "case": "narrowed_scope-0-b",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": true
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_fail_closed",
+      "control": "recipient_attack_denied",
+      "case": "recipient_substitution-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_alone",
+      "control": "expired_denied",
+      "case": "expired_delegation-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "tracegrant_alone",
+      "control": "verify_boundary",
+      "case": "unsatisfiable_verify-0-a",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": false
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_apc_preserved",
+      "control": "composition_denied",
+      "case": "composition_history_loss-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_apc_reset",
+      "control": "reset_leak_control",
+      "case": "composition_history_loss-0-a",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": false,
+        "unauthorized_effect": true,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_scope_only",
+      "control": "verify_boundary",
+      "case": "unsatisfiable_verify-0-a",
+      "observed": {
+        "allowed": true,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": false
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_retained",
+      "control": "evidence_blocks_replay",
+      "case": "repeated_calls-0-a",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": false,
+        "unauthorized_effect": false,
+        "false_denial": false,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    },
+    {
+      "arm": "apc_tracegrant_fail_closed",
+      "control": "fail_closed_benign",
+      "case": "history_sufficient-0-b",
+      "observed": {
+        "allowed": false,
+        "oracle_allowed": true,
+        "unauthorized_effect": false,
+        "false_denial": true,
+        "receipt_ok": null
+      },
+      "passed": true,
+      "failure_probe_passed": true
+    }
+  ],
+  "per_arm": {
+    "apc_alone": 3,
+    "tracegrant_alone": 3,
+    "apc_apc_preserved": 3,
+    "apc_apc_reset": 3,
+    "apc_tracegrant_scope_only": 3,
+    "apc_tracegrant_retained": 3,
+    "apc_tracegrant_fail_closed": 3
+  },
+  "passed": true
+}

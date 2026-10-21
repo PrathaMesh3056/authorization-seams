@@ -1,0 +1,8 @@
+[12:42:26] E1: 8 cases loaded; dataset_sha256=1b7c6083ef22d40c...
+[12:42:26] E1 matrix: arm apc_alone (8 cases)
+[12:42:26] E1 matrix: arm tracegrant_alone (8 cases)
+[12:42:26] E1 matrix: arm apc_tracegrant_scope_only (8 cases)
+[12:42:26] E1 matrix: arm apc_tracegrant_retained (8 cases)
+[12:42:26] E1 matrix: arm apc_tracegrant_fail_closed (8 cases)
+[12:42:27] E1: 40 executions complete; arm2/arm5 leaks=['action_narrow-0-a', 'action_narrow-1-a', 'action_narrow-2-a', 'action_narrow-3-a'] vs ['action_narrow-0-a', 'action_narrow-1-a', 'action_narrow-2-a', 'action_narrow-3-a']; seam offenders=[]
+[12:42:27] E1: controls passed=True; locked assertions passed=True

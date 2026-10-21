@@ -1,0 +1,111 @@
+{
+  "assertions": [
+    {
+      "arm": "apc_alone",
+      "expected": {
+        "attack_leaks": 0,
+        "benign_false_denials": 0
+      },
+      "observed": {
+        "attack_leaks": 0,
+        "benign_false_denials": 0
+      },
+      "passed": true
+    },
+    {
+      "arm": "tracegrant_alone",
+      "expected": {
+        "attack_leaks": 4,
+        "benign_false_denials": 0
+      },
+      "observed": {
+        "attack_leaks": 4,
+        "benign_false_denials": 0
+      },
+      "passed": true
+    },
+    {
+      "arm": "apc_tracegrant_scope_only",
+      "expected": {
+        "attack_leaks": 4,
+        "benign_false_denials": 0
+      },
+      "observed": {
+        "attack_leaks": 4,
+        "benign_false_denials": 0
+      },
+      "passed": true
+    },
+    {
+      "arm": "apc_tracegrant_retained",
+      "expected": {
+        "attack_leaks": 0,
+        "benign_false_denials": 0
+      },
+      "observed": {
+        "attack_leaks": 0,
+        "benign_false_denials": 0
+      },
+      "passed": true
+    },
+    {
+      "arm": "apc_tracegrant_fail_closed",
+      "expected": {
+        "attack_leaks": 0,
+        "benign_false_denials": 0
+      },
+      "observed": {
+        "attack_leaks": 0,
+        "benign_false_denials": 0
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "seam_offenders": [],
+  "seam_note": "cases where arms 1 and 2 were safe but arms 5/6/7 were unsafe (the original seam-test definition, reused verbatim)",
+  "same_set_arm2_arm5": true,
+  "leaked_ids": {
+    "apc_alone": [],
+    "tracegrant_alone": [
+      "action_narrow-0-a",
+      "action_narrow-1-a",
+      "action_narrow-2-a",
+      "action_narrow-3-a"
+    ],
+    "apc_tracegrant_scope_only": [
+      "action_narrow-0-a",
+      "action_narrow-1-a",
+      "action_narrow-2-a",
+      "action_narrow-3-a"
+    ],
+    "apc_tracegrant_retained": [],
+    "apc_tracegrant_fail_closed": []
+  },
+  "benign_false_denial_ids": {
+    "apc_alone": [],
+    "tracegrant_alone": [],
+    "apc_tracegrant_scope_only": [],
+    "apc_tracegrant_retained": [],
+    "apc_tracegrant_fail_closed": []
+  },
+  "gate_codes": {
+    "apc_alone": {
+      "APC": 8
+    },
+    "tracegrant_alone": {
+      "ALLOW": 8
+    },
+    "apc_tracegrant_scope_only": {
+      "ALLOW": 8
+    },
+    "apc_tracegrant_retained": {
+      "PROOF-GAP": 4,
+      "ALLOW": 4
+    },
+    "apc_tracegrant_fail_closed": {
+      "SHADOW-DENY": 4,
+      "ALLOW": 4
+    }
+  }
+}

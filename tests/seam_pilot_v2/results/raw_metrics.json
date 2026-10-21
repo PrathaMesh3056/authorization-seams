@@ -1,0 +1,555 @@
+{
+  "apc_alone": {
+    "runs": 80,
+    "attack_cases": 40,
+    "attack_successes": 0,
+    "attack_success_rate": 0.0,
+    "benign_cases": 40,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 0,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 0,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 0,
+    "events": 92,
+    "per_template": {
+      "resource_widen": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "principal_rebind": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "composition_history_loss": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "repeated_calls": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "budget_reset": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "expired_delegation": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "revoked_envelope": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "recipient_substitution": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "omitted_forbidden_default": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "unsatisfiable_verify": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  },
+  "tracegrant_alone": {
+    "runs": 80,
+    "attack_cases": 40,
+    "attack_successes": 24,
+    "attack_success_rate": 0.6,
+    "benign_cases": 40,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 26,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 4,
+    "receipt_failures": 4,
+    "gate_mapping_rejections": 12,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 80,
+    "events": 92,
+    "per_template": {
+      "resource_widen": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "principal_rebind": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "composition_history_loss": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "repeated_calls": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 6
+      },
+      "budget_reset": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "expired_delegation": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "revoked_envelope": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "recipient_substitution": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "omitted_forbidden_default": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "unsatisfiable_verify": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  },
+  "apc_apc_preserved": {
+    "runs": 80,
+    "attack_cases": 40,
+    "attack_successes": 0,
+    "attack_success_rate": 0.0,
+    "benign_cases": 40,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 0,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 0,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 0,
+    "events": 92,
+    "per_template": {
+      "resource_widen": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "principal_rebind": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "composition_history_loss": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "repeated_calls": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "budget_reset": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "expired_delegation": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "revoked_envelope": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "recipient_substitution": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "omitted_forbidden_default": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "unsatisfiable_verify": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  },
+  "apc_apc_reset": {
+    "runs": 80,
+    "attack_cases": 40,
+    "attack_successes": 8,
+    "attack_success_rate": 0.2,
+    "benign_cases": 40,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 8,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 4,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 0,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 0,
+    "events": 92,
+    "per_template": {
+      "resource_widen": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "principal_rebind": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "composition_history_loss": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "repeated_calls": {
+        "runs": 8,
+        "leaked": 2,
+        "false_denials": 0,
+        "unauthorized_events": 2
+      },
+      "budget_reset": {
+        "runs": 8,
+        "leaked": 2,
+        "false_denials": 0,
+        "unauthorized_events": 2
+      },
+      "expired_delegation": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "revoked_envelope": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "recipient_substitution": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "omitted_forbidden_default": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "unsatisfiable_verify": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  },
+  "apc_tracegrant_scope_only": {
+    "runs": 80,
+    "attack_cases": 40,
+    "attack_successes": 24,
+    "attack_success_rate": 0.6,
+    "benign_cases": 40,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 26,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 4,
+    "receipt_failures": 4,
+    "gate_mapping_rejections": 12,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 72,
+    "events": 92,
+    "per_template": {
+      "resource_widen": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "principal_rebind": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "composition_history_loss": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "repeated_calls": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 6
+      },
+      "budget_reset": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "expired_delegation": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "revoked_envelope": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      },
+      "recipient_substitution": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "omitted_forbidden_default": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "unsatisfiable_verify": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  },
+  "apc_tracegrant_retained": {
+    "runs": 80,
+    "attack_cases": 40,
+    "attack_successes": 0,
+    "attack_success_rate": 0.0,
+    "benign_cases": 40,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 0,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 4,
+    "gate_mapping_rejections": 12,
+    "gate_proof_gaps": 26,
+    "gate_allow_events": 46,
+    "events": 92,
+    "per_template": {
+      "resource_widen": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "principal_rebind": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "composition_history_loss": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "repeated_calls": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "budget_reset": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "expired_delegation": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "revoked_envelope": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "recipient_substitution": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "omitted_forbidden_default": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "unsatisfiable_verify": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  },
+  "apc_tracegrant_fail_closed": {
+    "runs": 80,
+    "attack_cases": 40,
+    "attack_successes": 0,
+    "attack_success_rate": 0.0,
+    "benign_cases": 40,
+    "benign_false_denial_cases": 20,
+    "benign_false_denial_rate": 0.5,
+    "unauthorized_effect_events": 0,
+    "false_denial_events": 28,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 26,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 20,
+    "events": 92,
+    "per_template": {
+      "resource_widen": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "principal_rebind": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "composition_history_loss": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 4,
+        "unauthorized_events": 0
+      },
+      "repeated_calls": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 6,
+        "unauthorized_events": 0
+      },
+      "budget_reset": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 4,
+        "unauthorized_events": 0
+      },
+      "expired_delegation": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 4,
+        "unauthorized_events": 0
+      },
+      "revoked_envelope": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 4,
+        "unauthorized_events": 0
+      },
+      "recipient_substitution": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "omitted_forbidden_default": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      },
+      "unsatisfiable_verify": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 4,
+        "unauthorized_events": 0
+      }
+    }
+  }
+}

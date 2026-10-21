@@ -1,0 +1,314 @@
+{
+  "run": {
+    "pair": "apc->sentinelagent",
+    "started_utc": "2026-10-19T11:57:16Z",
+    "ended_utc": "2026-10-19T11:57:16Z",
+    "executions": 672,
+    "cases": 96,
+    "arms": [
+      "apc_alone",
+      "sentinelagent_alone",
+      "apc_apc_preserved",
+      "apc_apc_reset",
+      "apc_sentinelagent_scope_only",
+      "apc_sentinelagent_retained",
+      "apc_sentinelagent_fail_closed"
+    ],
+    "argv": [],
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "sequential": "one arm at a time; no concurrency; no network (prepare() blocks it)",
+    "paid_llm_calls": 0
+  },
+  "lock": {
+    "sa_lock_path": "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\design\\sa_lock.json",
+    "sa_lock_sha256": "9f2611a1a8d8c5b3a1f7b55b2f384d72594399cf783808facb55e1f2965d47f0",
+    "sa_cases_sha256": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2",
+    "dataset_sha256": "0bab4d516177cdbfb356abee15291029d4d3294bb22225cc1693c33e40d9e310",
+    "locked_utc": "2026-10-19T11:52:24Z",
+    "case_count": 96,
+    "prediction_source": "design/composition_condition_sentinelagent.md sections 3, 4, 8 and design/call_to_token_mapping.md sections 4-9; arm 5 scope-only handoff",
+    "note": "predictions and cases were locked before the run; hashes above are the proof"
+  },
+  "key_model": {
+    "upstream_file": "C:\\Users\\prath\\Downloads\\RPaper\\sentinelagent_audit_20261014\\upstream\\sentinelagent_das_prototype.py",
+    "upstream_sha256": "739d9db1e836d7edaf567cabfa6c4ae074bb81d74ad522e98b7d04a3237b36be",
+    "trusted_key_hex": "7365616d2d70696c6f742d73656e74696e656c6167656e742d6272696467652d746573742d6b65792d32303236",
+    "original_das_key_hex": "73656e74696e656c6167656e742d6461732d7365637265742d6b65792d32303236",
+    "note": "module-level constant set at runtime; upstream file byte-identical; models the trust relationship (receiver must hold the issuer's key)"
+  },
+  "controls": {
+    "ok": true,
+    "records": [
+      {
+        "id": "S1-valid",
+        "setup": "validly signed token with expiry in the past (2001-01-01Z) presented to native P6/P7",
+        "expected": {
+          "p6": "ALLOWED by scope",
+          "p7": "OUTPUT_ALLOWED"
+        },
+        "observed": {
+          "p6": "ALLOWED by scope:read_confidential",
+          "p7": "OUTPUT_ALLOWED"
+        },
+        "ok": true
+      },
+      {
+        "id": "S1-failure",
+        "setup": "failure control: same token content, manifest mutated after signing",
+        "expected": {
+          "p6": "SIGNATURE_INVALID",
+          "p7": "SIGNATURE_INVALID"
+        },
+        "observed": {
+          "p6": "SIGNATURE_INVALID",
+          "p7": "SIGNATURE_INVALID"
+        },
+        "ok": true
+      },
+      {
+        "id": "S1-probe",
+        "setup": "revoked via revoke_chain (count=1); proves P6/P7 are not blanket no-ops",
+        "expected": {
+          "p6": "TOKEN_REVOKED",
+          "p7": "TOKEN_REVOKED"
+        },
+        "observed": {
+          "p6": "TOKEN_REVOKED",
+          "p7": "TOKEN_REVOKED"
+        },
+        "ok": true
+      },
+      {
+        "id": "S2-foreign",
+        "setup": "T0 content signed with the prototype's published key (REAL_DAS_KEY)",
+        "expected": {
+          "p6": "SIGNATURE_INVALID",
+          "p7": "SIGNATURE_INVALID"
+        },
+        "observed": {
+          "p6": "SIGNATURE_INVALID",
+          "p7": "SIGNATURE_INVALID"
+        },
+        "ok": true
+      },
+      {
+        "id": "S2-trusted",
+        "setup": "failure control for S2-foreign: identical content signed with the trusted bridge key",
+        "expected": {
+          "p6": "ALLOWED by scope",
+          "p7": "OUTPUT_ALLOWED"
+        },
+        "observed": {
+          "p6": "ALLOWED by scope:read_confidential",
+          "p7": "OUTPUT_ALLOWED"
+        },
+        "ok": true
+      },
+      {
+        "id": "S2-two-minters",
+        "setup": "identical scope/manifest/tags; one token attributed to the bridge, one to the delegate (token ids differ only for auditability); both signed with the trusted key",
+        "expected": {
+          "p6_both": "ALLOWED by scope",
+          "p7_both": "OUTPUT_ALLOWED",
+          "codes_identical": true
+        },
+        "observed": {
+          "p6_bridge": "ALLOWED by scope:read_confidential",
+          "p6_delegate": "ALLOWED by scope:read_confidential",
+          "p7_bridge": "OUTPUT_ALLOWED",
+          "p7_delegate": "OUTPUT_ALLOWED",
+          "codes_identical": true
+        },
+        "ok": true
+      },
+      {
+        "id": "S2-mutated",
+        "setup": "failure control: delegate-minted token, manifest widened after signing without re-signing",
+        "expected": {
+          "p6": "SIGNATURE_INVALID",
+          "p7": "SIGNATURE_INVALID"
+        },
+        "observed": {
+          "p6": "SIGNATURE_INVALID",
+          "p7": "SIGNATURE_INVALID"
+        },
+        "ok": true
+      },
+      {
+        "id": "S3-valid",
+        "setup": "signed attestation for the control call; probe tampers one signature character",
+        "expected": {
+          "gate": "ALLOWED",
+          "tamper": "ATTESTATION-SIGNATURE-INVALID"
+        },
+        "observed": {
+          "gate": "ATTESTATION-OK",
+          "tamper": "ATTESTATION-SIGNATURE-INVALID"
+        },
+        "ok": true
+      },
+      {
+        "id": "S3-mutated",
+        "setup": "failure control: apc_allowed flipped to true after signing; probe is the unmutated denied attestation",
+        "expected": {
+          "gate": "ATTESTATION-SIGNATURE-INVALID",
+          "probe": "APC-DENY"
+        },
+        "observed": {
+          "gate": "ATTESTATION-SIGNATURE-INVALID",
+          "probe": "APC-DENY"
+        },
+        "ok": true
+      },
+      {
+        "id": "S3-replay",
+        "setup": "valid attestation bound to the control call presented for a different resource",
+        "expected": {
+          "gate": "ATTESTATION-BINDING-MISMATCH",
+          "probe": "ALLOWED"
+        },
+        "observed": {
+          "gate": "ATTESTATION-BINDING-MISMATCH",
+          "probe": "ATTESTATION-OK"
+        },
+        "ok": true
+      }
+    ]
+  },
+  "self_review": {
+    "ok": true,
+    "checks": [
+      {
+        "check": "controls_passed",
+        "ok": true,
+        "detail": {
+          "records": 10
+        }
+      },
+      {
+        "check": "hash_unchanged:sentinelagent_das_prototype.py",
+        "ok": true,
+        "detail": {
+          "sha256": "739d9db1e836d7edaf567cabfa6c4ae074bb81d74ad522e98b7d04a3237b36be"
+        }
+      },
+      {
+        "check": "hash_unchanged:frozen_cases.json",
+        "ok": true,
+        "detail": {
+          "sha256": "4d8b76a2f63f9643ac8c59cc72f42b93d4cb8a1621084bec2c5d06170fff1639"
+        }
+      },
+      {
+        "check": "hash_unchanged:prediction_lock.json",
+        "ok": true,
+        "detail": {
+          "sha256": "0e0411242618259ccca251c378a32814bf034649e42423d1056558d2d16ca870"
+        }
+      },
+      {
+        "check": "hash_unchanged:raw_metrics.json",
+        "ok": true,
+        "detail": {
+          "sha256": "b2762e55f0e1aad4e8645211da0011bfbeb519c6d15068bfbb048bb9fc126f0c"
+        }
+      },
+      {
+        "check": "hash_unchanged:sa_cases.json",
+        "ok": true,
+        "detail": {
+          "sha256": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2"
+        }
+      },
+      {
+        "check": "hash_unchanged:sa_lock.json",
+        "ok": true,
+        "detail": {
+          "sha256": "9f2611a1a8d8c5b3a1f7b55b2f384d72594399cf783808facb55e1f2965d47f0"
+        }
+      },
+      {
+        "check": "hash_unchanged:call_to_token_mapping.md",
+        "ok": true,
+        "detail": {
+          "sha256": "e5ddda3e8fb5a6e2716372e5d4aed139c4e67f030a0dc436bd7b8e726b2f8f48"
+        }
+      },
+      {
+        "check": "hash_unchanged:composition_condition_sentinelagent.md",
+        "ok": true,
+        "detail": {
+          "sha256": "5423ec4ba5a14cf206e7b3fb4e0dec55c9b167d03fb4b9059111fbe3d001a9ec"
+        }
+      },
+      {
+        "check": "hash_unchanged:sa_case_generator.py",
+        "ok": true,
+        "detail": {
+          "sha256": "0a17df5cd655cc9aab761db42536b54fb5d28009ba964be878936bfc4e308a86"
+        }
+      },
+      {
+        "check": "hash_unchanged:sa_harness.py",
+        "ok": true,
+        "detail": {
+          "sha256": "89c7cc617c5127a8b91bf64767504abd0947508bd872e9471be1cf08de756555"
+        }
+      },
+      {
+        "check": "determinism_rerun",
+        "ok": true,
+        "detail": {
+          "sample": 20,
+          "mismatches": []
+        }
+      },
+      {
+        "check": "leak_audit",
+        "ok": true,
+        "detail": {
+          "problems": []
+        }
+      },
+      {
+        "check": "arm2_arm5_identical_leak_sets",
+        "ok": true,
+        "detail": {
+          "symmetric_difference": []
+        }
+      },
+      {
+        "check": "not_vacuous",
+        "ok": true,
+        "detail": {
+          "admissions": 488,
+          "token_denials": 150
+        }
+      },
+      {
+        "check": "snapshot_sources",
+        "ok": true,
+        "detail": null
+      }
+    ],
+    "reruns": 20
+  },
+  "expected_vs_observed_ok": false,
+  "file_hashes": {
+    "C:\\Users\\prath\\Downloads\\RPaper\\sentinelagent_audit_20261014\\upstream\\sentinelagent_das_prototype.py": "739d9db1e836d7edaf567cabfa6c4ae074bb81d74ad522e98b7d04a3237b36be",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_v2\\design\\frozen_cases.json": "4d8b76a2f63f9643ac8c59cc72f42b93d4cb8a1621084bec2c5d06170fff1639",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_v2\\design\\prediction_lock.json": "0e0411242618259ccca251c378a32814bf034649e42423d1056558d2d16ca870",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_v2\\results\\raw_metrics.json": "b2762e55f0e1aad4e8645211da0011bfbeb519c6d15068bfbb048bb9fc126f0c",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\design\\sa_cases.json": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\design\\sa_lock.json": "9f2611a1a8d8c5b3a1f7b55b2f384d72594399cf783808facb55e1f2965d47f0",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\design\\call_to_token_mapping.md": "e5ddda3e8fb5a6e2716372e5d4aed139c4e67f030a0dc436bd7b8e726b2f8f48",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\design\\composition_condition_sentinelagent.md": "5423ec4ba5a14cf206e7b3fb4e0dec55c9b167d03fb4b9059111fbe3d001a9ec",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\design\\sa_case_generator.py": "0a17df5cd655cc9aab761db42536b54fb5d28009ba964be878936bfc4e308a86",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\adapters\\sa_harness.py": "89c7cc617c5127a8b91bf64767504abd0947508bd872e9471be1cf08de756555"
+  },
+  "frozen_proof": {
+    "frozen_cases_sha256": "4d8b76a2f63f9643ac8c59cc72f42b93d4cb8a1621084bec2c5d06170fff1639",
+    "prediction_lock_sha256": "0e0411242618259ccca251c378a32814bf034649e42423d1056558d2d16ca870"
+  }
+}

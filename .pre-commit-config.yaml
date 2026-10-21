@@ -1,0 +1,17 @@
+# Local-only hooks: no network fetches, no rewriting of frozen artifacts.
+# Install with: python -m pip install pre-commit && pre-commit install
+repos:
+  - repo: local
+    hooks:
+      - id: verify-artifacts
+        name: verify artifact hashes
+        entry: python scripts/verify_artifacts.py
+        language: system
+        pass_filenames: false
+        files: ^(paper|tests|artifacts)/
+      - id: repo-qa
+        name: repository QA tests
+        entry: python -m pytest -q qa
+        language: system
+        pass_filenames: false
+        files: ^(qa|scripts|tests|paper|artifacts)/

@@ -1,0 +1,222 @@
+{
+  "ok": true,
+  "verdict": "NON_BLOCKING",
+  "summary": "All 12 claims were re-derived directly from the raw artifacts (runs.jsonl, metrics.json, the code, and independent re-executions) rather than from the report: 672 rows (96 x 7, no duplicates or missing ids, 48/48 attack/benign per arm), leak sets of arms 2/5 identical at 28 cases/30 events (24 dynamic-state/identity + 4 keyholder_widen), arm 4 at 8/8 as the locked reset control, arm 6 closing all 28 with 0 leaks/0 false denials, arm 7 closing all 28 at a cost of 20 benign false-denial cases / 28 false-denial events, seam test 0, and zero false positives or false negatives against the 28-case locked sets. Every unauthorized_effect/false_denial flag was re-derived from oracle_reasons/effects and the locked rules (0 disagreements; the extra signature clause never fired); leaks are counted only where an effect actually executed under an oracle violation. All 100 arm-6 attestation signatures were cryptographically re-verified under the bridge key (100/100 match; 0 signed with the prototype's published key), and the attestation merely carries the shadow APC decision across a disclosed trust boundary. The determinism sample was independently re-executed (10 cases x arms 2/5): 20/20 event-identical with timing stripped. All eleven frozen hashes are unchanged before/after the review; run_sa.py --check passes; the lock (11:52:24Z) predates the run (11:57:16-17Z). The one MAJOR finding (SA-1): SA_RESULTS.md sec.1/sec.2 and claims_update_sentinelagent.md 'Cross-cutting' still say, in effect, 'in every pair we have built and run ... zero composition-specific failures'; the E1 discriminating tests (which postdate the SA report's mtime) measured a composition-specific exception for the action family under arm-native scoring, and paper\\CONSOLIDATED_CLAIMS.md already bounds the star claim accordingly - the SA pair files must be corrected (wording only), then the consolidated set is freezable.",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "scale/design",
+      "result": "HELD",
+      "evidence": "Re-parsed results\\sa\\runs.jsonl: 672 rows, rows_per_arm all 96 across 7 arms, unique case ids, no duplicates or missing rows, 48 attack + 48 benign per arm. design\\sa_case_generator.py --check passes (dataset 0bab4d516177cdbfb356abee15291029d4d3294bb22225cc1693c33e40d9e310). Content diff of sa_cases.json first 80 cases vs seam_pilot_v2\\design\\frozen_cases.json: identical for 72/80; only the prediction/reason/notes fields differ for the 8 documented overrides. The 16 new signature cases are 2 templates x 4 document parameters x 2 variants (foreign_key_signed 4a/4b + keyholder_widen 4a + keyholder_plain 4b, 8/8 split); the frozen 80 are reused verbatim."
+    },
+    {
+      "id": "C2",
+      "claim": "canonical leak counts",
+      "result": "HELD",
+      "evidence": "Recomputed from runs.jsonl: arms 2/5 (sentinelagent_alone, apc_sentinelagent_scope_only) = 28 cases / 30 events; arms 1/3/6/7 = 0/0. Arm 4 (apc_apc_reset) = 8/8 - the review prompt's claim text ('arms 1/3/4/6 leak 0') is contradicted by the artifacts; the SA files themselves say 8/8 (sa_lock.json.expected_per_arm.apc_apc_reset locked pre-run; SA_RESULTS.md sec.3 table and sec.6) - recorded as finding SA-8. Split 24 dynamic-state/identity + 4 keyholder_widen: sa_lock.json.expected_leak_cases_arms_2_and_5 exactly matches the observed sets. Held with correction to the prompt text, not to any SA artifact."
+    },
+    {
+      "id": "C3",
+      "claim": "forced identity arm 2 = arm 5",
+      "result": "HELD",
+      "evidence": "Same receiving contract code path in both arms (sa_harness.py: build_presented 200-222, evaluate_presented 373-398, T0 derivation 168-171). Leak sets identical (self_review.json.arm2_arm5_identical_leak_sets, symmetric difference [] recomputed); gate codes equal per case; only benign-side difference is the narrowed_scope-0..3-b T0 manifests (arm 2 root R has 3 entries vs arm 5 post-handoff R intersect role R 1 entry) - no decision changes. The identity is labelled forced in CONSOLIDATED_CLAIMS.md sec.0.3/H2 and is not used as composition evidence."
+    },
+    {
+      "id": "C4",
+      "claim": "arm 6 closure",
+      "result": "HELD",
+      "evidence": "Attestation is checked, not merely trusted: all 100 arm-6 attestation HMAC signatures re-verified by reconstruction (results\\review_tmp\\adv_verify.py): 100/100 verify under BRIDGE_KEY, 0 under REAL_DAS_KEY. 42 downstream events denied at the attestation stage (apc_allowed=false, shadow reasons carried); 58 downstream events ran the native P6/P7 checks after attestation OK; presented-token SIGNATURE_INVALID x4 (the attestation itself valid); 0 false denials. The trust condition (the bridge/receiver holds the key, H5) is documented in call_to_token_mapping.md sec.6/sec.9, SA_RESULTS sec.15, and consolidated sec.5, so 'closes all 28' is read conditionally as disclosed - not overbroad in the artifacts."
+    },
+    {
+      "id": "C5",
+      "claim": "arm 7 utility cost",
+      "result": "HELD",
+      "evidence": "FD event list recomputed = 28 events: 20 benign (4 cases each of expired_delegation, renewed_grant, history_sufficient, single_call, budget_preserved) + 4 attack unsatisfiable_verify (T1-REFUSE:completion_untranslated) + 4 attack repeated_calls-0-a/-3-a (idx0 T1-REFUSE + idx1 SHADOW-DENY each). benign_false_denial_cases = 20 cases, all benign, no attack case counted as FD. The 4 unsatisfiable_verify cases are handled inertly (no pass credit; see SA-4 for the wording fix). Foreign-token rejections excluded from FD: all 16 SIGNATURE_INVALID events have false_denial=false. The 20 refused benign cases are exactly the cases arm 6 admits safely (identical id lists)."
+    },
+    {
+      "id": "C6",
+      "claim": "scoring convention",
+      "result": "HELD",
+      "evidence": "Code verified: seam_pilot\\model.py Oracle.decide (119-145) applies permitted &= set(role_resources) (L133) and prohibited_composition (L138-142, applied in arm 2; arm-2 leak oracle reasons show 'prohibited_composition'); the same V2Oracle serves all arms (arm-invariant); scoring rules locked pre-run (composition_condition_sentinelagent.md sec.7). Derived-vs-stored flags: 0 disagreements; the extra 'admitted under unverifiable token' clause fired 0 times. Rescoring disclosure ('rescoping would flip composition_history_loss arm 2 from leak to safe') is present in CONSOLIDATED_CLAIMS.md H2 conditions/sec.0.4/sec.5 and in the condition doc; it is absent from claims_update_sentinelagent.md (MINOR SA-9)."
+    },
+    {
+      "id": "C7",
+      "claim": "controls/determinism/non-vacuity",
+      "result": "HELD",
+      "evidence": "10/10 controls pass with real positive AND negative legs (S1-failure/S1-probe/S2-foreign/S2-mutated/S3-mutated/S3-replay-tamper negative; S2-trusted/S2-two-minters/S3-valid positive; S1-valid is the designed expired-token gap demonstration, stated in SA_RESULTS sec.8 and mapping doc sec.2.1). Determinism: the run's own 20 reruns report 0 mismatches, and an independent re-execution of the same sample reproduced 20/20 event-identical records (JSON-normalized, authorization_ns/envelope_id stripped). 488 admissions recomputed (66+92+66+74+92+62+36) and 150 token-attached denials recomputed (0+16+0+0+16+46+72); decomposition: 40 native P6/P7 denials + 42 attestation-stage + 68 pre-presentation refusals = 150 (label imprecision = MINOR SA-3). The check path is not vacuous."
+    },
+    {
+      "id": "C8",
+      "claim": "H5 keyholder",
+      "result": "HELD",
+      "evidence": "Verified per case in runs.jsonl: foreign_key_signed returns SIGNATURE_INVALID x4 in each of the four token arms (2/5/6/7 - correctly scoped there, not 'all seven arms' of the 7-arm matrix); keyholder_plain is ADMITTED 4/4 in all four token arms; keyholder_widen is ADMITTED 4/4 in arms 2/5 (leak), denied 4/4 in arm 6 via APC-DENY (shadow APC refusal of the widened resource - a reason unrelated to minter identity, as required) and arm 7 via SHADOW-DENY (same shadow reasons). Control S2-two-minters returns identical codes (controls.json, embedded identical in manifest.json)."
+    },
+    {
+      "id": "C9",
+      "claim": "H6 pair shape",
+      "result": "HELD",
+      "evidence": "28 = 24 dynamic-state/identity + 4 keyholder. 12 vocabulary-expressible attack cases denied per arms 2/5: 'BLOCKED: READ docs:external/secret' x4 (resource widening) + 'BLOCKED: SEND attacker@example.test' x4 (recipient substitution) + 'BLOCKED: SEND forbidden-default@example.test' x4 (forbidden default). 0 false denials in arms 2/5. No double counting: repeated_calls has 4 cases -> 6 events, and case-level leak sets are sets."
+    },
+    {
+      "id": "C10",
+      "claim": "cross-cutting wording",
+      "result": "FAILED",
+      "evidence": "Exact sentences recorded in SA-1: SA_RESULTS.md:9 (sec.1), SA_RESULTS.md:25 (sec.2), claims_update_sentinelagent.md:57 ('Cross-cutting'). The three sentences are stale unbounded universals that predate the E1 arm-native exception (discriminating_tests\\results\\REPORT.md sec.1-2: canonical seam 0 but arm-native seam 4/4); they are superseded by CONSOLIDATED_CLAIMS.md star/sec.4.2/sec.6.2, but the SA pair files themselves must be corrected before freeze."
+    },
+    {
+      "id": "C11",
+      "claim": "boundary cross-check",
+      "result": "HELD",
+      "evidence": "sa_boundary\\results\\boundary\\metrics.json: apc_sentinelagent_scope_only::v1/v2 attack_successes 32 / events 34; sentinelagent_alone::v1/v2 = 28/30; sentinelagent_alone_variant::v1/v2 = 32/34. Seam cases resource_widen-0..3-a (v1) / omitted_forbidden_default-0..3-a (v2) give 32 = 28 pre-existing + 4 new per variant; no new dynamic-state class; manifest.json.seam_test v1/v2 seam_count = 4 and expected_vs_observed_ok = true (checks only the seam count). The SA files never import the boundary's 32/34 into the canonical SA count and never use 24 as the pre-existing canonical set."
+    },
+    {
+      "id": "C12",
+      "claim": "provenance",
+      "result": "HELD",
+      "evidence": "All 11 frozen hashes identical before/after the review and equal to the frozen table (see hashes_before/hashes_after). run_sa.py --check (read-only): rows=672 expected=672, manifest lock dataset 0bab4d516177..., upstream sha256 match True, frozen lock hash match True, OK. sa_case_generator.py --check: OK, locked_utc 2026-10-19T11:52:24Z. Lock mtime 11:52:24Z < first execution 11:57:16Z (phases.json.started_utc). No frozen mtime after 11:57:17Z; the 12:03:18-25Z writes are the documented post-run report layer (SA_RESULTS sec.5/13). P12 ambiguity resolved in SA-2: hash_unchanged:raw_metrics.json = b2762e55... is the v2 file (full path in manifest.json.file_hashes), an ambiguous label, not an unrecorded provenance gap."
+    }
+  ],
+  "findings": [
+    {
+      "id": "SA-1",
+      "severity": "MAJOR",
+      "location": "SA_RESULTS.md:9 (sec.1), SA_RESULTS.md:25 (sec.2), claims_update_sentinelagent.md:57 (Cross-cutting)",
+      "issue": "Stale unbounded universal claims predating the E1 discriminating tests: 'This is the third consecutive pilot with a zero seam count...', 'In every pair we have built and run ... The seam changes which decisions are reachable, not which effects are possible.', 'Three pilots ... produced zero composition-specific failures: every leak in a composed arm was already present with the receiving mechanism alone.' The discriminating tests (E1, REPORT.md sec.1-2: canonical seam 0 but arm-native seam 4/4) measured a composition-specific exception for the action family under arm-native scoring; CONSOLIDATED_CLAIMS.md star/sec.4.2/sec.6.2 bound the claim accordingly 'with the measured exception'. The three SA sentences are convention-dependent universal claims stated without the exception.",
+      "evidence": "discriminating_tests\\results\\REPORT.md sec.1-2; CONSOLIDATED_CLAIMS.md sec.2 star, sec.4.2; SA_RESULTS.md:9/25; claims_update_sentinelagent.md:57; mtimes: SA claims 12:03:25Z written before the final E1 files (12:58:36Z) and before the discriminating results",
+      "proposed_fix": "Amend the three sentences to name the frozen family-wide scoring convention and cite the measured E1 arm-native exception (e.g. 'under the frozen family-wide oracle, zero seam in every pair run; under arm-native scoring the E1 action family fires 4/4 - see CONSOLIDATED_CLAIMS.md star'). Worded status: superseded by the consolidated file; correct the SA pair files before freeze.",
+      "changes_number": false
+    },
+    {
+      "id": "SA-2",
+      "severity": "MINOR",
+      "location": "SA_RESULTS.md:316 (sec.12) and sec.16 raw-metrics row; self_review.json check hash_unchanged:raw_metrics.json = b2762e55...",
+      "issue": "The short label is ambiguous with the SA's own results\\sa\\raw_metrics.json (b3151d7e...). Resolution: the check re-hashes tests\\seam_pilot_v2\\results\\raw_metrics.json (source dict run_sa.py:379; label derived via Path(rel).name, run_sa.py:313), and manifest.json.file_hashes records the full v2 path - ambiguous label, not an unrecorded provenance gap: the checked file is a frozen reused input; the SA raw-metrics file is a produced artifact (not a frozen input), covered by the mtime structure and --check.",
+      "evidence": "self_review.json check detail b2762e55...; manifest.json:302 full v2 path with the same hash; run_sa.py:379,313; frozen-table row 9 of the review prompt",
+      "proposed_fix": "In the next report regeneration, print the check as hash_unchanged:seam_pilot_v2/results/raw_metrics.json and add the SA raw-metrics hash to sec.16 under its own name.",
+      "changes_number": false
+    },
+    {
+      "id": "SA-3",
+      "severity": "MINOR",
+      "location": "SA_RESULTS.md:308 (sec.12 '150 token-check denials'), sec.6 column 'token-checked calls' (SA_RESULTS.md:178,184-187)",
+      "issue": "Label precision: the 150 'token denials' include 68 arm-7 pre-presentation refusals (SHADOW-DENY/T1-REFUSE, token:{presented:false}) and 42 arm-6 attestation-stage denials (token presented, native check skipped); only 40 events reached the native P6/P7 checks and were denied. Arm 6's 'token-checked calls 100' counts presented tokens, of which 58 reached the native checks. Non-vacuity conclusion unaffected (488 admissions, 40 or more real native denials in both directions).",
+      "evidence": "run_sa.py:344-348 (counter formula); sa_harness.py:539 (event['token'] set even when presented=false); recomputed decomposition 40+42+68=150; arm-6 native-after-attestation = 58",
+      "proposed_fix": "Reword to '150 denials with a token event attached (40 native P6/P7 denials, 42 attestation-stage, 68 pre-presentation)' and footnote the 'token-checked calls' column.",
+      "changes_number": false
+    },
+    {
+      "id": "SA-4",
+      "severity": "MINOR",
+      "location": "SA_RESULTS.md:285 (sec.9)",
+      "issue": "'no completion stage exists in this mechanism, so nothing is unsatisfiable and no effect is produced' is wrong: the four admitted unsatisfiable_verify attacks in arm 6 did execute world effects (save_internal -> internal_write, one per case); the class is inert because no unauthorized effect and no fabricated obligation, not because nothing ran.",
+      "evidence": "runs.jsonl, arm apc_sentinelagent_retained, cases unsatisfiable_verify-0..3-a downstream: allowed=true, effects=['internal_write'], unauthorized_effect=false",
+      "proposed_fix": "Change to '...no unauthorized effect is produced and no obligation is fabricated - the class is inert...'.",
+      "changes_number": false
+    },
+    {
+      "id": "SA-5",
+      "severity": "INFO",
+      "location": "results\\sa\\phases.json:71, manifest.json:24,34,299-308",
+      "issue": "Embedded absolute paths use the pre-move layout ...\\RPaper\\{seam_pilot_sentinelagent, seam_pilot_v2, sentinelagent_audit_20261014} (the pilot tree was moved into RPaper\\tests\\ after the run). All hashes match the moved files byte-for-byte, so this is historical metadata, not an integrity issue.",
+      "evidence": "path strings missing the tests\\ segment; every 11-file hash today equals the embedded value",
+      "proposed_fix": "None required; optionally annotate in a future regeneration that paths reflect the run-time layout.",
+      "changes_number": false
+    },
+    {
+      "id": "SA-6",
+      "severity": "INFO",
+      "location": "sa_harness.py:135-154,251-314; call_to_token_mapping.md sec.6/sec.9",
+      "issue": "Arm 6's attestation is a real, verified artifact (signature, payload, binding, replay checks; controls S3-valid/mutated/replay pass) - but the decision it carries is the shadow APC's own, signed with the key the receiver itself is configured with. Closure is therefore a trust-boundary choice (bridge-key possession + shadow-APC correctness), exactly as H5 predicts, and it is disclosed (mapping doc sec.6/sec.9, SA_RESULTS sec.15, consolidated sec.5 'not claimed: production safety of arms 6/7').",
+      "evidence": "HMAC re-verification: 100/100 attestation signatures correct under BRIDGE_KEY (0 under REAL_DAS_KEY); S3 controls; SA_RESULTS sec.9/sec.15",
+      "proposed_fix": "None; keep the conditional reading of 'closes all 28' as already documented.",
+      "changes_number": false
+    },
+    {
+      "id": "SA-7",
+      "severity": "INFO",
+      "location": "sa_harness.py:334-335 (t1_refusal)",
+      "issue": "Arm 7's dynamic-state refusal triggers on the case-declared exercised_aspects metadata, not on a runtime detection of state in the pre-admission snapshot. The 20-case FD count is therefore correct only relative to the frozen case labeling (verified constant across arms; no case mislabels exercised states today).",
+      "evidence": "runs.jsonl: FD cases = benign x {expired_delegation, renewed_grant, history_sufficient, single_call, budget_preserved}, all refused T1-REFUSE:dynamic_state_untranslated; sa_lock.json expected_per_arm note matches",
+      "proposed_fix": "For future case sets, state that arm 7's utility cost depends on exercised_aspects labeling discipline.",
+      "changes_number": false
+    },
+    {
+      "id": "SA-8",
+      "severity": "INFO",
+      "location": "Review prompt, claim list item 2 (claim C2 text)",
+      "issue": "The review prompt's claim text says 'arms 1/3/4/6 leak 0'; the artifacts (and the SA files) say arm 4 (apc_apc_reset) leaks 8 cases/8 events - locked pre-run (sa_lock.json.expected_per_arm.apc_apc_reset) as the same-mechanism reset control and verified observed (composition 4 / repeated 2 / budget 2 on the shared 80; frozen-reference consistency holds). The SA numbers are right; the prompt paraphrase is wrong.",
+      "evidence": "sa_lock.json.expected_per_arm.apc_apc_reset; metrics.json.metrics.apc_apc_reset.attack_successes = 8; SA_RESULTS.md:45-48,188",
+      "proposed_fix": "Correct the claim text in any downstream QA record; no SA artifact change.",
+      "changes_number": false
+    },
+    {
+      "id": "SA-9",
+      "severity": "MINOR",
+      "location": "claims_update_sentinelagent.md (whole file, 'Cross-cutting' section)",
+      "issue": "The pair claims file does not carry its own scoring-convention disclosure (arm-invariant oracle; rescoping arm 2 under its own world would flip composition_history_loss arm 2 to safe), which H6/the star claim cross-references implicitly. The disclosure exists in CONSOLIDATED_CLAIMS.md (sec.0.4, H2 conditions, sec.6 conventions list) and in the locked scoring rules (composition_condition_sentinelagent.md sec.7), so the consolidated authority is self-contained.",
+      "evidence": "CONSOLIDATED_CLAIMS.md:67,253; composition_condition_sentinelagent.md:177-194",
+      "proposed_fix": "Add one line under '## Cross-cutting': 'SA scoring is the frozen family-wide oracle (arm-invariant); rescoping arm 2 natively would flip composition_history_loss to safe - see CONSOLIDATED_CLAIMS.md H2 conditions.'",
+      "changes_number": false
+    }
+  ],
+  "hashes_before": {
+    "tests/seam_pilot_sentinelagent/design/sa_lock.json": "9f2611a1a8d8c5b3a1f7b55b2f384d72594399cf783808facb55e1f2965d47f0",
+    "tests/seam_pilot_sentinelagent/design/sa_cases.json": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2",
+    "tests/seam_pilot_sentinelagent/adapters/sa_harness.py": "89c7cc617c5127a8b91bf64767504abd0947508bd872e9471be1cf08de756555",
+    "tests/seam_pilot_sentinelagent/design/sa_case_generator.py": "0a17df5cd655cc9aab761db42536b54fb5d28009ba964be878936bfc4e308a86",
+    "tests/seam_pilot_sentinelagent/design/call_to_token_mapping.md": "e5ddda3e8fb5a6e2716372e5d4aed139c4e67f030a0dc436bd7b8e726b2f8f48",
+    "tests/seam_pilot_sentinelagent/design/composition_condition_sentinelagent.md": "5423ec4ba5a14cf206e7b3fb4e0dec55c9b167d03fb4b9059111fbe3d001a9ec",
+    "tests/sentinelagent_audit_20261014/upstream/sentinelagent_das_prototype.py": "739d9db1e836d7edaf567cabfa6c4ae074bb81d74ad522e98b7d04a3237b36be",
+    "tests/seam_pilot_sentinelagent/results/sa/raw_metrics.json": "b3151d7e8763abe37ea445bb9ce37c1f1b3e193d5fc7a2d72eeae19d6d04c4fb",
+    "tests/seam_pilot_v2/results/raw_metrics.json": "b2762e55f0e1aad4e8645211da0011bfbeb519c6d15068bfbb048bb9fc126f0c",
+    "tests/seam_pilot_v2/design/frozen_cases.json": "4d8b76a2f63f9643ac8c59cc72f42b93d4cb8a1621084bec2c5d06170fff1639",
+    "tests/seam_pilot_v2/design/prediction_lock.json": "0e0411242618259ccca251c378a32814bf034649e42423d1056558d2d16ca870"
+  },
+  "hashes_after": {
+    "tests/seam_pilot_sentinelagent/design/sa_lock.json": "9f2611a1a8d8c5b3a1f7b55b2f384d72594399cf783808facb55e1f2965d47f0",
+    "tests/seam_pilot_sentinelagent/design/sa_cases.json": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2",
+    "tests/seam_pilot_sentinelagent/adapters/sa_harness.py": "89c7cc617c5127a8b91bf64767504abd0947508bd872e9471be1cf08de756555",
+    "tests/seam_pilot_sentinelagent/design/sa_case_generator.py": "0a17df5cd655cc9aab761db42536b54fb5d28009ba964be878936bfc4e308a86",
+    "tests/seam_pilot_sentinelagent/design/call_to_token_mapping.md": "e5ddda3e8fb5a6e2716372e5d4aed139c4e67f030a0dc436bd7b8e726b2f8f48",
+    "tests/seam_pilot_sentinelagent/design/composition_condition_sentinelagent.md": "5423ec4ba5a14cf206e7b3fb4e0dec55c9b167d03fb4b9059111fbe3d001a9ec",
+    "tests/sentinelagent_audit_20261014/upstream/sentinelagent_das_prototype.py": "739d9db1e836d7edaf567cabfa6c4ae074bb81d74ad522e98b7d04a3237b36be",
+    "tests/seam_pilot_sentinelagent/results/sa/raw_metrics.json": "b3151d7e8763abe37ea445bb9ce37c1f1b3e193d5fc7a2d72eeae19d6d04c4fb",
+    "tests/seam_pilot_v2/results/raw_metrics.json": "b2762e55f0e1aad4e8645211da0011bfbeb519c6d15068bfbb048bb9fc126f0c",
+    "tests/seam_pilot_v2/design/frozen_cases.json": "4d8b76a2f63f9643ac8c59cc72f42b93d4cb8a1621084bec2c5d06170fff1639",
+    "tests/seam_pilot_v2/design/prediction_lock.json": "0e0411242618259ccca251c378a32814bf034649e42423d1056558d2d16ca870"
+  },
+  "no_frozen_edits": true,
+  "commands": [
+    "SHA-256 hashing of the 11 frozen inputs (in-memory, before the review) - all 11 match the frozen hash table in SA_ADVERSARIAL_REVIEW_PROMPT.md",
+    "python run_sa.py --check  [cwd: tests\\seam_pilot_sentinelagent; interpreter: tests\\authorization_pilot\\.venv\\Scripts\\python.exe; read-only; output: rows=672 expected=672, rows per arm all 96, manifest lock dataset 0bab4d516177cdbfb356abee15291029d4d3294bb22225cc1693c33e40d9e310, upstream sha256 match True, frozen lock hash match True, OK]",
+    "python design\\sa_case_generator.py --check  [cwd: tests\\seam_pilot_sentinelagent; dataset 0bab4d516177cdbfb356abee15291029d4d3294bb22225cc1693c33e40d9e310 == locked hash; locked_utc 2026-10-19T11:52:24Z; OK]",
+    "python results\\review_tmp\\adv_mech.py  [disclosed re-execution, in-memory; writes only results\\review_tmp\\adv_stats.json; re-parses all 672 runs.jsonl rows and re-derives structure, flags, leak/FD sets, seam test, arm-2/5 contract comparison, arm-6 payloads, arm-7 FD breakdown, keyholder grid, lock-vs-observed]",
+    "python results\\review_tmp\\adv_verify.py  [disclosed re-execution, in-memory; (a) independent determinism rerun of the 10 cases x arms 2/5 sample, JSON-normalized, timing keys authorization_ns/envelope_id stripped; (b) reconstruction of the 100 arm-6 attestations and HMAC re-verification under BRIDGE_KEY and REAL_DAS_KEY; (c) arms 1/3/4 restricted to the shared 80 vs tests\\seam_pilot_v2\\results\\raw_metrics.json (frozen-reference consistency); (d) equality of results\\sa\\raw_metrics.json with metrics.json.metrics]",
+    "mtime / newest-file audit of the frozen tree  [lock 2026-10-19T11:52:24Z < first execution 11:57:16Z; no frozen input modified after 11:57:17Z; the 12:03:18-25Z post-run report-layer writes are documented in SA_RESULTS sec.5/sec.13]",
+    "SHA-256 hashing of the 11 frozen inputs (in-memory, after the review) - all 11 unchanged and equal to the before values"
+  ],
+  "residual_risks": [
+    "No arm-native re-scoring of the SA pair was executed (no E1-style Test 1 equivalent). The consolidated statement 'rescoping would flip composition_history_loss arm 2 from leak to safe' is verified directionally from the code (prohibited_composition originates in the arm-invariant oracle; SA's vocabulary has no composition-history field) and from the E1 analogous measurement, not from an SA run. Falsifier: an executed arm-native SA rescore showing a different flip set.",
+    "The bridge is one possible mapping. All results are properties of this implementation under T0/T1/T2-attest and the disclosed key model; the pinned prototype's 'or a call to the DAS' path was not exercised (no live DAS service; in-process checks only, documented in the mapping doc sec.2-3).",
+    "The token-expiry non-check rests on the frozen prototype's code paths and the S1-valid control; a patched prototype could behave differently (out of scope by the frozen-hash discipline).",
+    "Arm 7's refusal logic keys on case-declared exercised_aspects (SA-7): if a future case mislabels its exercised state, arm 7 would silently admit it. The oracle's leak/FD classification does not depend on that metadata, so the current numbers are unaffected.",
+    "runs.jsonl event authorization_ns/envelope_id are nondeterministic; the determinism comparisons (the run's own and the review's) strip both. Any hypothetical nondeterminism confined to those fields would be invisible by design - acceptable (timing/envelope identity cannot affect authorization outcomes).",
+    "Arms 1/3/4 (the reused v2 runner) were not re-executed for determinism; the frozen-reference consistency check (shared-80 aggregates identical: 0/0/8) bounds that risk, and the run's own self-review covers its pipeline.",
+    "The tree was moved after the run (embedded paths lack the tests\\ segment); a lossy move would have shown as a hash mismatch - none across 11/11 files before and after this review."
+  ],
+  "notes": [
+    "Reviewer model: GLM-5.3-Flash Free (local, no paid calls; did not author the SA pilot or item 4). Date: 19 Oct 2026. Workspace: C:\\Users\\prath\\Downloads\\RPaper.",
+    "Paths in hashes_before/hashes_after use forward slashes and are relative to the RPaper workspace root.",
+    "Verdict rule application: one MAJOR finding (SA-1, stale unbounded source-file sentences contradicting the consolidated authority) precludes CLEAN; no BLOCKING trigger - no reported number is wrong, no frozen artifact changed, the harness never reads its own predictions, no denominator substitution (20 cases vs 28 events, 28 cases vs 30 events, 24 vs 28, 48 vs 96 all kept distinct), closure mechanisms were actually checked, the forced identity is labelled, and the universal wording is handled as MAJOR (stale source-file sentence contradicting the consolidated set). Therefore NON_BLOCKING, ok true.",
+    "run_sa.py --check must be run with cwd = tests\\seam_pilot_sentinelagent; an invocation from the RPaper root fails with file-not-found (path error only, no side effects; disclosed in review sec.5).",
+    "P12 resolution (SA-2): self_review.json's hash_unchanged:raw_metrics.json carries b2762e55... = tests\\seam_pilot_v2\\results\\raw_metrics.json (full path in manifest.json.file_hashes); the SA results\\sa\\raw_metrics.json is b3151d7e.... Ambiguous label, NOT an unrecorded provenance gap.",
+    "Review-prompt correction (SA-8): arm 4 (apc_apc_reset) leaks 8/8 by locked design - the same-mechanism reset control; the SA artifacts are correct and the prompt's 'arms 1/3/4/6 leak 0' paraphrase was wrong. Recorded as C2 HELD with correction to the prompt text.",
+    "The pilot tree was moved from the pre-move layout to RPaper\\tests\\... after the run (SA-5, INFO): all 11 hashes match the embedded pre-move provenance values byte-for-byte.",
+    "Arm 6 trust boundary (SA-6): the closure is a disclosed bridge-key + shadow-APC design choice, verified as a real HMAC-attested mechanism (100/100 signatures under BRIDGE_KEY), not an independent oracle; H5 predicts exactly this.",
+    "Attack-side FD events in arm 7 (8 events: 4 unsatisfiable_verify + 4 repeated_calls a-variant events) are disclosed separately from the 20 benign FD cases and are not counted as benign false denials.",
+    "Determinism: the run's own 20 reruns report 0 mismatches and the review's independent re-execution reproduced 20/20 event-identical records (JSON-normalized; authorization_ns/envelope_id stripped).",
+    "Recommendation (review sec.7): freeze the SentinelAgent pair (item 4) as-is - no rerun, no data change - conditional on correcting the three wording sentences (SA-1) and applying the presentational fixes (SA-2/SA-3/SA-4/SA-9) at the next report regeneration; freeze paper\\CONSOLIDATED_CLAIMS.md as-is once this review is merged.",
+    "Only files created by this review: results\\ADVERSARIAL_REVIEW.md, results\\adversarial_review.json, and the disclosed temp scripts/intermediates under results\\review_tmp\\ (adv_mech.py, adv_verify.py, adv_stats.json). No frozen artifact, lock, harness, case set, result report, metrics file, or runs.jsonl was modified.",
+    "Self-review checklist (prompt) satisfied: both output files exist and this JSON parses; all eleven hashes checked before and after; run_sa.py --check (and sa_case_generator.py --check) run; no frozen edits and newest mtimes reported; every finding carries a path/field and exact claim text where applicable; the 24/28, 28/30, 20/28 and 32/34 distinctions are maintained; the verdict follows the rules; no network, git, or paid calls were used."
+  ]
+}

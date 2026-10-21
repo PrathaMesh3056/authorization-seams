@@ -1,0 +1,13 @@
+[12:05:21] Phase 1: 10 labels + 2 mutations + 2 outbox checks passed
+[12:05:25] Phase 2: 21 controls with failure probes passed
+[12:05:31] Phase 3: arm apc_alone (80 cases)
+[12:05:31] Phase 3: arm tracegrant_alone (80 cases)
+[12:05:31] Phase 3: arm apc_apc_preserved (80 cases)
+[12:05:31] Phase 3: arm apc_apc_reset (80 cases)
+[12:05:31] Phase 3: arm apc_tracegrant_scope_only (80 cases)
+[12:05:32] Phase 3: arm apc_tracegrant_retained (80 cases)
+[12:05:32] Phase 3: arm apc_tracegrant_fail_closed (80 cases)
+[12:05:32] Phase 3: 560 executions complete; arm5 leaks=24
+[12:05:41] Phase 4: 10 replay pairs semantically identical
+[12:06:00] Phase 5: latency measured for 7 arms (1000 samples each)
+[12:06:06] Phase 5.5: payload-provenance diagnostic written

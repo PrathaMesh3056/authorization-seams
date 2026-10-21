@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "repositories": {
+    "apc": {
+      "url": "https://github.com/xmuruaga/bounded-agents.git",
+      "commit": "d31a1ea115a3e97ab972ac8d03f23ef36cf9b653",
+      "path": "vendor/bounded-agents",
+      "package": "apc"
+    },
+    "progent": {
+      "url": "https://github.com/sunblaze-ucb/progent.git",
+      "commit": "5be7b63fa96f70bc19b72fbcee81f1c0bcc1a565",
+      "path": "vendor/progent-source",
+      "package": "secagent"
+    }
+  }
+}

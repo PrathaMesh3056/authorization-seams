@@ -1,0 +1,65 @@
+{
+  "id": "04_fixed_delete",
+  "trusted_request": "Delete only draft.tmp",
+  "MAY": {
+    "delete_file": {
+      "budget": 1,
+      "allowed_args": [
+        "path"
+      ],
+      "constraints": {
+        "path": {
+          "type": "string",
+          "equals": "draft.tmp",
+          "has_equals": true,
+          "choices": null,
+          "minimum": null,
+          "maximum": null
+        }
+      },
+      "trusted_payloads": {}
+    }
+  },
+  "MUST": [
+    {
+      "id": "F1",
+      "kind": "effect",
+      "tool": "delete_file",
+      "dependencies": [],
+      "hard": true,
+      "enabled": true,
+      "evidence": null,
+      "output_equals": null,
+      "waiver_code": null
+    }
+  ],
+  "BIND": {
+    "F1": {
+      "path": {
+        "source": "constant",
+        "constant": "draft.tmp",
+        "evidence_obligation": null,
+        "field": null,
+        "derivation": "copy",
+        "multiplier": 1,
+        "offset": 0,
+        "selector": null,
+        "constraints": {
+          "type": "string",
+          "equals": "draft.tmp",
+          "has_equals": true,
+          "choices": null,
+          "minimum": null,
+          "maximum": null
+        }
+      }
+    }
+  },
+  "VERIFY": {
+    "F1": {
+      "postconditions": {
+        "deleted": true
+      }
+    }
+  }
+}

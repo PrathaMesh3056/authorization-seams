@@ -1,0 +1,8 @@
+{
+  "executable": "./.venv/Scripts/python.exe",
+  "arguments": [
+    "-m",
+    "implementation.example_contracts"
+  ],
+  "cwd": "C:\\Users\\prath\\Downloads\\RPaper\\tracegrant_task_d_20261014"
+}

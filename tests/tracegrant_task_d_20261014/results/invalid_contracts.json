@@ -1,0 +1,30 @@
+[
+  {
+    "case": "07_unknown_tool",
+    "accepted": false,
+    "failed_predicate": "WellFormed",
+    "expected": "WellFormed",
+    "matched": true
+  },
+  {
+    "case": "08_dependency_cycle",
+    "accepted": false,
+    "failed_predicate": "ControlSafe",
+    "expected": "ControlSafe",
+    "matched": true
+  },
+  {
+    "case": "09_missing_binding",
+    "accepted": false,
+    "failed_predicate": "FlowSafe",
+    "expected": "FlowSafe",
+    "matched": true
+  },
+  {
+    "case": "10_unobservable_verify",
+    "accepted": false,
+    "failed_predicate": "VerifySafe",
+    "expected": "VerifySafe",
+    "matched": true
+  }
+]

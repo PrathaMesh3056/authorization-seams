@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "files_hashed": 89,
+  "source_hashes_checked": 8,
+  "original_guide_unchanged": true,
+  "contract_examples": 10,
+  "independently_counted_unit_tests": 52,
+  "independent_arithmetic": true,
+  "exclusions": "venv/cache files and self-referential manifest/audit files/logs"
+}

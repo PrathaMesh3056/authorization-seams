@@ -1,0 +1,20 @@
+Artifact hashes for Table 15 — full SHA-256 values
+Displayed Table 15 values are variable-length truncations; this file carries the full 64-character values.
+
+Table 15 row 1 — E1 dataset (canonical dataset_sha256):
+1b7c6083ef22d40c8a0d3c3705357358b3508671bfbedc9db12f69a8b2e264ba
+
+Table 15 row 2 — Discriminating lock (file SHA-256):
+8cd4d9938348b43c7232eaa022280693d7e6f538c630d47f0c6d63bd996011ab
+
+Table 15 row 3 — SA lock (file SHA-256):
+9f2611a1a8d8c5b3a1f7b55b2f384d72594399cf783808facb55e1f2965d47f0
+
+Table 15 row 4 — SA cases (file SHA-256):
+ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2
+
+Table 15 row 5 — Boundary lock (file SHA-256):
+b4deab1aff17e974f0187143dc235bb95544f65a2fb1cc90fd4aec56082c4296
+
+Table 15 row 6 — Boundary harness (file SHA-256):
+fa8f7e424f59c4b9c79944b2699c88ae02f6e72bdcc974e96a32d3e790814af4

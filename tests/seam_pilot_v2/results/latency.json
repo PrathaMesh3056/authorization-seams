@@ -1,0 +1,83 @@
+{
+  "warmup": 100,
+  "samples": 1000,
+  "rows": [
+    {
+      "arm": "apc_alone",
+      "warmup": 100,
+      "samples": 1000,
+      "admitted_fraction": 1.0,
+      "p50_us": 54.0,
+      "p95_us": 80.2,
+      "p99_us": 147.2,
+      "mean_us": 59.124300000000005,
+      "measurement": "warm admission path only: shadow APC admission + contract synthesis + gate checks for TraceGrant arms; excludes initialization, execution, receipt and IPC"
+    },
+    {
+      "arm": "tracegrant_alone",
+      "warmup": 100,
+      "samples": 1000,
+      "admitted_fraction": 1.0,
+      "p50_us": 1258.55,
+      "p95_us": 1717.9,
+      "p99_us": 2273.6,
+      "mean_us": 1335.6248,
+      "measurement": "warm admission path only: shadow APC admission + contract synthesis + gate checks for TraceGrant arms; excludes initialization, execution, receipt and IPC"
+    },
+    {
+      "arm": "apc_apc_preserved",
+      "warmup": 100,
+      "samples": 1000,
+      "admitted_fraction": 1.0,
+      "p50_us": 53.7,
+      "p95_us": 84.5,
+      "p99_us": 165.5,
+      "mean_us": 59.2735,
+      "measurement": "warm admission path only: shadow APC admission + contract synthesis + gate checks for TraceGrant arms; excludes initialization, execution, receipt and IPC"
+    },
+    {
+      "arm": "apc_apc_reset",
+      "warmup": 100,
+      "samples": 1000,
+      "admitted_fraction": 1.0,
+      "p50_us": 54.4,
+      "p95_us": 78.7,
+      "p99_us": 167.9,
+      "mean_us": 59.3707,
+      "measurement": "warm admission path only: shadow APC admission + contract synthesis + gate checks for TraceGrant arms; excludes initialization, execution, receipt and IPC"
+    },
+    {
+      "arm": "apc_tracegrant_scope_only",
+      "warmup": 100,
+      "samples": 1000,
+      "admitted_fraction": 1.0,
+      "p50_us": 1740.7,
+      "p95_us": 4017.6,
+      "p99_us": 5009.2,
+      "mean_us": 2211.1942999999997,
+      "measurement": "warm admission path only: shadow APC admission + contract synthesis + gate checks for TraceGrant arms; excludes initialization, execution, receipt and IPC"
+    },
+    {
+      "arm": "apc_tracegrant_retained",
+      "warmup": 100,
+      "samples": 1000,
+      "admitted_fraction": 1.0,
+      "p50_us": 4895.55,
+      "p95_us": 7274.2,
+      "p99_us": 8085.4,
+      "mean_us": 4961.6717,
+      "measurement": "warm admission path only: shadow APC admission + contract synthesis + gate checks for TraceGrant arms; excludes initialization, execution, receipt and IPC"
+    },
+    {
+      "arm": "apc_tracegrant_fail_closed",
+      "warmup": 100,
+      "samples": 1000,
+      "admitted_fraction": 1.0,
+      "p50_us": 2695.1,
+      "p95_us": 4177.4,
+      "p99_us": 4676.2,
+      "mean_us": 2735.0955,
+      "measurement": "warm admission path only: shadow APC admission + contract synthesis + gate checks for TraceGrant arms; excludes initialization, execution, receipt and IPC"
+    }
+  ]
+}

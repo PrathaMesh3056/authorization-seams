@@ -1,0 +1,32 @@
+# Claims update — Extension E1 (supersedes the "Untested for action type" line in H1)
+
+Date: 2026-10-19. One Claim record for H1's action-type clause. It supersedes, and does not duplicate, the following line in the H1 block of `results/claims_update.md` (the original 80×7 claims file):
+
+> **Untested for action type** - no frozen case uses a tool in root A but outside handoff A.
+
+The original file is not edited: it remains the record of the original run. This extension file is the authority for the action-type clause from 2026-10-19 onward. Evidence: `design/action_narrow_condition.md` (locked before the run), `results/extension_e1/` (traces, metrics, condition, assertions, controls, manifest), `results/EXTENSION_E1_RESULTS.md` sections 1 and 3.
+
+## H1-action — the receiving mechanism under M0 admits a tool outside the handoff's narrowed A
+
+**Operationalization:** the `action_narrow` family (8 cases, own lock, `dataset_sha256=1b7c6083ef22d40c8a0d3c3705357358b3508671bfbedc9db12f69a8b2e264ba`): root A = {read_confidential, read_public, save_internal, send_external}; the handoff narrows the delegate role's A to A' = {read_public, save_internal} using the public `Scope.meet`/`narrow` path (verified in `design/code_verification.md`, Claim 1); the attack attempts `send_external` (in A, outside A'). Arms 1, 2, 5, 6, 7; 40 executions, arms 3/4 not used.
+
+**Locked prediction:** attacks unsafe under M0 (arms 2 and 5), denied elsewhere; benign safe in all five arms.
+
+**Observed (all locked expectations matched):**
+
+- Arms 2 and 5 (both M0): 4/4 attacks admitted → 4 unauthorized-effect events each; the leaked case sets are **identical** (`action_narrow-0..3-a`).
+- Arm 1 (APC after the narrowed handoff): 4/4 attacks denied (`action send_external not in scope`). Arm 6 (M2-auth): 4/4 attacks denied, `PROOF-GAP` — all eight signed records verified (`EVIDENCE-VERIFIED`); the attack records' `apc_allowed=false` cannot satisfy the M2 evidence obligation. Arm 7: 4/4 attacks denied, `SHADOW-DENY`.
+- Benign cases: 4/4 allowed in every arm, 0 false denials; receipts verify in every gated arm.
+- Arm-5 confusion against the locked predictions: TP 4 / FP 0 / FN 0 / TN 4 (precision 1.0, recall 1.0).
+- Seam test (arms 1+2 safe but arms 5/6/7 unsafe): **zero** cases. As in the original run, arm 2 leaks the same cases with no APC anywhere in the loop; the failure is a property of the M0 one-step Contract synthesis, not of the APC→TraceGrant interaction.
+
+**Revised H1 status (supersedes the quoted line):** **SUPPORTED for action type, under M0.** The M0 bridge trusts the requested tool as the Contract's MAY key and never consumes the handoff action set, even when that set is present in the scope record that crossed the seam (arm 5's snapshot carries `actions=[read_public, save_internal]`; the attack was still admitted). Fixes in this experiment's terms: carry the APC decision as admitted evidence (arm 6) or retain the upstream denial (arm 7). The resource clause of H1 remains **not supported** (the `narrow` meet drops widened resources).
+
+**Not claimed:**
+
+- Not claimed to be a defect of TraceGrant or APC as published: it is this project's M0 mapping design (the mapping doc lists action-set membership among what M0 does not translate), and a different synthesis that consumes `snapshot.actions` would change the outcome.
+- Not claimed for task-level Contracts, multi-step chains, or other handoff constructions; this family has one downstream call and `status=current`.
+- Arm 7's M1 action rule (`tool not in snapshot.actions`) was not independently exercised: the retained shadow denial fired first in all four attacks.
+- Not claimed to be novel relative to the original run's conclusion; it closes the coverage gap flagged there ("UNTESTED for action type") in the direction the original report predicted would matter.
+
+**Access:** READ — source: `results/extension_e1/` artifacts and the locked condition above. **Status of record:** supersedes the H1 action-type line; resource clause unchanged.

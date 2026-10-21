@@ -1,0 +1,44 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# --- Paper build outputs (generated) ---
+# Hand-written files under paper/build/ (header.tex, build.ps1, build.sh,
+# preprocess.py, retable.py, fix_texttt.py, README.md) must stay tracked, so
+# ignore generated names, not *.tex/*.pdf.
+paper/build/manuscript_build*
+paper/build/xelatex_console.*
+paper/build/build_run.log
+paper/build/current_text.txt
+paper/build/final_qa_text.txt
+paper/build/final_refs_text.txt
+paper/build/final_text.txt
+paper/build/final_text_21.txt
+paper/build/fontfix_text.txt
+paper/build/section_sign_contexts.txt
+paper/build/*.png
+
+# --- Local upstream clones and third-party inputs ---
+tests/authorization_pilot/vendor/
+tests/sentinelagent_audit_20261014/upstream/.git/
+tests/tracegrant_task_d_20261014/sources/
+tests/**/.venv*/
+tests/**/tmp/
+tests/**/cache/
+
+# --- Release staging ---
+dist/
+release/
+*.zip
+
+# --- Editor/OS ---
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,65 @@
+[
+  {
+    "case": "wrong_tool",
+    "observed": "DENY",
+    "expected": "DENY",
+    "matched": true,
+    "final_accepted": false
+  },
+  {
+    "case": "wrong_derived_recipient",
+    "observed": "PROOF-GAP",
+    "expected": "PROOF-GAP",
+    "matched": true,
+    "final_accepted": false
+  },
+  {
+    "case": "out_of_order",
+    "observed": "DENY",
+    "expected": "DENY",
+    "matched": true,
+    "final_accepted": false
+  },
+  {
+    "case": "budget_exhausted",
+    "observed": "DENY",
+    "expected": "DENY",
+    "matched": true,
+    "final_accepted": false
+  },
+  {
+    "case": "risky_payload",
+    "observed": "STEP_UP_AUTH",
+    "expected": "STEP_UP_AUTH",
+    "matched": true,
+    "final_accepted": false
+  },
+  {
+    "case": "replay",
+    "observed": false,
+    "expected": false,
+    "matched": true,
+    "final_accepted": false
+  },
+  {
+    "case": "dispatch_argument_drift",
+    "observed": false,
+    "expected": false,
+    "matched": true,
+    "final_accepted": false
+  },
+  {
+    "case": "native_failure",
+    "observed": false,
+    "expected": false,
+    "matched": true,
+    "final_accepted": false
+  },
+  {
+    "case": "postcondition_fault",
+    "observed": false,
+    "expected": false,
+    "matched": true,
+    "final_accepted": false
+  }
+]

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this working artifact, please cite the manuscript below. Until an archival DOI exists, cite the repository as an unpublished working artifact."
+title: "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry"
+type: software
+authors:
+  - family-names: Patil
+    given-names: Prathamesh
+    affiliation: "Department of Computer Engineering, Sardar Patel Institute of Technology"
+version: 0.1.0
+date-released: "2026-10-21"
+abstract: >-
+  Locked-artifact measurement harness and manuscript draft for a study of
+  cross-mechanism authorization seams. Predictions, cases, arms, locks, and
+  hashes are frozen before execution; the draft reports only discrepancies that
+  survived reconciliation. This is a working preprint artifact, not a
+  peer-reviewed result.
+keywords:
+  - cross-mechanism authorization
+  - agent authorization
+  - authorization seams
+  - scope narrowing
+  - evidence carriage
+  - conformance testing
+  - locked-artifact methodology
+license: "LicenseRef-proprietary"
+preferred-citation:
+  type: article
+  title: "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry"
+  authors:
+    - family-names: Patil
+      given-names: Prathamesh
+  year: 2026
+  month: 10
+  status: preprint
+  notes: "Working preprint draft, 21 October 2026; not peer reviewed."

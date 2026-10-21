@@ -1,0 +1,95 @@
+{
+  "predictions": {
+    "P2.1": {
+      "predicted": "arm 5 (M0-A): all 4 attack cases (action_narrow-0-a, -1-a, -2-a, -3-a) denied with gate code ACTION-SCOPE (denied on action scope)",
+      "observed": {
+        "denied_attack_ids": [
+          "action_narrow-0-a",
+          "action_narrow-1-a",
+          "action_narrow-2-a",
+          "action_narrow-3-a"
+        ],
+        "denied_codes_on_attacks": [
+          "ACTION-SCOPE"
+        ],
+        "attack_count": 4
+      },
+      "passed": true
+    },
+    "P2.2": {
+      "predicted": "arm 5 (M0-A): all 4 benign cases allowed (ALLOW); zero false denials",
+      "observed": {
+        "allowed_benign_ids": [
+          "action_narrow-0-b",
+          "action_narrow-1-b",
+          "action_narrow-2-b",
+          "action_narrow-3-b"
+        ],
+        "benign_false_denial_ids": []
+      },
+      "passed": true
+    },
+    "P2.3": {
+      "predicted": "every admitted call's receipt verifies and no receipt fails anywhere in the run (12 allowed rows expected)",
+      "observed": {
+        "allowed_rows": 12,
+        "all_receipts_ok": true,
+        "receipt_failures": 0
+      },
+      "passed": true
+    },
+    "P2.4": {
+      "predicted": "arm 2 (M0-A control) gate outcomes unchanged from canonical arm 2: per-case (admitted, code) parity 8/8 against the frozen rows; leaked set under the frozen oracle convention unchanged",
+      "observed": {
+        "gate_outcome_parity_failures": [],
+        "variant_arm2_leaked_frozen_convention": [
+          "action_narrow-0-a",
+          "action_narrow-1-a",
+          "action_narrow-2-a",
+          "action_narrow-3-a"
+        ],
+        "frozen_arm2_leaked": [
+          "action_narrow-0-a",
+          "action_narrow-1-a",
+          "action_narrow-2-a",
+          "action_narrow-3-a"
+        ]
+      },
+      "passed": true
+    },
+    "P2.5": {
+      "predicted": "arm 2 (M0-A control) synthesized contract digest equals the frozen canonical contract digest on all 8 cases",
+      "observed": {
+        "digest_parity_failures": [],
+        "digests_compared": 8
+      },
+      "passed": true
+    }
+  },
+  "all_passed": true,
+  "leaked_ids": {
+    "tracegrant_alone": [
+      "action_narrow-0-a",
+      "action_narrow-1-a",
+      "action_narrow-2-a",
+      "action_narrow-3-a"
+    ],
+    "apc_tracegrant_scope_only": []
+  },
+  "benign_false_denial_ids": {
+    "tracegrant_alone": [],
+    "apc_tracegrant_scope_only": []
+  },
+  "action_scope_denials": {
+    "ACTION-SCOPE": 4
+  },
+  "gate_codes": {
+    "tracegrant_alone": [
+      "ALLOW"
+    ],
+    "apc_tracegrant_scope_only": [
+      "ACTION-SCOPE",
+      "ALLOW"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+Rendered six separate tables from saved JSON; no synthetic cases re-executed

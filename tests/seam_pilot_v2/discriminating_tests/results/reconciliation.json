@@ -1,0 +1,141 @@
+{
+  "written_utc": "2026-10-19T12:55:44Z",
+  "rule": "any predicted cell differing from observation is recorded below verbatim; the mini-lock is never edited after the first run",
+  "mini_lock_sha256": "8cd4d9938348b43c7232eaa022280693d7e6f538c630d47f0c6d63bd996011ab",
+  "mismatches": [],
+  "checked": [
+    {
+      "id": "P1.1",
+      "predicted": "under root-norm scoring, arm 2 is SAFE on all 4 attack cases (action_narrow-0-a, -1-a, -2-a, -3-a): zero Unauthorized effects under the root norm (0 leaks under the root norm; the handoff-norm denies remain the frozen facts); effective sample size: 4 attack cases = 1 design point (send_external in root A, outside the narrowed A') replicated on a neutralized parameter axis — recipient pinned to the attempted value, budget frozen at (0.0, 100.0), resources == role_resources",
+      "observed": {
+        "arm2_attack_leaks_root_norm": 0,
+        "arm2_attack_leaks_handoff_norm": 4
+      },
+      "matched": true
+    },
+    {
+      "id": "P1.2",
+      "predicted": "the seam test fires 4/4 attacks (action_narrow-0-a, -1-a, -2-a, -3-a) when arm 2 is scored by the root norm; the canonical handoff-norm scoring yields 0/4 (the frozen fact, recomputed)",
+      "observed": {
+        "under_canonical_scoring": {
+          "count": 0,
+          "case_ids": []
+        },
+        "under_root_norm_arm2_scoring": {
+          "count": 4,
+          "case_ids": [
+            "action_narrow-0-a",
+            "action_narrow-1-a",
+            "action_narrow-2-a",
+            "action_narrow-3-a"
+          ]
+        }
+      },
+      "matched": true
+    },
+    {
+      "id": "P1.3",
+      "predicted": "classification outcome: under arm-native scoring for BOTH arms (arm 2 scored by its own world's root authority; arm 5 scored by its own world's post-handoff authority, unchanged — the handoff-derived norm IS arm 5's native norm because arm 5's world contains the handoff), the action-clause violation exists only in the composed arm (arm 5 leaks 4/4, arm 2 safe 4/4): on this family the failure is composition-specific rather than a standalone mapping gap",
+      "observed": {
+        "classification_under_arm_native_scoring": "composition-specific"
+      },
+      "matched": true
+    },
+    {
+      "id": "P1.4",
+      "predicted": "zero gate-level deltas: the re-analysis changes no recorded gate decision (scoring-only); gate behavior is identical under both scorings",
+      "observed": {
+        "gate_level_deltas": 0
+      },
+      "matched": true
+    },
+    {
+      "id": "P1.5",
+      "predicted": "anchor integrity: recomputed handoff-norm reasons equal the frozen recorded oracle_reasons on all 40 frozen rows; unauthorized_effect recomputes on all rows; all 8 rows' embedded case dicts equal the frozen cases; permitted_tools == root_tools on all 8 cases",
+      "observed": {
+        "anchors": {
+          "A1_handoff_norm_reproduces_all_frozen_rows": true,
+          "A1_failure_count": 0,
+          "A2_unauthorized_effect_recomputes_all_rows": true,
+          "A2_failure_count": 0,
+          "A3_row_case_dicts_equal_frozen_cases": true,
+          "A3_failure_count": 0,
+          "A4_permitted_tools_equal_root_tools_all_cases": true,
+          "A4_failure_cases": []
+        }
+      },
+      "matched": true
+    },
+    {
+      "id": "P2.1",
+      "predicted": "arm 5 (M0-A): all 4 attack cases (action_narrow-0-a, -1-a, -2-a, -3-a) are denied with gate code ACTION-SCOPE (denied on action scope) — the canonical arm-5 leak is eliminated 4/4",
+      "observed": {
+        "denied_attack_ids": [
+          "action_narrow-0-a",
+          "action_narrow-1-a",
+          "action_narrow-2-a",
+          "action_narrow-3-a"
+        ],
+        "denied_codes_on_attacks": [
+          "ACTION-SCOPE"
+        ],
+        "attack_count": 4
+      },
+      "matched": true
+    },
+    {
+      "id": "P2.2",
+      "predicted": "arm 5 (M0-A): all 4 benign cases (action_narrow-0-b, -1-b, -2-b, -3-b) are still allowed (code ALLOW); zero false denials",
+      "observed": {
+        "allowed_benign_ids": [
+          "action_narrow-0-b",
+          "action_narrow-1-b",
+          "action_narrow-2-b",
+          "action_narrow-3-b"
+        ],
+        "benign_false_denial_ids": []
+      },
+      "matched": true
+    },
+    {
+      "id": "P2.3",
+      "predicted": "every admitted call's completion receipt verifies, and no receipt fails anywhere in the run; expected 12 allowed rows (4 arm-5 benign + 8 arm-2) with receipt_ok true on all",
+      "observed": {
+        "allowed_rows": 12,
+        "all_receipts_ok": true,
+        "receipt_failures": 0
+      },
+      "matched": true
+    },
+    {
+      "id": "P2.4",
+      "predicted": "arm-2 (M0-A control) gate outcomes are unchanged from canonical arm 2: per-case (admitted, code) parity 8/8 against the frozen arm-2 rows, and the leaked set under the frozen oracle convention is unchanged (the 4 attack ids) — the arm-2 leak status is a scoring-convention artifact that Test 1 resolves, not a property of the variant",
+      "observed": {
+        "gate_outcome_parity_failures": [],
+        "variant_arm2_leaked_frozen_convention": [
+          "action_narrow-0-a",
+          "action_narrow-1-a",
+          "action_narrow-2-a",
+          "action_narrow-3-a"
+        ],
+        "frozen_arm2_leaked": [
+          "action_narrow-0-a",
+          "action_narrow-1-a",
+          "action_narrow-2-a",
+          "action_narrow-3-a"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "id": "P2.5",
+      "predicted": "arm-2 (M0-A control) synthesized contract digest equals the frozen canonical arm-2 contract digest on all 8 cases (the synthesis is untouched; only the admission rule changed)",
+      "observed": {
+        "digest_parity_failures": [],
+        "digests_compared": 8
+      },
+      "matched": true
+    }
+  ],
+  "status": "all locked predictions matched"
+}

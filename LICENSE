@@ -1,0 +1,24 @@
+Copyright (c) 2026 Prathamesh Patil. All rights reserved.
+
+LICENSE SELECTION PENDING — THIS IS A RELEASE GATE, NOT A LICENSE GRANT.
+
+No permission is granted to use, copy, modify, or redistribute the code,
+manuscript, results, or other contents of this repository until the repository
+owner replaces this file with:
+
+  1. an explicit license for the source code and experiment harnesses, and
+  2. an explicit license for the manuscript, figures, and documentation.
+
+Known constraints at the time this gate was created:
+
+- The manuscript is a draft under revision; its final distribution license is
+  not decided.
+- The repository vendors small third-party excerpts (see
+  `tests/sentinelagent_audit_20261014/upstream/LICENSE`, MIT) and references
+  other upstream projects that are not redistributed here. Any code license
+  chosen must remain compatible with those notices.
+- arXiv posting requires selecting an arXiv distribution license separately;
+  that choice does not automatically license this repository.
+
+When the owner decides, replace this file, update `CITATION.cff`, update the
+license row in `docs/RELEASE_CHECKLIST.md`, and commit the change.

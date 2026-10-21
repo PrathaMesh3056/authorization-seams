@@ -1,0 +1,33 @@
+name: paper
+
+# Manual only. The reference build is Pandoc 3.12.1 + MiKTeX 25.12 on Windows;
+# this job provides an indicative Linux rebuild and should not be treated as a
+# release build without comparing the output to the canonical PDF.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pandoc and XeLaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc texlive-xetex texlive-latex-extra texlive-fonts-recommended \
+            lmodern fonts-lmodern
+      - name: Build the draft
+        run: bash paper/build/build.sh
+      - name: Upload built PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-build
+          path: paper/build/manuscript_build_wide.pdf
+          if-no-files-found: error

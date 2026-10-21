@@ -1,0 +1,37 @@
+[
+  {
+    "case": "01_bill_payment",
+    "verified": true,
+    "final_accepted": true,
+    "expected": true,
+    "matched": true
+  },
+  {
+    "case": "02_report_owner",
+    "verified": true,
+    "final_accepted": true,
+    "expected": true,
+    "matched": true
+  },
+  {
+    "case": "04_fixed_delete",
+    "verified": true,
+    "final_accepted": true,
+    "expected": true,
+    "matched": true
+  },
+  {
+    "case": "05_retry_payment",
+    "verified": true,
+    "final_accepted": true,
+    "expected": true,
+    "matched": true
+  },
+  {
+    "case": "06_output_exemption",
+    "verified": true,
+    "final_accepted": true,
+    "expected": true,
+    "matched": true
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "check": "controls_passed",
+      "ok": true,
+      "detail": {
+        "records": 7
+      }
+    },
+    {
+      "check": "hash_unchanged:boundary_harness.py",
+      "ok": true,
+      "detail": {
+        "sha256": "fa8f7e424f59c4b9c79944b2699c88ae02f6e72bdcc974e96a32d3e790814af4"
+      }
+    },
+    {
+      "check": "hash_unchanged:sa_cases.json",
+      "ok": true,
+      "detail": {
+        "sha256": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2"
+      }
+    },
+    {
+      "check": "determinism_rerun",
+      "ok": true,
+      "detail": {
+        "detail": {
+          "id": "CV4",
+          "setup": "determinism: 10 re-runs (10 cases x 4 arm-variant combos) identical event-by-event",
+          "expected": "no mismatches",
+          "observed": {
+            "reruns": 40,
+            "mismatches": []
+          },
+          "ok": true
+        }
+      }
+    },
+    {
+      "check": "leak_audit",
+      "ok": true,
+      "detail": {
+        "problems": []
+      }
+    },
+    {
+      "check": "not_vacuous",
+      "ok": true,
+      "detail": {
+        "admissions": 896,
+        "denials": 400
+      }
+    }
+  ],
+  "ok": true
+}

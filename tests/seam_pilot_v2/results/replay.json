@@ -1,0 +1,69 @@
+{
+  "pairs": 10,
+  "rows": [
+    {
+      "case": "resource_widen-0-a",
+      "arm": "apc_tracegrant_scope_only",
+      "semantic_equal": true,
+      "projection_sha256": "b9697ab818e317724d1c2365a212513581164bbb42addcf582ff49af58a94f38"
+    },
+    {
+      "case": "principal_rebind-0-a",
+      "arm": "tracegrant_alone",
+      "semantic_equal": true,
+      "projection_sha256": "ffaa04160d3453c34c2178c17dbc52f956d334ea1bd1e1114d11d06683fb2737"
+    },
+    {
+      "case": "composition_history_loss-1-a",
+      "arm": "apc_tracegrant_scope_only",
+      "semantic_equal": true,
+      "projection_sha256": "e7110fb6847a58d89c4a94fc01e4da6b0b78ca9867558412a45074dd35db24f6"
+    },
+    {
+      "case": "budget_reset-2-a",
+      "arm": "apc_tracegrant_retained",
+      "semantic_equal": true,
+      "projection_sha256": "7ee69dbc7e237cedca7d8ed93adb5e2b0492212401e37304bf05abb46a62b7a1"
+    },
+    {
+      "case": "expired_delegation-3-a",
+      "arm": "apc_tracegrant_fail_closed",
+      "semantic_equal": true,
+      "projection_sha256": "60a179ae30bb06d1682171c44fb74b7e7fe140ff0a4525d5e13e345e07e011bb"
+    },
+    {
+      "case": "narrowed_scope-0-b",
+      "arm": "apc_alone",
+      "semantic_equal": true,
+      "projection_sha256": "92aa8b0caaa76672c4303a484eb43ae558e7230e339c402253beeb22641c166d"
+    },
+    {
+      "case": "history_sufficient-0-b",
+      "arm": "apc_tracegrant_fail_closed",
+      "semantic_equal": true,
+      "projection_sha256": "e2e1f1be304cadc9b902dc015d8bd69e28cb6f7d4a79733889aac84956ae58da"
+    },
+    {
+      "case": "recipient_substitution-0-a",
+      "arm": "apc_apc_preserved",
+      "semantic_equal": true,
+      "projection_sha256": "8a0c496a1c14cf2943a3f68da3ceb9993234d47df87a23754f02e75a40be2523"
+    },
+    {
+      "case": "unsatisfiable_verify-0-a",
+      "arm": "apc_tracegrant_retained",
+      "semantic_equal": true,
+      "projection_sha256": "e952949a2cc30441fec612e61776a3f5235c32ef794e929bad92314c366a52c2"
+    },
+    {
+      "case": "verified_evidence-2-b",
+      "arm": "tracegrant_alone",
+      "semantic_equal": true,
+      "projection_sha256": "36d10ad351b322fca8a797a353c5b1c50b4f5b6888158de8eaf43e1030c755a4"
+    }
+  ],
+  "excluded_fields": [
+    "authorization_ns"
+  ],
+  "passed": true
+}

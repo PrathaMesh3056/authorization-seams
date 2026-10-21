@@ -1,0 +1,139 @@
+{
+  "records": [
+    {
+      "id": "S1-valid",
+      "setup": "validly signed token with expiry in the past (2001-01-01Z) presented to native P6/P7",
+      "expected": {
+        "p6": "ALLOWED by scope",
+        "p7": "OUTPUT_ALLOWED"
+      },
+      "observed": {
+        "p6": "ALLOWED by scope:read_confidential",
+        "p7": "OUTPUT_ALLOWED"
+      },
+      "ok": true
+    },
+    {
+      "id": "S1-failure",
+      "setup": "failure control: same token content, manifest mutated after signing",
+      "expected": {
+        "p6": "SIGNATURE_INVALID",
+        "p7": "SIGNATURE_INVALID"
+      },
+      "observed": {
+        "p6": "SIGNATURE_INVALID",
+        "p7": "SIGNATURE_INVALID"
+      },
+      "ok": true
+    },
+    {
+      "id": "S1-probe",
+      "setup": "revoked via revoke_chain (count=1); proves P6/P7 are not blanket no-ops",
+      "expected": {
+        "p6": "TOKEN_REVOKED",
+        "p7": "TOKEN_REVOKED"
+      },
+      "observed": {
+        "p6": "TOKEN_REVOKED",
+        "p7": "TOKEN_REVOKED"
+      },
+      "ok": true
+    },
+    {
+      "id": "S2-foreign",
+      "setup": "T0 content signed with the prototype's published key (REAL_DAS_KEY)",
+      "expected": {
+        "p6": "SIGNATURE_INVALID",
+        "p7": "SIGNATURE_INVALID"
+      },
+      "observed": {
+        "p6": "SIGNATURE_INVALID",
+        "p7": "SIGNATURE_INVALID"
+      },
+      "ok": true
+    },
+    {
+      "id": "S2-trusted",
+      "setup": "failure control for S2-foreign: identical content signed with the trusted bridge key",
+      "expected": {
+        "p6": "ALLOWED by scope",
+        "p7": "OUTPUT_ALLOWED"
+      },
+      "observed": {
+        "p6": "ALLOWED by scope:read_confidential",
+        "p7": "OUTPUT_ALLOWED"
+      },
+      "ok": true
+    },
+    {
+      "id": "S2-two-minters",
+      "setup": "identical scope/manifest/tags; one token attributed to the bridge, one to the delegate (token ids differ only for auditability); both signed with the trusted key",
+      "expected": {
+        "p6_both": "ALLOWED by scope",
+        "p7_both": "OUTPUT_ALLOWED",
+        "codes_identical": true
+      },
+      "observed": {
+        "p6_bridge": "ALLOWED by scope:read_confidential",
+        "p6_delegate": "ALLOWED by scope:read_confidential",
+        "p7_bridge": "OUTPUT_ALLOWED",
+        "p7_delegate": "OUTPUT_ALLOWED",
+        "codes_identical": true
+      },
+      "ok": true
+    },
+    {
+      "id": "S2-mutated",
+      "setup": "failure control: delegate-minted token, manifest widened after signing without re-signing",
+      "expected": {
+        "p6": "SIGNATURE_INVALID",
+        "p7": "SIGNATURE_INVALID"
+      },
+      "observed": {
+        "p6": "SIGNATURE_INVALID",
+        "p7": "SIGNATURE_INVALID"
+      },
+      "ok": true
+    },
+    {
+      "id": "S3-valid",
+      "setup": "signed attestation for the control call; probe tampers one signature character",
+      "expected": {
+        "gate": "ALLOWED",
+        "tamper": "ATTESTATION-SIGNATURE-INVALID"
+      },
+      "observed": {
+        "gate": "ATTESTATION-OK",
+        "tamper": "ATTESTATION-SIGNATURE-INVALID"
+      },
+      "ok": true
+    },
+    {
+      "id": "S3-mutated",
+      "setup": "failure control: apc_allowed flipped to true after signing; probe is the unmutated denied attestation",
+      "expected": {
+        "gate": "ATTESTATION-SIGNATURE-INVALID",
+        "probe": "APC-DENY"
+      },
+      "observed": {
+        "gate": "ATTESTATION-SIGNATURE-INVALID",
+        "probe": "APC-DENY"
+      },
+      "ok": true
+    },
+    {
+      "id": "S3-replay",
+      "setup": "valid attestation bound to the control call presented for a different resource",
+      "expected": {
+        "gate": "ATTESTATION-BINDING-MISMATCH",
+        "probe": "ALLOWED"
+      },
+      "observed": {
+        "gate": "ATTESTATION-BINDING-MISMATCH",
+        "probe": "ATTESTATION-OK"
+      },
+      "ok": true
+    }
+  ],
+  "ok": true
+}

@@ -1,0 +1,159 @@
+{
+  "labels": [
+    {
+      "case": "principal_rebind-0-a",
+      "observed_allowed": false,
+      "observed_reasons": [
+        "principal_binding",
+        "task_context"
+      ],
+      "expected_allowed": false,
+      "expected_reasons": [
+        "principal_binding",
+        "task_context"
+      ],
+      "how": "actor agent:rogue is not in the root chain and session other-task != root-task",
+      "passed": true
+    },
+    {
+      "case": "composition_history_loss-0-a",
+      "observed_allowed": false,
+      "observed_reasons": [
+        "prohibited_composition"
+      ],
+      "expected_allowed": false,
+      "expected_reasons": [
+        "prohibited_composition"
+      ],
+      "how": "prelude read_confidential sets confidential_read; the send is prohibited by the root restriction",
+      "passed": true
+    },
+    {
+      "case": "budget_reset-1-a",
+      "observed_allowed": false,
+      "observed_reasons": [
+        "cumulative_budget"
+      ],
+      "expected_allowed": false,
+      "expected_reasons": [
+        "cumulative_budget"
+      ],
+      "how": "pre-consumed 80 + attempt 30 = 110 > 100",
+      "passed": true
+    },
+    {
+      "case": "expired_delegation-0-a",
+      "observed_allowed": false,
+      "observed_reasons": [
+        "expired"
+      ],
+      "expected_allowed": false,
+      "expected_reasons": [
+        "expired"
+      ],
+      "how": "handoff constructs an already-expired delegated grant",
+      "passed": true
+    },
+    {
+      "case": "revoked_envelope-0-a",
+      "observed_allowed": false,
+      "observed_reasons": [
+        "revoked"
+      ],
+      "expected_allowed": false,
+      "expected_reasons": [
+        "revoked"
+      ],
+      "how": "handoff revokes the delegated envelope",
+      "passed": true
+    },
+    {
+      "case": "resource_widen-0-a",
+      "observed_allowed": false,
+      "observed_reasons": [
+        "resource_scope"
+      ],
+      "expected_allowed": false,
+      "expected_reasons": [
+        "resource_scope"
+      ],
+      "how": "docs:external/secret is not in the root resources",
+      "passed": true
+    },
+    {
+      "case": "recipient_substitution-0-a",
+      "observed_allowed": false,
+      "observed_reasons": [
+        "recipient_constraint"
+      ],
+      "expected_allowed": false,
+      "expected_reasons": [
+        "recipient_constraint"
+      ],
+      "how": "attacker@example.test != the case's allowlisted recipient",
+      "passed": true
+    },
+    {
+      "case": "omitted_forbidden_default-0-a",
+      "observed_allowed": false,
+      "observed_reasons": [
+        "recipient_constraint"
+      ],
+      "expected_allowed": false,
+      "expected_reasons": [
+        "recipient_constraint"
+      ],
+      "how": "MockWorld.canonical fills forbidden-default@example.test",
+      "passed": true
+    },
+    {
+      "case": "narrowed_scope-0-b",
+      "observed_allowed": true,
+      "observed_reasons": [],
+      "expected_allowed": true,
+      "expected_reasons": [],
+      "how": "read_public on a resource in root and role scope",
+      "passed": true
+    },
+    {
+      "case": "history_sufficient-0-b",
+      "observed_allowed": true,
+      "observed_reasons": [],
+      "expected_allowed": true,
+      "expected_reasons": [],
+      "how": "public read then send; no prohibited pair",
+      "passed": true
+    }
+  ],
+  "mutations": [
+    {
+      "mutation": "drop_prohibited_composition",
+      "case": "composition_history_loss-0-a",
+      "mutation_detected": true
+    },
+    {
+      "mutation": "drop_recipient_constraint",
+      "case": "recipient_substitution-0-a",
+      "mutation_detected": true
+    }
+  ],
+  "outbox": [
+    {
+      "case": "narrowed_scope-0-b",
+      "admitted": true,
+      "effects_recorded": 1,
+      "effects_on_denied_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "recipient_substitution-0-a",
+      "admitted": false,
+      "effects_recorded": 0,
+      "effects_on_denied_calls": 0,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "labels_checked": 10,
+  "mutations_checked": 2
+}

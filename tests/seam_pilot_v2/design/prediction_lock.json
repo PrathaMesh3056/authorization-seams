@@ -1,0 +1,44 @@
+{
+  "schema_version": "seam_pilot_v2_prediction_lock_v1",
+  "dataset": "design/frozen_cases.json",
+  "dataset_sha256": "0fe1eafb0552549370415711a3aa08993715160d4ce391f10cfd59c988605ad2",
+  "case_count": 80,
+  "attack_cases": 40,
+  "benign_cases": 40,
+  "predicted_unsafe": 32,
+  "predicted_safe": 48,
+  "per_hypothesis": {
+    "H1": {
+      "attack": 8,
+      "benign": 8,
+      "predicted_unsafe": 8
+    },
+    "H2": {
+      "attack": 20,
+      "benign": 20,
+      "predicted_unsafe": 20
+    },
+    "H4": {
+      "attack": 8,
+      "benign": 8,
+      "predicted_unsafe": 0
+    },
+    "H3": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    }
+  },
+  "locked_utc": "2026-10-19",
+  "prediction_source": "design/composition_condition.md section 3 and design/call_to_contract_mapping.md section 4; arm 5 scope-only handoff",
+  "expected_arm5_confusion": {
+    "true_positive": 28,
+    "false_positive": 4,
+    "false_negative": 0,
+    "true_negative": 48,
+    "precision": 0.875,
+    "recall": 1.0,
+    "note": "expected before Phase 2: 28 state/authority leaks plus 4 unsatisfiable-VERIFY predicted-unsafe cases that complete no unauthorized effect (false positives)"
+  },
+  "note": "Predictions and cases are locked before Phase 2/3. No retroactive edits."
+}

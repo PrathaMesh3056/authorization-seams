@@ -1,0 +1,123 @@
+{
+  "schema_version": "seam_pilot_v2_discriminating_lock_v1",
+  "task": "The two discriminating tests named in results/claims_update_extension.md (composition-attribution bullet, marked open) and ADVERSARIAL_REVIEW_RESULTS.md (Task 5 correction 4): Test 1 — arm 2 scored against its own world's authority (scoring-only); Test 2 — an M0 variant that consumes snapshot.actions (mini-run).",
+  "locked_utc": "2026-10-19",
+  "written_utc": "2026-10-19T12:52:51Z",
+  "discipline": [
+    "written (and hashed) BEFORE any test execution; no post-lock edits to this lock or to any artifact",
+    "any locked-vs-observed mismatch is recorded verbatim in results/reconciliation.json, never edited in",
+    "no case-set changes: the 8 frozen action_narrow-0..3-{a,b} cases from design/extension_e1_cases.json are reused unchanged",
+    "strictly sequential runs; no network; no paid calls; no width changes to the arm list after this lock"
+  ],
+  "environment": {
+    "python": "C:/Users/prath/Downloads/RPaper/authorization_pilot/.venv/Scripts/python.exe (3.12.7)",
+    "network": "blocked in-process via seam_pilot.native.block_network before any execution",
+    "roots": "all new work under seam_pilot_v2/discriminating_tests/; frozen files read-only"
+  },
+  "frozen_inputs": {
+    "case_set": "seam_pilot_v2/design/extension_e1_cases.json",
+    "case_set_file_sha256": "b705fb4d8b64c86b9d9d9519834cf0b72fc4ed1bb2995e805bc713122a73e7c2",
+    "case_dataset_sha256_canonical": "1b7c6083ef22d40c8a0d3c3705357358b3508671bfbedc9db12f69a8b2e264ba",
+    "frozen_extension_results": "seam_pilot_v2/results/extension_e1/ (traces.jsonl, metrics.json, controls.json, assertions.json, manifest.json)",
+    "frozen_traces_file_sha256": "cd7391a9a38a8b41b02547af35acf2a194aa1daf5a33a4350435c5380c27b41a",
+    "frozen_traces_canonical_sha256": "53974ff43c74185858ff6f7a2e1de6d8f8e0c78fc4ea25e32ff55542373bc10d",
+    "frozen_oracle_convention": "E1Oracle is arm-invariant (adapters/extension_e1.py decide, ~lines 122-126): for every downstream call whose tool is not in case.handoff_tools it appends handoff_action_scope, on every arm including arm 2 which contains no handoff"
+  },
+  "harness": {
+    "variant_adapter": "discriminating_tests/adapters/variant_adapter.py",
+    "variant_adapter_sha256": "e6db7e6b1ccf68223396c1ada1f8406022cf3551160b48174e80df437915fd62",
+    "runner": "discriminating_tests/run_discriminating.py",
+    "runner_sha256": "3536840247a79ce22d9327292851162eac89b5443844dcab398065bdd801ad68"
+  },
+  "case_ids": [
+    "action_narrow-0-a",
+    "action_narrow-0-b",
+    "action_narrow-1-a",
+    "action_narrow-1-b",
+    "action_narrow-2-a",
+    "action_narrow-2-b",
+    "action_narrow-3-a",
+    "action_narrow-3-b"
+  ],
+  "test1_scoring_only": {
+    "nature": "re-analysis of the frozen arm-2 (tracegrant_alone) records; ZERO new executions; recorded gate decisions are frozen facts and are NOT re-evaluated",
+    "norm_authority": {
+      "handoff_norm_frozen": "a downstream call violates iff a base reference rule fails OR call.tool is not in case.handoff_tools; reason handoff_action_scope (frozen E1Oracle.decide); this norm is derived from a handoff that does not exist in arm 2's world",
+      "root_norm_variant": "a downstream call violates iff a base reference rule fails OR call.tool is not in case.root_tools; reason root_action_scope; every other reference rule unchanged (base seam_pilot.model.Oracle.decide reused unmodified)"
+    },
+    "field_source": "root_tools and handoff_tools are the exact per-case field names in design/extension_e1_cases.json; in this family case.permitted_tools == case.root_tools on all 8 cases (asserted at run time, anchor A4)",
+    "leak_definition_under_norm": "unauthorized effect under norm N = frozen gate allowed AND frozen effects executed AND norm-N oracle denial",
+    "procedure": [
+      "load the frozen 40-row traces; verify file sha256 and the canonical traces sha256 against this lock",
+      "re-decide every frozen row with a FRESH E1Oracle on the row's frozen (call, args, phase); the recomputed handoff-norm reasons must equal the frozen recorded oracle_reasons (anchor A1); frozen unauthorized_effect flags must recompute from frozen fields (anchor A2); each row's embedded case dict must equal the frozen case dict (anchor A3)",
+      "for arm-2 rows only: re-decide with a FRESH RootNormOracle (root norm); compute leak status under both norms",
+      "recompute the seam test under the canonical scoring and under root-norm arm-2 scoring",
+      "count gate-level deltas (must be 0: scoring-only)"
+    ],
+    "seam_test_definition": "cases where arm 1 safe AND arm 2 safe BUT arm 5 unsafe (frozen definition reused verbatim; arms 1/5 states are frozen facts)",
+    "predictions": {
+      "P1.1": {
+        "prediction": "under root-norm scoring, arm 2 is SAFE on all 4 attack cases (action_narrow-0-a, -1-a, -2-a, -3-a): zero Unauthorized effects under the root norm (0 leaks under the root norm; the handoff-norm denies remain the frozen facts); effective sample size: 4 attack cases = 1 design point (send_external in root A, outside the narrowed A') replicated on a neutralized parameter axis — recipient pinned to the attempted value, budget frozen at (0.0, 100.0), resources == role_resources",
+        "denominator": "4 attack cases (1 design point) + 4 benign counterparts as context"
+      },
+      "P1.2": {
+        "prediction": "the seam test fires 4/4 attacks (action_narrow-0-a, -1-a, -2-a, -3-a) when arm 2 is scored by the root norm; the canonical handoff-norm scoring yields 0/4 (the frozen fact, recomputed)"
+      },
+      "P1.3": {
+        "prediction": "classification outcome: under arm-native scoring for BOTH arms (arm 2 scored by its own world's root authority; arm 5 scored by its own world's post-handoff authority, unchanged — the handoff-derived norm IS arm 5's native norm because arm 5's world contains the handoff), the action-clause violation exists only in the composed arm (arm 5 leaks 4/4, arm 2 safe 4/4): on this family the failure is composition-specific rather than a standalone mapping gap"
+      },
+      "P1.4": {
+        "prediction": "zero gate-level deltas: the re-analysis changes no recorded gate decision (scoring-only); gate behavior is identical under both scorings"
+      },
+      "P1.5": {
+        "prediction": "anchor integrity: recomputed handoff-norm reasons equal the frozen recorded oracle_reasons on all 40 frozen rows; unauthorized_effect recomputes on all rows; all 8 rows' embedded case dicts equal the frozen cases; permitted_tools == root_tools on all 8 cases"
+      }
+    }
+  },
+  "test2_mini_run": {
+    "nature": "new executions: 8 frozen cases x 2 arms = 16, strictly sequential, one execution at a time",
+    "variant": {
+      "name": "M0-A",
+      "gate_class": "ActionScopeGate (discriminating_tests/adapters/variant_adapter.py): the canonical TraceGrantGate whose admission rule additionally consumes the snapshot's action set before contract synthesis",
+      "consumption_rule_locked": [
+        "R1: if snapshot.actions is present and non-empty and call.tool is NOT in it -> deny before contract synthesis; gate code ACTION-SCOPE; no contract is built and no effect executes",
+        "R2 (field absent): if snapshot.actions is absent or empty -> deny before contract synthesis with gate code ACTION-SCOPE-ABSENT (fail-closed — the conservative locked option for an unverifiable authority record). Not exercised by the 16 scheduled executions: every snapshot in this family carries a non-empty action set (arm 2: case_snapshot -> root action set; arm 5: apc-post-handoff -> narrowed handoff action set); recorded here so the rule is total",
+        "R3: otherwise the evaluation is byte-identical to canonical M0: the same synthesis call (build_contract with the canonical mapping label 'M0'), the same constraints, the same dispatch and receipt path; the variant adds an admission rule, it does not alter the synthesized Contract",
+        "decision-equivalence: R1 is decision-equivalent to deriving the Contract's MAY key set from snapshot.actions, because the engine's H check admits a request only if the requested tool is a key of contract.MAY and the canonical synthesis builds MAY = {requested tool}"
+      ]
+    },
+    "arms": [
+      {
+        "arm": "tracegrant_alone (arm 2, control)",
+        "spec": "no APC anywhere; gate = ActionScopeGate; snapshot = case_snapshot(case) (source case-root; actions = permitted_tools = root_tools)",
+        "why_valid_control": "arm 2's snapshot carries the arm's own root action set, and every frozen attack's tool (send_external) is inside it, so a consuming admission rule cannot change any arm-2 gate outcome; any arm-2 delta would therefore evidence that the variant perturbs M0 behavior itself rather than the composition handling — the isolation property the control must have"
+      },
+      {
+        "arm": "apc_tracegrant_scope_only (arm 5, treatment)",
+        "spec": "shadow APC runs first, decision recorded and NOT propagated (canonical arm-5 semantics); gate = ActionScopeGate evaluated on the post-handoff snapshot (actions = the narrowed handoff_tools)"
+      }
+    ],
+    "arm_set_decision": "arms {2, 5} only; decided before running, no additional arms. Rationale: the open question is exactly the pair (standalone arm 2, composed arm 5); arms 6/7 deny via other mechanisms (evidence obligation / retained shadow denial) and cannot discriminate an M0-synthesis change; the benign context is provided by the -b cases within the same two arms",
+    "oracle_convention": "the frozen canonical E1Oracle (arm-invariant handoff norm) is recorded in the mini-run events so cell-level comparison with the frozen run is possible; leak status in the mini-run is reported under the same frozen convention as the frozen run, with that convention disclosed in the report (Test 1 establishes what the arm-native norms say)",
+    "predictions": {
+      "P2.1": {
+        "prediction": "arm 5 (M0-A): all 4 attack cases (action_narrow-0-a, -1-a, -2-a, -3-a) are denied with gate code ACTION-SCOPE (denied on action scope) — the canonical arm-5 leak is eliminated 4/4",
+        "denominator": "4 attack cases (1 design point, same neutralized parameter axis as Test 1)"
+      },
+      "P2.2": {
+        "prediction": "arm 5 (M0-A): all 4 benign cases (action_narrow-0-b, -1-b, -2-b, -3-b) are still allowed (code ALLOW); zero false denials"
+      },
+      "P2.3": {
+        "prediction": "every admitted call's completion receipt verifies, and no receipt fails anywhere in the run; expected 12 allowed rows (4 arm-5 benign + 8 arm-2) with receipt_ok true on all"
+      },
+      "P2.4": {
+        "prediction": "arm-2 (M0-A control) gate outcomes are unchanged from canonical arm 2: per-case (admitted, code) parity 8/8 against the frozen arm-2 rows, and the leaked set under the frozen oracle convention is unchanged (the 4 attack ids) — the arm-2 leak status is a scoring-convention artifact that Test 1 resolves, not a property of the variant"
+      },
+      "P2.5": {
+        "prediction": "arm-2 (M0-A control) synthesized contract digest equals the frozen canonical arm-2 contract digest on all 8 cases (the synthesis is untouched; only the admission rule changed)"
+      }
+    }
+  },
+  "falsification_clause": "any predicted cell differing from observation is recorded verbatim in discriminating_tests/results/reconciliation.json; the lock is never edited after the first run; both outcomes of each test were accepted at lock time — whichever is observed is reported",
+  "note": "This mini-lock is the pre-registration for the discriminating tests only. The frozen Extension E1 lock (design/extension_e1_lock.json), the original 80-case set and lock, and all frozen artifacts are not modified. The classification language in the report follows the pre-registered norms; it is not a post-hoc reclassification."
+}

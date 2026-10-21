@@ -1,0 +1,8 @@
+{
+  "cwd": "C:\\Users\\prath\\Downloads\\RPaper\\tracegrant_task_d_20261014",
+  "arguments": [
+    "-c",
+    "from implementation.run_artifact import render_saved_tables; render_saved_tables()"
+  ],
+  "executable": "./.venv/Scripts/python.exe"
+}

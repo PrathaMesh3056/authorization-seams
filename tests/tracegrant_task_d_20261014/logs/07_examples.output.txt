@@ -1,0 +1,1 @@
+Wrote 10 hand-authored Contract JSON fixtures, catalog, and synthetic frozen registry

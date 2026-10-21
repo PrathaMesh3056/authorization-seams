@@ -1,0 +1,52 @@
+name: Research or artifact issue
+description: Report a problem with the manuscript, a frozen artifact, or the reproduction package.
+title: "[issue] "
+labels: ["triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste credentials, private data, or unpublished third-party material.
+        For suspected security issues, use the process in SECURITY.md instead.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - manuscript claim or wording
+        - frozen artifact / stored result
+        - build or tooling
+        - reproducibility instructions
+        - other
+    validations:
+      required: true
+  - type: input
+    id: path
+    attributes:
+      label: File or section
+      description: Path (for example paper/MANUSCRIPT_REVISED.md) or section number.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What is wrong?
+      description: Quote the exact text or value and explain the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Commands run, hashes, or artifact paths that support the report.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have not modified any frozen artifact in place.
+          required: true
+        - label: This report does not ask for H4/H7 experiments to be treated as tested.
+          required: true

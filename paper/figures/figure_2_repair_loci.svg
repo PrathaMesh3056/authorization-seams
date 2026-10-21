@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="7in" height="4.17in" viewBox="0 0 1008 600" font-family="Arial, Helvetica, sans-serif">
+  <title>Figure 2 — the two repair loci</title>
+  <desc>Schematic of one delegated call through a five-step pipeline band: sender narrowing, bridge translation, carried record, receiver read set, admission decision. A short dashed stub from the carried record terminates at the X barrier between the carried record and the receiver read set, so the unread path stops before the read set. Locus A (receiver side) and Locus B (bridge side) face the carried-record to read-set gap from opposite sides. No data, no counts.</desc>
+
+  <defs>
+    <!-- Fixed-size arrowhead in viewBox units (does not scale with stroke width) -->
+    <marker id="arrowhead" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon fill="#333333" points="0 0.5, 9 5, 0 9.5" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1008" height="600" fill="#FFFFFF" />
+
+  <!-- ============ UPPER BAND: five steps ============ -->
+  <!-- Step 1: Sender narrowing -->
+  <rect x="20" y="30" width="174" height="110" fill="#FFFFFF" stroke="#0072B2" stroke-width="2" />
+  <text x="107" y="60" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">Sender</text>
+  <text x="107" y="82" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">narrowing</text>
+  <text x="107" y="112" text-anchor="middle" font-size="16" fill="#333333">A &#x2192; A&#x2032;</text>
+
+  <!-- Arrow 1 to 2 -->
+  <line x1="194" y1="85" x2="216" y2="85" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Step 2: Bridge translation -->
+  <rect x="218" y="30" width="174" height="110" fill="#FFFFFF" stroke="#E69F00" stroke-width="2" />
+  <text x="305" y="60" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">Bridge</text>
+  <text x="305" y="82" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">translation</text>
+  <text x="305" y="112" text-anchor="middle" font-size="16" fill="#333333">&#x03C1;_R = B(A&#x2032;, state)</text>
+
+  <!-- Arrow 2 to 3 -->
+  <line x1="392" y1="85" x2="414" y2="85" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Step 3: Carried record -->
+  <rect x="416" y="30" width="174" height="110" fill="#FFFFFF" stroke="#0072B2" stroke-width="2" />
+  <text x="503" y="60" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">Carried</text>
+  <text x="503" y="82" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">record</text>
+  <text x="503" y="112" text-anchor="middle" font-size="16" fill="#333333">&#x03C1;_R</text>
+
+  <!-- X barrier in the carried-record to read-set gap, before V_read -->
+  <g stroke="#D55E00" stroke-width="2.5" stroke-linecap="round">
+    <line x1="596" y1="79" x2="608" y2="91" />
+    <line x1="608" y1="79" x2="596" y2="91" />
+  </g>
+
+  <!-- Short dashed unread path into the X barrier; it stops before V_read -->
+  <line x1="590" y1="85" x2="596" y2="85" stroke="#666666" stroke-width="2" stroke-dasharray="2 2" stroke-linecap="round" />
+
+  <!-- Gap annotation between step 3 and step 4 -->
+  <text x="602" y="165" text-anchor="middle" font-size="16" fill="#666666" font-style="italic">carried but unread = uncarried</text>
+
+  <!-- Step 4: Receiver read set -->
+  <rect x="614" y="30" width="174" height="110" fill="#FFFFFF" stroke="#009E73" stroke-width="2" />
+  <text x="701" y="60" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">Receiver</text>
+  <text x="701" y="82" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">read set</text>
+  <text x="701" y="112" text-anchor="middle" font-size="16" fill="#333333">V_read <tspan font-family="Cambria Math">&#x2286;</tspan> V_R</text>
+
+  <!-- Arrow 4 to 5 -->
+  <line x1="788" y1="85" x2="810" y2="85" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Step 5: Admission decision -->
+  <rect x="812" y="30" width="174" height="110" fill="#FFFFFF" stroke="#009E73" stroke-width="2" />
+  <text x="899" y="60" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">Admission</text>
+  <text x="899" y="82" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">decision</text>
+  <text x="899" y="112" text-anchor="middle" font-size="16" fill="#333333">admit / deny</text>
+
+  <!-- ============ LOCUS B — bridge side (left) ============ -->
+  <rect x="20" y="210" width="474" height="360" fill="#FFFFFF" stroke="#333333" stroke-width="1.5" />
+  <text x="257" y="245" text-anchor="middle" font-size="20" fill="#000000" font-weight="bold">Locus B — bridge side</text>
+  <text x="257" y="275" text-anchor="middle" font-size="16" fill="#666666">applies when the bridge itself widened</text>
+
+  <text x="40" y="320" font-size="18" fill="#000000" font-weight="bold">Repair:</text>
+  <text x="40" y="345" font-size="18" fill="#000000" font-weight="bold">narrowing-preserving</text>
+  <text x="40" y="370" font-size="18" fill="#000000" font-weight="bold">manifest derivation</text>
+  <text x="40" y="410" font-size="15" fill="#333333" font-style="italic">no receiver-side consumption can recover</text>
+  <text x="40" y="432" font-size="15" fill="#333333" font-style="italic">a fact the bridge did not narrow.</text>
+
+  <!-- Miniature derivation repair -->
+  <text x="40" y="462" font-size="15" fill="#666666" font-style="italic">repair at the bridge</text>
+  <rect x="40" y="474" width="170" height="48" rx="6" fill="#FFFFFF" stroke="#666666" stroke-width="1.5" />
+  <text x="125" y="503" text-anchor="middle" font-size="15" fill="#333333">bridge derivation</text>
+  <line x1="212" y1="498" x2="238" y2="498" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <rect x="240" y="474" width="220" height="48" rx="6" fill="#FFFFFF" stroke="#666666" stroke-width="1.5" />
+  <text x="350" y="503" text-anchor="middle" font-size="15" fill="#333333">narrowed manifest</text>
+
+  <!-- Facing elbow bracket from Locus B up to the carried-record/read-set gap -->
+  <path d="M 466 210 L 466 190 L 588 190" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- ============ LOCUS A — receiver side (right) ============ -->
+  <rect x="514" y="210" width="474" height="360" fill="#FFFFFF" stroke="#333333" stroke-width="1.5" />
+  <text x="751" y="245" text-anchor="middle" font-size="20" fill="#000000" font-weight="bold">Locus A — receiver side</text>
+  <text x="751" y="275" text-anchor="middle" font-size="16" fill="#666666">applies when the narrowed fact crossed intact</text>
+  <text x="534" y="310" font-size="18" fill="#000000" font-weight="bold">Repair patterns</text>
+
+  <!-- Consumption -->
+  <circle cx="538" cy="338" r="3" fill="#333333" />
+  <text x="550" y="344" font-size="16" fill="#000000" font-weight="bold">Consumption</text>
+  <text x="550" y="368" font-size="16" fill="#333333">receiver reads the carried</text>
+  <text x="550" y="390" font-size="16" fill="#333333">narrowed fact.</text>
+
+  <!-- Evidence carriage -->
+  <circle cx="538" cy="420" r="3" fill="#333333" />
+  <text x="550" y="426" font-size="16" fill="#000000" font-weight="bold">Evidence carriage</text>
+  <text x="550" y="450" font-size="16" fill="#333333">carry the upstream decision</text>
+  <text x="550" y="472" font-size="16" fill="#333333">as evidence.</text>
+  <text x="550" y="498" font-size="15" fill="#666666">digest-only</text>
+  <text x="650" y="498" font-size="15" fill="#666666">signed</text>
+
+  <!-- Fail-closed refusal: dashed fallback branch -->
+  <rect x="530" y="516" width="440" height="44" fill="#FFFFFF" stroke="#666666" stroke-width="1.5" stroke-dasharray="7 5" />
+  <text x="544" y="534" font-size="16" fill="#000000" font-weight="bold">Fail-closed refusal</text>
+  <text x="544" y="552" font-size="15" fill="#666666" font-style="italic">measured fallback; benign cost disclosed.</text>
+
+  <!-- Facing elbow bracket from Locus A up to the carried-record/read-set gap -->
+  <path d="M 736 210 L 736 190 L 616 190" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+</svg>

@@ -1,0 +1,34 @@
+# Paper build
+
+Pandoc converts `../MANUSCRIPT_REVISED.md` into LaTeX; XeLaTeX compiles it
+three times to converge labels. All output stays in this directory and is
+generated, not tracked.
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `build.ps1` | Windows build (Pandoc + XeLaTeX from PATH) |
+| `build.sh` | POSIX build |
+| `preprocess.py` | Hash-checks the manuscript and adds YAML metadata + abstract env |
+| `retable.py` | Rewrites pipe-table separator widths; formatting only |
+| `header.tex` | Build preamble; not part of the manuscript |
+| `fix_texttt.py` | Wraps long code spans after Pandoc; never edits the manuscript |
+
+## Expected result
+
+- `manuscript_build_wide.pdf`: 24 pages.
+- Build log: zero missing glyphs, zero LaTeX errors, zero overfull hboxes.
+- Three underfull hboxes and one `Label(s) may have changed` warning are
+  expected and cosmetic.
+
+## Version notes
+
+The reference build used Pandoc 3.12.1 and MiKTeX 25.12 (XeLaTeX). Older
+Pandoc releases may render tables differently. `docs/TOOLCHAIN.md` records the
+verified toolchain.
+
+## Rule
+
+Never edit `../MANUSCRIPT_REVISED.md` to make a build pass. If a source hash
+mismatches, stop and open a revision record.

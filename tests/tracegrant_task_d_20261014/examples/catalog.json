@@ -1,0 +1,42 @@
+[
+  {
+    "name": "01_bill_payment",
+    "group": "valid"
+  },
+  {
+    "name": "02_report_owner",
+    "group": "valid"
+  },
+  {
+    "name": "03_optional_recipient_gap",
+    "group": "exploratory"
+  },
+  {
+    "name": "04_fixed_delete",
+    "group": "valid"
+  },
+  {
+    "name": "05_retry_payment",
+    "group": "valid"
+  },
+  {
+    "name": "06_output_exemption",
+    "group": "valid"
+  },
+  {
+    "name": "07_unknown_tool",
+    "group": "invalid"
+  },
+  {
+    "name": "08_dependency_cycle",
+    "group": "invalid"
+  },
+  {
+    "name": "09_missing_binding",
+    "group": "invalid"
+  },
+  {
+    "name": "10_unobservable_verify",
+    "group": "invalid"
+  }
+]

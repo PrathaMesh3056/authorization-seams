@@ -1,0 +1,28 @@
+{
+  "schema_version": "seam_pilot_sa_boundary_reconciliation_v1",
+  "run_reference": {
+    "started_utc": "2026-10-19T14:16:54Z",
+    "matrix_executions": 1152,
+    "manifest": "results/boundary/manifest.json",
+    "note": "lock (design/boundary_lock.json) and all result artifacts unmodified after the first run"
+  },
+  "items": [
+    {
+      "id": "arm2_canonical_leak_scope_overstated",
+      "locked": "boundary_condition.md and boundary_lock.json expected_per_arm_variant: sentinelagent_alone (arm 2, canonical) predicted 0 leaks / safe on all cases, for both v1 and v2",
+      "observed": {
+        "sentinelagent_alone::v1": {"attack_successes": 28, "leak_cases": ["principal_rebind-0-a..3-a","composition_history_loss-0-a..3-a","repeated_calls-0-a..3-a","budget_reset-0-a..3-a","expired_delegation-0-a..3-a","revoked_envelope-0-a..3-a","keyholder_widen-0-a..3-a"], "safe_on": ["resource_widen-0-a..3-a"]},
+        "sentinelagent_alone::v2": {"attack_successes": 28, "leak_cases": ["principal_rebind-0-a..3-a","composition_history_loss-0-a..3-a","repeated_calls-0-a..3-a","budget_reset-0-a..3-a","expired_delegation-0-a..3-a","revoked_envelope-0-a..3-a","keyholder_widen-0-a..3-a"], "safe_on": ["omitted_forbidden_default-0-a..3-a"]}
+      },
+      "seam_effect": "none on the variant-specific question",
+      "explanation": "The lock's 'arm 2 = 0 leaks / safe on all cases' overstated the prediction. Arm 2 (canonical T0, frozen case root scope) is the pre-registered standalone bridge reference and correctly is SAFE on the variant-specific cases: safe on resource_widen-0-a..3-a under V1 (canonical blocks docs:external/secret, which is not in case.resources) and safe on omitted_forbidden_default-0-a..3-a under V2 (canonical SEND endpoint is the snapshot recipient, not the default-filled forbidden-default). The 24 additional arm-2 leaks are the pre-existing SA canonical leak set (principal_rebind, composition_history_loss, repeated_calls, budget_reset, expired_delegation, revoked_envelope, keyholder_widen) that are unrelated to V1/V2 and were already documented in the SA pilot. They do not affect the V1/V2 boundary claims. The variant-specific prediction holds: arm 2 safe on the variant cases; arm 5 leaks them; arm 2v leaks them standalone.",
+      "evidence": ["results/boundary/metrics.json: sentinelagent_alone::v1 and ::v2 attack_success_cases"],
+      "affects_behavior_cells": false,
+      "resolution": "recorded in reconciliation only; lock and artifacts unmodified; the variant-specific predictions (arm 2 safe on resource_widen / omitted_forbidden_default; arm 5 leaks them; arm 2v leaks identically standalone) all hold"
+    }
+  ],
+  "comparison_flags": {
+    "manifest_expected_vs_observed_ok": true,
+    "note": "per-arm-variant leak expectations recorded in metrics.json comparison; the one overbroad statement (arm 2 = 0 leaks total) is reconciled here, not in the lock"
+  }
+}

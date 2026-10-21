@@ -1,0 +1,10 @@
+[
+  {
+    "case": "protected_runner_crash",
+    "outcome": "EXPECTED_CRASH",
+    "error": "synthetic runner crash",
+    "certificate_consumed": true,
+    "final_accepted": false,
+    "successful_defense": false
+  }
+]

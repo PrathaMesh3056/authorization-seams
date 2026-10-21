@@ -1,0 +1,5 @@
+﻿# Figure PDF hashes
+# Generated: 2026-10-20T18:16:19.0322913+05:30
+
+5343A821F16F846C4645F73FCE036E1176F603070E5BFF89750E34E659D36AD9  C:\Users\prath\Downloads\RPaper\paper\figures\figure_1_handoff_anatomy.pdf
+96D0A84161EFF6DABF1F484FCF42802EC723B63CA4A98FE53FBD1ABBEB135E1A  C:\Users\prath\Downloads\RPaper\paper\figures\figure_2_repair_loci.pdf

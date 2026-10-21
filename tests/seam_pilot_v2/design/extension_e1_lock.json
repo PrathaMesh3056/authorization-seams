@@ -1,0 +1,92 @@
+{
+  "schema_version": "seam_pilot_v2_extension_e1_lock_v1",
+  "dataset": "design/extension_e1_cases.json",
+  "dataset_sha256": "1b7c6083ef22d40c8a0d3c3705357358b3508671bfbedc9db12f69a8b2e264ba",
+  "case_count": 8,
+  "attack_cases": 4,
+  "benign_cases": 4,
+  "predicted_unsafe": 4,
+  "predicted_safe": 4,
+  "per_hypothesis": {
+    "H1": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    }
+  },
+  "locked_utc": "2026-10-19",
+  "written_utc": "2026-10-19T07:12:12Z",
+  "prediction_source": "design/action_narrow_condition.md sections 3-6; extension arm 5 scope-only handoff",
+  "expected_arm5_confusion": {
+    "true_positive": 4,
+    "false_positive": 0,
+    "false_negative": 0,
+    "true_negative": 4,
+    "precision": 1.0,
+    "recall": 1.0,
+    "note": "action-narrow prediction: M0 admits send_external outside the narrowed A' in arms 2 and 5; benign calls inside A' stay safe"
+  },
+  "expected_by_arm": {
+    "apc_alone": {
+      "attack_leaks": 0,
+      "benign_false_denials": 0,
+      "expectation": "APC effective A after the narrowed handoff excludes send_external"
+    },
+    "tracegrant_alone": {
+      "attack_leaks": 4,
+      "benign_false_denials": 0,
+      "expectation": "M0 from the frozen root scope; no action-set check anywhere"
+    },
+    "apc_tracegrant_scope_only": {
+      "attack_leaks": 4,
+      "benign_false_denials": 0,
+      "expectation": "M0 from the post-handoff snapshot; shadow denial recorded, not propagated"
+    },
+    "apc_tracegrant_retained": {
+      "attack_leaks": 0,
+      "benign_false_denials": 0,
+      "expectation": "M2-auth: signature verifies; evidence admits only when the shadow APC allowed the call"
+    },
+    "apc_tracegrant_fail_closed": {
+      "attack_leaks": 0,
+      "benign_false_denials": 0,
+      "expectation": "shadow denial retained before M1 evaluation"
+    }
+  },
+  "expected_controls": {
+    "denominator": 3,
+    "note": "controls run on their own denominator, separate from the 40-case run; each control ships with a failure probe (opposite outcome)",
+    "controls": {
+      "C-valid": {
+        "case": "action_narrow-0-b",
+        "expected_admitted": true,
+        "expected_code": "ALLOW"
+      },
+      "C-valid-probe-missing-signature": {
+        "expected_admitted": false,
+        "expected_code": "EVIDENCE-SIGNATURE-MISSING"
+      },
+      "C-mutated": {
+        "case": "action_narrow-0-a",
+        "expected_admitted": false,
+        "expected_code": "EVIDENCE-SIGNATURE-INVALID"
+      },
+      "C-mutated-probe-unmutated": {
+        "expected_admitted": false,
+        "expected_code": "PROOF-GAP"
+      },
+      "C-replay": {
+        "case": "action_narrow-0-a",
+        "record_from": "action_narrow-1-b",
+        "expected_admitted": false,
+        "expected_code": "EVIDENCE-BINDING-MISMATCH"
+      },
+      "C-replay-probe-original-call": {
+        "case": "action_narrow-1-b",
+        "expected_admitted": true,
+        "expected_code": "ALLOW"
+      }
+    }
+  },
+  "note": "Extension E1 cases, per-arm expectations and control expectations are locked before any extension execution. The original 80-case set, its lock, and all original results are not modified. No retroactive edits."
+}

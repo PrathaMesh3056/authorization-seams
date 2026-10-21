@@ -1,0 +1,6 @@
+# Development and QA dependencies for the repository itself.
+# The experiment harnesses use a small, separately recorded dependency set:
+#   tests/authorization_pilot/requirements.lock
+#   tests/tracegrant_task_d_20261014/requirements.lock
+pytest==9.0.2
+pypdf==6.14.2

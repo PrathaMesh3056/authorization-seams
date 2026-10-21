@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3.33in" height="2.3865in" viewBox="0 0 480 344" font-family="Arial, Helvetica, sans-serif">
+  <title>Figure 1 — anatomy of a cross-mechanism handoff</title>
+  <desc>Left-to-right schematic: sender narrows authority A over call space C to A′; bridge translates narrowed decision plus state into receiver-side record ρ_R = B(A′, state); receiver runs M_R = (V_R, admit_R) and consults read set V_read ⊆ V_R. Carried record and read set are separated, with unread fields dashed. No data, no counts.</desc>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon fill="#333333" points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="480" height="344" fill="#FFFFFF" />
+
+  <!-- ============ TOP ROW: sender, bridge, receiver ============ -->
+  <rect x="8" y="10" width="134" height="138" fill="#FFFFFF" stroke="#0072B2" stroke-width="1.5" />
+  <text x="75" y="34" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">Sender</text>
+  <text x="75" y="53" text-anchor="middle" font-size="16" fill="#000000">mechanism</text>
+  <text x="75" y="78" text-anchor="middle" font-size="17" fill="#0072B2">Authority A</text>
+  <text x="75" y="97" text-anchor="middle" font-size="16" fill="#000000">over call space C</text>
+  <text x="75" y="116" text-anchor="middle" font-size="16" fill="#000000">narrows to A&#x2032; &#x2286; A</text>
+
+  <line x1="144" y1="118" x2="203" y2="118" stroke="#333333" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="176" y="88" text-anchor="middle" font-size="16" fill="#333333" font-style="italic">narrow</text>
+  <text x="176" y="106" text-anchor="middle" font-size="16" fill="#333333" font-style="italic">authority</text>
+
+  <rect x="210" y="10" width="113" height="138" fill="#FFFFFF" stroke="#E69F00" stroke-width="1.5" />
+  <text x="266.5" y="34" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">Bridge</text>
+  <text x="266.5" y="53" text-anchor="middle" font-size="16" fill="#000000">mechanism</text>
+  <text x="266.5" y="78" text-anchor="middle" font-size="17" fill="#333333">&#x03C1;_R =</text>
+  <text x="266.5" y="97" text-anchor="middle" font-size="17" fill="#333333">B(A&#x2032;, state)</text>
+  <text x="266.5" y="116" text-anchor="middle" font-size="16" fill="#666666" font-style="italic">(no admission</text>
+  <text x="266.5" y="135" text-anchor="middle" font-size="16" fill="#666666" font-style="italic">decision)</text>
+
+  <line x1="325" y1="118" x2="351" y2="118" stroke="#333333" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <rect x="356" y="10" width="118" height="138" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5" />
+  <text x="415" y="34" text-anchor="middle" font-size="18" fill="#000000" font-weight="bold">Receiver</text>
+  <text x="415" y="53" text-anchor="middle" font-size="16" fill="#000000">mechanism</text>
+  <text x="415" y="78" text-anchor="middle" font-size="17" fill="#333333">M_R =</text>
+  <text x="415" y="97" text-anchor="middle" font-size="16" fill="#333333">(V_R, admit_R)</text>
+  <text x="415" y="116" text-anchor="middle" font-size="16" fill="#000000">consults</text>
+  <text x="415" y="135" text-anchor="middle" font-size="16" fill="#000000">V_read &#x2286; V_R</text>
+
+  <!-- Bridge hands the carried record into the left lane -->
+  <line x1="245" y1="148" x2="170" y2="179" stroke="#333333" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <!-- ============ BOTTOM LEFT LANE: carried record ============ -->
+  <rect x="8" y="182" width="222" height="118" fill="#FFFFFF" stroke="#0072B2" stroke-width="1.5" />
+  <text x="119" y="206" text-anchor="middle" font-size="16" fill="#0072B2" font-weight="bold">carried record &#x03C1;_R</text>
+  <text x="26" y="234" font-size="16" fill="#0072B2">read fields (solid)</text>
+  <line x1="26" y1="244" x2="152" y2="244" stroke="#0072B2" stroke-width="3" />
+  <text x="26" y="274" font-size="16" fill="#666666">unread fields (dashed)</text>
+  <line x1="26" y1="284" x2="152" y2="284" stroke="#666666" stroke-width="1.5" stroke-dasharray="7 5" />
+
+  <!-- ============ BOTTOM RIGHT LANE: read set, admission ============ -->
+  <rect x="298" y="182" width="176" height="60" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5" />
+  <text x="386" y="206" text-anchor="middle" font-size="16" fill="#333333" font-weight="bold">read set V_read</text>
+  <text x="386" y="232" text-anchor="middle" font-size="15" fill="#333333">fields the decision reads</text>
+
+  <rect x="298" y="258" width="176" height="54" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5" />
+  <text x="386" y="280" text-anchor="middle" font-size="16" fill="#000000" font-weight="bold">admission decision</text>
+  <text x="386" y="302" text-anchor="middle" font-size="16" fill="#333333">consumes V_read</text>
+
+  <!-- Record to read set: solid path for read fields -->
+  <line x1="232" y1="212" x2="292" y2="212" stroke="#333333" stroke-width="1.5" marker-end="url(#arrowhead)" />
+  <text x="264" y="198" text-anchor="middle" font-size="16" fill="#333333" font-style="italic">read</text>
+
+  <!-- Unread fields do not reach the read set -->
+  <line x1="232" y1="284" x2="256" y2="284" stroke="#666666" stroke-width="1.5" stroke-dasharray="7 5" />
+  <line x1="260" y1="279" x2="270" y2="289" stroke="#666666" stroke-width="1.5" />
+  <line x1="260" y1="289" x2="270" y2="279" stroke="#666666" stroke-width="1.5" />
+  <text x="264" y="306" text-anchor="middle" font-size="16" fill="#666666" font-style="italic">not read</text>
+
+  <!-- Read set to admission -->
+  <line x1="386" y1="244" x2="386" y2="255" stroke="#333333" stroke-width="1.5" marker-end="url(#arrowhead)" />
+
+  <!-- ============ ANNOTATION ============ -->
+  <text x="240" y="332" text-anchor="middle" font-size="16" fill="#333333" font-style="italic">carried but unread = uncarried (for decision purposes)</text>
+</svg>

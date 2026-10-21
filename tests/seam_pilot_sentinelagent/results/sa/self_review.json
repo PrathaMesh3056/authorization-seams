@@ -1,0 +1,118 @@
+{
+  "checks": [
+    {
+      "check": "controls_passed",
+      "ok": true,
+      "detail": {
+        "records": 10
+      }
+    },
+    {
+      "check": "hash_unchanged:sentinelagent_das_prototype.py",
+      "ok": true,
+      "detail": {
+        "sha256": "739d9db1e836d7edaf567cabfa6c4ae074bb81d74ad522e98b7d04a3237b36be"
+      }
+    },
+    {
+      "check": "hash_unchanged:frozen_cases.json",
+      "ok": true,
+      "detail": {
+        "sha256": "4d8b76a2f63f9643ac8c59cc72f42b93d4cb8a1621084bec2c5d06170fff1639"
+      }
+    },
+    {
+      "check": "hash_unchanged:prediction_lock.json",
+      "ok": true,
+      "detail": {
+        "sha256": "0e0411242618259ccca251c378a32814bf034649e42423d1056558d2d16ca870"
+      }
+    },
+    {
+      "check": "hash_unchanged:raw_metrics.json",
+      "ok": true,
+      "detail": {
+        "sha256": "b2762e55f0e1aad4e8645211da0011bfbeb519c6d15068bfbb048bb9fc126f0c"
+      }
+    },
+    {
+      "check": "hash_unchanged:sa_cases.json",
+      "ok": true,
+      "detail": {
+        "sha256": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2"
+      }
+    },
+    {
+      "check": "hash_unchanged:sa_lock.json",
+      "ok": true,
+      "detail": {
+        "sha256": "9f2611a1a8d8c5b3a1f7b55b2f384d72594399cf783808facb55e1f2965d47f0"
+      }
+    },
+    {
+      "check": "hash_unchanged:call_to_token_mapping.md",
+      "ok": true,
+      "detail": {
+        "sha256": "e5ddda3e8fb5a6e2716372e5d4aed139c4e67f030a0dc436bd7b8e726b2f8f48"
+      }
+    },
+    {
+      "check": "hash_unchanged:composition_condition_sentinelagent.md",
+      "ok": true,
+      "detail": {
+        "sha256": "5423ec4ba5a14cf206e7b3fb4e0dec55c9b167d03fb4b9059111fbe3d001a9ec"
+      }
+    },
+    {
+      "check": "hash_unchanged:sa_case_generator.py",
+      "ok": true,
+      "detail": {
+        "sha256": "0a17df5cd655cc9aab761db42536b54fb5d28009ba964be878936bfc4e308a86"
+      }
+    },
+    {
+      "check": "hash_unchanged:sa_harness.py",
+      "ok": true,
+      "detail": {
+        "sha256": "89c7cc617c5127a8b91bf64767504abd0947508bd872e9471be1cf08de756555"
+      }
+    },
+    {
+      "check": "determinism_rerun",
+      "ok": true,
+      "detail": {
+        "sample": 20,
+        "mismatches": []
+      }
+    },
+    {
+      "check": "leak_audit",
+      "ok": true,
+      "detail": {
+        "problems": []
+      }
+    },
+    {
+      "check": "arm2_arm5_identical_leak_sets",
+      "ok": true,
+      "detail": {
+        "symmetric_difference": []
+      }
+    },
+    {
+      "check": "not_vacuous",
+      "ok": true,
+      "detail": {
+        "admissions": 488,
+        "token_denials": 150
+      }
+    },
+    {
+      "check": "snapshot_sources",
+      "ok": true,
+      "detail": null
+    }
+  ],
+  "ok": true,
+  "reruns": 20
+}

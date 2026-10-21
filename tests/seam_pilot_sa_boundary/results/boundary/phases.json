@@ -1,0 +1,128 @@
+{
+  "phase1_lock_check": {
+    "utc": "2026-10-19T14:17:07Z",
+    "lock_utc": "2026-10-19T14:11:31Z",
+    "note": "dataset and harness re-hashed at load; mismatch aborts"
+  },
+  "started_utc": "2026-10-19T14:17:07Z",
+  "phase2_pre_controls": {
+    "utc": "2026-10-19T14:17:07Z",
+    "ok": true,
+    "records": [
+      "CV3-s1s3",
+      "CV1",
+      "CV1b",
+      "CV2",
+      "CV2b"
+    ]
+  },
+  "phase3_matrix": {
+    "utc": "2026-10-19T14:17:07Z",
+    "executions": 1152,
+    "rows_per_arm_variant": {
+      "apc_alone::v1": 96,
+      "apc_alone::v2": 96,
+      "sentinelagent_alone::v1": 96,
+      "sentinelagent_alone::v2": 96,
+      "sentinelagent_alone_variant::v1": 96,
+      "sentinelagent_alone_variant::v2": 96,
+      "apc_sentinelagent_scope_only::v1": 96,
+      "apc_sentinelagent_scope_only::v2": 96,
+      "apc_sentinelagent_retained::v1": 96,
+      "apc_sentinelagent_retained::v2": 96,
+      "apc_sentinelagent_fail_closed::v1": 96,
+      "apc_sentinelagent_fail_closed::v2": 96
+    }
+  },
+  "phase4_metrics": {
+    "utc": "2026-10-19T14:17:07Z",
+    "comparison_ok": true,
+    "seam_test": {
+      "v1": {
+        "arm1_leaks": [],
+        "arm2_leaks": [
+          "budget_reset-0-a",
+          "budget_reset-1-a",
+          "budget_reset-2-a",
+          "budget_reset-3-a",
+          "composition_history_loss-0-a",
+          "composition_history_loss-1-a",
+          "composition_history_loss-2-a",
+          "composition_history_loss-3-a",
+          "expired_delegation-0-a",
+          "expired_delegation-1-a",
+          "expired_delegation-2-a",
+          "expired_delegation-3-a",
+          "keyholder_widen-0-a",
+          "keyholder_widen-1-a",
+          "keyholder_widen-2-a",
+          "keyholder_widen-3-a",
+          "principal_rebind-0-a",
+          "principal_rebind-1-a",
+          "principal_rebind-2-a",
+          "principal_rebind-3-a",
+          "repeated_calls-0-a",
+          "repeated_calls-1-a",
+          "repeated_calls-2-a",
+          "repeated_calls-3-a",
+          "revoked_envelope-0-a",
+          "revoked_envelope-1-a",
+          "revoked_envelope-2-a",
+          "revoked_envelope-3-a"
+        ],
+        "seam_cases": [
+          "resource_widen-0-a",
+          "resource_widen-1-a",
+          "resource_widen-2-a",
+          "resource_widen-3-a"
+        ],
+        "seam_count": 4
+      },
+      "v2": {
+        "arm1_leaks": [],
+        "arm2_leaks": [
+          "budget_reset-0-a",
+          "budget_reset-1-a",
+          "budget_reset-2-a",
+          "budget_reset-3-a",
+          "composition_history_loss-0-a",
+          "composition_history_loss-1-a",
+          "composition_history_loss-2-a",
+          "composition_history_loss-3-a",
+          "expired_delegation-0-a",
+          "expired_delegation-1-a",
+          "expired_delegation-2-a",
+          "expired_delegation-3-a",
+          "keyholder_widen-0-a",
+          "keyholder_widen-1-a",
+          "keyholder_widen-2-a",
+          "keyholder_widen-3-a",
+          "principal_rebind-0-a",
+          "principal_rebind-1-a",
+          "principal_rebind-2-a",
+          "principal_rebind-3-a",
+          "repeated_calls-0-a",
+          "repeated_calls-1-a",
+          "repeated_calls-2-a",
+          "repeated_calls-3-a",
+          "revoked_envelope-0-a",
+          "revoked_envelope-1-a",
+          "revoked_envelope-2-a",
+          "revoked_envelope-3-a"
+        ],
+        "seam_cases": [
+          "omitted_forbidden_default-0-a",
+          "omitted_forbidden_default-1-a",
+          "omitted_forbidden_default-2-a",
+          "omitted_forbidden_default-3-a"
+        ],
+        "seam_count": 4
+      }
+    }
+  },
+  "phase5_self_review": {
+    "utc": "2026-10-19T14:17:07Z",
+    "ok": true,
+    "failed": []
+  }
+}

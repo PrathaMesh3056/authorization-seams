@@ -1,0 +1,20 @@
+{
+  "id": "06_output_exemption",
+  "trusted_request": "Return summary text; an empty input exemption is permitted",
+  "MAY": {},
+  "MUST": [
+    {
+      "id": "O1",
+      "kind": "output",
+      "tool": null,
+      "dependencies": [],
+      "hard": true,
+      "enabled": true,
+      "evidence": null,
+      "output_equals": "Summary",
+      "waiver_code": "EMPTY_INPUT"
+    }
+  ],
+  "BIND": {},
+  "VERIFY": {}
+}

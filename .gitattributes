@@ -1,0 +1,13 @@
+# Byte fidelity matters in this repository: frozen artifacts and manifests are
+# hash-verified. Disable Git's end-of-line normalization for everything so a
+# clone checks out exactly the bytes that were committed.
+* -text
+
+# Explicit binary markers (informational; -text already prevents conversion).
+*.pdf binary
+*.png binary
+*.zip binary
+*.docx binary
+
+# Keep generated paper build output out of diffs.
+artifacts/sha256sums.txt linguist-generated=true

@@ -1,0 +1,73 @@
+{
+  "phase1_lock_check": {
+    "utc": "2026-10-19T11:57:16Z",
+    "dataset_sha256": "0bab4d516177cdbfb356abee15291029d4d3294bb22225cc1693c33e40d9e310",
+    "case_count": 96,
+    "locked_utc": "2026-10-19T11:52:24Z",
+    "expected_confusion": {
+      "true_positive": 28,
+      "false_positive": 0,
+      "false_negative": 0,
+      "true_negative": 68,
+      "precision": 1.0,
+      "recall": 1.0,
+      "note": "7 leaking attack templates x 4 parameters = 28 predicted-unsafe attack cases"
+    },
+    "note": "dataset re-hashed at load; mismatch would have raised"
+  },
+  "started_utc": "2026-10-19T11:57:16Z",
+  "phase2_controls": {
+    "utc": "2026-10-19T11:57:16Z",
+    "ok": true,
+    "records": [
+      "S1-valid",
+      "S1-failure",
+      "S1-probe",
+      "S2-foreign",
+      "S2-trusted",
+      "S2-two-minters",
+      "S2-mutated",
+      "S3-valid",
+      "S3-mutated",
+      "S3-replay"
+    ]
+  },
+  "phase3_matrix": {
+    "utc": "2026-10-19T11:57:16Z",
+    "executions": 672,
+    "rows_per_arm": {
+      "apc_alone": 96,
+      "sentinelagent_alone": 96,
+      "apc_apc_preserved": 96,
+      "apc_apc_reset": 96,
+      "apc_sentinelagent_scope_only": 96,
+      "apc_sentinelagent_retained": 96,
+      "apc_sentinelagent_fail_closed": 96
+    }
+  },
+  "phase4_metrics": {
+    "utc": "2026-10-19T11:57:16Z",
+    "expected_ok": false,
+    "seam_test": {
+      "cases": [],
+      "count": 0,
+      "expected_count": 0,
+      "ok": true
+    },
+    "arm5_confusion": {
+      "true_positive": 28,
+      "false_positive": 0,
+      "false_negative": 0,
+      "true_negative": 20
+    }
+  },
+  "phase5_self_review": {
+    "utc": "2026-10-19T11:57:16Z",
+    "ok": true,
+    "failed": []
+  },
+  "phase6_manifest": {
+    "utc": "2026-10-19T11:57:17Z",
+    "manifest": "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\results\\sa\\manifest.json"
+  }
+}

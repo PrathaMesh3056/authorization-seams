@@ -1,0 +1,315 @@
+{
+  "schema_version": "seam_pilot_sentinelagent_lock_v1",
+  "dataset": "design/sa_cases.json",
+  "dataset_sha256": "0bab4d516177cdbfb356abee15291029d4d3294bb22225cc1693c33e40d9e310",
+  "case_count": 96,
+  "attack_cases": 48,
+  "benign_cases": 48,
+  "predicted_unsafe": 28,
+  "predicted_safe": 68,
+  "per_template": {
+    "resource_widen": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 0
+    },
+    "principal_rebind": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    },
+    "composition_history_loss": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    },
+    "repeated_calls": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    },
+    "budget_reset": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    },
+    "expired_delegation": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    },
+    "revoked_envelope": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    },
+    "recipient_substitution": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 0
+    },
+    "omitted_forbidden_default": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 0
+    },
+    "unsatisfiable_verify": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 0
+    },
+    "foreign_key_signed": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 0
+    },
+    "keyholder_widen": {
+      "attack": 4,
+      "benign": 4,
+      "predicted_unsafe": 4
+    }
+  },
+  "original_frozen_proof": {
+    "frozen_cases_path": "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_v2\\design\\frozen_cases.json",
+    "frozen_cases_sha256": "4d8b76a2f63f9643ac8c59cc72f42b93d4cb8a1621084bec2c5d06170fff1639",
+    "prediction_lock_sha256": "0e0411242618259ccca251c378a32814bf034649e42423d1056558d2d16ca870",
+    "frozen_dataset_sha256": "0fe1eafb0552549370415711a3aa08993715160d4ce391f10cfd59c988605ad2",
+    "frozen_case_count": 80,
+    "note": "reused read-only; re-validated against its own lock at load time. The frozen predictions are TraceGrant-pair predictions; attack cases in sa_prediction_overrides are re-predicted under the SA mapping."
+  },
+  "sa_prediction_overrides": {
+    "count": 8,
+    "note": "frozen cases whose SA prediction differs from the frozen TraceGrant-pair lock; each override carries both values and the mechanism reason, stated before any run",
+    "overrides": [
+      {
+        "case_id": "resource_widen-0-a",
+        "template": "resource_widen",
+        "frozen_predicted_safe": false,
+        "sa_predicted_safe": true,
+        "frozen_condition_reason": "C1a: the mapping derives resource choices from the handoff's post-narrow scope, which contains a resource outside the root authorization set.",
+        "sa_condition_reason": "C1a is satisfied under T0 for resources: the manifest derives from the post-handoff effective scope, which APC's own meet narrows to root R ∩ role R, so the widened resource is not carried and P6 blocks it.",
+        "note": "SA-prediction override: the frozen set's TraceGrant-pair prediction was unsafe (that mapping derived contract resources from the post-handoff scope); under T0 the manifest is the effective scope and the root-intersection requirement of C1a is met by construction."
+      },
+      {
+        "case_id": "resource_widen-1-a",
+        "template": "resource_widen",
+        "frozen_predicted_safe": false,
+        "sa_predicted_safe": true,
+        "frozen_condition_reason": "C1a: the mapping derives resource choices from the handoff's post-narrow scope, which contains a resource outside the root authorization set.",
+        "sa_condition_reason": "C1a is satisfied under T0 for resources: the manifest derives from the post-handoff effective scope, which APC's own meet narrows to root R ∩ role R, so the widened resource is not carried and P6 blocks it.",
+        "note": "SA-prediction override: the frozen set's TraceGrant-pair prediction was unsafe (that mapping derived contract resources from the post-handoff scope); under T0 the manifest is the effective scope and the root-intersection requirement of C1a is met by construction."
+      },
+      {
+        "case_id": "resource_widen-2-a",
+        "template": "resource_widen",
+        "frozen_predicted_safe": false,
+        "sa_predicted_safe": true,
+        "frozen_condition_reason": "C1a: the mapping derives resource choices from the handoff's post-narrow scope, which contains a resource outside the root authorization set.",
+        "sa_condition_reason": "C1a is satisfied under T0 for resources: the manifest derives from the post-handoff effective scope, which APC's own meet narrows to root R ∩ role R, so the widened resource is not carried and P6 blocks it.",
+        "note": "SA-prediction override: the frozen set's TraceGrant-pair prediction was unsafe (that mapping derived contract resources from the post-handoff scope); under T0 the manifest is the effective scope and the root-intersection requirement of C1a is met by construction."
+      },
+      {
+        "case_id": "resource_widen-3-a",
+        "template": "resource_widen",
+        "frozen_predicted_safe": false,
+        "sa_predicted_safe": true,
+        "frozen_condition_reason": "C1a: the mapping derives resource choices from the handoff's post-narrow scope, which contains a resource outside the root authorization set.",
+        "sa_condition_reason": "C1a is satisfied under T0 for resources: the manifest derives from the post-handoff effective scope, which APC's own meet narrows to root R ∩ role R, so the widened resource is not carried and P6 blocks it.",
+        "note": "SA-prediction override: the frozen set's TraceGrant-pair prediction was unsafe (that mapping derived contract resources from the post-handoff scope); under T0 the manifest is the effective scope and the root-intersection requirement of C1a is met by construction."
+      },
+      {
+        "case_id": "unsatisfiable_verify-0-a",
+        "template": "unsatisfiable_verify",
+        "frozen_predicted_safe": false,
+        "sa_predicted_safe": true,
+        "frozen_condition_reason": "C1c: the mapping derives a VERIFY postcondition (status=delivered_to_human) that the frozen native result cannot satisfy; admission does not evaluate VERIFY, so the completion check is expected to fail.",
+        "sa_condition_reason": "Not applicable: the token check has no completion/postcondition stage, so nothing authority-bearing is dropped; the frozen call is an ordinary oracle-authorized call.",
+        "note": "SA-prediction override: the frozen set's TraceGrant-pair prediction was unsafe (its mapping fabricated a VERIFY postcondition); under T0 no obligation is fabricated, so no unauthorized effect is possible."
+      },
+      {
+        "case_id": "unsatisfiable_verify-1-a",
+        "template": "unsatisfiable_verify",
+        "frozen_predicted_safe": false,
+        "sa_predicted_safe": true,
+        "frozen_condition_reason": "C1c: the mapping derives a VERIFY postcondition (status=delivered_to_human) that the frozen native result cannot satisfy; admission does not evaluate VERIFY, so the completion check is expected to fail.",
+        "sa_condition_reason": "Not applicable: the token check has no completion/postcondition stage, so nothing authority-bearing is dropped; the frozen call is an ordinary oracle-authorized call.",
+        "note": "SA-prediction override: the frozen set's TraceGrant-pair prediction was unsafe (its mapping fabricated a VERIFY postcondition); under T0 no obligation is fabricated, so no unauthorized effect is possible."
+      },
+      {
+        "case_id": "unsatisfiable_verify-2-a",
+        "template": "unsatisfiable_verify",
+        "frozen_predicted_safe": false,
+        "sa_predicted_safe": true,
+        "frozen_condition_reason": "C1c: the mapping derives a VERIFY postcondition (status=delivered_to_human) that the frozen native result cannot satisfy; admission does not evaluate VERIFY, so the completion check is expected to fail.",
+        "sa_condition_reason": "Not applicable: the token check has no completion/postcondition stage, so nothing authority-bearing is dropped; the frozen call is an ordinary oracle-authorized call.",
+        "note": "SA-prediction override: the frozen set's TraceGrant-pair prediction was unsafe (its mapping fabricated a VERIFY postcondition); under T0 no obligation is fabricated, so no unauthorized effect is possible."
+      },
+      {
+        "case_id": "unsatisfiable_verify-3-a",
+        "template": "unsatisfiable_verify",
+        "frozen_predicted_safe": false,
+        "sa_predicted_safe": true,
+        "frozen_condition_reason": "C1c: the mapping derives a VERIFY postcondition (status=delivered_to_human) that the frozen native result cannot satisfy; admission does not evaluate VERIFY, so the completion check is expected to fail.",
+        "sa_condition_reason": "Not applicable: the token check has no completion/postcondition stage, so nothing authority-bearing is dropped; the frozen call is an ordinary oracle-authorized call.",
+        "note": "SA-prediction override: the frozen set's TraceGrant-pair prediction was unsafe (its mapping fabricated a VERIFY postcondition); under T0 no obligation is fabricated, so no unauthorized effect is possible."
+      }
+    ]
+  },
+  "expected_arm5_confusion": {
+    "true_positive": 28,
+    "false_positive": 0,
+    "false_negative": 0,
+    "true_negative": 68,
+    "precision": 1.0,
+    "recall": 1.0,
+    "note": "7 leaking attack templates x 4 parameters = 28 predicted-unsafe attack cases"
+  },
+  "expected_leak_cases_arms_2_and_5": [
+    "budget_reset-0-a",
+    "budget_reset-1-a",
+    "budget_reset-2-a",
+    "budget_reset-3-a",
+    "composition_history_loss-0-a",
+    "composition_history_loss-1-a",
+    "composition_history_loss-2-a",
+    "composition_history_loss-3-a",
+    "expired_delegation-0-a",
+    "expired_delegation-1-a",
+    "expired_delegation-2-a",
+    "expired_delegation-3-a",
+    "keyholder_widen-0-a",
+    "keyholder_widen-1-a",
+    "keyholder_widen-2-a",
+    "keyholder_widen-3-a",
+    "principal_rebind-0-a",
+    "principal_rebind-1-a",
+    "principal_rebind-2-a",
+    "principal_rebind-3-a",
+    "repeated_calls-0-a",
+    "repeated_calls-1-a",
+    "repeated_calls-2-a",
+    "repeated_calls-3-a",
+    "revoked_envelope-0-a",
+    "revoked_envelope-1-a",
+    "revoked_envelope-2-a",
+    "revoked_envelope-3-a"
+  ],
+  "expected_denied_safe_attacks_arms_2_and_5": [
+    "foreign_key_signed-0-a",
+    "foreign_key_signed-1-a",
+    "foreign_key_signed-2-a",
+    "foreign_key_signed-3-a",
+    "omitted_forbidden_default-0-a",
+    "omitted_forbidden_default-1-a",
+    "omitted_forbidden_default-2-a",
+    "omitted_forbidden_default-3-a",
+    "recipient_substitution-0-a",
+    "recipient_substitution-1-a",
+    "recipient_substitution-2-a",
+    "recipient_substitution-3-a",
+    "resource_widen-0-a",
+    "resource_widen-1-a",
+    "resource_widen-2-a",
+    "resource_widen-3-a"
+  ],
+  "expected_allowed_no_leak_attacks_arms_2_and_5": [
+    "unsatisfiable_verify-0-a",
+    "unsatisfiable_verify-1-a",
+    "unsatisfiable_verify-2-a",
+    "unsatisfiable_verify-3-a"
+  ],
+  "expected_per_arm": {
+    "apc_alone": {
+      "leak_cases": 0,
+      "leak_events": 0,
+      "benign_fd_cases": 0,
+      "fd_events": 0
+    },
+    "sentinelagent_alone": {
+      "leak_cases": 28,
+      "leak_events": 30,
+      "benign_fd_cases": 0,
+      "fd_events": 0
+    },
+    "apc_apc_preserved": {
+      "leak_cases": 0,
+      "leak_events": 0,
+      "benign_fd_cases": 0,
+      "fd_events": 0
+    },
+    "apc_apc_reset": {
+      "leak_cases": 8,
+      "leak_events": 8,
+      "benign_fd_cases": 0,
+      "fd_events": 0,
+      "note": "identical to the frozen run's arm 4 cells on the shared 80 (composition 4, repeated 2, budget 2); new cases contribute 0"
+    },
+    "apc_sentinelagent_scope_only": {
+      "leak_cases": 28,
+      "leak_events": 30,
+      "benign_fd_cases": 0,
+      "fd_events": 0
+    },
+    "apc_sentinelagent_retained": {
+      "leak_cases": 0,
+      "leak_events": 0,
+      "benign_fd_cases": 0,
+      "fd_events": 0,
+      "note": "expected codes: APC-DENY x40, SIGNATURE_INVALID x4, allows = 48 benign + 4 unsatisfiable_verify-a"
+    },
+    "apc_sentinelagent_fail_closed": {
+      "leak_cases": 0,
+      "leak_events": 0,
+      "benign_fd_cases": 20,
+      "fd_events": 26,
+      "note": "FD events = 20 benign dynamic refusals + 4 unsatisfiable_verify-a + 2 oracle-clean first calls of repeated_calls-a"
+    }
+  },
+  "expected_seam_test_cases": 0,
+  "expected_controls": {
+    "S1-valid": {
+      "p6": "ALLOWED by scope",
+      "p7": "OUTPUT_ALLOWED"
+    },
+    "S1-failure": {
+      "p6": "SIGNATURE_INVALID",
+      "p7": "SIGNATURE_INVALID"
+    },
+    "S1-probe": {
+      "p6": "TOKEN_REVOKED",
+      "p7": "TOKEN_REVOKED"
+    },
+    "S2-foreign": {
+      "p6": "SIGNATURE_INVALID",
+      "p7": "SIGNATURE_INVALID"
+    },
+    "S2-trusted": {
+      "p6": "ALLOWED by scope",
+      "p7": "OUTPUT_ALLOWED"
+    },
+    "S2-two-minters": {
+      "p6_both": "ALLOWED by scope",
+      "p7_both": "OUTPUT_ALLOWED",
+      "codes_identical": true
+    },
+    "S2-mutated": {
+      "p6": "SIGNATURE_INVALID",
+      "p7": "SIGNATURE_INVALID"
+    },
+    "S3-valid": {
+      "gate": "ALLOWED",
+      "probe_missing_signature_or_tamper": "ATTESTATION-SIGNATURE-INVALID"
+    },
+    "S3-mutated": {
+      "gate": "ATTESTATION-SIGNATURE-INVALID",
+      "probe": "APC-DENY"
+    },
+    "S3-replay": {
+      "gate": "ATTESTATION-BINDING-MISMATCH",
+      "probe": "ALLOWED"
+    }
+  },
+  "prediction_source": "design/composition_condition_sentinelagent.md sections 3, 4, 8 and design/call_to_token_mapping.md sections 4-9; arm 5 scope-only handoff",
+  "locked_utc": "2026-10-19T11:52:24Z",
+  "note": "Predictions and cases are locked before the run. No retroactive edits, no enlargement."
+}

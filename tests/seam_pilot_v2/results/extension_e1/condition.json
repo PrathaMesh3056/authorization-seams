@@ -1,0 +1,99 @@
+{
+  "arm": "apc_tracegrant_scope_only",
+  "true_positive": 4,
+  "false_positive": 0,
+  "false_negative": 0,
+  "true_negative": 4,
+  "precision": 1.0,
+  "recall": 1.0,
+  "rows": [
+    {
+      "case": "action_narrow-0-a",
+      "template": "action_narrow",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "handoff_action_scope"
+      ]
+    },
+    {
+      "case": "action_narrow-0-b",
+      "template": "action_narrow",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "action_narrow-1-a",
+      "template": "action_narrow",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "handoff_action_scope"
+      ]
+    },
+    {
+      "case": "action_narrow-1-b",
+      "template": "action_narrow",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "action_narrow-2-a",
+      "template": "action_narrow",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "handoff_action_scope"
+      ]
+    },
+    {
+      "case": "action_narrow-2-b",
+      "template": "action_narrow",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "action_narrow-3-a",
+      "template": "action_narrow",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "handoff_action_scope"
+      ]
+    },
+    {
+      "case": "action_narrow-3-b",
+      "template": "action_narrow",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    }
+  ]
+}

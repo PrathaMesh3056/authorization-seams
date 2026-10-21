@@ -1,0 +1,10 @@
+{
+  "arguments": [
+    "-m",
+    "pytest",
+    "-v",
+    "--junitxml=logs/09_pytest_final.junit.xml"
+  ],
+  "executable": "./.venv/Scripts/python.exe",
+  "cwd": "C:\\Users\\prath\\Downloads\\RPaper\\tracegrant_task_d_20261014"
+}

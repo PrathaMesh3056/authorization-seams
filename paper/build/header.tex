@@ -1,0 +1,88 @@
+﻿% header.tex -- build-only preamble for the seam manuscript draft.
+% Not part of the manuscript; passed with --include-in-header.
+% Assumes the Pandoc XeLaTeX template has already loaded fontspec,
+% unicode-math, longtable, booktabs, array, caption, calc, etoolbox.
+
+% ---------------------------------------------------------------------
+% 1. Unicode text-mode glyphs that Latin Modern Roman does not carry.
+%    Each is mapped to the equivalent math macro, so it typesets from
+%    Latin Modern Math and stays searchable/copyable in the PDF only
+%    where the source glyph survives (math macros are not ToUnicode).
+%    U+2605 (★) has no Latin Modern Math glyph, so it maps to the
+%    Latin Modern Math star operator U+22C6 (\star) rather than pulling
+%    in a platform symbol font. No Segoe UI Symbol fallback remains.
+% ---------------------------------------------------------------------
+\usepackage{newunicodechar}
+% unicode-math installs its own begin-document definitions for math
+% characters, so the mappings must be declared inside \AtBeginDocument
+% to run after them; a plain preamble \newunicodechar is overwritten.
+\AtBeginDocument{%
+  \newunicodechar{★}{\ensuremath{\star}}%
+  \newunicodechar{⊆}{\ensuremath{\subseteq}}%
+  \newunicodechar{→}{\ensuremath{\rightarrow}}%
+  \newunicodechar{ρ}{\ensuremath{\rho}}%
+  \newunicodechar{τ}{\ensuremath{\tau}}%
+  \newunicodechar{≔}{\ensuremath{\mathrel{:=}}}%
+  \newunicodechar{⊓}{\ensuremath{\sqcap}}%
+  \newunicodechar{∧}{\ensuremath{\wedge}}%
+  \newunicodechar{∈}{\ensuremath{\in}}%
+  \newunicodechar{≡}{\ensuremath{\equiv}}%
+  \newunicodechar{′}{\ensuremath{{}^{\prime}}}%
+}
+
+% ---------------------------------------------------------------------
+% 2. Captions. The manuscript writes its own "**Figure 1.**" label in
+%    the caption text, so suppress LaTeX's "Figure 1:" prefix to avoid
+%    a duplicated label. Table captions are ordinary body paragraphs
+%    (Pandoc pipe tables carry no \caption), so this only affects figures.
+% ---------------------------------------------------------------------
+\captionsetup{labelformat=empty,justification=raggedright,singlelinecheck=false,font=small}
+
+% ---------------------------------------------------------------------
+% 3. Tables. Sixteen pipe tables become sixteen longtables. Long arm
+%    names in \texttt cannot hyphenate, so widen the usable measure by
+%    shrinking table type and inter-column padding.
+% ---------------------------------------------------------------------
+\AtBeginEnvironment{longtable}{\footnotesize}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{6pt}
+
+% ---------------------------------------------------------------------
+% 4. Floats: keep figures near their references in a single-column draft.
+% ---------------------------------------------------------------------
+\usepackage{float}
+\floatplacement{figure}{htbp}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
+
+% ---------------------------------------------------------------------
+% 5. Author block. Pandoc escapes backslashes in YAML author metadata,
+%    so set the multi-line display form after the template has run.
+% ---------------------------------------------------------------------
+\AtBeginDocument{%
+  \author{Prathamesh Patil\\Department of Computer Engineering\\Sardar Patel Institute of Technology}%
+}
+
+% --- variant B: long code spans are wrapped selectively by the build
+%     post-process, not globally; global seqsplit breaks status tokens
+%     such as SUPPORTED mid-word.
+\usepackage{seqsplit}
+\usepackage{url}
+\let\origtexttt\texttt
+\setlength{\emergencystretch}{4em}
+% Overfull boxes are counted from the log; do not print debug rules in the
+% candidate PDF (they read as black artifacts in narrow table columns).
+\overfullrule=0pt
+
+% --- variant C: allow a break after escaped underscores in plain text
+\let\origunderscore\_
+\renewcommand{\_}{\origunderscore\allowbreak}
+
+% --- variant F: inside longtables, use the original \texttt so cells
+%     break only at separators, not mid-token.
+\AtBeginEnvironment{longtable}{\let\texttt\origtexttt}
+

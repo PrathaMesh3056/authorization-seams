@@ -1,0 +1,32 @@
+[
+  {
+    "case": "bool_amount",
+    "observed": "DENY",
+    "expected": "DENY",
+    "matched": true
+  },
+  {
+    "case": "string_amount",
+    "observed": "DENY",
+    "expected": "DENY",
+    "matched": true
+  },
+  {
+    "case": "unknown_argument",
+    "observed": "DENY",
+    "expected": "DENY",
+    "matched": true
+  },
+  {
+    "case": "missing_argument",
+    "observed": "DENY",
+    "expected": "DENY",
+    "matched": true
+  },
+  {
+    "case": "malformed_contract",
+    "observed": "VALIDATION_ERROR",
+    "expected": "VALIDATION_ERROR",
+    "matched": true
+  }
+]

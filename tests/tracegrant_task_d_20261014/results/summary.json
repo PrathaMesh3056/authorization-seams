@@ -1,0 +1,38 @@
+{
+  "valid_cases": {
+    "numerator": 5,
+    "denominator": 5,
+    "fraction": 1.0
+  },
+  "invalid_contracts": {
+    "numerator": 4,
+    "denominator": 4,
+    "fraction": 1.0
+  },
+  "invalid_inputs": {
+    "numerator": 5,
+    "denominator": 5,
+    "fraction": 1.0
+  },
+  "exploratory_probes": {
+    "denominator": 2,
+    "illustrative_effects_receipt_verified": 2
+  },
+  "controls": {
+    "numerator": 9,
+    "denominator": 9,
+    "fraction": 1.0
+  },
+  "crash_controls": {
+    "denominator": 1,
+    "crashes_observed": 1,
+    "successful_defenses": 0
+  },
+  "unit_tests": {
+    "tests": 52,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 52
+  }
+}

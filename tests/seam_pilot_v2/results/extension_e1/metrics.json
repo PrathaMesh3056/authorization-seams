@@ -1,0 +1,127 @@
+{
+  "apc_alone": {
+    "runs": 8,
+    "attack_cases": 4,
+    "attack_successes": 0,
+    "attack_success_rate": 0.0,
+    "benign_cases": 4,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 0,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 0,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 0,
+    "events": 8,
+    "per_template": {
+      "action_narrow": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  },
+  "tracegrant_alone": {
+    "runs": 8,
+    "attack_cases": 4,
+    "attack_successes": 4,
+    "attack_success_rate": 1.0,
+    "benign_cases": 4,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 4,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 0,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 8,
+    "events": 8,
+    "per_template": {
+      "action_narrow": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      }
+    }
+  },
+  "apc_tracegrant_scope_only": {
+    "runs": 8,
+    "attack_cases": 4,
+    "attack_successes": 4,
+    "attack_success_rate": 1.0,
+    "benign_cases": 4,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 4,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 0,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 8,
+    "events": 8,
+    "per_template": {
+      "action_narrow": {
+        "runs": 8,
+        "leaked": 4,
+        "false_denials": 0,
+        "unauthorized_events": 4
+      }
+    }
+  },
+  "apc_tracegrant_retained": {
+    "runs": 8,
+    "attack_cases": 4,
+    "attack_successes": 0,
+    "attack_success_rate": 0.0,
+    "benign_cases": 4,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 0,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 0,
+    "gate_proof_gaps": 4,
+    "gate_allow_events": 4,
+    "events": 8,
+    "per_template": {
+      "action_narrow": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  },
+  "apc_tracegrant_fail_closed": {
+    "runs": 8,
+    "attack_cases": 4,
+    "attack_successes": 0,
+    "attack_success_rate": 0.0,
+    "benign_cases": 4,
+    "benign_false_denial_cases": 0,
+    "benign_false_denial_rate": 0.0,
+    "unauthorized_effect_events": 0,
+    "false_denial_events": 0,
+    "confidential_marker_external_effects": 0,
+    "receipt_failures": 0,
+    "gate_mapping_rejections": 0,
+    "gate_proof_gaps": 0,
+    "gate_allow_events": 4,
+    "events": 8,
+    "per_template": {
+      "action_narrow": {
+        "runs": 8,
+        "leaked": 0,
+        "false_denials": 0,
+        "unauthorized_events": 0
+      }
+    }
+  }
+}

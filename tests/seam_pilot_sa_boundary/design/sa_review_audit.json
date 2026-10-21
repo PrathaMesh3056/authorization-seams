@@ -1,0 +1,106 @@
+{
+  "schema_version": "seam_pilot_sa_review_audit_v1",
+  "source_reviewed": "seam_pilot_v2/ADVERSARIAL_REVIEW_RESULTS.md",
+  "source_sha256": "f26601a461e7a5c0961d179ea34be9a96fc8e242d9272712a79389715e52f752",
+  "audit_utc": "2026-10-19T13:39:27Z",
+  "applied_to": "seam_pilot_sentinelagent (adapters/sa_harness.py, design/sa_cases.json, design/sa_lock.json, adapters/v2_common.py, authorization_pilot/seam_pilot/model.py)",
+  "leg_a_arm_invariant_scoring": [
+    {
+      "rule_id": "A1",
+      "rule": "Downstream resource scope intersected with delegate's role scope: permitted &= set(case.role_resources)",
+      "source": "authorization_pilot/seam_pilot/model.py Oracle.decide lines 130-135",
+      "norm_kind": "handoff/delegate role scope",
+      "applied_to_no_handoff_arm_2": true,
+      "flip_if_rescoped_to_handoff_arms_only": false,
+      "flip_detail": "No arm-2 cell flips: keyholder_widen's resource_scope persists (widened resource not in case.resources either); all other arm-2 leaks use principal_binding/task_context/prohibited_composition/cumulative_budget/expired/revoked. Arm-2 safe cases (resource_widen) are blocked by P6 before narrowing matters.",
+      "disclose_in_phase_d": false
+    },
+    {
+      "rule_id": "A2",
+      "rule": "Cross-call prohibited_composition from composition-history state (confidential_read/external_send)",
+      "source": "authorization_pilot/seam_pilot/model.py Oracle.decide lines 137-142",
+      "norm_kind": "composition history",
+      "applied_to_no_handoff_arm_2": true,
+      "flip_if_rescoped_to_handoff_arms_only": true,
+      "flip_detail": "composition_history_loss-0-a..3-a arm 2 flip from leak to safe (prohibited_composition reason removed); arm 5 still leaks on the same 4 cases; seam test would fire on those 4 cases with zero gate-behavior change.",
+      "disclose_in_phase_d": true
+    }
+  ],
+  "leg_b_construction_forced_identities": [
+    {
+      "claim_id": "B1",
+      "claim": "arm 2 == arm 5 leak sets (identical 28-case leak sets)",
+      "consumed_inputs_diff": "T0 consumes snapshot.handoff_resources (resource ops) and snapshot.recipient (SEND endpoint) only (sa_harness.t0_ops). Arm 2 snapshot = case.resources/case.recipient; arm 5 snapshot = APC post-handoff effective scope/case.recipient. APC's meet narrows role to root R âˆ© role R, so post-handoff == root on all 96 cases.",
+      "label": "forced-by-construction",
+      "evidential_weight": "zero â€” identical manifests and decisions are necessary, not observed",
+      "informative_contrast": "canonical arm 2 (safe) vs composed variant arm 5 (leak); standalone arm 2v (leak) vs canonical arm 2 (safe)"
+    },
+    {
+      "claim_id": "B2",
+      "claim": "self-review check arm2_arm5_identical_leak_sets",
+      "label": "forced-by-construction",
+      "note": "verifies a construction-forced identity; carries no evidence about composition"
+    },
+    {
+      "claim_id": "B3",
+      "claim": "boundary: under V1, 2v and 5 both derive from role_resources -> identical manifests -> 2v==5v set equality; under V2, 2v and 5 both fill the default recipient -> identical manifests -> 2v==5v set equality",
+      "label": "forced-by-construction, not evidence",
+      "informative_contrast": "canonical arm 2 (safe) vs composed variant arm 5 (leak)"
+    }
+  ],
+  "task3_inert_fixtures_and_vacuous_checks": [
+    {
+      "field_check": "output_schema (P7 check_output)",
+      "consumed_by": "P7",
+      "inert": true,
+      "reason": "Not signed; permitted=[STANDARD_TAG[tool]]; presented tag always in permitted for frozen tools â€” P7 always ALLOWED, vacuous globally"
+    },
+    {
+      "field_check": "revoked (P6/P7 revocation gate)",
+      "consumed_by": "P6/P7",
+      "inert": true,
+      "reason": "Not signed; bridge tokens always revoked=False; never set from APC state â€” cannot cause a token-layer deny"
+    },
+    {
+      "field_check": "expiry (carried in token)",
+      "consumed_by": "none at P6/P7",
+      "inert": true,
+      "reason": "P6/P7 do not consult expiry (prototype.py:133-149); cannot cause a token-layer deny/allow"
+    },
+    {
+      "field_check": "chain_refusal (parent_hash != ROOT)",
+      "consumed_by": "arm 7 T1",
+      "inert": true,
+      "reason": "All T0/T1 tokens have parent_hash=ROOT; vacuous under this construction"
+    },
+    {
+      "field_check": "T1 tags_untranslated",
+      "consumed_by": "arm 7 T1",
+      "inert": true,
+      "reason": "derivable_tags from the 4 frozen tools always contains STANDARD_TAG[tool]; vacuous for the frozen tool set"
+    },
+    {
+      "field_check": "intent_text",
+      "consumed_by": "none (P2 out of scope)",
+      "inert": true,
+      "reason": "Template string, never classified; mapping.md section 7"
+    }
+  ],
+  "correction4_structural_blindness": {
+    "can_seam_test_fire_under_narrowing_preserving_T0": false,
+    "reason": "arm 2 == arm 5 by construction under T0 (identical manifests; APC meet never widens post-handoff scope beyond root), so arm-2-safe AND arm-5-leak is false on every row; seam count structurally 0",
+    "family_types_that_could_make_it_fire": "none under narrowing-preserving T0; only a non-narrowing-preserving bridge (V1/V2) can let arm 5 admit what arm 2 blocks",
+    "motivation_for_v1_v2": "V1 derives resource ops from case.role_resources (may exceed root R); V2 fills omitted recipient default â€” both non-narrowing-preserving, the discriminating tests the review's correction 4 called for"
+  },
+  "conventions_to_disclose": [
+    "the arm-2 authority input is the frozen case root scope, via canonical T0 (arm 2 always canonical regardless of variant loop variable)",
+    "V2Oracle scoring is family-wide and arm-invariant; permitted &= role_resources (A1) and prohibited_composition (A2) are applied to arm 2 although arm 2 has no handoff; rescoping A2 flips composition_history_loss-0-a..3-a arm 2 leak->safe (disclosed; does not affect V1/V2 boundary predictions)",
+    "arm 2==arm 5 (SA pilot) and 2v==5v (boundary, each variant) are construction-forced identities, not evidence; informative contrast is canonical arm 2 (safe) vs composed variant arm 5 (leak)",
+    "under narrowing-preserving T0 the seam test is structurally blind (count forced to 0); any nonzero V1/V2 seam is a bridge-design artifact that exists standalone (arm 2v leaks identically), not composition-specific"
+  ],
+  "file_hashes": {
+    "sa_review_audit_md": "a5fd84f490880e7bad589f9ef318250e35a3d8b7e7a430ce4d8046395d7e4827",
+    "issuance_review_md": null,
+    "sa_review_audit_json": "9bc046d966258df8e0438e66515736d81ab2048192278310de482cb253ecfa12"
+  }
+}

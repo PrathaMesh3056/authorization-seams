@@ -1,0 +1,1 @@
+./run_logged.ps1 -Name 08_pytest -Executable ./.venv/Scripts/python.exe -Arguments @('-m','pytest','-v','--junitxml=logs/08_pytest.junit.xml') ; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

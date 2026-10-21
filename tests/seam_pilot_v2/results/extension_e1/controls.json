@@ -1,0 +1,144 @@
+{
+  "denominator": 3,
+  "executions": 6,
+  "note": "3 controls, each with a failure probe; separate from the 40-case run and not mixed into it (own denominator)",
+  "checks": [
+    {
+      "control": "C-valid",
+      "claim": "A correctly signed evidence record for a benign action_narrow call is admitted and the M2-auth gate completes the call.",
+      "check": "AuthenticatedEvidenceGate.evaluate_signed on action_narrow-0-b (read_public) with an HMAC-signed apc_state record, then gate.receipt.",
+      "expected": {
+        "admitted": true,
+        "code": "ALLOW"
+      },
+      "observed": {
+        "admitted": true,
+        "code": "ALLOW",
+        "reasons": [],
+        "checks": {
+          "H": false,
+          "M": true,
+          "O": true,
+          "P": true,
+          "B": true
+        },
+        "receipt_ok": true
+      },
+      "failure_control": "same record with evidence_signature removed -> must be rejected before admission",
+      "failure_control_expected": {
+        "admitted": false,
+        "code": "EVIDENCE-SIGNATURE-MISSING"
+      },
+      "failure_control_observed": {
+        "admitted": false,
+        "code": "EVIDENCE-SIGNATURE-MISSING",
+        "reasons": [
+          "evidence record carries no signature field"
+        ],
+        "checks": {},
+        "receipt_ok": null
+      },
+      "passed": true,
+      "not_claimed": "does not test key management, freshness/nonces across time, or asymmetric verification; the key is a public test constant"
+    },
+    {
+      "control": "C-mutated",
+      "claim": "A field changed after signing (apc_allowed false -> true) is rejected by the signature check before admission.",
+      "check": "AuthenticatedEvidenceGate.evaluate_signed on action_narrow-0-a (send_external, shadow-denied) with a record mutated after signing.",
+      "expected": {
+        "admitted": false,
+        "code": "EVIDENCE-SIGNATURE-INVALID"
+      },
+      "observed": {
+        "admitted": false,
+        "code": "EVIDENCE-SIGNATURE-INVALID",
+        "reasons": [
+          "evidence signature does not verify"
+        ],
+        "checks": {},
+        "receipt_ok": null
+      },
+      "failure_control": "unmutated signed record on the same call: the signature must verify (no signature code) and admission must then fail on the apc_allowed obligation",
+      "failure_control_expected": {
+        "admitted": false,
+        "code": "PROOF-GAP"
+      },
+      "failure_control_observed": {
+        "admitted": false,
+        "code": "PROOF-GAP",
+        "reasons": [
+          "evidence not admitted (apc_state record failed its rule)"
+        ],
+        "checks": {},
+        "receipt_ok": null
+      },
+      "passed": true,
+      "not_claimed": "does not test mutation of every field; the probe shows the rejection is caused by the post-signing mutation, not by a blanket failure"
+    },
+    {
+      "control": "C-replay",
+      "claim": "A validly signed record from a different call is rejected by the binding check (same signature, wrong call).",
+      "check": "AuthenticatedEvidenceGate.evaluate_signed on action_narrow-0-a (send_external) with the record signed for action_narrow-1-b (read_public).",
+      "expected": {
+        "admitted": false,
+        "code": "EVIDENCE-BINDING-MISMATCH"
+      },
+      "observed": {
+        "admitted": false,
+        "code": "EVIDENCE-BINDING-MISMATCH",
+        "reasons": [
+          "signed record tool='read_public' does not match the call ('send_external')"
+        ],
+        "checks": {},
+        "receipt_ok": null
+      },
+      "failure_control": "the same record presented for its original call (action_narrow-1-b) must be admitted, showing the rejection is binding-specific",
+      "failure_control_expected": {
+        "admitted": true,
+        "code": "ALLOW"
+      },
+      "failure_control_observed": {
+        "admitted": true,
+        "code": "ALLOW",
+        "reasons": [],
+        "checks": {
+          "H": false,
+          "M": true,
+          "O": true,
+          "P": true,
+          "B": true
+        },
+        "receipt_ok": true
+      },
+      "passed": true,
+      "not_claimed": "does not test replay within a time window (no freshness/nonce beyond the call binding) or cross-process replay"
+    }
+  ],
+  "passed": true,
+  "lock_matches": [
+    {
+      "check": "C-valid",
+      "matched": true
+    },
+    {
+      "check": "C-valid-probe-missing-signature",
+      "matched": true
+    },
+    {
+      "check": "C-mutated",
+      "matched": true
+    },
+    {
+      "check": "C-mutated-probe-unmutated",
+      "matched": true
+    },
+    {
+      "check": "C-replay",
+      "matched": true
+    },
+    {
+      "check": "C-replay-probe-original-call",
+      "matched": true
+    }
+  ]
+}

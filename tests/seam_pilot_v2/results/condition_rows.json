@@ -1,0 +1,887 @@
+{
+  "arm": "apc_tracegrant_scope_only",
+  "true_positive": 24,
+  "false_positive": 8,
+  "false_negative": 0,
+  "true_negative": 48,
+  "precision": 0.75,
+  "recall": 1.0,
+  "rows": [
+    {
+      "case": "resource_widen-0-a",
+      "template": "resource_widen",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "resource_scope"
+      ]
+    },
+    {
+      "case": "narrowed_scope-0-b",
+      "template": "resource_widen",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "resource_widen-1-a",
+      "template": "resource_widen",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "resource_scope"
+      ]
+    },
+    {
+      "case": "narrowed_scope-1-b",
+      "template": "resource_widen",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "resource_widen-2-a",
+      "template": "resource_widen",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "resource_scope"
+      ]
+    },
+    {
+      "case": "narrowed_scope-2-b",
+      "template": "resource_widen",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "resource_widen-3-a",
+      "template": "resource_widen",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "resource_scope"
+      ]
+    },
+    {
+      "case": "narrowed_scope-3-b",
+      "template": "resource_widen",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "principal_rebind-0-a",
+      "template": "principal_rebind",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "principal_binding",
+        "task_context"
+      ]
+    },
+    {
+      "case": "preserved_binding-0-b",
+      "template": "principal_rebind",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "principal_rebind-1-a",
+      "template": "principal_rebind",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "principal_binding",
+        "task_context"
+      ]
+    },
+    {
+      "case": "preserved_binding-1-b",
+      "template": "principal_rebind",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "principal_rebind-2-a",
+      "template": "principal_rebind",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "principal_binding",
+        "task_context"
+      ]
+    },
+    {
+      "case": "preserved_binding-2-b",
+      "template": "principal_rebind",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "principal_rebind-3-a",
+      "template": "principal_rebind",
+      "kind": "attack",
+      "hypothesis": "H1",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "principal_binding",
+        "task_context"
+      ]
+    },
+    {
+      "case": "preserved_binding-3-b",
+      "template": "principal_rebind",
+      "kind": "benign",
+      "hypothesis": "H1",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "composition_history_loss-0-a",
+      "template": "composition_history_loss",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "prohibited_composition"
+      ]
+    },
+    {
+      "case": "history_sufficient-0-b",
+      "template": "composition_history_loss",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "composition_history_loss-1-a",
+      "template": "composition_history_loss",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "prohibited_composition"
+      ]
+    },
+    {
+      "case": "history_sufficient-1-b",
+      "template": "composition_history_loss",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "composition_history_loss-2-a",
+      "template": "composition_history_loss",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "prohibited_composition"
+      ]
+    },
+    {
+      "case": "history_sufficient-2-b",
+      "template": "composition_history_loss",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "composition_history_loss-3-a",
+      "template": "composition_history_loss",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "prohibited_composition"
+      ]
+    },
+    {
+      "case": "history_sufficient-3-b",
+      "template": "composition_history_loss",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "repeated_calls-0-a",
+      "template": "repeated_calls",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "cumulative_budget"
+      ]
+    },
+    {
+      "case": "single_call-0-b",
+      "template": "repeated_calls",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "repeated_calls-1-a",
+      "template": "repeated_calls",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "cumulative_budget"
+      ]
+    },
+    {
+      "case": "single_call-1-b",
+      "template": "repeated_calls",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "repeated_calls-2-a",
+      "template": "repeated_calls",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "cumulative_budget"
+      ]
+    },
+    {
+      "case": "single_call-2-b",
+      "template": "repeated_calls",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "repeated_calls-3-a",
+      "template": "repeated_calls",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "cumulative_budget"
+      ]
+    },
+    {
+      "case": "single_call-3-b",
+      "template": "repeated_calls",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "budget_reset-0-a",
+      "template": "budget_reset",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "cumulative_budget"
+      ]
+    },
+    {
+      "case": "budget_preserved-0-b",
+      "template": "budget_reset",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "budget_reset-1-a",
+      "template": "budget_reset",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "cumulative_budget"
+      ]
+    },
+    {
+      "case": "budget_preserved-1-b",
+      "template": "budget_reset",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "budget_reset-2-a",
+      "template": "budget_reset",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "cumulative_budget"
+      ]
+    },
+    {
+      "case": "budget_preserved-2-b",
+      "template": "budget_reset",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "budget_reset-3-a",
+      "template": "budget_reset",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "cumulative_budget"
+      ]
+    },
+    {
+      "case": "budget_preserved-3-b",
+      "template": "budget_reset",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "expired_delegation-0-a",
+      "template": "expired_delegation",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "expired"
+      ]
+    },
+    {
+      "case": "current_delegation-0-b",
+      "template": "expired_delegation",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "expired_delegation-1-a",
+      "template": "expired_delegation",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "expired"
+      ]
+    },
+    {
+      "case": "current_delegation-1-b",
+      "template": "expired_delegation",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "expired_delegation-2-a",
+      "template": "expired_delegation",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "expired"
+      ]
+    },
+    {
+      "case": "current_delegation-2-b",
+      "template": "expired_delegation",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "expired_delegation-3-a",
+      "template": "expired_delegation",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "expired"
+      ]
+    },
+    {
+      "case": "current_delegation-3-b",
+      "template": "expired_delegation",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "revoked_envelope-0-a",
+      "template": "revoked_envelope",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "revoked"
+      ]
+    },
+    {
+      "case": "renewed_grant-0-b",
+      "template": "revoked_envelope",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "revoked_envelope-1-a",
+      "template": "revoked_envelope",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "revoked"
+      ]
+    },
+    {
+      "case": "renewed_grant-1-b",
+      "template": "revoked_envelope",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "revoked_envelope-2-a",
+      "template": "revoked_envelope",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "revoked"
+      ]
+    },
+    {
+      "case": "renewed_grant-2-b",
+      "template": "revoked_envelope",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "revoked_envelope-3-a",
+      "template": "revoked_envelope",
+      "kind": "attack",
+      "hypothesis": "H2",
+      "predicted_safe": false,
+      "observed_leak": true,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "revoked"
+      ]
+    },
+    {
+      "case": "renewed_grant-3-b",
+      "template": "revoked_envelope",
+      "kind": "benign",
+      "hypothesis": "H2",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "recipient_substitution-0-a",
+      "template": "recipient_substitution",
+      "kind": "attack",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "recipient_constraint"
+      ]
+    },
+    {
+      "case": "correct_translation-0-b",
+      "template": "recipient_substitution",
+      "kind": "benign",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "recipient_substitution-1-a",
+      "template": "recipient_substitution",
+      "kind": "attack",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "recipient_constraint"
+      ]
+    },
+    {
+      "case": "correct_translation-1-b",
+      "template": "recipient_substitution",
+      "kind": "benign",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "recipient_substitution-2-a",
+      "template": "recipient_substitution",
+      "kind": "attack",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "recipient_constraint"
+      ]
+    },
+    {
+      "case": "correct_translation-2-b",
+      "template": "recipient_substitution",
+      "kind": "benign",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "recipient_substitution-3-a",
+      "template": "recipient_substitution",
+      "kind": "attack",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "recipient_constraint"
+      ]
+    },
+    {
+      "case": "correct_translation-3-b",
+      "template": "recipient_substitution",
+      "kind": "benign",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "omitted_forbidden_default-0-a",
+      "template": "omitted_forbidden_default",
+      "kind": "attack",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "recipient_constraint"
+      ]
+    },
+    {
+      "case": "permitted_default-0-b",
+      "template": "omitted_forbidden_default",
+      "kind": "benign",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "omitted_forbidden_default-1-a",
+      "template": "omitted_forbidden_default",
+      "kind": "attack",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "recipient_constraint"
+      ]
+    },
+    {
+      "case": "permitted_default-1-b",
+      "template": "omitted_forbidden_default",
+      "kind": "benign",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "omitted_forbidden_default-2-a",
+      "template": "omitted_forbidden_default",
+      "kind": "attack",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "recipient_constraint"
+      ]
+    },
+    {
+      "case": "permitted_default-2-b",
+      "template": "omitted_forbidden_default",
+      "kind": "benign",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "omitted_forbidden_default-3-a",
+      "template": "omitted_forbidden_default",
+      "kind": "attack",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": [
+        "recipient_constraint"
+      ]
+    },
+    {
+      "case": "permitted_default-3-b",
+      "template": "omitted_forbidden_default",
+      "kind": "benign",
+      "hypothesis": "H4",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "unsatisfiable_verify-0-a",
+      "template": "unsatisfiable_verify",
+      "kind": "attack",
+      "hypothesis": "H3",
+      "predicted_safe": false,
+      "observed_leak": false,
+      "observed_receipt_failure": true,
+      "oracle_reasons": []
+    },
+    {
+      "case": "verified_evidence-0-b",
+      "template": "unsatisfiable_verify",
+      "kind": "benign",
+      "hypothesis": "H3",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "unsatisfiable_verify-1-a",
+      "template": "unsatisfiable_verify",
+      "kind": "attack",
+      "hypothesis": "H3",
+      "predicted_safe": false,
+      "observed_leak": false,
+      "observed_receipt_failure": true,
+      "oracle_reasons": []
+    },
+    {
+      "case": "verified_evidence-1-b",
+      "template": "unsatisfiable_verify",
+      "kind": "benign",
+      "hypothesis": "H3",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "unsatisfiable_verify-2-a",
+      "template": "unsatisfiable_verify",
+      "kind": "attack",
+      "hypothesis": "H3",
+      "predicted_safe": false,
+      "observed_leak": false,
+      "observed_receipt_failure": true,
+      "oracle_reasons": []
+    },
+    {
+      "case": "verified_evidence-2-b",
+      "template": "unsatisfiable_verify",
+      "kind": "benign",
+      "hypothesis": "H3",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    },
+    {
+      "case": "unsatisfiable_verify-3-a",
+      "template": "unsatisfiable_verify",
+      "kind": "attack",
+      "hypothesis": "H3",
+      "predicted_safe": false,
+      "observed_leak": false,
+      "observed_receipt_failure": true,
+      "oracle_reasons": []
+    },
+    {
+      "case": "verified_evidence-3-b",
+      "template": "unsatisfiable_verify",
+      "kind": "benign",
+      "hypothesis": "H3",
+      "predicted_safe": true,
+      "observed_leak": false,
+      "observed_receipt_failure": false,
+      "oracle_reasons": []
+    }
+  ]
+}

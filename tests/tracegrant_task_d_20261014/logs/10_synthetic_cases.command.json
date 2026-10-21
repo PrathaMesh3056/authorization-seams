@@ -1,0 +1,8 @@
+{
+  "cwd": "C:\\Users\\prath\\Downloads\\RPaper\\tracegrant_task_d_20261014",
+  "executable": "./.venv/Scripts/python.exe",
+  "arguments": [
+    "-m",
+    "implementation.run_artifact"
+  ]
+}

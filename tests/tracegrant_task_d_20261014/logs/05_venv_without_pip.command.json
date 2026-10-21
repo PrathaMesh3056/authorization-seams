@@ -1,0 +1,11 @@
+{
+  "cwd": "C:\\Users\\prath\\Downloads\\RPaper\\tracegrant_task_d_20261014",
+  "arguments": [
+    "-m",
+    "venv",
+    "--without-pip",
+    "--system-site-packages",
+    ".venv"
+  ],
+  "executable": "python"
+}

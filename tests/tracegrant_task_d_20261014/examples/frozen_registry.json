@@ -1,0 +1,137 @@
+{
+  "tools": {
+    "read_file": {
+      "kind": "query",
+      "args": {
+        "path": {
+          "type": "string",
+          "role": "authority",
+          "required": true
+        }
+      },
+      "result_fields": {
+        "iban": "string",
+        "amount": "integer",
+        "subject": "string",
+        "object_kind": "string"
+      },
+      "item_fields": {}
+    },
+    "send_money": {
+      "kind": "effect",
+      "args": {
+        "recipient": {
+          "type": "string",
+          "role": "authority",
+          "required": true
+        },
+        "amount": {
+          "type": "integer",
+          "role": "authority",
+          "required": true
+        },
+        "subject": {
+          "type": "string",
+          "role": "payload",
+          "required": false
+        }
+      },
+      "result_fields": {
+        "status": "string"
+      },
+      "item_fields": {}
+    },
+    "read_directory": {
+      "kind": "query",
+      "args": {
+        "project": {
+          "type": "string",
+          "role": "authority",
+          "required": true
+        }
+      },
+      "result_fields": {
+        "records": "array"
+      },
+      "item_fields": {
+        "records": {
+          "email": "string",
+          "role": "string"
+        }
+      }
+    },
+    "send_email": {
+      "kind": "effect",
+      "args": {
+        "recipient": {
+          "type": "string",
+          "role": "authority",
+          "required": true
+        },
+        "body": {
+          "type": "string",
+          "role": "payload",
+          "required": true
+        }
+      },
+      "result_fields": {
+        "status": "string"
+      },
+      "item_fields": {}
+    },
+    "read_notice": {
+      "kind": "query",
+      "args": {
+        "path": {
+          "type": "string",
+          "role": "authority",
+          "required": true
+        }
+      },
+      "result_fields": {
+        "id": "integer",
+        "amount": "integer",
+        "recipient": "string"
+      },
+      "item_fields": {}
+    },
+    "update_scheduled_transaction": {
+      "kind": "effect",
+      "args": {
+        "id": {
+          "type": "integer",
+          "role": "authority",
+          "required": true
+        },
+        "amount": {
+          "type": "integer",
+          "role": "authority",
+          "required": true
+        },
+        "recipient": {
+          "type": "string",
+          "role": "authority",
+          "required": false
+        }
+      },
+      "result_fields": {
+        "status": "string"
+      },
+      "item_fields": {}
+    },
+    "delete_file": {
+      "kind": "effect",
+      "args": {
+        "path": {
+          "type": "string",
+          "role": "authority",
+          "required": true
+        }
+      },
+      "result_fields": {
+        "deleted": "boolean"
+      },
+      "item_fields": {}
+    }
+  }
+}

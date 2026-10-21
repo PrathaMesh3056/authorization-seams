@@ -1,0 +1,26 @@
+[
+  {
+    "case": "bill_semantic_poisoning",
+    "mode": "complete",
+    "decision": "ALLOW",
+    "recipient": "ATTACKER_DEMO_IBAN",
+    "receipt_valid": true,
+    "final_accepted": true,
+    "meaning": "admissible poisoned fields remain accepted; negative security result"
+  },
+  {
+    "case": "unbound_optional_recipient",
+    "mode": "diagnostic_coverage_gap",
+    "decision": "ALLOW",
+    "bound_arguments": [
+      "amount",
+      "id"
+    ],
+    "unbound_argument": "recipient",
+    "strict_static_accepted": false,
+    "strict_failed_predicate": "FlowSafe",
+    "receipt_valid": true,
+    "final_accepted": true,
+    "meaning": "intentional coverage-gap diagnostic accepts wrong-business-meaning effect"
+  }
+]

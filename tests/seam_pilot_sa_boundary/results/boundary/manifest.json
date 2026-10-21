@@ -1,0 +1,493 @@
+{
+  "run": {
+    "pair": "apc->sentinelagent-boundary",
+    "started_utc": "2026-10-19T14:17:07Z",
+    "ended_utc": "2026-10-19T14:17:07Z",
+    "executions": 1152,
+    "cases": 96,
+    "arms": [
+      "apc_alone",
+      "sentinelagent_alone",
+      "sentinelagent_alone_variant",
+      "apc_sentinelagent_scope_only",
+      "apc_sentinelagent_retained",
+      "apc_sentinelagent_fail_closed"
+    ],
+    "variants": [
+      "v1",
+      "v2"
+    ],
+    "argv": [],
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "sequential": "one arm-variant at a time; no concurrency; no network (prepare() blocks it)",
+    "paid_llm_calls": 0
+  },
+  "lock": {
+    "boundary_lock_path": "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sa_boundary\\design\\boundary_lock.json",
+    "boundary_lock_sha256": "b4deab1aff17e974f0187143dc235bb95544f65a2fb1cc90fd4aec56082c4296",
+    "boundary_harness_sha256": "fa8f7e424f59c4b9c79944b2699c88ae02f6e72bdcc974e96a32d3e790814af4",
+    "sa_cases_sha256": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2",
+    "locked_utc": "2026-10-19T14:11:31Z",
+    "case_count": 96,
+    "prediction_source": "design/boundary_condition.md sections 2-5; call_to_token_mapping.md sections 4-10; manifest diff computed from sa_cases.json at lock time",
+    "note": "predictions and cases were locked before the run; hashes above are the proof"
+  },
+  "key_model": {
+    "upstream_file": "C:\\Users\\prath\\Downloads\\RPaper\\sentinelagent_audit_20261014\\upstream\\sentinelagent_das_prototype.py",
+    "upstream_sha256": "739d9db1e836d7edaf567cabfa6c4ae074bb81d74ad522e98b7d04a3237b36be",
+    "trusted_key_hex": "7365616d2d70696c6f742d73656e74696e656c6167656e742d6272696467652d746573742d6b65792d32303236",
+    "original_das_key_hex": "73656e74696e656c6167656e742d6461732d7365637265742d6b65792d32303236",
+    "note": "module-level constant set at runtime; upstream file byte-identical; models the trust relationship (receiver must hold the issuer's key)"
+  },
+  "controls": {
+    "ok": true,
+    "records": [
+      {
+        "id": "CV3-s1s3",
+        "setup": "re-run S1 (freshness), S2 (signature), S3 (attestation) controls from sa_harness",
+        "expected": "all 10 control records ok",
+        "observed_ok": true,
+        "records": [
+          {
+            "id": "S1-valid",
+            "setup": "validly signed token with expiry in the past (2001-01-01Z) presented to native P6/P7",
+            "expected": {
+              "p6": "ALLOWED by scope",
+              "p7": "OUTPUT_ALLOWED"
+            },
+            "observed": {
+              "p6": "ALLOWED by scope:read_confidential",
+              "p7": "OUTPUT_ALLOWED"
+            },
+            "ok": true
+          },
+          {
+            "id": "S1-failure",
+            "setup": "failure control: same token content, manifest mutated after signing",
+            "expected": {
+              "p6": "SIGNATURE_INVALID",
+              "p7": "SIGNATURE_INVALID"
+            },
+            "observed": {
+              "p6": "SIGNATURE_INVALID",
+              "p7": "SIGNATURE_INVALID"
+            },
+            "ok": true
+          },
+          {
+            "id": "S1-probe",
+            "setup": "revoked via revoke_chain (count=1); proves P6/P7 are not blanket no-ops",
+            "expected": {
+              "p6": "TOKEN_REVOKED",
+              "p7": "TOKEN_REVOKED"
+            },
+            "observed": {
+              "p6": "TOKEN_REVOKED",
+              "p7": "TOKEN_REVOKED"
+            },
+            "ok": true
+          },
+          {
+            "id": "S2-foreign",
+            "setup": "T0 content signed with the prototype's published key (REAL_DAS_KEY)",
+            "expected": {
+              "p6": "SIGNATURE_INVALID",
+              "p7": "SIGNATURE_INVALID"
+            },
+            "observed": {
+              "p6": "SIGNATURE_INVALID",
+              "p7": "SIGNATURE_INVALID"
+            },
+            "ok": true
+          },
+          {
+            "id": "S2-trusted",
+            "setup": "failure control for S2-foreign: identical content signed with the trusted bridge key",
+            "expected": {
+              "p6": "ALLOWED by scope",
+              "p7": "OUTPUT_ALLOWED"
+            },
+            "observed": {
+              "p6": "ALLOWED by scope:read_confidential",
+              "p7": "OUTPUT_ALLOWED"
+            },
+            "ok": true
+          },
+          {
+            "id": "S2-two-minters",
+            "setup": "identical scope/manifest/tags; one token attributed to the bridge, one to the delegate (token ids differ only for auditability); both signed with the trusted key",
+            "expected": {
+              "p6_both": "ALLOWED by scope",
+              "p7_both": "OUTPUT_ALLOWED",
+              "codes_identical": true
+            },
+            "observed": {
+              "p6_bridge": "ALLOWED by scope:read_confidential",
+              "p6_delegate": "ALLOWED by scope:read_confidential",
+              "p7_bridge": "OUTPUT_ALLOWED",
+              "p7_delegate": "OUTPUT_ALLOWED",
+              "codes_identical": true
+            },
+            "ok": true
+          },
+          {
+            "id": "S2-mutated",
+            "setup": "failure control: delegate-minted token, manifest widened after signing without re-signing",
+            "expected": {
+              "p6": "SIGNATURE_INVALID",
+              "p7": "SIGNATURE_INVALID"
+            },
+            "observed": {
+              "p6": "SIGNATURE_INVALID",
+              "p7": "SIGNATURE_INVALID"
+            },
+            "ok": true
+          },
+          {
+            "id": "S3-valid",
+            "setup": "signed attestation for the control call; probe tampers one signature character",
+            "expected": {
+              "gate": "ALLOWED",
+              "tamper": "ATTESTATION-SIGNATURE-INVALID"
+            },
+            "observed": {
+              "gate": "ATTESTATION-OK",
+              "tamper": "ATTESTATION-SIGNATURE-INVALID"
+            },
+            "ok": true
+          },
+          {
+            "id": "S3-mutated",
+            "setup": "failure control: apc_allowed flipped to true after signing; probe is the unmutated denied attestation",
+            "expected": {
+              "gate": "ATTESTATION-SIGNATURE-INVALID",
+              "probe": "APC-DENY"
+            },
+            "observed": {
+              "gate": "ATTESTATION-SIGNATURE-INVALID",
+              "probe": "APC-DENY"
+            },
+            "ok": true
+          },
+          {
+            "id": "S3-replay",
+            "setup": "valid attestation bound to the control call presented for a different resource",
+            "expected": {
+              "gate": "ATTESTATION-BINDING-MISMATCH",
+              "probe": "ALLOWED"
+            },
+            "observed": {
+              "gate": "ATTESTATION-BINDING-MISMATCH",
+              "probe": "ATTESTATION-OK"
+            },
+            "ok": true
+          }
+        ],
+        "ok": true
+      },
+      {
+        "id": "CV1",
+        "setup": "v1 manifest for resource_widen-0-a vs canonical manifest",
+        "expected": {
+          "v1_contains_widened_op": true,
+          "canonical_excludes_widened_op": true
+        },
+        "observed": {
+          "v1": [
+            "READ doc-001",
+            "READ internal",
+            "READ mail:external",
+            "READ docs:external/secret"
+          ],
+          "canonical": [
+            "READ doc-001",
+            "READ internal",
+            "READ mail:external"
+          ]
+        },
+        "ok": true
+      },
+      {
+        "id": "CV1b",
+        "setup": "v1/v2 manifests identical to canonical on >=2 no-divergence benign cases",
+        "expected": {
+          "count_ge_2": true,
+          "case_ids": [
+            "preserved_binding-0-b",
+            "preserved_binding-1-b"
+          ]
+        },
+        "observed": {
+          "nondivergence_cases": [
+            "preserved_binding-0-b",
+            "preserved_binding-1-b"
+          ],
+          "count": 2
+        },
+        "ok": true
+      },
+      {
+        "id": "CV2",
+        "setup": "v1 token admits widened op (READ docs:external/secret) where canonical token is BLOCKED",
+        "expected": {
+          "v1_p6_allowed": true,
+          "canonical_p6_blocked": true
+        },
+        "observed": {
+          "v1": {
+            "p6_allowed": true,
+            "p6_message": "ALLOWED by scope:read_confidential"
+          },
+          "canonical": {
+            "p6_allowed": false,
+            "p6_message": "BLOCKED: READ docs:external/secret not in manifest"
+          }
+        },
+        "ok": true
+      },
+      {
+        "id": "CV2b",
+        "setup": "v2 token admits the default-filled send (SEND forbidden-default@example.test)",
+        "expected": {
+          "v2_p6_allowed": true,
+          "manifest_contains_default_send": true
+        },
+        "observed": {
+          "v2": {
+            "p6_allowed": true,
+            "p6_message": "ALLOWED by scope:send_external",
+            "manifest": {
+              "send_external": [
+                "SEND forbidden-default@example.test"
+              ]
+            }
+          }
+        },
+        "ok": true
+      },
+      {
+        "id": "CV4",
+        "setup": "determinism: 10 re-runs (10 cases x 4 arm-variant combos) identical event-by-event",
+        "expected": "no mismatches",
+        "observed": {
+          "reruns": 40,
+          "mismatches": []
+        },
+        "ok": true
+      },
+      {
+        "id": "CV5",
+        "setup": "non-vacuity: admissions > 0 and denials > 0 in each arm-variant cell",
+        "expected": "all cells non-vacuous",
+        "observed": {
+          "apc_alone::v1": {
+            "admissions": 66,
+            "denials": 42,
+            "ok": true
+          },
+          "apc_alone::v2": {
+            "admissions": 66,
+            "denials": 42,
+            "ok": true
+          },
+          "apc_sentinelagent_fail_closed::v1": {
+            "admissions": 36,
+            "denials": 72,
+            "ok": true
+          },
+          "apc_sentinelagent_fail_closed::v2": {
+            "admissions": 36,
+            "denials": 72,
+            "ok": true
+          },
+          "apc_sentinelagent_retained::v1": {
+            "admissions": 62,
+            "denials": 46,
+            "ok": true
+          },
+          "apc_sentinelagent_retained::v2": {
+            "admissions": 62,
+            "denials": 46,
+            "ok": true
+          },
+          "apc_sentinelagent_scope_only::v1": {
+            "admissions": 96,
+            "denials": 12,
+            "ok": true
+          },
+          "apc_sentinelagent_scope_only::v2": {
+            "admissions": 96,
+            "denials": 12,
+            "ok": true
+          },
+          "sentinelagent_alone::v1": {
+            "admissions": 92,
+            "denials": 16,
+            "ok": true
+          },
+          "sentinelagent_alone::v2": {
+            "admissions": 92,
+            "denials": 16,
+            "ok": true
+          },
+          "sentinelagent_alone_variant::v1": {
+            "admissions": 96,
+            "denials": 12,
+            "ok": true
+          },
+          "sentinelagent_alone_variant::v2": {
+            "admissions": 96,
+            "denials": 12,
+            "ok": true
+          }
+        },
+        "ok": true
+      }
+    ]
+  },
+  "self_review": {
+    "ok": true,
+    "checks": [
+      {
+        "check": "controls_passed",
+        "ok": true,
+        "detail": {
+          "records": 7
+        }
+      },
+      {
+        "check": "hash_unchanged:boundary_harness.py",
+        "ok": true,
+        "detail": {
+          "sha256": "fa8f7e424f59c4b9c79944b2699c88ae02f6e72bdcc974e96a32d3e790814af4"
+        }
+      },
+      {
+        "check": "hash_unchanged:sa_cases.json",
+        "ok": true,
+        "detail": {
+          "sha256": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2"
+        }
+      },
+      {
+        "check": "determinism_rerun",
+        "ok": true,
+        "detail": {
+          "detail": {
+            "id": "CV4",
+            "setup": "determinism: 10 re-runs (10 cases x 4 arm-variant combos) identical event-by-event",
+            "expected": "no mismatches",
+            "observed": {
+              "reruns": 40,
+              "mismatches": []
+            },
+            "ok": true
+          }
+        }
+      },
+      {
+        "check": "leak_audit",
+        "ok": true,
+        "detail": {
+          "problems": []
+        }
+      },
+      {
+        "check": "not_vacuous",
+        "ok": true,
+        "detail": {
+          "admissions": 896,
+          "denials": 400
+        }
+      }
+    ]
+  },
+  "expected_vs_observed_ok": true,
+  "seam_test": {
+    "v1": {
+      "arm1_leaks": [],
+      "arm2_leaks": [
+        "budget_reset-0-a",
+        "budget_reset-1-a",
+        "budget_reset-2-a",
+        "budget_reset-3-a",
+        "composition_history_loss-0-a",
+        "composition_history_loss-1-a",
+        "composition_history_loss-2-a",
+        "composition_history_loss-3-a",
+        "expired_delegation-0-a",
+        "expired_delegation-1-a",
+        "expired_delegation-2-a",
+        "expired_delegation-3-a",
+        "keyholder_widen-0-a",
+        "keyholder_widen-1-a",
+        "keyholder_widen-2-a",
+        "keyholder_widen-3-a",
+        "principal_rebind-0-a",
+        "principal_rebind-1-a",
+        "principal_rebind-2-a",
+        "principal_rebind-3-a",
+        "repeated_calls-0-a",
+        "repeated_calls-1-a",
+        "repeated_calls-2-a",
+        "repeated_calls-3-a",
+        "revoked_envelope-0-a",
+        "revoked_envelope-1-a",
+        "revoked_envelope-2-a",
+        "revoked_envelope-3-a"
+      ],
+      "seam_cases": [
+        "resource_widen-0-a",
+        "resource_widen-1-a",
+        "resource_widen-2-a",
+        "resource_widen-3-a"
+      ],
+      "seam_count": 4
+    },
+    "v2": {
+      "arm1_leaks": [],
+      "arm2_leaks": [
+        "budget_reset-0-a",
+        "budget_reset-1-a",
+        "budget_reset-2-a",
+        "budget_reset-3-a",
+        "composition_history_loss-0-a",
+        "composition_history_loss-1-a",
+        "composition_history_loss-2-a",
+        "composition_history_loss-3-a",
+        "expired_delegation-0-a",
+        "expired_delegation-1-a",
+        "expired_delegation-2-a",
+        "expired_delegation-3-a",
+        "keyholder_widen-0-a",
+        "keyholder_widen-1-a",
+        "keyholder_widen-2-a",
+        "keyholder_widen-3-a",
+        "principal_rebind-0-a",
+        "principal_rebind-1-a",
+        "principal_rebind-2-a",
+        "principal_rebind-3-a",
+        "repeated_calls-0-a",
+        "repeated_calls-1-a",
+        "repeated_calls-2-a",
+        "repeated_calls-3-a",
+        "revoked_envelope-0-a",
+        "revoked_envelope-1-a",
+        "revoked_envelope-2-a",
+        "revoked_envelope-3-a"
+      ],
+      "seam_cases": [
+        "omitted_forbidden_default-0-a",
+        "omitted_forbidden_default-1-a",
+        "omitted_forbidden_default-2-a",
+        "omitted_forbidden_default-3-a"
+      ],
+      "seam_count": 4
+    }
+  },
+  "file_hashes": {
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sa_boundary\\adapters\\boundary_harness.py": "fa8f7e424f59c4b9c79944b2699c88ae02f6e72bdcc974e96a32d3e790814af4",
+    "C:\\Users\\prath\\Downloads\\RPaper\\seam_pilot_sentinelagent\\design\\sa_cases.json": "ca2f05d5ea0c04fd2a82603ed78971d323a566bac0f54c8e1af20b9ae42cb6d2"
+  }
+}
