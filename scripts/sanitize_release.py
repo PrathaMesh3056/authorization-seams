@@ -119,8 +119,9 @@ def main() -> int:
         copied += 1
 
     # Preserve the frozen manifest next to the release manifest.
-    frozen_manifest = DIST / "artifacts" / "sha256sums.txt"
+    frozen_manifest = repo_common.MANIFEST_TXT
     if frozen_manifest.exists():
+        (DIST / "artifacts").mkdir(parents=True, exist_ok=True)
         shutil.copyfile(frozen_manifest, DIST / "artifacts" / "sha256sums.frozen.txt")
 
     (DIST / "SANITIZATION_REPORT.json").write_text(
@@ -156,6 +157,12 @@ def main() -> int:
             + manifest_result.stderr,
             file=sys.stderr,
         )
+
+    # Remove caches created by running the manifest tool inside the release tree.
+    for cache_name in ("__pycache__", ".pytest_cache"):
+        for cache_dir in DIST.rglob(cache_name):
+            if cache_dir.is_dir():
+                shutil.rmtree(cache_dir, ignore_errors=True)
 
     print(f"sanitized tree: {DIST}")
     print(f"files copied: {copied}; files changed: {changed}; files skipped: {len(skipped)}")

@@ -45,8 +45,8 @@ are the build acceptance criteria.
 
 | Artifact | Result |
 |---|---|
-| `dist/sanitized/` | 296 files; own manifest verifies; 9 QA tests pass |
-| `dist/seam-conformance-kit-20261021-review.zip` | 2,101,313 bytes; SHA-256 `DCB85AB69AA8C403366CC8B7430856EDAC8108E75EF7758EB2D5EB5A48094C46` |
+| `dist/sanitized/` | 298 files; own manifest verifies; 9 QA tests pass |
+| `dist/seam-conformance-kit-*-review.zip` | Built from tracked files; SHA-256 recorded in the `.sha256` sidecar |
 | Zip extraction check | manifest verifies; 9 QA tests pass; paper builds to 24 pages |
 
 ## Fresh-clone check

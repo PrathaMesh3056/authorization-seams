@@ -28,6 +28,8 @@ never expose the internal placeholder email.
    as the working tree, or simply inspect that no replacement tokens remain:
 
    ```powershell
+   $env:PYTHONDONTWRITEBYTECODE = '1'
+   python scripts/verify_artifacts.py
    Get-ChildItem dist\sanitized -Recurse -File |
      Select-String -Pattern 'C:\\Users|/home/|/Users/|agentscan@gmail\.com'
    ```
