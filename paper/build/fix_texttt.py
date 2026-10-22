@@ -53,13 +53,22 @@ while True:
         break
     content = text[open_pos:close_pos]
     scanned += 1
-    if len(content) > 20 and (
-        r"\textbackslash{}" in content or r"\_" in content or "/" in content
-    ):
-        # Paths and long identifiers: use \path, which typesets in
-        # typewriter and inserts breakpoints at path separators. Convert
-        # Pandoc's LaTeX escapes back to the literal characters expected
-        # by \path.
+    looks_like_path = (
+        r"\textbackslash{}" in content or "/" in content
+    )
+    has_space_or_bracket = (
+        " " in content
+        or r"\ " in content
+        or "{[}" in content
+        or "{]}" in content
+        or "[" in content
+        or "]" in content
+    )
+    if len(content) > 20 and looks_like_path and not has_space_or_bracket:
+        # True paths only: use \path, which typesets in typewriter and
+        # inserts breakpoints at path separators. Do not route identifiers
+        # or code snippets with spaces/brackets here: \path prints Pandoc's
+        # {[}/{]} escapes literally and ignores spaces.
         path = content
         path = path.replace(r"\textbackslash{}", "\\")
         path = path.replace(r"\_", "_")

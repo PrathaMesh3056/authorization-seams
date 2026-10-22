@@ -9,7 +9,8 @@ This directory contains the corrected draft. The frozen predecessor
 |---|---|
 | `MANUSCRIPT_REVISED.md` | Corrected manuscript source; the only build input |
 | `hashes.txt` | Frozen Table 15 hashes; do not edit |
-| `drafts/MANUSCRIPT_DRAFT_2026-10-21.pdf` | Canonical 24-page draft PDF |
+| `drafts/MANUSCRIPT_DRAFT_2026-10-23.pdf` | Canonical 24-page named-author draft PDF |
+| `drafts/MANUSCRIPT_DRAFT_2026-10-21.pdf` | Archived 21 October draft PDF |
 | `figures/` | Canonical vector figures and their recorded hashes |
 | `build/` | Pandoc + XeLaTeX build scripts and preamble |
 | `latex_export/` | Standalone single-file LaTeX source and reference PDF |
@@ -33,7 +34,10 @@ deliberately if you intend to refresh the draft.
 ## Draft facts
 
 - Single-column `article`-class, letter paper, 10 pt, 0.75 in margins.
-- 24 pages, 7 static reference entries, both figures vector.
+- 24 pages, 8 static reference entries, both figures vector.
+- Named-author build: the title page and PDF metadata name Prathamesh Patil;
+  the placeholder email is not printed. A double-blind venue would require
+  re-anonymization.
 - Zero missing glyphs, zero LaTeX errors, zero overfull hboxes in the recorded
   build; three cosmetic underfull hboxes and one stable label warning remain.
 - The author email is intentionally not printed. The final public address is an

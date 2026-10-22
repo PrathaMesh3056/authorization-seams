@@ -22,6 +22,7 @@ This directory mixes two kinds of material:
 | `SUBMISSION_METADATA_CHECKLIST.md` | copied, redacted | Venue/author metadata gates |
 | `TOOLCHAIN.md` | copied | Verified toolchain versions |
 | `REVIEW_CORRECTIONS_2026-10-21.md` | copied | Superseded characterizations and corrections |
+| `RECHECK_RECONCILIATION_2026-10-21.md` | copied | 21 October recheck reconciliation and finalization procedure |
 
 ## Redactions and frozen-file caveat
 

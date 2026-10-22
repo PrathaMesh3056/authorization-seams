@@ -1,12 +1,12 @@
 # Font consistency and PDF QA report
 
-**Date:** 21 October 2026
+**Date:** 23 October 2026
 
 **Scope:** body typography and figure typography for the 24-page
-single-column draft. No manuscript claim, number, status, table data, or frozen
-artifact was changed by the font pass. The current-build values below were
-refreshed after the separate factual/traceability correction pass; the font
-inventory itself is unchanged.
+single-column named-author draft. No manuscript claim, number, status, table
+data, or frozen artifact was changed by the font pass. The current-build values
+below were refreshed for the 23 October finalization build; the font inventory
+itself is unchanged.
 
 ## Problem found
 
@@ -56,13 +56,16 @@ the body font, and the figure math glyphs did not match the figure labels.
 
 ## Build QA
 
-- PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-21.pdf`
-- SHA-256: `5635F9DDA3A9D75B56C791939F80DC3ACBF5254619661131A6E80AB47F2FB494`
+- PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf`
+- SHA-256: `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`
 - Pages: 24
 - Page size: 612 x 792 pt (US Letter)
+- Named-author build: `Prathamesh Patil`; the placeholder email is not printed.
 - Missing glyphs: 0
 - LaTeX errors: 0
 - Overfull hboxes: 0
+- Three cosmetic underfull hboxes and one stable `Label(s) may have changed`
+  warning remain; neither is a blocker.
 - All fonts embedded and subset.
 - `pdfimages`: zero raster images.
 - Figure 1: 239.76 x 171.828 pt.
@@ -70,13 +73,15 @@ the body font, and the figure math glyphs did not match the figure labels.
 
 ## Visual checks
 
-- Page 1: title, author block, abstract, keywords; no public email printed.
+- Page 1: title, named author block, abstract, keywords; no public email
+  printed.
 - Page 2: Figure 1 at final width; labels and subset glyph coherent; no clipped
   or overlapping text.
 - Page 17: Figure 2 at 7.0 in; labels and subset glyph coherent; dashed stub
   enters the X without crossing into `V_read`.
-- Pages 23-24: closing status line intact; the seven-entry reference list
-  follows it and introduces no new font family.
+- Pages 23-24: closing status line intact; the eight-entry reference list
+  follows it and introduces no new font family. The Table 15 caption and table
+  body are both on page 23.
 
 ## Standalone export
 
@@ -86,8 +91,8 @@ contains only `main.tex`, `figures/`, `main.pdf`, and `README.md`; no Poppler
 or QA tooling is bundled. The current export uses the same Latin Modern body
 and Arial/Cambria Math figures.
 
-- `main.tex` SHA-256: `73CDBEF4E38721D50FB4CCA6973D7E4A0FB8818D86D3C74F06D67384BF049A24`
-- `main.pdf` SHA-256: `163CBD7D5D771C6B751DBB6B6A8C63B85E2CE039AA043C9B66951524F8B58BFA`
+- `main.tex` SHA-256: `29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED`
+- `main.pdf` SHA-256: `86456E83B99E42D14FAC96BF6E29C00634437C9A5A9F75390285DB001A5EFD06`
 
 ## Remaining font-related caveat
 

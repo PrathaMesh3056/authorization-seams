@@ -1,26 +1,85 @@
-# Research status - 21 Oct 2026
+# Research status - 23 Oct 2026
 
 ## Current position
 
-The manuscript is a 24-page single-column arXiv-style draft built from
-`paper\MANUSCRIPT_REVISED.md` (SHA-256
-`D1A7AA9E3119AE3850FBA1C012B12ED528F6BF2B0CA0A794BC2A63310E06AF1D`).
-The build is clean: 24 pages, 0 missing glyphs, 0 LaTeX errors, 0 overfull
-hboxes. Three cosmetic underfull hboxes remain; they are not blockers. One
-stable `Label(s) may have changed` warning remains in the build log, with no
-unresolved-reference warning and no missing glyph. Both figures are vector
-PDFs and are included. The static seven-entry reference list remains fixed.
+The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
+`6EC07C5A2FBCD423E8BEEA235187366ED74644977E8AE8A4A277FCE577DACC9B`; 557
+lines, 111,290 bytes). The reference list has eight entries: the seven frozen
+identities checked on 20 October 2026 plus MasDrift, added 22 October 2026
+after arXiv identity verification. The abstract remains 222 words and
+byte-identical to the frozen version
+(`CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`).
+
+The canonical build is the 24-page single-column named-author draft
+`paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` (SHA-256
+`5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`): 24
+pages, 321,364 bytes, 0 missing glyphs, 0 LaTeX errors, 0 overfull hboxes. The
+title page and PDF metadata name Prathamesh Patil; this is the authorized
+named-author build, not a double-blind submission. Three cosmetic underfull
+hboxes and one stable `Label(s) may have changed` warning remain; they are not
+blockers. The Table 15 caption and table body both appear on page 23, so the
+caption orphan reported against the older 21 October snapshot does not persist.
+The four expected divergences listed in the older preflight report (the 16-case
+H5 signature-family structure, the `tests\` path prefix, the eight-case family
+wording, and the eighth reference) are resolved in this build; the remaining
+label warning and underfull hboxes are cosmetic.
+The standalone export is refreshed to the same source:
+`paper\latex_export\main.tex` (SHA-256
+`29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED`) and
+reference PDF `paper\latex_export\main.pdf` (SHA-256
+`86456E83B99E42D14FAC96BF6E29C00634437C9A5A9F75390285DB001A5EFD06`), 24
+pages, 0 errors, 0 overfull. Both figures are vector PDFs and are included.
+
+The staged repository (`RPaper-repo`) has been refreshed locally on 23 October
+2026 with the new source, canonical PDF, export, state docs, and regenerated
+manifest; it has no remote and nothing has been pushed. The old 21 October
+canonical PDF, export, and repository revision remain archived.
 
 The authorized factual/traceability correction pass is applied. It changed no
 claims, experiments, references, or H4/H7 status. The corrections and their
 provenance are recorded in
 `paper\agent_reports\REVIEW_CORRECTIONS_2026-10-21.md`.
 
+The 21 October recheck reconciliation applied three further in-line corrections
+with the same scope: the H5 signature-family sample size, the Task D path
+prefix, and the arm-5 confusion-matrix scoping. It is recorded in
+`paper\agent_reports\RECHECK_RECONCILIATION_2026-10-21.md`.
+
 ## Completed
 
 - Run 6 QA, section assembly, cross-checks, reconciliation, targeted model
   pass, and independent fixer/verifier.
+- 21 Oct 2026 recheck reconciliation applied: H5 signature-family sample size
+  corrected to 16 cases (2 pairs x 4 document parameters x 2 variants; 8 attack
+  + 8 benign), Task D path prefix, and arm-5 confusion-matrix scoping; the
+  abstract was re-verified byte-identical.
+- 22 Oct 2026 MasDrift added as the eighth reference after arXiv identity
+  verification (arXiv:2608.07556v3, revised 15 October 2026; DOI
+  10.48550/arXiv.2608.07556). The addition is confined to Section 6 and the
+  reference list; it states a scale/design distinction, introduces no
+  comparison, changes no claim or experiment, and leaves H4/H7 `UNTESTED`.
+- 23 Oct 2026 finalization applied F1-F13: exporter `\path` to `\texttt`,
+  terminology cleanup, `ATT-OK` alias, H1-H7 status key, the 638 token-event
+  denominator, the named author block, reset-control note, T1 fractions,
+  six-control ledger note, SentinelAgent P1/P3-P7 TLA+ qualifier, and
+  Noma/IETF softening. F14 and F15 remain optional and unapplied.
 - Six Table 15 hashes verified; `paper\hashes.txt` remains untouched.
+- Table 15 truncation gate closed (22 Oct 2026): all six printed fragments are
+  exact substrings of the full 64-character values, including the 7-character
+  row-3 suffix (`65d47f0`) and the 9-character row-6 suffix (`790814af4`); the
+  variable-length truncation is disclosed by the Table 15 suffix note at
+  `MANUSCRIPT_REVISED.md` line 521. No hash correction is required or applied.
+  This closes the item recorded as approval-pending in
+  `paper\manuscript_crosscheck_reconciliation.md` (proposed 8-character rewrite,
+  not applied) and as the sole unresolved blocker in
+  `paper\MANUSCRIPT_FIX_REPORT.md`; both are historical records and are not
+  edited.
+- 22 Oct 2026 external content check of the reviewed-round standalone
+  `latex_export\main.tex`: the execution ledger, status tokens, Table 15
+  fragments, arm-7 26/28 non-additivity, and spot-checked frozen numbers were
+  reported consistent; no content correction was required. Exhaustive
+  table-cell verification remains the 21 Oct recheck (all 15 tables match raw
+  metrics cell-for-cell); the 22 Oct pass spot-checked Tables 4, 8, and 12 only.
 - Figure 1 v2 promoted to canonical; Figure 1 v1 archived.
 - Both figures converted to vector PDF; Figure 1 at 239.76 x 171.828 pt and
   Figure 2 at 504 x 300.24 pt; zero raster images.
@@ -35,9 +94,10 @@ provenance are recorded in
 - Progent replacement applied and the false 4/20 attribution removed. Progent
   is a close related work, not a baseline; no Progent number is reproduced,
   re-measured, or compared.
-- Static seven-entry reference list maintained; bibliographic identities
-  checked on 20 October 2026. Claims remain unverified and none is treated as
-  a verified input.
+- Reference list: the seven entries' bibliographic identities were checked on
+  20 October 2026; MasDrift was added as the eighth entry on 22 October 2026
+  after arXiv verification. Claims remain unverified and none is treated as a
+  verified input.
 - APC correction: Agentic Principal Chain expanded; Theorem 4.7 (Composition
   Soundness) cited; C1-C6, the complete restriction set, serialized
   admission, static X, and intra-session scope stated.
@@ -59,27 +119,41 @@ provenance are recorded in
   Table 9 uses compact code cells and a control list. No mid-token underscore
   wrapping remains in the checked cells.
 - Zero-seam caveat and scope-of-positioning paragraph added.
-- Current PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-21.pdf`, SHA-256
-  `5635F9DDA3A9D75B56C791939F80DC3ACBF5254619661131A6E80AB47F2FB494`.
-- Standalone source: `paper\latex_export\main.tex`, SHA-256
-  `73CDBEF4E38721D50FB4CCA6973D7E4A0FB8818D86D3C74F06D67384BF049A24`;
+- Canonical PDF (23 Oct named-author build):
+  `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf`, SHA-256
+  `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`;
+  24 pages, 321,364 bytes.
+- Standalone source (23 Oct export):
+  `paper\latex_export\main.tex`, SHA-256
+  `29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED`;
   reference PDF `paper\latex_export\main.pdf`, SHA-256
-  `163CBD7D5D771C6B751DBB6B6A8C63B85E2CE039AA043C9B66951524F8B58BFA`.
-- Packaged export: `paper\drafts\seam_manuscript_latex_2026-10-21.zip`
-  (SHA-256 `D64FD1D46ED0C2A70BF10B2CD1D753DBD130BB4E9B52D247EBAB03B60AD670A2`),
+  `86456E83B99E42D14FAC96BF6E29C00634437C9A5A9F75390285DB001A5EFD06`;
+  24 pages.
+- Build output: `paper\build\manuscript_build_wide.pdf`, SHA-256
+  `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`
+  (same as the canonical copy for this build).
+- Packaged export: `paper\drafts\seam_manuscript_latex_2026-10-23.zip`
+  (SHA-256 `3FCF7B7ABE52D0F20F91C94CB2FC3899778DA11AB13E640B5BC64E8A8E69DDF0`),
   independently extracted and compiled to 24 pages with 0 errors, 0 missing
-  characters, and 0 overfull hboxes.
+  characters, and 0 overfull hboxes. The 21 October zip remains archived at
+  `paper\drafts\seam_manuscript_latex_2026-10-21.zip` (SHA-256
+  `D64FD1D46ED0C2A70BF10B2CD1D753DBD130BB4E9B52D247EBAB03B60AD670A2`).
 - Proposed future full-paper build recorded separately in
   `future_paper\FUTURE_PAPER_BUILD.md`; it is not part of the current paper.
 
 ## Open gates
 
-1. **Public email.** The placeholder must not appear on the draft PDF (it does
-   not). The final public address is still needed.
+1. **Author block and public email.** The named-author block is printed
+   (Prathamesh Patil; Department of Computer Engineering, Sardar Patel
+   Institute of Technology), and the PDF metadata carries the same author. The
+   public email is still needed; the placeholder must not appear on the draft
+   PDF (it does not). A double-blind venue would require re-anonymizing this
+   build.
 2. **Venue metadata.** Venue, page limit, anonymity rule, reference style,
    license, repository URL, archival DOI, and release sanitization remain open.
-3. **Release package.** The artifact tree is not yet sanitized or manifested
-   for public release.
+3. **Release package.** The local repository manifest is regenerated and
+   verified; `dist\sanitized` remains intentionally untouched. Public-release
+   sanitization, license, repository URL, and DOI remain open.
 4. **Merge/submission.** No merge into `paper\MANUSCRIPT.md` and no submission
    has occurred.
 5. **Frozen authority.** `paper\CONSOLIDATED_CLAIMS.md` remains frozen and now
@@ -87,7 +161,9 @@ provenance are recorded in
    be used as the current wording authority until separately reconciled.
 6. **Deferred expansions.** Classic-literature expansion, the 40-50 percent
    length cut, and any new data figure need explicit approval and new
-   verification.
+   verification. The MasDrift citation was authorized and added on 22 October
+   2026 after arXiv verification; further new references still require explicit
+   approval and verification.
 
 ## Frozen constraints
 
@@ -104,7 +180,11 @@ provenance are recorded in
 
 ## Next actions
 
-1. Obtain the final public email and venue/license/repository decisions.
-2. Add venue metadata only after a specific CFP is chosen.
-3. Complete release sanitization and the full artifact manifest.
-4. Do not merge or submit until every open gate closes.
+1. Choose the final public email, venue/CFP, license, repository URL, and
+   archival DOI.
+2. If a double-blind venue is chosen, re-anonymize the named-author build before
+   submission; do not send the named-author PDF to a double-blind track.
+3. Add venue metadata only after a specific CFP is chosen.
+4. The 23 October rebuild, export refresh, and local repository refresh are
+   complete. Leave `dist\sanitized` untouched and do not push.
+5. Do not merge or submit until every open gate closes.

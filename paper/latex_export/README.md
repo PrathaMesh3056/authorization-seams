@@ -1,7 +1,8 @@
 # The Handoff Nobody Owns - standalone LaTeX source
 
-This package reproduces the 21 October 2026 draft of the seam-research
-manuscript. It is a working preprint source, not a submission-ready package.
+This package reproduces the 23 October 2026 named-author draft of the
+seam-research manuscript. It is a working preprint source, not a
+submission-ready package.
 
 ## Files
 
@@ -26,7 +27,7 @@ The compile may print a stable `Label(s) may have changed` warning; the
 reference build has zero unresolved references and should be checked by the
 page-count and text QA below rather than by warning count alone.
 
-No BibTeX run is required. References are a static, verified 7-entry list
+No BibTeX run is required. References are a static, verified 8-entry list
 embedded in `main.tex`; `references.bib` is not needed for this compile. The
 source uses a single-column `article` class, 10 pt, letter paper, 0.75 in
 margins. Figure 1 is included at 3.33 in wide; Figure 2 is included at 7.0 in
@@ -39,25 +40,28 @@ files and are not needed to compile the body.
 ## Provenance
 
 - Manuscript source: `paper\MANUSCRIPT_REVISED.md`
-- Manuscript SHA-256: `D1A7AA9E3119AE3850FBA1C012B12ED528F6BF2B0CA0A794BC2A63310E06AF1D`
-- Canonical draft PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-21.pdf`
-- Canonical draft PDF SHA-256: `5635F9DDA3A9D75B56C791939F80DC3ACBF5254619661131A6E80AB47F2FB494`
-- Standalone `main.tex` SHA-256: `73CDBEF4E38721D50FB4CCA6973D7E4A0FB8818D86D3C74F06D67384BF049A24`
-- Reference PDF SHA-256: `163CBD7D5D771C6B751DBB6B6A8C63B85E2CE039AA043C9B66951524F8B58BFA`
+- Manuscript SHA-256: `6EC07C5A2FBCD423E8BEEA235187366ED74644977E8AE8A4A277FCE577DACC9B`
+- Canonical draft PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf`
+- Canonical draft PDF SHA-256: `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`
+- Standalone `main.tex` SHA-256: `29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED`
+- Reference PDF SHA-256: `86456E83B99E42D14FAC96BF6E29C00634437C9A5A9F75390285DB001A5EFD06`
 - Build: Pandoc 3.12.1 + XeLaTeX (MiKTeX 25.12)
-- Draft date in the PDF: 21 October 2026
+- Draft date in the PDF: 23 October 2026
 
 ## References
 
-The manuscript now contains a static list of seven entries: `[APC]`,
-`[TraceGrant]`, `[SentinelAgent]`, `[Progent]`, Noma Security, the IETF
-individual Internet-Draft, and arXiv:2605.05440. Bibliographic identities were
-checked on 20 October 2026; the works were not reproduced, and their claims are
-not treated as verified inputs. The list is style-neutral and must be adapted
-only after the target venue is selected.
+The manuscript now contains a static list of eight entries: `[APC]`,
+`[TraceGrant]`, `[SentinelAgent]`, `[Progent]`, `[MasDrift]`, Noma Security,
+the IETF individual Internet-Draft, and arXiv:2605.05440. Bibliographic
+identities were checked on 20 October 2026 for the first seven entries and on
+22 October 2026 for MasDrift (arXiv:2608.07556v3); the works were not
+reproduced, and their claims are not treated as verified inputs. The list is
+style-neutral and must be adapted only after the target venue is selected.
 
 ## Known gates
 
+- The title page and PDF metadata are named-author (`Prathamesh Patil`); a
+  double-blind venue would require re-anonymizing this build.
 - The author email is intentionally not printed. The recorded placeholder must
   not appear on a public PDF; the final public address is still needed.
 - Venue, page limit, anonymity rule, reference style, license, repository URL,
@@ -71,8 +75,14 @@ only after the target venue is selected.
 
 - 24 pages, letter paper.
 - Zero missing glyphs, zero LaTeX errors, zero overfull hboxes in the build.
+- Three cosmetic underfull hboxes and one stable `Label(s) may have changed`
+  warning remain; both are non-blocking. The reference PDF has zero unresolved
+  references.
 - All fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
 - Both figures are vector; `pdfimages` reports zero raster images.
 - Figure 1 is 239.76 x 171.828 pt; Figure 2 is 504 x 300.24 pt.
-- The static reference list appears after Section 9 and is set ragged-right to
-  avoid stretched interword gaps.
+- Table 15's caption and table body both appear on page 23 in the canonical
+  build; the caption orphan reported against the older 21 October snapshot is
+  resolved.
+- The static eight-entry reference list appears after Section 9 and is set
+  ragged-right to avoid stretched interword gaps.

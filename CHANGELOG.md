@@ -3,6 +3,26 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.1] - 2026-10-23
+
+### Changed
+
+- Finalized the named-author 23 October draft: F1-F13 corrections, the author
+  block and matching PDF metadata, a refreshed canonical PDF, and a refreshed
+  standalone LaTeX export.
+- Added MasDrift as the eighth reference after the 22 October 2026 arXiv check;
+  the first seven identities remain the frozen 20 October set.
+- Table 15's caption and table body now both appear on page 23; the suffix note
+  is at `MANUSCRIPT_REVISED.md` line 521.
+
+### Notes
+
+- H4 and H7 remain `UNTESTED`; no new claims, experiments, or references
+  beyond the authorized MasDrift addition.
+- One stable label warning and three cosmetic underfull hboxes remain.
+- The build is named-author; a double-blind venue requires re-anonymization.
+- `dist/sanitized` remains untouched; no push has occurred.
+
 ## [0.1.0] - 2026-10-21
 
 ### Added

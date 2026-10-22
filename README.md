@@ -4,14 +4,17 @@ Working preprint and reproduction package for a measurement study of what
 happens when one authorization mechanism hands a narrowed decision to another.
 
 > **Status:** prepared locally, **no remote configured and nothing pushed**.
-> The manuscript is a 24-page single-column arXiv-style draft for a
+> The manuscript is a 24-page single-column arXiv-style named-author draft for a
 > workshop/short-paper or tool-track submission. It is not peer reviewed, it
 > has not been merged into the frozen `MANUSCRIPT.md`, and it has not been
-> submitted anywhere. Hypotheses H4 and H7 remain `UNTESTED`.
+> submitted anywhere. Hypotheses H4 and H7 remain `UNTESTED`. The 23 October
+> build prints the author name and affiliation; a double-blind venue would
+> require re-anonymization.
 
 ## What this repository is
 
-- The corrected manuscript source and the canonical 21 October 2026 PDF.
+- The corrected manuscript source and the canonical 23 October 2026 named-author
+  PDF.
 - The locked-artifact harnesses for the APC → TraceGrant, APC → SentinelAgent,
   and bridge-boundary experiments, with their frozen cases, locks, and stored
   results.
@@ -65,7 +68,7 @@ bash paper/build/build.sh
 ```
 
 The build writes generated files under `paper/build/`. The canonical PDF is
-`paper/drafts/MANUSCRIPT_DRAFT_2026-10-21.pdf`; the build does not overwrite it.
+`paper/drafts/MANUSCRIPT_DRAFT_2026-10-23.pdf`; the build does not overwrite it.
 
 To rerun the experiments, first fetch the two pinned upstream repositories:
 

@@ -6,8 +6,8 @@ authors:
   - family-names: Patil
     given-names: Prathamesh
     affiliation: "Department of Computer Engineering, Sardar Patel Institute of Technology"
-version: 0.1.0
-date-released: "2026-10-21"
+version: 0.1.1
+date-released: "2026-10-23"
 abstract: >-
   Locked-artifact measurement harness and manuscript draft for a study of
   cross-mechanism authorization seams. Predictions, cases, arms, locks, and
@@ -32,4 +32,4 @@ preferred-citation:
   year: 2026
   month: 10
   status: preprint
-  notes: "Working preprint draft, 21 October 2026; not peer reviewed."
+  notes: "Working preprint draft, 23 October 2026; not peer reviewed."

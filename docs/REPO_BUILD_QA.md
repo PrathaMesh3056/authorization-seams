@@ -56,6 +56,17 @@ manifest verified, all 9 QA tests passed, and the paper built to 24 pages with
 the same log counts. This confirms the `* -text` attribute and the frozen
 artifacts survive a normal clone.
 
+## 23 October 2026 refresh
+
+The named-author finalization refreshed `paper/MANUSCRIPT_REVISED.md`, the
+canonical 23 October PDF, the standalone LaTeX export, the build guard, and the
+current-state docs. `artifacts/sha256sums.txt` was regenerated after the
+refresh; `python scripts/verify_artifacts.py` and `python -m pytest -q qa`
+pass. The build remains 24 pages with 0 missing glyphs, 0 LaTeX errors, and
+0 overfull hboxes; one stable label warning and three cosmetic underfull
+hboxes remain. `dist/sanitized` was not regenerated. The current tracked-file
+count is recorded in `artifacts/manifest.json`.
+
 ## Gate reminder
 
 This record does not close the publication gates. License, final public email,
