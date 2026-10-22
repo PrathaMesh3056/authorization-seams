@@ -9,9 +9,9 @@
 | Title | *The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry* | Present |
 | Abstract | 222 words; no new numbers, claims, statuses, or citations | Present, frozen guardrail |
 | Keywords | cross-mechanism authorization; agent authorization; authorization seams; scope narrowing; evidence carriage; conformance testing; locked-artifact methodology | Present |
-| Current draft | `paper\MANUSCRIPT_REVISED.md` | Present; SHA-256 `6EC07C5A2FBCD423E8BEEA235187366ED74644977E8AE8A4A277FCE577DACC9B` |
-| Current PDF | `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` | Present; 24 pages; named-author build; SHA-256 `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B` |
-| Standalone LaTeX | `paper\latex_export\main.tex` | Present; SHA-256 `29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED`; independent XeLaTeX compile verified (24 pages) |
+| Current draft | `paper\MANUSCRIPT_REVISED.md` | Present; SHA-256 `1F82A0ED02CF02405FD8076EDAD74B9ADD2130F154D38F87CE493F80D00E6510` |
+| Current PDF | `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` | Present; 24 pages; named-author build; SHA-256 `086F0F6D451060644DA1C9A8F22DDA985A0F2B16D90A4B9D4BDDF22638BD67AC` |
+| Standalone LaTeX | `paper\latex_export\main.tex` | Present; SHA-256 `28EA541F13643026DA05BCC906CCC2649C08ED1BDA630DCBCF8FF6495B00A8DB`; independent XeLaTeX compile verified (24 pages) |
 | References | Static eight-entry list after Section 9 | Present; first seven identities checked 20 October 2026, MasDrift checked 22 October 2026; claims not reproduced |
 | Base draft | `paper\MANUSCRIPT.md` | Preserved, not for merge |
 
@@ -111,7 +111,7 @@ printed and is redacted in this checklist.
 - [ ] AI-use disclosure checked against venue policy.
 - [ ] Release tree sanitized; license and repository URL assigned.
 - [ ] Target CFP checked directly; page limit, template, anonymity, and reference style confirmed.
-- [x] Factual/traceability correction pass applied; no new claims, experiments, references, or H4/H7 work. The 23 Oct F1-F13 finalization pass is also applied. See `paper\agent_reports\REVIEW_CORRECTIONS_2026-10-21.md` and `paper\RESEARCH_STATUS.md`.
+- [x] Factual/traceability correction pass applied; no new claims, experiments, references, or H4/H7 work. The 23 Oct F1-F13 finalization pass and the F4/F5 wording corrections are also applied. See `paper\agent_reports\REVIEW_CORRECTIONS_2026-10-21.md`, `paper\agent_reports\FINAL_BUILD_QA.md`, and `paper\RESEARCH_STATUS.md`.
 - [x] Manuscript compiled; 0 overfull hboxes; 24 pages; standalone LaTeX export verified. The 23 Oct named-author build places the Table 15 caption and body together on page 23.
 - [ ] Final QA pass completed after final email and venue metadata; no frozen file changed; no merge into `MANUSCRIPT.md` without approval.
 

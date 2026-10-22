@@ -1841,8 +1841,8 @@ REFINED & Sections 4.3, 4.4 &
 \path{tests\seam_pilot_sentinelagent\results\sa\controls.json};
 \path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json};
 \path{tests\seam_pilot_sa_boundary\results\boundary\manifest.json} \\
-H6 failure shapes; no new composition-specific failure mode & SUPPORTED
-& Sections 4.1, 4.2, 4.3, 4.4, 4.5 &
+H6 failure shapes; no new composition-specific failure mode except the
+disclosed E1 exception & SUPPORTED & Sections 4.1, 4.2, 4.3, 4.4, 4.5 &
 \path{tests\seam_pilot_v2\results\raw_metrics.json};
 \path{tests\seam_pilot_sentinelagent\results\sa\metrics.json};
 \path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json};
@@ -1948,18 +1948,17 @@ this family; the difference is the scoring convention, and that
 dependence is disclosed. Test 1 (scoring-only re-analysis, zero new
 executions) showed arm 2 safe against its own world's root authority
 (0/4 leaks under the root norm) while the frozen handoff-norm scoring
-kept the 4 denials; the seam test fires 4/4 under arm-native scoring and
-0 under canonical. Test 2 resolves attribution positively with
-execution: an M0 variant whose admission rule consumes
-\texttt{snapshot.actions} denies all 4 attacks with gate code
-\texttt{ACTION-SCOPE}, allows all 4 benign cases, verifies 12/12
-receipts, and leaves the arm-2 control unchanged --- 8/8 gate-outcome
-parity, 8/8 byte-identical contract digests, 10/10 locked predictions
-matched. Consumption, not carriage, is enforcement: the receiver must
-read the narrowed fact, not merely receive it. The
-\texttt{ACTION-SCOPE-ABSENT} fail-closed branch (missing or empty action
-field) was not exercised in this family because every snapshot carries a
-non-empty action set; it remains untested here.
+kept the 4 leaks; the seam test fires 4/4 under arm-native scoring and 0
+under canonical. Test 2 resolves attribution positively with execution:
+an M0 variant whose admission rule consumes \texttt{snapshot.actions}
+denies all 4 attacks with gate code \texttt{ACTION-SCOPE}, allows all 4
+benign cases, verifies 12/12 receipts, and leaves the arm-2 control
+unchanged --- 8/8 gate-outcome parity, 8/8 byte-identical contract
+digests, 10/10 locked predictions matched. Consumption, not carriage, is
+enforcement: the receiver must read the narrowed fact, not merely
+receive it. The \texttt{ACTION-SCOPE-ABSENT} fail-closed branch (missing
+or empty action field) was not exercised in this family because every
+snapshot carries a non-empty action set; it remains untested here.
 
 \textbf{Repairs.} Four loci follow: three receiver-side (evidence
 carriage, retain the upstream denial, consumption) plus the

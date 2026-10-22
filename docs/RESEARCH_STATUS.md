@@ -3,8 +3,8 @@
 ## Current position
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
-`6EC07C5A2FBCD423E8BEEA235187366ED74644977E8AE8A4A277FCE577DACC9B`; 557
-lines, 111,290 bytes). The reference list has eight entries: the seven frozen
+`1F82A0ED02CF02405FD8076EDAD74B9ADD2130F154D38F87CE493F80D00E6510`; 557
+lines, 111,322 bytes). The reference list has eight entries: the seven frozen
 identities checked on 20 October 2026 plus MasDrift, added 22 October 2026
 after arXiv identity verification. The abstract remains 222 words and
 byte-identical to the frozen version
@@ -12,8 +12,8 @@ byte-identical to the frozen version
 
 The canonical build is the 24-page single-column named-author draft
 `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` (SHA-256
-`5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`): 24
-pages, 321,364 bytes, 0 missing glyphs, 0 LaTeX errors, 0 overfull hboxes. The
+`086F0F6D451060644DA1C9A8F22DDA985A0F2B16D90A4B9D4BDDF22638BD67AC`): 24
+pages, 321,386 bytes, 0 missing glyphs, 0 LaTeX errors, 0 overfull hboxes. The
 title page and PDF metadata name Prathamesh Patil; this is the authorized
 named-author build, not a double-blind submission. Three cosmetic underfull
 hboxes and one stable `Label(s) may have changed` warning remain; they are not
@@ -21,24 +21,38 @@ blockers. The Table 15 caption and table body both appear on page 23, so the
 caption orphan reported against the older 21 October snapshot does not persist.
 The four expected divergences listed in the older preflight report (the 16-case
 H5 signature-family structure, the `tests\` path prefix, the eight-case family
-wording, and the eighth reference) are resolved in this build; the remaining
-label warning and underfull hboxes are cosmetic.
+wording, and the eighth reference) are resolved in this build. The independent
+review's F1-F3, F6, and F9 are also resolved; F4 and F5 are corrected here (the
+handoff-norm sentence says "kept the 4 leaks", and the Table 12 H6 row is scoped
+to the measured pairs with the disclosed E1 action-family exception). The
+remaining review items (F7, F8, F10-F14, and the listed NITs) are minor or
+cosmetic and are not blockers.
+
 The standalone export is refreshed to the same source:
 `paper\latex_export\main.tex` (SHA-256
-`29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED`) and
+`28EA541F13643026DA05BCC906CCC2649C08ED1BDA630DCBCF8FF6495B00A8DB`) and
 reference PDF `paper\latex_export\main.pdf` (SHA-256
-`86456E83B99E42D14FAC96BF6E29C00634437C9A5A9F75390285DB001A5EFD06`), 24
-pages, 0 errors, 0 overfull. Both figures are vector PDFs and are included.
+`9F781FEC64797AD1D6412D3485DE385D3566FF348C657E3C9747488A2628C0B0`), 24
+pages, 0 errors, 0 overfull. Both figures are vector PDFs and are included. The
+pre-F4F5 23 October build remains archived at
+`paper\drafts\MANUSCRIPT_DRAFT_2026-10-23_pre_F4F5.pdf` (SHA-256
+`5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`), with
+its export zip at
+`paper\drafts\seam_manuscript_latex_2026-10-23_pre_F4F5.zip` (SHA-256
+`3FCF7B7ABE52D0F20F91C94CB2FC3899778DA11AB13E640B5BC64E8A8E69DDF0`).
 
 The staged repository (`RPaper-repo`) has been refreshed locally on 23 October
-2026 with the new source, canonical PDF, export, state docs, and regenerated
-manifest; it has no remote and nothing has been pushed. The old 21 October
-canonical PDF, export, and repository revision remain archived.
+2026 with the corrected source, canonical PDF, export, state docs, and
+regenerated manifest; it has no remote and nothing has been pushed. The
+pre-F4F5 23 October build and the old 21 October PDF/export/revision remain
+archived.
 
-The authorized factual/traceability correction pass is applied. It changed no
-claims, experiments, references, or H4/H7 status. The corrections and their
-provenance are recorded in
-`paper\agent_reports\REVIEW_CORRECTIONS_2026-10-21.md`.
+The authorized factual/traceability correction pass is applied, including the
+23 October named-author finalization (F1-F13) and the F4/F5 wording corrections.
+It changed no claims, experiments, references, or H4/H7 status. The corrections
+and their provenance are recorded in
+`paper\agent_reports\REVIEW_CORRECTIONS_2026-10-21.md` and
+`paper\agent_reports\FINAL_BUILD_QA.md`.
 
 The 21 October recheck reconciliation applied three further in-line corrections
 with the same scope: the H5 signature-family sample size, the Task D path
@@ -63,6 +77,10 @@ prefix, and the arm-5 confusion-matrix scoping. It is recorded in
   denominator, the named author block, reset-control note, T1 fractions,
   six-control ledger note, SentinelAgent P1/P3-P7 TLA+ qualifier, and
   Noma/IETF softening. F14 and F15 remain optional and unapplied.
+- 23 Oct 2026 F4/F5 correction: the handoff-norm sentence now says "kept the 4
+  leaks", and the Table 12 H6 row is scoped to the measured pairs with the
+  disclosed E1 action-family exception. The canonical PDF, export, and zip were
+  rebuilt; the pre-F4F5 build is archived.
 - Six Table 15 hashes verified; `paper\hashes.txt` remains untouched.
 - Table 15 truncation gate closed (22 Oct 2026): all six printed fragments are
   exact substrings of the full 64-character values, including the 7-character
@@ -121,21 +139,27 @@ prefix, and the arm-5 confusion-matrix scoping. It is recorded in
 - Zero-seam caveat and scope-of-positioning paragraph added.
 - Canonical PDF (23 Oct named-author build):
   `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf`, SHA-256
-  `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`;
-  24 pages, 321,364 bytes.
+  `086F0F6D451060644DA1C9A8F22DDA985A0F2B16D90A4B9D4BDDF22638BD67AC`;
+  24 pages, 321,386 bytes.
+- Archived pre-F4F5 23 Oct PDF:
+  `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23_pre_F4F5.pdf`, SHA-256
+  `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`.
 - Standalone source (23 Oct export):
   `paper\latex_export\main.tex`, SHA-256
-  `29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED`;
+  `28EA541F13643026DA05BCC906CCC2649C08ED1BDA630DCBCF8FF6495B00A8DB`;
   reference PDF `paper\latex_export\main.pdf`, SHA-256
-  `86456E83B99E42D14FAC96BF6E29C00634437C9A5A9F75390285DB001A5EFD06`;
+  `9F781FEC64797AD1D6412D3485DE385D3566FF348C657E3C9747488A2628C0B0`;
   24 pages.
 - Build output: `paper\build\manuscript_build_wide.pdf`, SHA-256
-  `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`
+  `086F0F6D451060644DA1C9A8F22DDA985A0F2B16D90A4B9D4BDDF22638BD67AC`
   (same as the canonical copy for this build).
 - Packaged export: `paper\drafts\seam_manuscript_latex_2026-10-23.zip`
-  (SHA-256 `3FCF7B7ABE52D0F20F91C94CB2FC3899778DA11AB13E640B5BC64E8A8E69DDF0`),
+  (SHA-256 `9F4958FCE4D26492F3B5F4055D6437A59C4CECB5AEB1AECD34762FF42ED704C3`),
   independently extracted and compiled to 24 pages with 0 errors, 0 missing
-  characters, and 0 overfull hboxes. The 21 October zip remains archived at
+  characters, and 0 overfull hboxes. The pre-F4F5 zip remains archived at
+  `paper\drafts\seam_manuscript_latex_2026-10-23_pre_F4F5.zip` (SHA-256
+  `3FCF7B7ABE52D0F20F91C94CB2FC3899778DA11AB13E640B5BC64E8A8E69DDF0`). The
+  21 October zip remains archived at
   `paper\drafts\seam_manuscript_latex_2026-10-21.zip` (SHA-256
   `D64FD1D46ED0C2A70BF10B2CD1D753DBD130BB4E9B52D247EBAB03B60AD670A2`).
 - Proposed future full-paper build recorded separately in

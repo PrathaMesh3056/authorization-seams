@@ -16,7 +16,7 @@ import sys
 HERE = Path(__file__).resolve().parent
 SRC = HERE.parent / "MANUSCRIPT_REVISED.md"
 OUT = HERE / "manuscript_build.md"
-EXPECTED_SHA = "6EC07C5A2FBCD423E8BEEA235187366ED74644977E8AE8A4A277FCE577DACC9B"
+EXPECTED_SHA = "1F82A0ED02CF02405FD8076EDAD74B9ADD2130F154D38F87CE493F80D00E6510"
 
 text = SRC.read_text(encoding="utf-8")
 sha = hashlib.sha256(text.encode("utf-8")).hexdigest().upper()

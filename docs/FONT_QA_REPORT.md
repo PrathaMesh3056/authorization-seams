@@ -5,8 +5,8 @@
 **Scope:** body typography and figure typography for the 24-page
 single-column named-author draft. No manuscript claim, number, status, table
 data, or frozen artifact was changed by the font pass. The current-build values
-below were refreshed for the 23 October finalization build; the font inventory
-itself is unchanged.
+below were refreshed for the 23 October finalization and F4/F5 correction build;
+the font inventory itself is unchanged.
 
 ## Problem found
 
@@ -57,8 +57,9 @@ the body font, and the figure math glyphs did not match the figure labels.
 ## Build QA
 
 - PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf`
-- SHA-256: `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B`
+- SHA-256: `086F0F6D451060644DA1C9A8F22DDA985A0F2B16D90A4B9D4BDDF22638BD67AC`
 - Pages: 24
+- File size: 321,386 bytes
 - Page size: 612 x 792 pt (US Letter)
 - Named-author build: `Prathamesh Patil`; the placeholder email is not printed.
 - Missing glyphs: 0
@@ -77,8 +78,11 @@ the body font, and the figure math glyphs did not match the figure labels.
   printed.
 - Page 2: Figure 1 at final width; labels and subset glyph coherent; no clipped
   or overlapping text.
-- Page 17: Figure 2 at 7.0 in; labels and subset glyph coherent; dashed stub
-  enters the X without crossing into `V_read`.
+- Page 16: Figure 2 at 7.0 in; labels and subset glyph coherent; dashed stub
+  enters the X without crossing into `V_read`. The dashed "Fail-closed refusal"
+  callout remains close to the Locus A border (review F13; cosmetic).
+- Pages 16-17: Table 12 begins on page 16 and continues on page 17 with the
+  header repeated; the scoped H6 row is legible.
 - Pages 23-24: closing status line intact; the eight-entry reference list
   follows it and introduces no new font family. The Table 15 caption and table
   body are both on page 23.
@@ -91,8 +95,8 @@ contains only `main.tex`, `figures/`, `main.pdf`, and `README.md`; no Poppler
 or QA tooling is bundled. The current export uses the same Latin Modern body
 and Arial/Cambria Math figures.
 
-- `main.tex` SHA-256: `29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED`
-- `main.pdf` SHA-256: `86456E83B99E42D14FAC96BF6E29C00634437C9A5A9F75390285DB001A5EFD06`
+- `main.tex` SHA-256: `28EA541F13643026DA05BCC906CCC2649C08ED1BDA630DCBCF8FF6495B00A8DB`
+- `main.pdf` SHA-256: `9F781FEC64797AD1D6412D3485DE385D3566FF348C657E3C9747488A2628C0B0`
 
 ## Remaining font-related caveat
 

@@ -2,22 +2,23 @@
 
 This is a working snapshot, not the release manifest. It records the current
 manuscript, figures, build, and standalone LaTeX export after the readability,
-font, vector-PDF, reference-integration, and factual/traceability correction
-passes, plus the 23 October 2026 finalization pass (F1-F13 and the named-author
-build). It does not replace `paper\hashes.txt` (the six Table 15 hashes) or any
-frozen source map.
+font, vector-PDF, reference-integration, factual/traceability, and 23 October
+2026 finalization passes, including the F4/F5 wording corrections. It does not
+replace `paper\hashes.txt` (the six Table 15 hashes) or any frozen source map.
 
 ## Current artifacts
 
 | Artifact | SHA-256 |
 |---|---|
-| `paper\MANUSCRIPT_REVISED.md` | `6EC07C5A2FBCD423E8BEEA235187366ED74644977E8AE8A4A277FCE577DACC9B` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` | `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B` |
-| `paper\build\manuscript_build_wide.tex` | `29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED` |
-| `paper\build\manuscript_build_wide.pdf` | `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B` |
-| `paper\latex_export\main.tex` | `29E9861ED0866671FB2C8C795E3AD8981451BB7B920B08C2AD5530A22F7540ED` |
-| `paper\latex_export\main.pdf` | `86456E83B99E42D14FAC96BF6E29C00634437C9A5A9F75390285DB001A5EFD06` |
-| `paper\drafts\seam_manuscript_latex_2026-10-23.zip` | `3FCF7B7ABE52D0F20F91C94CB2FC3899778DA11AB13E640B5BC64E8A8E69DDF0` |
+| `paper\MANUSCRIPT_REVISED.md` | `1F82A0ED02CF02405FD8076EDAD74B9ADD2130F154D38F87CE493F80D00E6510` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` | `086F0F6D451060644DA1C9A8F22DDA985A0F2B16D90A4B9D4BDDF22638BD67AC` |
+| `paper\build\manuscript_build_wide.tex` | `28EA541F13643026DA05BCC906CCC2649C08ED1BDA630DCBCF8FF6495B00A8DB` |
+| `paper\build\manuscript_build_wide.pdf` | `086F0F6D451060644DA1C9A8F22DDA985A0F2B16D90A4B9D4BDDF22638BD67AC` |
+| `paper\latex_export\main.tex` | `28EA541F13643026DA05BCC906CCC2649C08ED1BDA630DCBCF8FF6495B00A8DB` |
+| `paper\latex_export\main.pdf` | `9F781FEC64797AD1D6412D3485DE385D3566FF348C657E3C9747488A2628C0B0` |
+| `paper\drafts\seam_manuscript_latex_2026-10-23.zip` | `9F4958FCE4D26492F3B5F4055D6437A59C4CECB5AEB1AECD34762FF42ED704C3` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23_pre_F4F5.pdf` (archived) | `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B` |
+| `paper\drafts\seam_manuscript_latex_2026-10-23_pre_F4F5.zip` (archived) | `3FCF7B7ABE52D0F20F91C94CB2FC3899778DA11AB13E640B5BC64E8A8E69DDF0` |
 | `paper\drafts\MANUSCRIPT_DRAFT_2026-10-21.pdf` (archived) | `5635F9DDA3A9D75B56C791939F80DC3ACBF5254619661131A6E80AB47F2FB494` |
 | `paper\drafts\seam_manuscript_latex_2026-10-21.zip` (archived) | `D64FD1D46ED0C2A70BF10B2CD1D753DBD130BB4E9B52D247EBAB03B60AD670A2` |
 | `paper\figures\figure_1_handoff_anatomy.svg` | `035902B00D700869806BF038F4CE6CBF0B30017BCDB50D3760C4D23F72B9A23C` |
@@ -45,9 +46,9 @@ frozen source map.
 - `pdfimages` reports zero raster images in the manuscript and in both figures.
 - Standalone `paper\latex_export\main.tex` compiles independently with
   XeLaTeX, producing a 24-page PDF.
-- The 23 October zip was extracted to a clean directory and compiled
+- The current 23 October zip was extracted to a clean directory and compiled
   independently: 24 pages, 0 errors, 0 missing glyphs, 0 overfull hboxes.
-- The 21 October PDF and zip remain archived and are not overwritten.
+- The pre-F4F5 23 October PDF/zip and the 21 October PDF/zip remain archived.
 
 ## References
 
@@ -69,12 +70,17 @@ frozen source map.
 
 - The current manuscript includes the spelled-out `Section` cross-references,
   the one-sentence star definition at first use, both figure includes, the
-  H1-H7 status key, and the eight-entry reference list.
+  H1-H7 status key, the eight-entry reference list, the corrected handoff-norm
+  sentence ("kept the 4 leaks"), and the H6 row scoped to the disclosed E1
+  exception.
 - The Table 15 suffix note is at `MANUSCRIPT_REVISED.md` line 521. It discloses
   the 7-character row-3 suffix and the 9-character row-6 suffix; the full
   values remain in `paper\hashes.txt`.
-- F1-F13 are applied. F14 (Progent version refresh) and F15 (model disclosure
-  wording) remain optional and unapplied.
+- F1-F13 and the F4/F5 wording corrections are applied. F14 (Progent version
+  refresh) and F15 (model disclosure wording) remain optional and unapplied.
+- The pre-F4F5 source and export are preserved in local commit `31843d3`; the
+  pre-F4F5 rendered PDF and zip are preserved in `paper\drafts` as the
+  `_pre_F4F5` files above.
 - The build preamble maps the source star to the Latin Modern Math `\star`
   glyph. The PDF shows a star, not a platform symbol-font glyph.
 - The figures use Arial for labels and Cambria Math for the subset glyph only;

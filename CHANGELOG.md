@@ -3,6 +3,26 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.2] - 2026-10-23
+
+### Fixed
+
+- Corrected the handoff-norm sentence from "kept the 4 denials" to "kept the
+  4 leaks" (independent review F4).
+- Scoped the Table 12 H6 row to the measured pairs with the disclosed E1
+  action-family exception (independent review F5).
+- Refreshed the canonical PDF, standalone LaTeX export, package, state docs,
+  manifest, and QA hashes. The pre-F4F5 23 October PDF/zip are archived in the
+  working archive; the previous local commit preserves the pre-correction
+  repository state.
+
+### Notes
+
+- No new claims, experiments, references, or H4/H7 status; the abstract and
+  eight-reference list are unchanged.
+- Remaining independent-review items are minor or cosmetic and non-blocking.
+- `dist/sanitized` remains untouched; no push has occurred.
+
 ## [0.1.1] - 2026-10-23
 
 ### Changed
