@@ -3,8 +3,7 @@ message: "If you use this research artifact, please cite the manuscript below. N
 title: "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry"
 type: software
 authors:
-  - family-names: Patil
-    given-names: Prathamesh
+    -given-names: Prathamesh N Patil
     affiliation: "Department of Computer Engineering, Sardar Patel Institute of Technology"
 version: 0.1.3
 date-released: "2026-10-23"
@@ -27,8 +26,7 @@ preferred-citation:
   type: article
   title: "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry"
   authors:
-    - family-names: Patil
-      given-names: Prathamesh
+    - given-names: Prathamesh N Patil
   year: 2026
   month: 10
   status: preprint
