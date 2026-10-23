@@ -10,7 +10,7 @@ after arXiv identity verification. The abstract remains 222 words and
 byte-identical to the frozen version
 (`CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`).
 
-The canonical build is the 24-page single-column named-author draft
+The canonical build is the 24-page single-column named-author preprint
 `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` (SHA-256
 `D2F01F8F80BB9DCC43F59E6CF1763DDACEEA6341AAC0569B18B36C27DD1EA9CE`): 24
 pages, 321,409 bytes, 0 missing glyphs, 0 LaTeX errors, 0 overfull hboxes. The
@@ -53,9 +53,8 @@ its export zip at
 `paper\drafts\seam_manuscript_latex_2026-10-23_pre_F4F5.zip` (SHA-256
 `3FCF7B7ABE52D0F20F91C94CB2FC3899778DA11AB13E640B5BC64E8A8E69DDF0`).
 
-The staged repository (`RPaper-repo`) has been refreshed locally on 23 October
-2026 with the corrected source, canonical PDF, export, state docs, and
-regenerated manifest; it has no remote and nothing has been pushed. The pre-638
+The repository was refreshed on 23 October 2026 with the corrected source,
+canonical PDF, export, state docs, and regenerated manifest. The pre-638
 23 October build, the pre-F4F5 23 October build, and the old 21 October
 PDF/export/revision remain archived.
 
@@ -193,21 +192,21 @@ prefix, and the arm-5 confusion-matrix scoping. It is recorded in
 - Proposed future full-paper build recorded separately in
   `future_paper\FUTURE_PAPER_BUILD.md`; it is not part of the current paper.
 
-## Open gates
+## Release decisions
 
-1. **Author block and public email.** The named-author block is printed
+1. **Author block and public contact.** The named-author block is printed
    (Prathamesh Patil; Department of Computer Engineering, Sardar Patel
    Institute of Technology), and the PDF metadata carries the same author. The
-   public email is still needed; the placeholder must not appear on the draft
-   PDF (it does not). A double-blind venue would require re-anonymizing this
-   build.
+   final public contact address is still needed; the internal placeholder must
+   not appear on the PDF (it does not). A double-blind venue would require
+   re-anonymizing this build.
 2. **Venue metadata.** Venue, page limit, anonymity rule, reference style,
-   license, repository URL, archival DOI, and release sanitization remain open.
-3. **Release package.** The local repository manifest is regenerated and
-   verified; `dist\sanitized` remains intentionally untouched. Public-release
-   sanitization, license, repository URL, and DOI remain open.
-4. **Merge/submission.** No merge into `paper\MANUSCRIPT.md` and no submission
-   has occurred.
+   license, repository URL, archival DOI, and release sanitization are pending.
+3. **Release package.** The repository manifest is regenerated and verified;
+   `dist\sanitized` remains intentionally untouched. Public-release
+   sanitization, license, repository URL, and DOI are pending.
+4. **Merge/submission.** The manuscript remains separate from the frozen
+   predecessor; no peer-reviewed submission has occurred.
 5. **Frozen authority.** `paper\CONSOLIDATED_CLAIMS.md` remains frozen and now
    contains superseded Progent/APC/SentinelAgent characterizations. It must not
    be used as the current wording authority until separately reconciled.
@@ -227,16 +226,15 @@ prefix, and the arm-5 confusion-matrix scoping. It is recorded in
   X without crossing into `V_read`.
 - The paper target is a workshop/short paper, tool track, or arXiv preprint,
   not main-track.
-- The paper is not submission-ready until the open metadata and release gates
-  close.
+- Public release is gated on the pending metadata and release checks above.
 
 ## Next actions
 
-1. Choose the final public email, venue/CFP, license, repository URL, and
-   archival DOI.
+1. Choose the final public contact address, venue/CFP, license, repository URL,
+   and archival DOI.
 2. If a double-blind venue is chosen, re-anonymize the named-author build before
    submission; do not send the named-author PDF to a double-blind track.
 3. Add venue metadata only after a specific CFP is chosen.
-4. The 23 October rebuild, export refresh, and local repository refresh are
-   complete. Leave `dist\sanitized` untouched and do not push.
-5. Do not merge or submit until every open gate closes.
+4. The 23 October rebuild, export refresh, and repository refresh are complete.
+   Leave `dist\sanitized` untouched; publication is a separate owner decision.
+5. Do not submit to a public venue until the relevant release checks close.

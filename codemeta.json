@@ -4,7 +4,7 @@
   "name": "The Handoff Nobody Owns: locked-artifact study of cross-mechanism authorization seams",
   "version": "0.1.3",
   "datePublished": "2026-10-23",
-  "description": "Locked-artifact measurement harness and manuscript draft for a study of cross-mechanism authorization seams. Working preprint artifact; not peer reviewed. Hypotheses H4 and H7 remain untested.",
+  "description": "Locked-artifact measurement harness and research manuscript for a study of cross-mechanism authorization seams. Not peer reviewed. Hypotheses H4 and H7 remain untested.",
   "author": [
     {
       "@type": "Person",
@@ -36,6 +36,6 @@
     "@type": "ScholarlyArticle",
     "name": "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry",
     "datePublished": "2026-10-23",
-    "creativeWorkStatus": "Draft"
+    "creativeWorkStatus": "Preprint"
   }
 }

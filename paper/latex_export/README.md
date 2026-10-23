@@ -1,8 +1,8 @@
 # The Handoff Nobody Owns - standalone LaTeX source
 
-This package reproduces the 23 October 2026 named-author draft of the
-seam-research manuscript. It is a working preprint source, not a
-submission-ready package.
+This package reproduces the 23 October 2026 named-author preprint of the
+seam-research manuscript. It is a preprint source, not a peer-reviewed
+publication.
 
 ## Files
 
@@ -41,12 +41,12 @@ files and are not needed to compile the body.
 
 - Manuscript source: `paper\MANUSCRIPT_REVISED.md`
 - Manuscript SHA-256: `84648BDFF4CADF06DB8055EC2A51BC1D1A37FB9E12882BD506530349F0C2DB66`
-- Canonical draft PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf`
-- Canonical draft PDF SHA-256: `D2F01F8F80BB9DCC43F59E6CF1763DDACEEA6341AAC0569B18B36C27DD1EA9CE`
+- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf`
+- Canonical PDF SHA-256: `D2F01F8F80BB9DCC43F59E6CF1763DDACEEA6341AAC0569B18B36C27DD1EA9CE`
 - Standalone `main.tex` SHA-256: `107BEF375982BF0120167F59F4C64662151C04B2CCB79AD0BDE3614E15EB786A`
 - Reference PDF SHA-256: `1BBAD8114A771F710CDE01903ED4ECC2135F27E8ED13BF1DC99A24BA21500DAF`
 - Build: Pandoc 3.12.1 + XeLaTeX (MiKTeX 25.12)
-- Draft date in the PDF: 23 October 2026
+- Manuscript date in the PDF: 23 October 2026
 
 ## References
 
@@ -58,18 +58,17 @@ identities were checked on 20 October 2026 for the first seven entries and on
 reproduced, and their claims are not treated as verified inputs. The list is
 style-neutral and must be adapted only after the target venue is selected.
 
-## Known gates
+## Release notes
 
 - The title page and PDF metadata are named-author (`Prathamesh Patil`); a
   double-blind venue would require re-anonymizing this build.
-- The author email is intentionally not printed. The recorded placeholder must
-  not appear on a public PDF; the final public address is still needed.
+- Public contact information is intentionally omitted from this build; the
+  final public address is still needed.
 - Venue, page limit, anonymity rule, reference style, license, repository URL,
-  archival DOI, and release sanitization remain open.
+  archival DOI, and release sanitization are pending.
 - H4 and H7 remain `UNTESTED`; no H4/H7 experiments are part of this package.
-- The paper remains a workshop/short-paper or arXiv candidate, not a main-track
-  submission. No merge into `paper\MANUSCRIPT.md` and no submission has
-  occurred.
+- The manuscript is prepared for workshop/short-paper or arXiv submission; no
+  peer-reviewed venue is asserted.
 
 ## QA of the reference PDF
 

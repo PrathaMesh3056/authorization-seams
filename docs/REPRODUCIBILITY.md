@@ -2,7 +2,7 @@
 
 Two separate activities:
 
-1. **Verify the frozen evidence and rebuild the paper** — cheap, offline,
+1. **Verify the frozen evidence and rebuild the paper** — cheap, local,
    deterministic, and the default.
 2. **Rerun an experiment set from its locked inputs** — slower, needs the
    pinned upstream checkouts, and must be done in a scratch copy so the frozen
@@ -65,9 +65,9 @@ Copy-Item -Recurse tests\seam_pilot_v2 $env:TEMP\seam_pilot_v2_rerun
 The writers overwrite files under `results/`. Never run them against the frozen
 tree in this repository.
 
-Experiment execution is offline. The APC pilot blocks socket connections during
-runs; the SentinelAgent audit used a loopback-only offline entry point. Setup
-steps that need network access are separated from evaluation.
+Experiment execution is local and network-isolated. The APC pilot blocks socket
+connections during runs; the SentinelAgent audit used a loopback-only entry
+point. Setup steps that need network access are separated from evaluation.
 
 ## Dependencies
 

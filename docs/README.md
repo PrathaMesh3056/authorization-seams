@@ -2,20 +2,20 @@
 
 This directory mixes two kinds of material:
 
-- **New repository documentation** written for this package (method overview,
-  reproducibility, scope, release gates, sanitization).
-- **Copied internal status/QA records** from the working archive. They are kept
-  for traceability, not as submission text.
+- **Repository documentation** written for this package (method overview,
+  reproducibility, scope, release checks, sanitization).
+- **Project status and QA records** retained for traceability. They are not part
+  of the manuscript text.
 
 | File | Kind | Purpose |
 |---|---|---|
 | `METHOD_OVERVIEW.md` | new | What the study measures and how to read the claims |
 | `REPRODUCIBILITY.md` | new | How to rebuild the paper and verify artifacts |
 | `ARTIFACT_SCOPE.md` | new | What is and is not included, and why |
-| `RELEASE_CHECKLIST.md` | new | Open gates before publishing/submitting |
+| `RELEASE_CHECKLIST.md` | new | Release checks before publishing/submitting |
 | `RELEASE_SANITIZATION.md` | new | Machine-local path and input review procedure |
 | `REPO_BUILD_QA.md` | new | Local build, integrity, and packaging validation record |
-| `RESEARCH_STATUS.md` | copied | Internal status snapshot and open gates |
+| `RESEARCH_STATUS.md` | copied | Project status snapshot and release checks |
 | `FINAL_BUILD_QA.md` | copied | Build, font, reference, and export QA |
 | `FONT_QA_REPORT.md` | copied | Font embedding and fallback checks |
 | `ARTIFACT_SNAPSHOT.md` | copied | Recorded hashes and build state |

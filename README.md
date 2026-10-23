@@ -1,54 +1,63 @@
-# The Handoff Nobody Owns — locked-artifact study of cross-mechanism authorization seams
+# The Handoff Nobody Owns
 
-Working preprint and reproduction package for a measurement study of what
+**A locked-artifact study of cross-mechanism authorization seams**
+
+Research preprint and reproduction package for a measurement study of what
 happens when one authorization mechanism hands a narrowed decision to another.
 
-> **Status:** prepared locally, **no remote configured and nothing pushed**.
-> The manuscript is a 24-page single-column arXiv-style named-author draft for a
-> workshop/short-paper or tool-track submission. It is not peer reviewed, it
-> has not been merged into the frozen `MANUSCRIPT.md`, and it has not been
-> submitted anywhere. Hypotheses H4 and H7 remain `UNTESTED`. The 23 October
-> build prints the author name and affiliation; a double-blind venue would
-> require re-anonymization.
+> **Status:** research preprint; not peer reviewed. The manuscript is a 24-page,
+> single-column named-author build prepared for workshop/short-paper or
+> tool-track review. Hypotheses H4 and H7 remain `UNTESTED`. The build prints
+> the author name and affiliation; a double-blind venue would require
+> re-anonymization.
 
-## What this repository is
+## Overview
 
-- The corrected manuscript source and the canonical 23 October 2026 named-author
-  PDF.
+The repository contains the manuscript, its canonical PDF, the standalone LaTeX
+export, and the frozen experiment evidence behind the reported measurements.
+The experiments use a locked-prediction protocol: cases, arms, inputs, and
+hashes are fixed before execution; runs are local and deterministic;
+discrepancies are reconciled verbatim; and reported values are generated from
+stored artifacts.
+
+## What is included
+
+- The manuscript source and the canonical 23 October 2026 named-author PDF.
 - The locked-artifact harnesses for the APC → TraceGrant, APC → SentinelAgent,
   and bridge-boundary experiments, with their frozen cases, locks, and stored
   results.
 - The independent TraceGrant Task D implementation and the SentinelAgent
   prototype pinned for the SentinelAgent pilot.
-- Build, manifest, and integrity-check tooling for paper and artifacts.
+- Build, manifest, and integrity-check tooling for the paper and artifacts.
 
-## What this repository is not
+## Scope and non-claims
 
-- It is **not** a claim that any third-party mechanism is broken or secure. The
-  paper measures composition it can observe under explicit bridge mappings.
+- This is **not** a claim that any third-party mechanism is broken or secure.
+  The paper measures composition under explicit bridge mappings.
 - Progent is related work, not a baseline. Its published numbers are its
   authors' self-report and are not reproduced, re-measured, or compared here.
-- It does not contain the large working archive (local virtual environments,
-  upstream clones, third-party PDFs). Those are fetched or referenced by the
-  bootstrap and provenance docs.
 - H4 and H7 are not tested. No result in this repository should be read as
   evidence for or against them.
+- The repository does not redistribute the large local archive, virtual
+  environments, upstream clones, or third-party PDFs. Those are fetched or
+  referenced by the bootstrap and provenance documentation.
 
 ## Repository layout
 
 | Path | Contents |
 |---|---|
-| `paper/` | Corrected manuscript, canonical PDF, figures, Pandoc/XeLaTeX build |
-| `paper/latex_export/` | Standalone single-file LaTeX export of the same draft |
-| `tests/` | Frozen experiment trees, pinned inputs, locks, stored results |
+| `paper/` | Manuscript, canonical PDF, figures, Pandoc/XeLaTeX build |
+| `paper/latex_export/` | Standalone single-file LaTeX export of the manuscript |
+| `tests/` | Frozen experiment evidence: cases, locks, harnesses, and stored results |
 | `artifacts/` | Generated SHA-256 manifest and integrity metadata |
-| `docs/` | Method overview, reproducibility notes, internal status and QA records |
-| `future_paper/` | Proposed SeamBench full-paper program; not part of this submission |
+| `docs/` | Method overview, reproducibility notes, project status, and QA records |
+| `future_paper/` | Proposed SeamBench full-paper program; not part of this manuscript |
 | `scripts/` | Build, verify, bootstrap, sanitize, and package entry points |
-| `qa/` | Repository-level integrity tests |
+| `qa/` | Repository-level integrity checks |
 
 The `tests/` layout is deliberate. The frozen scripts resolve their inputs from
-sibling directories, so the directory names must stay exactly as they are.
+sibling directories, so the directory names must stay exactly as they are. These
+are experiment records, not a conventional unit-test suite.
 
 ## Quick start
 
@@ -87,26 +96,21 @@ the paper.
 - `scripts/verify_artifacts.py` checks the manuscript, canonical PDF, LaTeX
   export, figures, and the selected frozen result/lock files against
   `artifacts/sha256sums.txt`.
-- Any mismatch is a hard failure. Do not "fix" a hash by editing the manifest
-  without recording why in `CHANGELOG.md`.
+- Any mismatch is a hard failure. Do not edit the manifest to make a mismatch
+  disappear without recording why in `CHANGELOG.md`.
 
-## Publication gates
+## Release status
 
-These remain open and are tracked in `docs/RELEASE_CHECKLIST.md`:
-
-- final public author email;
-- target venue/CFP, page limit, anonymity rule, reference style;
-- license selection (code and manuscript);
-- repository URL and archival DOI;
-- release sanitization of machine-local paths and third-party inputs.
+This repository is currently private. License selection, public contact
+information, target venue, repository URL, and archival DOI are not yet
+assigned. The release checklist is maintained in `docs/RELEASE_CHECKLIST.md`.
 
 ## Citation
 
-See `CITATION.cff`. Until the preprint is posted, cite the repository as an
-unpublished working artifact; do not cite a DOI that does not exist.
+See `CITATION.cff`. No archival DOI is assigned; cite the repository as an
+unpublished preprint until a DOI exists.
 
 ## License
 
-**No license has been granted yet.** `LICENSE` is a release gate, not a grant.
-Do not redistribute this repository until the owner replaces it with an
-explicit code license and an explicit manuscript license.
+No license is granted for redistribution. `LICENSE` records the current
+all-rights-reserved status; a release license is still pending.

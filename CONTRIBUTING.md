@@ -7,19 +7,19 @@ artifacts.**
 ## Ground rules
 
 1. **Frozen means frozen.** Files under `paper/` (manuscript source, hashes)
-   and `tests/**` (cases, locks, results) are the evidence for the draft.
+   and `tests/**` (cases, locks, results) are the evidence for the manuscript.
    Corrections are made by adding a new dated artifact or a new revision, never
    by editing an existing one in place.
 2. **No new claims without evidence.** The manuscript reports only what the
    locked artifacts support. Do not add results, comparisons, or performance
-   claims to the draft without a new frozen experiment and review.
+   claims to the manuscript without a new frozen experiment and review.
 3. **H4 and H7 stay `UNTESTED`.** Do not present analysis, commentary, or
    partial runs as tests of either hypothesis.
 4. **Third-party material is referenced, not absorbed.** Do not vendor
    upstream projects beyond the small MIT-licensed SentinelAgent excerpt that
    is already present. Use `scripts/bootstrap_vendor.*` for pinned clones.
-5. **No secrets, tokens, or personal credentials.** The harnesses are offline;
-   network access is disabled during runs.
+5. **No secrets, tokens, or personal credentials.** The harnesses run locally
+   with network access disabled during runs.
 
 ## Making a change
 
@@ -39,5 +39,5 @@ authorized revision, and record what changed and why in `CHANGELOG.md`.
 - [ ] `python -m pytest -q qa` passes.
 - [ ] If the manuscript changed, the hash in `paper/build/preprocess.py` and
       the canonical PDF were regenerated deliberately.
-- [ ] No placeholder email, token, or machine-local path was added.
+- [ ] No placeholder contact, token, or machine-local path was added.
 - [ ] Claims remain scoped to the locked case families.

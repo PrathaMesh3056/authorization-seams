@@ -1,6 +1,6 @@
 {
   "title": "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry",
-  "description": "Locked-artifact reproduction package and manuscript draft for a study of cross-mechanism authorization seams. Working preprint artifact; not peer reviewed. Hypotheses H4 and H7 remain untested.",
+  "description": "Locked-artifact reproduction package and research manuscript for a study of cross-mechanism authorization seams. Not peer reviewed. Hypotheses H4 and H7 remain untested.",
   "creators": [
     {
       "name": "Patil, Prathamesh",
@@ -20,5 +20,5 @@
     "conformance testing",
     "locked-artifact methodology"
   ],
-  "notes": "License selection and final public email are unresolved release gates. No DOI is assigned. Do not publish this metadata record until those gates close."
+  "notes": "Private metadata. License selection and public contact information are not yet assigned; no DOI is assigned."
 }

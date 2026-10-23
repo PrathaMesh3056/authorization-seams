@@ -78,4 +78,4 @@ This list is illustrative, not exhaustive; the script report is the authority.
 The script does not exhaustively detect credentials, and the repository should
 never contain any. Before release, also scan for token-shaped strings and
 confirm that no API key, cookie, or private key was committed. The harnesses are
-designed to run offline and to take no credentials.
+designed to run locally without network access and to take no credentials.
