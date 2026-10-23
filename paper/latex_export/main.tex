@@ -1377,11 +1377,12 @@ distribution the critical interface of this seam.
 Ten controls pass across the family --- signature-validity failure
 probes, foreign-key rejection, two-minter indistinguishability,
 attestation tamper and replay --- showing the checks are neither vacuous
-in the admit direction nor no-ops in the deny direction. The direction
-balance is measured: the matrix holds 488 admissions and 150 token-event
-denials out of 638 token-event calls (40 native P6/P7 denials, 42
-attestation-stage denials in arm 6, 68 pre-presentation refusals in arm
-7). Table 9 reports the per-template codes; the ten controls follow.
+in the admit direction nor no-ops in the deny direction. Across the full
+96-case matrix, the non-vacuity count is 488 admissions plus 150 denials
+with a token event attached (638 counted events; 40 native P6/P7
+denials, 42 attestation-stage denials in arm 6, 68 pre-presentation
+refusals in arm 7). Table 9 reports the per-template codes; the ten
+controls follow.
 
 \textbf{Table 9.} SentinelAgent signature family - per-template codes
 and leaks in the four token arms. Arm 2 = standalone; arm 5 =

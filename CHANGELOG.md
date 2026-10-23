@@ -3,6 +3,29 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.3] - 2026-10-23
+
+### Fixed
+
+- Corrected the 638 denominator wording to the full 96-case matrix scope: 488
+  admissions plus 150 token-attached denials = 638 counted events; the 150
+  decomposes as 40 native P6/P7, 42 attestation-stage, and 68 pre-presentation
+  denials. This is a non-vacuity count, not a count of all token events and not
+  a "token-event call" denominator.
+- Refreshed the canonical PDF, standalone LaTeX export, package, state docs,
+  manifest, and QA hashes. The pre-638 23 October PDF/zip/source are archived in
+  the working archive; the previous local commit preserves the pre-correction
+  repository state.
+
+### Notes
+
+- No new claims, experiments, references, or H4/H7 status; the abstract and
+  eight-reference list are unchanged.
+- F2, F3, F6, F9, F13, and F14 are resolved; F1 remains a minor identifier
+  line-break residual. F7, F8, F10-F12, and the listed NITs are minor/cosmetic;
+  F15 is an optional editorial note.
+- `dist/sanitized` remains untouched; no push has occurred.
+
 ## [0.1.2] - 2026-10-23
 
 ### Fixed

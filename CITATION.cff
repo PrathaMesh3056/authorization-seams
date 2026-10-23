@@ -6,7 +6,7 @@ authors:
   - family-names: Patil
     given-names: Prathamesh
     affiliation: "Department of Computer Engineering, Sardar Patel Institute of Technology"
-version: 0.1.2
+version: 0.1.3
 date-released: "2026-10-23"
 abstract: >-
   Locked-artifact measurement harness and manuscript draft for a study of
