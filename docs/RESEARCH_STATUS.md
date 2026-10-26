@@ -238,3 +238,22 @@ prefix, and the arm-5 confusion-matrix scoping. It is recorded in
 4. The 23 October rebuild, export refresh, and repository refresh are complete.
    Leave `dist\sanitized` untouched; publication is a separate owner decision.
 5. Do not submit to a public venue until the relevant release checks close.
+
+## 26 October 2026 arXiv candidate
+
+A separate arXiv-compliant named-author build now exists at
+`paper\arxiv_export\`. It is 27 pages, US Letter, 10 pt, with 1-inch margins,
+zero missing glyphs, zero LaTeX errors, and zero overfull hboxes. The canonical
+24-page PDF and frozen LaTeX export are unchanged. The arXiv build uses
+`Prathamesh N Patil` to match `CITATION.cff`; the canonical PDF retains the
+historical `Prathamesh Patil` string.
+
+Figure 2 remains a vector figure and its canonical file remains 7.0 inches
+wide. In the arXiv build it is fitted to the 6.5-inch text measure with
+`\linewidth`, preserving aspect ratio and content; this is a layout-only
+scaling, not a figure revision. No claim, number, table, reference, or
+hypothesis status changed.
+
+arXiv endorsement, license, public email, ORCID, repository URL, archival DOI,
+and release sanitization remain open. No submission or public release has
+occurred. See `docs\ARXIV_BUILD_QA.md`.

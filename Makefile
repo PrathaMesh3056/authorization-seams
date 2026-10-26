@@ -4,7 +4,7 @@
 
 PYTHON ?= python
 
-.PHONY: help verify qa test manifest paper package sanitize bootstrap clean
+.PHONY: help verify qa test manifest paper arxiv package sanitize bootstrap clean
 
 help:
 	@echo "targets:"
@@ -14,6 +14,7 @@ help:
 	@echo "  manifest  regenerate artifacts/sha256sums.txt"
 	@echo "  bootstrap fetch the pinned upstream checkouts (network)"
 	@echo "  paper     build the manuscript PDF with Pandoc + XeLaTeX"
+	@echo "  arxiv     build the 1-inch-margin arXiv candidate"
 	@echo "  package   build a review zip under dist/ after hash verification"
 	@echo "  sanitize  produce the public-release tree under dist/sanitized/"
 	@echo "  clean     remove generated paper build output"
@@ -35,6 +36,9 @@ bootstrap:
 
 paper:
 	bash paper/build/build.sh
+
+arxiv:
+	$(PYTHON) paper/build/build_arxiv.py
 
 package:
 	$(PYTHON) scripts/package_release.py

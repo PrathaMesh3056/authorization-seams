@@ -10,6 +10,7 @@ generated, not tracked.
 |---|---|
 | `build.ps1` | Windows build (Pandoc + XeLaTeX from PATH) |
 | `build.sh` | POSIX build |
+| `build_arxiv.py` | Builds the 27-page arXiv candidate with 1-inch margins from the frozen LaTeX export |
 | `preprocess.py` | Hash-checks the manuscript and adds YAML metadata + abstract env |
 | `retable.py` | Rewrites pipe-table separator widths; formatting only |
 | `header.tex` | Build preamble; not part of the manuscript |
@@ -21,6 +22,9 @@ generated, not tracked.
 - Build log: zero missing glyphs, zero LaTeX errors, zero overfull hboxes.
 - Three underfull hboxes and one `Label(s) may have changed` warning are
   expected and cosmetic.
+- `build_arxiv.py` writes `paper/arxiv_export/main.pdf`: 27 pages, 1-inch
+  margins, zero missing glyphs, zero LaTeX errors, zero overfull hboxes, four
+  cosmetic underfull hboxes, and one stable label warning.
 
 ## Version notes
 

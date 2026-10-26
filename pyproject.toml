@@ -9,7 +9,7 @@ description = "Locked-artifact harnesses and manuscript for cross-mechanism auth
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  { name = "Prathamesh Patil" },
+  { name = "Prathamesh N Patil" },
 ]
 keywords = [
   "agent authorization",

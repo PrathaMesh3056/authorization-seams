@@ -3,6 +3,45 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [Unreleased]
+
+### Added
+
+- arXiv-compliant named-author export under `paper/arxiv_export/`: 27 pages,
+  US Letter, 10 pt, 1-inch margins, both figures vector, zero missing glyphs,
+  zero LaTeX errors, and zero overfull hboxes.
+- Reproducible `paper/build/build_arxiv.py`, which verifies the frozen
+  `paper/latex_export/main.tex` SHA-256 before generating the candidate.
+- `docs/ARXIV_BUILD_QA.md`, `paper/arxiv_export/README.md`, and
+  `paper/arxiv_export/ARXIV_METADATA.md`.
+
+### Changed
+
+- Reconciled the author display metadata in `CITATION.cff`, `codemeta.json`,
+  `.zenodo.json`, `pyproject.toml`, and the arXiv candidate to
+  `Prathamesh N Patil`. The frozen canonical PDF remains unchanged with the
+  historical `Prathamesh Patil` string.
+- Updated the repository README, paper README, build README, toolchain notes,
+  submission checklist, release checklist, and documentation index for the
+  arXiv build.
+
+### Validation
+
+- Canonical manuscript, canonical PDF, frozen LaTeX export, figures, locks,
+  traces, and `dist/sanitized` remain unchanged.
+- Abstract remains 222 words with SHA-256
+  `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`;
+  the static reference list remains eight entries; H4 and H7 remain `UNTESTED`.
+- The arXiv PDF differs from the canonical PDF only by the 1-inch layout,
+  author display string, and Figure 2 fit. The generated LaTeX source differs
+  from the frozen export only in six content lines plus the build header.
+- No arXiv submission, public release, license, DOI, or repository visibility
+  change has occurred.
+- `python scripts/verify_artifacts.py` verifies 306 files; `python -m pytest -q
+  qa` passes 15 tests; the TraceGrant Task D suite passes 52 tests. The review
+  zip extracts, verifies, passes QA, and rebuilds the 27-page arXiv candidate.
+  `dist/sanitized` remains untouched and verifies at 298 files.
+
 ## [0.1.3] - 2026-10-23
 
 ### Fixed

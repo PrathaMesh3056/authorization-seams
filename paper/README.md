@@ -14,7 +14,8 @@ and why.
 | `drafts/MANUSCRIPT_DRAFT_2026-10-21.pdf` | Archived 21 October PDF |
 | `figures/` | Canonical vector figures and their recorded hashes |
 | `build/` | Pandoc + XeLaTeX build scripts and preamble |
-| `latex_export/` | Standalone single-file LaTeX source and reference PDF |
+| `latex_export/` | Frozen standalone single-file LaTeX source and reference PDF |
+| `arxiv_export/` | 27-page arXiv-compliant named-author build (1-inch margins) |
 
 ## Build
 
@@ -22,6 +23,9 @@ and why.
 pwsh -File paper/build/build.ps1
 # or
 bash paper/build/build.sh
+
+# arXiv-compliant candidate (1-inch margins)
+python paper/build/build_arxiv.py
 ```
 
 The build checks the manuscript SHA-256 before doing anything. If the hash does
@@ -34,11 +38,15 @@ deliberately if you intend to refresh the manuscript.
 
 ## Manuscript facts
 
-- Single-column `article`-class, letter paper, 10 pt, 0.75 in margins.
-- 24 pages, 8 static reference entries, both figures vector.
-- Named-author build: the title page and PDF metadata name Prathamesh Patil;
-  public contact information is not printed. A double-blind venue would require
-  re-anonymization.
+- Canonical build: single-column `article`-class, letter paper, 10 pt, 0.75 in
+  margins, 24 pages.
+- arXiv candidate: single-column `article`-class, letter paper, 10 pt, 1-inch
+  margins, 27 pages; see `arxiv_export/README.md` and `docs/ARXIV_BUILD_QA.md`.
+- 8 static reference entries, both figures vector in both builds.
+- Named-author build: the canonical title page and PDF metadata name
+  Prathamesh Patil; the arXiv candidate uses `Prathamesh N Patil` to match
+  `CITATION.cff`. Public contact information is not printed. A double-blind
+  venue would require re-anonymization.
 - Zero missing glyphs, zero LaTeX errors, zero overfull hboxes in the recorded
   build; three cosmetic underfull hboxes and one stable label warning remain.
 - The final public contact address is a pending release decision.

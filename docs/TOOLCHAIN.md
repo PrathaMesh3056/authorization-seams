@@ -39,6 +39,18 @@ xelatex -interaction=nonstopmode -halt-on-error main.tex
 The export directory contains `main.tex`, `figures/`, `main.pdf`, and
 `README.md`.
 
+### arXiv candidate
+
+```powershell
+python paper\build\build_arxiv.py
+```
+
+The script verifies the frozen LaTeX export hash, applies the 1-inch margin,
+author-name, and Figure 2 width changes, and compiles three times. It writes
+`paper\arxiv_export\main.tex` and `paper\arxiv_export\main.pdf` (27 pages, 0
+missing glyphs, 0 LaTeX errors, 0 overfull hboxes; 4 cosmetic underfull hboxes
+and 1 stable label warning). See `docs\ARXIV_BUILD_QA.md`.
+
 ### Figure conversion
 
 ```powershell

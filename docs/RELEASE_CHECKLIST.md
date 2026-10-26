@@ -36,6 +36,18 @@ Work top to bottom. Do not publish or submit while any required gate is open.
       explicit approval and verification.
 - [ ] No merge into the frozen `MANUSCRIPT.md`.
 
+## arXiv build gates
+
+- [x] arXiv-compliant named-author build created with 1-inch margins, 10 pt
+      type, no line numbers/watermarks, and 0 missing glyphs / 0 LaTeX errors /
+      0 overfull hboxes. See `docs/ARXIV_BUILD_QA.md`.
+- [ ] arXiv license selected and recorded; the choice is irrevocable per
+      announced version.
+- [ ] arXiv endorsement status resolved for `cs.CR`.
+- [ ] Public contact email and optional ORCID finalized.
+- [ ] Repository URL / archival DOI added only after the public release gate
+      closes, or omitted from the arXiv metadata.
+
 ## Packaging gates
 
 - [ ] `python scripts/verify_artifacts.py` passes.

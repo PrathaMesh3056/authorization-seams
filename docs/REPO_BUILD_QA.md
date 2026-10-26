@@ -107,6 +107,26 @@ in the working archive. The manifest verifies 297 files / 15,826,372 bytes;
 SentinelAgent, and boundary lock checks pass. No claim, experiment, reference,
 abstract, or H4/H7 status changed.
 
+## 26 October 2026 arXiv candidate
+
+A separate arXiv-compliant named-author build was generated from the frozen
+standalone LaTeX export. The build is 27 pages, US Letter, 10 pt, with 1-inch
+margins, zero missing glyphs, zero LaTeX errors, zero overfull hboxes, four
+cosmetic underfull hboxes, and one stable label warning. All fonts are embedded;
+both figures are vector; `pdfimages` reports zero raster images.
+
+The generated source differs from the frozen export only in six content lines
+plus the build header: margin, author display/metadata (four occurrences), and
+Figure 2 width. The canonical 24-page PDF and frozen LaTeX export are
+byte-identical. `paper\arxiv_export\main.tex` and `main.pdf` are tracked; the
+build script is `paper\build\build_arxiv.py`. See `ARXIV_BUILD_QA.md`.
+
+The refreshed manifest verifies 306 files; `pytest -q qa`
+passes 15 tests; TraceGrant Task D passes 52 tests. The canonical build still
+produces 24 pages with 0 missing glyphs, 0 LaTeX errors, and 0 overfull hboxes.
+The review zip extracts, verifies, passes QA, and rebuilds the 27-page arXiv
+candidate. `dist\sanitized` was not regenerated and verifies at 298 files.
+
 ## Gate reminder
 
 This record does not close the publication gates. License, final public email,

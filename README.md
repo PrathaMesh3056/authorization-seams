@@ -5,11 +5,12 @@
 Research preprint and reproduction package for a measurement study of what
 happens when one authorization mechanism hands a narrowed decision to another.
 
-> **Status:** research preprint; not peer reviewed. The manuscript is a 24-page,
-> single-column named-author build prepared for workshop/short-paper or
-> tool-track review. Hypotheses H4 and H7 remain `UNTESTED`. The build prints
-> the author name and affiliation; a double-blind venue would require
-> re-anonymization.
+> **Status:** research preprint; not peer reviewed. The canonical manuscript is
+> a 24-page, single-column named-author build. A separate 27-page
+> arXiv-compliant candidate uses 1-inch margins and the `Prathamesh N Patil`
+> display name. Both are prepared for workshop/short-paper or tool-track
+> review. Hypotheses H4 and H7 remain `UNTESTED`. The builds print the author
+> name and affiliation; a double-blind venue would require re-anonymization.
 
 ## Overview
 
@@ -47,7 +48,8 @@ stored artifacts.
 | Path | Contents |
 |---|---|
 | `paper/` | Manuscript, canonical PDF, figures, Pandoc/XeLaTeX build |
-| `paper/latex_export/` | Standalone single-file LaTeX export of the manuscript |
+| `paper/latex_export/` | Frozen standalone single-file LaTeX export of the manuscript |
+| `paper/arxiv_export/` | 27-page arXiv-compliant named-author build (1-inch margins) |
 | `tests/` | Frozen experiment evidence: cases, locks, harnesses, and stored results |
 | `artifacts/` | Generated SHA-256 manifest and integrity metadata |
 | `docs/` | Method overview, reproducibility notes, project status, and QA records |
@@ -74,10 +76,15 @@ pwsh -File paper/build/build.ps1
 
 # paper build (Linux/macOS)
 bash paper/build/build.sh
+
+# arXiv-compliant candidate (1-inch margins, 27 pages)
+python paper/build/build_arxiv.py
 ```
 
 The build writes generated files under `paper/build/`. The canonical PDF is
 `paper/drafts/MANUSCRIPT_DRAFT_2026-10-23.pdf`; the build does not overwrite it.
+The arXiv candidate is `paper/arxiv_export/main.pdf`; its QA record is
+`docs/ARXIV_BUILD_QA.md`.
 
 To rerun the experiments, first fetch the two pinned upstream repositories:
 
@@ -101,9 +108,11 @@ the paper.
 
 ## Release status
 
-This repository is currently private. License selection, public contact
-information, target venue, repository URL, and archival DOI are not yet
-assigned. The release checklist is maintained in `docs/RELEASE_CHECKLIST.md`.
+This repository is currently private. The arXiv-compliant build is prepared,
+but arXiv endorsement, license selection, public contact information, target
+venue, repository URL, and archival DOI are not yet assigned. The release
+checklist is maintained in `docs/RELEASE_CHECKLIST.md`; the build-specific
+record is `docs/ARXIV_BUILD_QA.md`.
 
 ## Citation
 
