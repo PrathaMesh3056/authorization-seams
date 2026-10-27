@@ -75,6 +75,14 @@
 \usepackage{url}
 \usepackage{needspace}
 \let\origtexttt\texttt
+% Inline code and artifact paths stay upright even inside italic notes.
+% \upshape changes only the shape, so bold table/heading contexts keep their
+% weight.  The url package's \path command selects \UrlFont directly, so it
+% needs the same rule.
+\renewcommand{\texttt}[1]{{\upshape\origtexttt{#1}}}
+\makeatletter
+\def\url@ttstyle{\def\UrlFont{\ttfamily\upshape}}
+\makeatother
 \setlength{\emergencystretch}{4em}
 % Overfull boxes are counted from the log; do not print debug rules in the
 % candidate PDF (they read as black artifacts in narrow table columns).

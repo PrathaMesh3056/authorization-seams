@@ -3,6 +3,54 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.5] - 2026-10-28
+
+### Changed
+
+- 28 October 2026 path-format correction: inline code and artifact paths now
+  render upright monospace, including spans inside notes; italic monospace is
+  prohibited by the build header. The artifact-root key is defined once in
+  Section 3.5, Table 12 and the Appendix cross-reference it, long path
+  parentheticals were shortened, and italic note lead-ins became bold run-in
+  labels.
+- Refreshed the canonical 26 October PDF, standalone LaTeX export, and
+  28-page arXiv candidate. The manuscript is now
+  `3C93BE57592BC022DCE353867E44273F41251DDF0FF849C2F95A7028DB4DA08A`;
+  the canonical PDF is
+  `BC6AB2C5A82654D7FC3831AE4B7CEA66EE4A4C38A5ABF5924BC8EC65F236C544`;
+  the standalone `main.tex` is
+  `ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515`;
+  the standalone PDF is
+  `9B569A258F2510DC0823BDB839FFE9511CE4DE34171E5670EF30D35A17E20B7D`;
+  the arXiv source is
+  `FCA5B98B2C209BA72EC8FFEBDE792FFB450C48660D1E6C7A999B81E4D467C007`;
+  and the arXiv PDF is
+  `7B8E8E7B6E167C9E4523BBA2B1F6F752F04FBA5FFA64D254E54AC5CAB4986165`.
+- Updated state docs, QA hash pins, build records, and export READMEs for the
+  28 October build.
+
+### Validation
+
+- Canonical build: 25 pages, 321,990 bytes, 0 missing glyphs, 0 fatal LaTeX
+  errors, 0 overfull hboxes, 3 cosmetic underfull hboxes, 6 ignored
+  infinite-glue-shrinkage diagnostics, and 1 stable label warning.
+- Standalone export: 25 pages, 321,988 bytes, 0 fatal errors, 0 overfull
+  hboxes, 3 underfull hboxes, and 1 stable label warning.
+- arXiv build: 28 pages, 323,573 bytes, 0 missing glyphs, 0 fatal LaTeX errors,
+  0 overfull hboxes, 4 cosmetic underfull hboxes, and 1 stable label warning.
+- All three PDFs contain zero `LMMono*-Italic` spans; all tested artifact paths
+  render upright and break at path separators rather than mid-word.
+- Abstract remains 222 words with SHA-256
+  `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`;
+  the static reference list remains eight entries; H4 and H7 remain
+  `UNTESTED`.
+- No new claims, experiments, or references were added.
+- The regenerated manifest and release packages were verified after generation;
+  the repository QA suite and TraceGrant Task D suite passed; `dist/sanitized`
+  remains untouched.
+- No arXiv submission, public release, license, DOI, or repository visibility
+  change has occurred.
+
 ## [0.1.4] - 2026-10-26
 
 ### Added

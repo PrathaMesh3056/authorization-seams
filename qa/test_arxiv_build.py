@@ -1,7 +1,7 @@
 """Checks for the 26 October 2026 arXiv-compliant candidate.
 
 These tests protect the separate 1-inch-margin build. They do not alter the
-frozen canonical PDF or the frozen LaTeX export.
+pinned canonical PDF or the current LaTeX export.
 """
 from __future__ import annotations
 

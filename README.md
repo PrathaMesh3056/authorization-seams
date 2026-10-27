@@ -23,7 +23,8 @@ stored artifacts.
 
 ## What is included
 
-- The manuscript source and the canonical 26 October 2026 named-author PDF.
+- The manuscript source and the canonical 26 October 2026 named-author PDF,
+  refreshed on 28 October 2026 for inline code/path formatting.
 - The locked-artifact harnesses for the APC → TraceGrant, APC → SentinelAgent,
   and bridge-boundary experiments, with their frozen cases, locks, and stored
   results.
@@ -48,7 +49,7 @@ stored artifacts.
 | Path | Contents |
 |---|---|
 | `paper/` | Manuscript, canonical PDF, figures, Pandoc/XeLaTeX build |
-| `paper/latex_export/` | Frozen standalone single-file LaTeX export of the manuscript |
+| `paper/latex_export/` | Current standalone single-file LaTeX export of the manuscript |
 | `paper/arxiv_export/` | 28-page arXiv-compliant named-author build (1-inch margins) |
 | `tests/` | Frozen experiment evidence: cases, locks, harnesses, and stored results |
 | `artifacts/` | Generated SHA-256 manifest and integrity metadata |

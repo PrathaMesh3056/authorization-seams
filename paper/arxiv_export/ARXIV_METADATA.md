@@ -1,7 +1,8 @@
 # arXiv metadata candidate
 
-Status: prepared 26 October 2026. Not submitted. License, endorsement, and
-public contact information remain owner decisions.
+Status: prepared 26 October 2026; build refreshed 28 October 2026 for inline
+code/path formatting. Not submitted. License, endorsement, and public contact
+information remain owner decisions.
 
 ## Core metadata
 

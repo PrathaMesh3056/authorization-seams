@@ -1,4 +1,4 @@
-# arXiv build QA - 26 October 2026
+# arXiv build QA - 28 October 2026
 
 **Target:** arXiv preprint, initial submission, named-author build.
 **Official sources checked 26 October 2026:**
@@ -25,8 +25,9 @@ made.
 The canonical 26 October PDF is a 25-page, single-column, named-author build
 with **0.75-inch margins**. arXiv requires a **minimum 1-inch page margin** and
 10-14 pt type. Uploading the canonical PDF as-is would risk a format
-correction. The canonical PDF and frozen LaTeX export are therefore unchanged;
-a separate arXiv candidate was generated. The 23 October 24-page PDF remains
+correction. The canonical PDF and standalone LaTeX export were refreshed for
+the 28 October path-format correction, but the arXiv layout remains a separate
+candidate generated from that export. The 23 October 24-page PDF remains
 archived.
 
 The same review also confirmed that arXiv is named-author (no anonymity), while
@@ -38,16 +39,16 @@ single-column paper is not a CODASPY-ready submission.
 
 | Item | Value |
 |---|---|
-| Frozen manuscript | `paper/MANUSCRIPT_REVISED.md` |
-| Manuscript SHA-256 | `1732872C36D4AC5EAE349450ACA946120F0EA21A2C48235F58985167A414CCC2` |
-| Frozen LaTeX source | `paper/latex_export/main.tex` |
-| Frozen LaTeX SHA-256 | `4C27CB582582473B961C9DD7E7574D67BD2ECB9C00CA55E6AFDDA493044D8602` |
+| Current manuscript | `paper/MANUSCRIPT_REVISED.md` |
+| Manuscript SHA-256 | `3C93BE57592BC022DCE353867E44273F41251DDF0FF849C2F95A7028DB4DA08A` |
+| Current LaTeX source | `paper/latex_export/main.tex` |
+| LaTeX source SHA-256 | `ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515` |
 | Build script | `paper/build/build_arxiv.py` |
 | Output source | `paper/arxiv_export/main.tex` |
 | Output PDF | `paper/arxiv_export/main.pdf` |
 | Toolchain | Pandoc 3.12.1 (source export) + XeLaTeX 4.16 / MiKTeX 25.12 |
 
-The build script verifies the frozen source hash before writing anything. It
+The build script verifies the pinned source hash before writing anything. It
 applies only the following changes:
 
 1. `margin=0.75in` to `margin=1in`;
@@ -56,10 +57,10 @@ applies only the following changes:
 3. Figure 2 from a fixed 7-inch width to `\linewidth`, so it fits the 1-inch
    text measure.
 
-A line-level diff against the frozen export shows exactly those six changed
-content lines (one margin line, four author-metadata lines, and one Figure 2
-width line) plus the generated-file header. No sentence, number, table,
-reference, figure, or hypothesis status changed.
+A line-level diff against the current source export shows exactly those six
+changed content lines (one margin line, four author-metadata lines, and one
+Figure 2 width line) plus the generated-file header. No sentence, number,
+table, reference, figure, or hypothesis status changed.
 
 ## Output checks
 
@@ -69,10 +70,10 @@ reference, figure, or hypothesis status changed.
 | Page size | 612 x 792 pt (US Letter) |
 | Body type | 10 pt |
 | Margins | 1-inch geometry; text line boxes at 72 pt |
-| PDF SHA-256 | `7022C36250F5E690E574CB2AF814A2BFD8C538FFBF2812AD156188192FE514D1` |
-| PDF size | 329,328 bytes |
-| Source SHA-256 | `82DF6A9A2E7AD7B59946C90D7878C8D0E26C9B3BF07FD98790A7C4C5DC83C934` |
-| Source size | 141,104 bytes |
+| PDF SHA-256 | `7B8E8E7B6E167C9E4523BBA2B1F6F752F04FBA5FFA64D254E54AC5CAB4986165` |
+| PDF size | 323,573 bytes |
+| Source SHA-256 | `FCA5B98B2C209BA72EC8FFEBDE792FFB450C48660D1E6C7A999B81E4D467C007` |
+| Source size | 141,560 bytes |
 | Missing glyphs | 0 |
 | Fatal LaTeX errors | 0 |
 | Overfull hboxes | 0 |
@@ -104,33 +105,46 @@ table overflows the page.
 - Static reference list: 8 entries.
 - H4 and H7: `UNTESTED` in the source and the PDF.
 - Progent: related work only; no reproduced figure or comparison.
-- The 26 October canonical PDF and frozen LaTeX export remain unchanged by
+- The 26 October canonical PDF and current LaTeX export remain unchanged by
   this export. The 23 October 24-page PDF remains archived.
 - Both arXiv figures are byte-identical copies of the canonical vector PDFs.
 - No internal placeholder email, local Windows path, or token-shaped secret
   appears in the generated source or PDF text.
 - No line numbers or watermark.
 
+## 28 October path-format correction
+
+- The upstream export now forces upright `\texttt` and `\path` rendering, so
+  code and paths inside notes are upright monospace rather than italic
+  monospace. The arXiv PDF contains zero `LMMono*-Italic` spans.
+- The artifact-root key is defined once in Section 3.5; Table 12 and the
+  Appendix cross-reference it. Long path parentheticals were shortened, and
+  italic note lead-ins became bold run-in labels.
+- The correction changes no claim, number, reference, table datum, figure, or
+  H4/H7 status. The abstract remains 222 words and the reference list remains
+  eight entries.
+
 ## Visual review
 
-Pages 1, 7, 18, 27, and 28 were rendered at 150 dpi and inspected. The title
-page, the Table 2/Table 3 page, Figure 2 and Table 12, the Appendix A/Table A1
-page, and the reference list show no clipping, overlap, missing glyph, or
-broken table. Table 2's caption and body are together; Table 3's Total row
-stays with the ledger; Figure 2's Locus B connector points to the
-bridge-translation step. All 28 pages were checked mechanically for text
-presence, text bounds, embedded images, and drawing content.
+Pages 1, 7, 13, 16, 18, 27, and 28 were rendered at 150 dpi and inspected.
+The title page, the Table 2/Table 3 page, the SentinelAgent and boundary
+reconciliation notes, Figure 2 and Table 12, the Appendix A/Table A1 page, and
+the reference list show no clipping, overlap, missing glyph, or broken table.
+Table 2's caption and body are together; Table 3's Total row stays with the
+ledger; Figure 2's Locus B connector points to the bridge-translation step. All
+28 pages were checked mechanically for text presence, text bounds, embedded
+images, and drawing content.
 
 ## Packaging checks
 
 - arXiv source package:
-  `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip` (160,075 bytes;
-  SHA-256 `45774B48313002A5B80F560A14EF01BB3F4644440EF7F419005584863643581C`).
+  `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip` (160,352 bytes;
+  SHA-256 `61DC9672548878E450638DC969B07EAEE0D1BD0D35B3FE1C1ADC3B4CF2BB33DA`).
   It contains `main.tex` and the two vector figures. Extracted into a clean
   temporary directory, it compiles to 28 pages with 0 missing glyphs, 0 fatal
   LaTeX errors, 0 overfull hboxes, 4 underfull hboxes, 3 ignored
   infinite-glue diagnostics, and 1 stable label warning.
-- Review package: `dist/seam-conformance-kit-20261026-review.zip`; regenerated
+- Review package: `dist/seam-conformance-kit-20261027-review.zip`; regenerated
   after the final manifest. It extracts, verifies the tracked files, passes the
   repository QA suite, and rebuilds the arXiv candidate to 28 pages. The
   current checksum is in the adjacent `.sha256` sidecar; it changes when

@@ -1,10 +1,10 @@
-# Research status - 26 October 2026
+# Research status - 28 October 2026
 
 ## Current position
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
-`1732872C36D4AC5EAE349450ACA946120F0EA21A2C48235F58985167A414CCC2`;
-588 lines, 115,324 bytes). The reference list has eight entries: the seven
+`3C93BE57592BC022DCE353867E44273F41251DDF0FF849C2F95A7028DB4DA08A`;
+590 lines, 115,367 bytes). The reference list has eight entries: the seven
 frozen identities checked on 20 October 2026 plus MasDrift, added 22 October
 2026 after arXiv identity verification. The abstract remains 222 words and
 byte-identical to the frozen version
@@ -12,8 +12,8 @@ byte-identical to the frozen version
 
 The canonical build is the 25-page single-column named-author preprint
 `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` (SHA-256
-`B3D39ED0D5F26CB42C1B436D43B9D5FFCC3C6FE613461C860561A0DBEBB788D3`):
-25 pages, 327,382 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+`BC6AB2C5A82654D7FC3831AE4B7CEA66EE4A4C38A5ABF5924BC8EC65F236C544`):
+25 pages, 321,990 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
 hboxes, 3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage
 diagnostics, and 1 stable `Label(s) may have changed` warning. The title page
 and PDF metadata name Prathamesh Patil; this is the authorized named-author
@@ -22,19 +22,19 @@ archived and unchanged.
 
 The standalone export is refreshed to the same source:
 `paper\latex_export\main.tex` (SHA-256
-`4C27CB582582473B961C9DD7E7574D67BD2ECB9C00CA55E6AFDDA493044D8602`) and
+`ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515`) and
 reference PDF `paper\latex_export\main.pdf` (SHA-256
-`5901ED2B13AC24C9536E41F313BD2A4BBF161F4BDF46E8A9D7D6FC11500492AE`), 25
-pages, 0 fatal errors, 0 overfull, 3 underfull, and 6 ignored glue
-diagnostics. Both figures are vector PDFs and are included.
+`9B569A258F2510DC0823BDB839FFE9511CE4DE34171E5670EF30D35A17E20B7D`), 25
+pages, 321,988 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 6 ignored
+glue diagnostics. Both figures are vector PDFs and are included.
 
 The separate arXiv-compliant named-author candidate is
 `paper\arxiv_export\main.pdf` (SHA-256
-`7022C36250F5E690E574CB2AF814A2BFD8C538FFBF2812AD156188192FE514D1`):
-28 pages, US Letter, 10 pt, 1-inch margins, 0 missing glyphs, 0 fatal LaTeX
-errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1 stable label
-warning. Its source SHA-256 is
-`82DF6A9A2E7AD7B59946C90D7878C8D0E26C9B3BF07FD98790A7C4C5DC83C934`.
+`7B8E8E7B6E167C9E4523BBA2B1F6F752F04FBA5FFA64D254E54AC5CAB4986165`):
+28 pages, 323,573 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
+0 fatal LaTeX errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1
+stable label warning. Its source SHA-256 is
+`FCA5B98B2C209BA72EC8FFEBDE792FFB450C48660D1E6C7A999B81E4D467C007`.
 
 ## 26 October correction pass
 
@@ -61,15 +61,35 @@ H4/H7 status. It applied these corrections:
   arm 6, 68 pre-presentation refusals in arm 7). The 230 admitted events without
   a token key are inside the 488; the 118 denials without a token key are
   outside the 638.
-- Table 12 uses display-only artifact-root abbreviations and keeps the full
-  paths in the artifact tree and prose. Table 2's caption/body and Table 3's
-  Total row stay with their tables.
+- Table 12 uses display-only artifact-root abbreviations; full paths remain in
+  the artifact tree. Table 2's caption/body and Table 3's Total row stay with
+  their tables.
 - Figure 2's Locus B connector points to the bridge-translation step; Locus A
   points to the carried-record/read-set gap. The caption and SVG description
   match the drawing.
 
 The pre-edit manuscript, export, and Figure 2 copies are archived under
 `paper\backups\` and `paper\figures\superseded\`.
+
+## 28 October path-format correction
+
+The path-format correction changed no claims, experiments, references, table
+data, or H4/H7 status. It applied these presentation fixes:
+
+- Inline code and artifact paths now render upright monospace, including spans
+  inside notes. The build header forces upright `\texttt` and `\path` shapes;
+  all three PDFs contain zero `LMMono*-Italic` spans.
+- The artifact-root key is defined once in Section 3.5: `v2` is the
+  `tests\seam_pilot_v2\results` root, `dt` is the discriminating-tests results
+  root, `sa` is the SentinelAgent results root, and `b` is the boundary results
+  root. Table 12 and the Appendix cross-reference that key.
+- Long path parentheticals were shortened, and italic note lead-ins became bold
+  run-in labels. The Section 3.5 key is a bullet list so long roots start at
+  the left margin and do not break mid-segment.
+- The canonical PDF, standalone export, and arXiv candidate were regenerated.
+  The abstract remains 222 words with SHA-256
+  `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`;
+  the reference list remains eight entries.
 
 ## Completed
 
@@ -99,6 +119,9 @@ The pre-edit manuscript, export, and Figure 2 copies are archived under
   and zip were rebuilt; the pre-638 build is archived.
 - 26 Oct 2026 audit correction pass applied as listed above; canonical,
   standalone export, and arXiv candidate rebuilt and rechecked.
+- 28 Oct 2026 path-format correction applied: upright inline code/paths,
+  Section 3.5 artifact-root key, shortened path parentheticals, and bold note
+  labels; canonical, export, and arXiv candidate rebuilt and rechecked.
 - Six Table 15 hashes verified; `paper\hashes.txt` remains untouched.
 - Table 15 truncation gate closed (22 Oct 2026): all six printed fragments are
   exact substrings of the full 64-character values, including the 7-character
@@ -133,7 +156,7 @@ The pre-edit manuscript, export, and Figure 2 copies are archived under
 - Implementation provenance added for the pinned APC commit, SentinelAgent
   prototype, TraceGrant Task D implementation, and bridge mappings.
 - SentinelAgent reconciliation flags disclosed: `expected_vs_observed_ok=false`
-  and `comparison.overall_ok=false`, with `sa\reconciliation.json` cited.
+  and `comparison.overall_ok=false`, with `sa\sa\reconciliation.json` cited.
 - Pilot-1 zero-seam pointer corrected to
   `tests\seam_pilot_v2\RESULTS_FOR_COAUTHOR.md` Section 1, derived from the
   arm2 = arm5 identity. All three forced identities are stated.
@@ -205,7 +228,7 @@ The pre-edit manuscript, export, and Figure 2 copies are archived under
 2. If a double-blind venue is chosen, re-anonymize the named-author build before
    submission; do not send the named-author PDF to a double-blind track.
 3. Add venue metadata only after a specific CFP is chosen.
-4. The 26 October rebuild, export refresh, arXiv candidate, and repository
-   refresh are complete. Leave `dist\sanitized` untouched; publication is a
-   separate owner decision.
+4. The 28 October path-format rebuild, export refresh, arXiv candidate, and
+   repository refresh are complete. Leave `dist\sanitized` untouched;
+   publication is a separate owner decision.
 5. Do not submit to a public venue until the relevant release checks close.
