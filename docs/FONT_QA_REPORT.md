@@ -5,8 +5,8 @@
 **Scope:** body typography and figure typography for the 25-page
 single-column named-author draft. No manuscript claim, number, status, table
 data, or frozen artifact was changed by the font pass. The current-build values
-below were refreshed for the 28 October path-format correction; the font
-inventory itself is unchanged from the earlier font pass.
+below were refreshed for the 28 October path-format and AI-use disclosure
+revision; the font inventory itself is unchanged from the earlier font pass.
 
 ## Problem found
 
@@ -60,9 +60,9 @@ the body font, and the figure math glyphs did not match the figure labels.
 ## Build QA
 
 - PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf`
-- SHA-256: `BC6AB2C5A82654D7FC3831AE4B7CEA66EE4A4C38A5ABF5924BC8EC65F236C544`
+- SHA-256: `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3`
 - Pages: 25
-- File size: 321,990 bytes
+- File size: 321,999 bytes
 - Page size: 612 x 792 pt (US Letter)
 - Named-author build: `Prathamesh Patil`; the placeholder email is not printed.
 - Missing glyphs: 0
@@ -102,9 +102,9 @@ export contains only `main.tex`, `figures/`, `main.pdf`, and `README.md`; no
 Poppler or QA tooling is bundled. The current export uses the same Latin Modern
 body and Arial/Cambria Math figures.
 
-- `main.tex` SHA-256: `ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515`
-- `main.pdf` 25 pages, 321,988 bytes, SHA-256:
-  `9B569A258F2510DC0823BDB839FFE9511CE4DE34171E5670EF30D35A17E20B7D`
+- `main.tex` SHA-256: `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA`
+- `main.pdf` 25 pages, 322,001 bytes, SHA-256:
+  `1430E2DBFF0A4658C72504731AA28F04B127BA4C6D4F7C04AAC0C59282916EDD`
 
 ## Remaining font-related caveat
 

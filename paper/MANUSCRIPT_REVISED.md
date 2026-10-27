@@ -152,7 +152,7 @@ The lock–run–publish discipline is completed by a review loop. After runs, t
 
 ### 3.7 Ethics, AI use, and reflexivity
 
-AI-assisted drafting, review, and quality assurance were used throughout this work. The SentinelAgent adversarial review was performed by `GLM-5.3-Flash Free`; a fresh-context OpenCode cross-check and a targeted external free-chat review were also used. These are not human peer review and do not constitute independent vendor validation. No AI system is an author; the authors remain responsible for all claims, artifacts, and errors. No human-subjects data were collected; the work is synthetic and offline.
+AI-assisted tools were used for the experiment implementation and artifact quality assurance. The SentinelAgent adversarial review was performed by `GLM-5.3-Flash Free`; a fresh-context OpenCode cross-check and a targeted external free-chat review were also used for quality assurance. These are not human peer review and do not constitute independent vendor validation. No AI system is an author; the author remains responsible for all claims, artifacts, and errors. No human-subjects data were collected; the work is synthetic and offline.
 
 ## 4. Results
 

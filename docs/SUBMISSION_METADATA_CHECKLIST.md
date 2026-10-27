@@ -9,11 +9,11 @@
 | Title | *The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry* | Present |
 | Abstract | 222 words; no new numbers, claims, statuses, or citations | Present, frozen guardrail |
 | Keywords | cross-mechanism authorization; agent authorization; authorization seams; scope narrowing; evidence carriage; conformance testing; locked-artifact methodology | Present |
-| Current draft | `paper\MANUSCRIPT_REVISED.md` | Present; SHA-256 `3C93BE57592BC022DCE353867E44273F41251DDF0FF849C2F95A7028DB4DA08A` |
-| Current PDF | `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` | Present; 25 pages; 321,990 bytes; named-author build; SHA-256 `BC6AB2C5A82654D7FC3831AE4B7CEA66EE4A4C38A5ABF5924BC8EC65F236C544` |
-| Standalone LaTeX | `paper\latex_export\main.tex` | Present; SHA-256 `ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515`; independent XeLaTeX compile verified (25 pages, 321,988 bytes) |
-| arXiv PDF | `paper\arxiv_export\main.pdf` | Present; 28 pages; 323,573 bytes; 1-inch margins; named-author `Prathamesh N Patil`; SHA-256 `7B8E8E7B6E167C9E4523BBA2B1F6F752F04FBA5FFA64D254E54AC5CAB4986165` |
-| arXiv LaTeX source | `paper\arxiv_export\main.tex` | Present; generated from the current export; SHA-256 `FCA5B98B2C209BA72EC8FFEBDE792FFB450C48660D1E6C7A999B81E4D467C007` |
+| Current draft | `paper\MANUSCRIPT_REVISED.md` | Present; SHA-256 `5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32` |
+| Current PDF | `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` | Present; 25 pages; 321,999 bytes; named-author build; SHA-256 `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3` |
+| Standalone LaTeX | `paper\latex_export\main.tex` | Present; SHA-256 `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA`; independent XeLaTeX compile verified (25 pages, 322,001 bytes) |
+| arXiv PDF | `paper\arxiv_export\main.pdf` | Present; 28 pages; 323,588 bytes; 1-inch margins; named-author `Prathamesh N Patil`; SHA-256 `E2939B632D2A5FAB2AC9BEAECC5084D0C556AFADE6BFFC97994532D310083430` |
+| arXiv LaTeX source | `paper\arxiv_export\main.tex` | Present; generated from the current export; SHA-256 `F1E614CE592CDDC058F90FDCCEF4651F42663DD164FD59FC02FD935FBC17F032` |
 | References | Static eight-entry list after Section 9 | Present; first seven identities checked 20 October 2026, MasDrift checked 22 October 2026; claims not reproduced |
 | Base draft | archived `MANUSCRIPT.md` (project archive, not this repository) | Preserved, not for merge |
 
@@ -55,7 +55,7 @@ checklist.
 
 | Declaration | Current state | Action |
 |---|---|---|
-| Ethics / AI use | Section 3.7 describes AI-assisted drafting, review, and QA; no human-subjects data; synthetic/offline work | Confirm wording and placement for target venue |
+| Ethics / AI use | Section 3.7 describes AI use in the experiment/artifact pipeline and QA; no human-subjects data; synthetic/offline work | Confirm wording and placement for target venue |
 | Funding | `TBD` | Add or state "none" only if true |
 | Competing interests | `TBD` | Add or state "none" only if true |
 | Data availability | Artifact tree exists; release not sanitized | Add only after release gate |

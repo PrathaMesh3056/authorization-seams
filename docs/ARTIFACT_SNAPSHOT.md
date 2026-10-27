@@ -2,7 +2,8 @@
 
 This is a working snapshot, not the release manifest. It records the current
 manuscript, figures, builds, and standalone LaTeX export after the 28 October
-2026 path-format correction to the 26 October 2026 audit-corrected draft. It
+2026 path-format correction and AI-use disclosure revision to the 26 October
+2026 audit-corrected draft. It
 does not replace `paper\hashes.txt` (the six Table 15 hashes) or any frozen
 source map. The 23 October 2026 canonical PDF and the pre-edit
 manuscript/export copies remain archived and unchanged.
@@ -11,14 +12,14 @@ manuscript/export copies remain archived and unchanged.
 
 | Artifact | SHA-256 |
 |---|---|
-| `paper\MANUSCRIPT_REVISED.md` | `3C93BE57592BC022DCE353867E44273F41251DDF0FF849C2F95A7028DB4DA08A` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` | `BC6AB2C5A82654D7FC3831AE4B7CEA66EE4A4C38A5ABF5924BC8EC65F236C544` |
-| `paper\build\manuscript_build_wide.tex` | `ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515` |
-| `paper\build\manuscript_build_wide.pdf` | `BC6AB2C5A82654D7FC3831AE4B7CEA66EE4A4C38A5ABF5924BC8EC65F236C544` |
-| `paper\latex_export\main.tex` | `ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515` |
-| `paper\latex_export\main.pdf` | `9B569A258F2510DC0823BDB839FFE9511CE4DE34171E5670EF30D35A17E20B7D` |
-| `paper\arxiv_export\main.tex` | `FCA5B98B2C209BA72EC8FFEBDE792FFB450C48660D1E6C7A999B81E4D467C007` |
-| `paper\arxiv_export\main.pdf` | `7B8E8E7B6E167C9E4523BBA2B1F6F752F04FBA5FFA64D254E54AC5CAB4986165` |
+| `paper\MANUSCRIPT_REVISED.md` | `5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` | `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3` |
+| `paper\build\manuscript_build_wide.tex` | `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA` |
+| `paper\build\manuscript_build_wide.pdf` | `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3` |
+| `paper\latex_export\main.tex` | `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA` |
+| `paper\latex_export\main.pdf` | `1430E2DBFF0A4658C72504731AA28F04B127BA4C6D4F7C04AAC0C59282916EDD` |
+| `paper\arxiv_export\main.tex` | `F1E614CE592CDDC058F90FDCCEF4651F42663DD164FD59FC02FD935FBC17F032` |
+| `paper\arxiv_export\main.pdf` | `E2939B632D2A5FAB2AC9BEAECC5084D0C556AFADE6BFFC97994532D310083430` |
 | `paper\figures\figure_1_handoff_anatomy.svg` | `035902B00D700869806BF038F4CE6CBF0B30017BCDB50D3760C4D23F72B9A23C` |
 | `paper\figures\figure_1_handoff_anatomy.pdf` | `0AA8A365135AA4E11C5A0D7194FEB3C27947D00FAD8FEA703A1612987C3B90B1` |
 | `paper\figures\figure_2_repair_loci.svg` | `B4C641CE07FB789C4E6D74D55E2092A698E256E374C87173D532A138066F3F88` |
@@ -33,9 +34,9 @@ manuscript/export copies remain archived and unchanged.
 ## Build status
 
 - Canonical 26 October build, refreshed 28 October: 25 pages, letter paper,
-  10 pt, 0.75 in margins; 321,990 bytes.
+  10 pt, 0.75 in margins; 321,999 bytes.
 - arXiv candidate, refreshed 28 October: 28 pages, letter paper, 10 pt, 1 in
-  margins; 323,573 bytes.
+  margins; 323,588 bytes.
 - Canonical build: 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes,
   3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage diagnostics,
   and 1 stable `Label(s) may have changed` warning.
@@ -54,7 +55,7 @@ manuscript/export copies remain archived and unchanged.
 - Figure 1: 239.76 x 171.828 pt, vector. Figure 2: 504 x 300.24 pt, vector.
 - `pdfimages` reports zero raster images in the manuscript and in both figures.
 - Standalone `paper\latex_export\main.tex` compiles independently with
-  XeLaTeX, producing a 25-page, 321,988-byte PDF with 0 overfull hboxes.
+  XeLaTeX, producing a 25-page, 322,001-byte PDF with 0 overfull hboxes.
 
 ## References and statuses
 
@@ -71,8 +72,12 @@ manuscript/export copies remain archived and unchanged.
   block is directional-only and is not used as evidence; Appendix Table A1
   records the hypothesis-label lineage.
 
-## 28 October path-format correction
+## 28 October path-format and disclosure revision
 
+- Section 3.7 now limits AI-use disclosure to experiment implementation,
+  artifact quality assurance, and the documented review passes; it no longer
+  claims AI-assisted drafting throughout the work. No new claim, experiment, or
+  reference was added.
 - Inline code and artifact paths now render upright monospace in all three
   PDFs, including spans inside italic notes. The build header forces `\texttt`
   and `\path` to upright shapes; no `LMMono*-Italic` span remains.

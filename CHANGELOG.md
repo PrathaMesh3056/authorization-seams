@@ -3,6 +3,49 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.6] - 2026-10-28
+
+### Changed
+
+- Scoped the Section 3.7 AI-use disclosure to experiment implementation,
+  artifact quality assurance, and the documented review passes. The broad
+  "AI-assisted drafting ... throughout this work" wording was removed; no claim
+  is made that an AI system authored the paper. No new claim, experiment, or
+  reference was added.
+- Rebuilt the canonical, standalone, and arXiv outputs after the disclosure
+  change. The manuscript is now
+  `5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32`
+  (115,399 bytes, 590 lines); the canonical PDF is
+  `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3`
+  (321,999 bytes, 25 pages); the standalone `main.tex` is
+  `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA`
+  and its PDF is
+  `1430E2DBFF0A4658C72504731AA28F04B127BA4C6D4F7C04AAC0C59282916EDD`
+  (322,001 bytes, 25 pages); the arXiv source is
+  `F1E614CE592CDDC058F90FDCCEF4651F42663DD164FD59FC02FD935FBC17F032`
+  (141,592 bytes) and the arXiv PDF is
+  `E2939B632D2A5FAB2AC9BEAECC5084D0C556AFADE6BFFC97994532D310083430`
+  (323,588 bytes, 28 pages).
+- Updated QA hash pins, build records, export READMEs, manifest, and packages.
+
+### Validation
+
+- Canonical build: 25 pages, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+  hboxes, 3 cosmetic underfull hboxes, and 1 stable label warning.
+- Standalone export: 25 pages, 0 fatal errors, 0 overfull hboxes, 3 underfull
+  hboxes, and 1 stable label warning.
+- arXiv build: 28 pages, 0 missing glyphs, 0 fatal errors, 0 overfull hboxes,
+  4 cosmetic underfull hboxes, and 1 stable label warning.
+- Abstract remains 222 words with SHA-256
+  `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`;
+  the reference list remains eight entries; H4 and H7 remain `UNTESTED`.
+- All three PDFs contain zero `LMMono*-Italic` spans.
+- Manifest, review package, arXiv package, repository QA suite, TraceGrant Task
+  D suite, E1/SA/boundary checks, and extracted-package rebuilds were verified
+  after generation. `dist/sanitized` remains untouched.
+- No arXiv submission, public release, license, DOI, or repository visibility
+  change has occurred.
+
 ## [0.1.5] - 2026-10-28
 
 ### Changed

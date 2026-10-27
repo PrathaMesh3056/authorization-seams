@@ -3,8 +3,8 @@
 ## Current position
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
-`3C93BE57592BC022DCE353867E44273F41251DDF0FF849C2F95A7028DB4DA08A`;
-590 lines, 115,367 bytes). The reference list has eight entries: the seven
+`5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32`;
+590 lines, 115,399 bytes). The reference list has eight entries: the seven
 frozen identities checked on 20 October 2026 plus MasDrift, added 22 October
 2026 after arXiv identity verification. The abstract remains 222 words and
 byte-identical to the frozen version
@@ -12,8 +12,8 @@ byte-identical to the frozen version
 
 The canonical build is the 25-page single-column named-author preprint
 `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` (SHA-256
-`BC6AB2C5A82654D7FC3831AE4B7CEA66EE4A4C38A5ABF5924BC8EC65F236C544`):
-25 pages, 321,990 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+`92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3`):
+25 pages, 321,999 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
 hboxes, 3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage
 diagnostics, and 1 stable `Label(s) may have changed` warning. The title page
 and PDF metadata name Prathamesh Patil; this is the authorized named-author
@@ -22,19 +22,19 @@ archived and unchanged.
 
 The standalone export is refreshed to the same source:
 `paper\latex_export\main.tex` (SHA-256
-`ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515`) and
+`A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA`) and
 reference PDF `paper\latex_export\main.pdf` (SHA-256
-`9B569A258F2510DC0823BDB839FFE9511CE4DE34171E5670EF30D35A17E20B7D`), 25
-pages, 321,988 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 6 ignored
+`1430E2DBFF0A4658C72504731AA28F04B127BA4C6D4F7C04AAC0C59282916EDD`), 25
+pages, 322,001 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 6 ignored
 glue diagnostics. Both figures are vector PDFs and are included.
 
 The separate arXiv-compliant named-author candidate is
 `paper\arxiv_export\main.pdf` (SHA-256
-`7B8E8E7B6E167C9E4523BBA2B1F6F752F04FBA5FFA64D254E54AC5CAB4986165`):
-28 pages, 323,573 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
+`E2939B632D2A5FAB2AC9BEAECC5084D0C556AFADE6BFFC97994532D310083430`):
+28 pages, 323,588 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
 0 fatal LaTeX errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1
 stable label warning. Its source SHA-256 is
-`FCA5B98B2C209BA72EC8FFEBDE792FFB450C48660D1E6C7A999B81E4D467C007`.
+`F1E614CE592CDDC058F90FDCCEF4651F42663DD164FD59FC02FD935FBC17F032`.
 
 ## 26 October correction pass
 
@@ -71,11 +71,15 @@ H4/H7 status. It applied these corrections:
 The pre-edit manuscript, export, and Figure 2 copies are archived under
 `paper\backups\` and `paper\figures\superseded\`.
 
-## 28 October path-format correction
+## 28 October path-format and disclosure revision
 
-The path-format correction changed no claims, experiments, references, table
-data, or H4/H7 status. It applied these presentation fixes:
+The revision changed no claims, experiments, references, table data, or H4/H7
+status. It applied these presentation and disclosure fixes:
 
+- Section 3.7 now limits AI-use disclosure to experiment implementation,
+  artifact quality assurance, and the documented review passes; it no longer
+  claims AI-assisted drafting throughout the work. No new claim, experiment, or
+  reference was added.
 - Inline code and artifact paths now render upright monospace, including spans
   inside notes. The build header forces upright `\texttt` and `\path` shapes;
   all three PDFs contain zero `LMMono*-Italic` spans.
@@ -119,9 +123,10 @@ data, or H4/H7 status. It applied these presentation fixes:
   and zip were rebuilt; the pre-638 build is archived.
 - 26 Oct 2026 audit correction pass applied as listed above; canonical,
   standalone export, and arXiv candidate rebuilt and rechecked.
-- 28 Oct 2026 path-format correction applied: upright inline code/paths,
-  Section 3.5 artifact-root key, shortened path parentheticals, and bold note
-  labels; canonical, export, and arXiv candidate rebuilt and rechecked.
+- 28 Oct 2026 path-format and AI-disclosure revision applied: upright inline
+  code/paths, Section 3.5 artifact-root key, shortened path parentheticals,
+  bold note labels, and an experiment/artifact-scoped Section 3.7 disclosure;
+  canonical, export, and arXiv candidate rebuilt and rechecked.
 - Six Table 15 hashes verified; `paper\hashes.txt` remains untouched.
 - Table 15 truncation gate closed (22 Oct 2026): all six printed fragments are
   exact substrings of the full 64-character values, including the 7-character
@@ -228,7 +233,7 @@ data, or H4/H7 status. It applied these presentation fixes:
 2. If a double-blind venue is chosen, re-anonymize the named-author build before
    submission; do not send the named-author PDF to a double-blind track.
 3. Add venue metadata only after a specific CFP is chosen.
-4. The 28 October path-format rebuild, export refresh, arXiv candidate, and
-   repository refresh are complete. Leave `dist\sanitized` untouched;
+4. The 28 October path-format and disclosure rebuild, export refresh, arXiv
+   candidate, and repository refresh are complete. Leave `dist\sanitized` untouched;
    publication is a separate owner decision.
 5. Do not submit to a public venue until the relevant release checks close.

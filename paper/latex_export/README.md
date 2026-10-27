@@ -2,8 +2,8 @@
 
 This package reproduces the 26 October 2026 named-author preprint of the
 seam-research manuscript, refreshed on 28 October 2026 for the inline
-code/path formatting correction. It is a preprint source, not a peer-reviewed
-publication.
+code/path formatting correction and AI-use disclosure revision. It is a
+preprint source, not a peer-reviewed publication.
 
 ## Files
 
@@ -41,12 +41,12 @@ files and are not needed to compile the body.
 ## Provenance
 
 - Manuscript source: `paper\MANUSCRIPT_REVISED.md`
-- Manuscript SHA-256: `3C93BE57592BC022DCE353867E44273F41251DDF0FF849C2F95A7028DB4DA08A`
+- Manuscript SHA-256: `5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32`
 - Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf`
-- Canonical PDF SHA-256: `BC6AB2C5A82654D7FC3831AE4B7CEA66EE4A4C38A5ABF5924BC8EC65F236C544`
-- Standalone `main.tex` SHA-256: `ED7970DFA49DB36B3759B3ED59700679C81EED91BFA326723503C5670E9A8515`
-- Reference PDF: 25 pages, 321,988 bytes
-- Reference PDF SHA-256: `9B569A258F2510DC0823BDB839FFE9511CE4DE34171E5670EF30D35A17E20B7D`
+- Canonical PDF SHA-256: `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3`
+- Standalone `main.tex` SHA-256: `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA`
+- Reference PDF: 25 pages, 322,001 bytes
+- Reference PDF SHA-256: `1430E2DBFF0A4658C72504731AA28F04B127BA4C6D4F7C04AAC0C59282916EDD`
 - Build: Pandoc 3.12.1 + XeLaTeX (MiKTeX 25.12)
 - Manuscript date in the PDF: 26 October 2026
 
