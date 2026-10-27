@@ -55,8 +55,8 @@ remains 222 words and byte-identical to the frozen version
   regenerated and independently compiled.
 - `paper\ARTIFACT_SNAPSHOT.md`, `paper\RESEARCH_STATUS.md`,
   `paper\SUBMISSION_METADATA_CHECKLIST.md`, `paper\TOOLCHAIN.md`,
-  `paper\agent_reports\FINAL_BUILD_QA.md`,
-  `paper\agent_reports\FONT_QA_REPORT.md` - current build state and hashes
+  `docs\FINAL_BUILD_QA.md`,
+  `docs\FONT_QA_REPORT.md` - current build state and hashes
   refreshed.
 - `future_paper\FUTURE_PAPER_BUILD.md` - separate proposed full-paper build;
   not part of the current paper.

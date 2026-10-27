@@ -10,12 +10,13 @@ and why.
 |---|---|
 | `MANUSCRIPT_REVISED.md` | Manuscript source; the only build input |
 | `hashes.txt` | Frozen Table 15 hashes; do not edit |
-| `drafts/MANUSCRIPT_DRAFT_2026-10-23.pdf` | Canonical 24-page named-author preprint PDF |
+| `drafts/MANUSCRIPT_DRAFT_2026-10-26.pdf` | Canonical 25-page named-author preprint PDF |
+| `drafts/MANUSCRIPT_DRAFT_2026-10-23.pdf` | Archived 23 October canonical PDF |
 | `drafts/MANUSCRIPT_DRAFT_2026-10-21.pdf` | Archived 21 October PDF |
 | `figures/` | Canonical vector figures and their recorded hashes |
 | `build/` | Pandoc + XeLaTeX build scripts and preamble |
 | `latex_export/` | Frozen standalone single-file LaTeX source and reference PDF |
-| `arxiv_export/` | 27-page arXiv-compliant named-author build (1-inch margins) |
+| `arxiv_export/` | 28-page arXiv-compliant named-author build (1-inch margins) |
 
 ## Build
 
@@ -39,16 +40,17 @@ deliberately if you intend to refresh the manuscript.
 ## Manuscript facts
 
 - Canonical build: single-column `article`-class, letter paper, 10 pt, 0.75 in
-  margins, 24 pages.
+  margins, 25 pages, 16 tables including Appendix Table A1.
 - arXiv candidate: single-column `article`-class, letter paper, 10 pt, 1-inch
-  margins, 27 pages; see `arxiv_export/README.md` and `docs/ARXIV_BUILD_QA.md`.
+  margins, 28 pages; see `arxiv_export/README.md` and `docs/ARXIV_BUILD_QA.md`.
 - 8 static reference entries, both figures vector in both builds.
 - Named-author build: the canonical title page and PDF metadata name
   Prathamesh Patil; the arXiv candidate uses `Prathamesh N Patil` to match
   `CITATION.cff`. Public contact information is not printed. A double-blind
   venue would require re-anonymization.
-- Zero missing glyphs, zero LaTeX errors, zero overfull hboxes in the recorded
-  build; three cosmetic underfull hboxes and one stable label warning remain.
+- Zero missing glyphs, zero fatal LaTeX errors, zero overfull hboxes in the
+  recorded canonical build; three cosmetic underfull hboxes, six ignored
+  infinite-glue-shrinkage diagnostics, and one stable label warning remain.
 - The final public contact address is a pending release decision.
 
 ## Scope

@@ -1,112 +1,98 @@
-# Working artifact snapshot - 23 Oct 2026
+# Working artifact snapshot - 26 October 2026
 
 This is a working snapshot, not the release manifest. It records the current
-manuscript, figures, build, and standalone LaTeX export after the readability,
-font, vector-PDF, reference-integration, factual/traceability, and 23 October
-2026 finalization passes, including the F4/F5 wording corrections and the 638
-non-vacuity wording correction. It does not replace `paper\hashes.txt` (the six
-Table 15 hashes) or any frozen source map.
+manuscript, figures, builds, and standalone LaTeX export after the 26 October
+2026 audit-driven correction pass. It does not replace `paper\hashes.txt` (the
+six Table 15 hashes) or any frozen source map. The 23 October 2026 canonical
+PDF and the pre-edit manuscript/export copies remain archived and unchanged.
 
 ## Current artifacts
 
 | Artifact | SHA-256 |
 |---|---|
-| `paper\MANUSCRIPT_REVISED.md` | `84648BDFF4CADF06DB8055EC2A51BC1D1A37FB9E12882BD506530349F0C2DB66` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` | `D2F01F8F80BB9DCC43F59E6CF1763DDACEEA6341AAC0569B18B36C27DD1EA9CE` |
-| `paper\build\manuscript_build_wide.tex` | `107BEF375982BF0120167F59F4C64662151C04B2CCB79AD0BDE3614E15EB786A` |
-| `paper\build\manuscript_build_wide.pdf` | `D2F01F8F80BB9DCC43F59E6CF1763DDACEEA6341AAC0569B18B36C27DD1EA9CE` |
-| `paper\latex_export\main.tex` | `107BEF375982BF0120167F59F4C64662151C04B2CCB79AD0BDE3614E15EB786A` |
-| `paper\latex_export\main.pdf` | `1BBAD8114A771F710CDE01903ED4ECC2135F27E8ED13BF1DC99A24BA21500DAF` |
-| `paper\drafts\seam_manuscript_latex_2026-10-23.zip` | `9252C9953074AD8301E67FF63EC62E014E2B18AC7EF0A0FF39D42759EC3E5E35` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23_pre_638fix.pdf` (archived) | `086F0F6D451060644DA1C9A8F22DDA985A0F2B16D90A4B9D4BDDF22638BD67AC` |
-| `paper\drafts\seam_manuscript_latex_2026-10-23_pre_638fix.zip` (archived) | `9F4958FCE4D26492F3B5F4055D6437A59C4CECB5AEB1AECD34762FF42ED704C3` |
-| `paper\backups\MANUSCRIPT_REVISED_pre_638fix_20261023.md` (archived) | `1F82A0ED02CF02405FD8076EDAD74B9ADD2130F154D38F87CE493F80D00E6510` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23_pre_F4F5.pdf` (archived) | `5C9DB3F375F92A4E9A93DDBA64E38960CF25F91CBE20D217EBCDBDCE03BFB82B` |
-| `paper\drafts\seam_manuscript_latex_2026-10-23_pre_F4F5.zip` (archived) | `3FCF7B7ABE52D0F20F91C94CB2FC3899778DA11AB13E640B5BC64E8A8E69DDF0` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-21.pdf` (archived) | `5635F9DDA3A9D75B56C791939F80DC3ACBF5254619661131A6E80AB47F2FB494` |
-| `paper\drafts\seam_manuscript_latex_2026-10-21.zip` (archived) | `D64FD1D46ED0C2A70BF10B2CD1D753DBD130BB4E9B52D247EBAB03B60AD670A2` |
+| `paper\MANUSCRIPT_REVISED.md` | `1732872C36D4AC5EAE349450ACA946120F0EA21A2C48235F58985167A414CCC2` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` | `B3D39ED0D5F26CB42C1B436D43B9D5FFCC3C6FE613461C860561A0DBEBB788D3` |
+| `paper\build\manuscript_build_wide.tex` | `4C27CB582582473B961C9DD7E7574D67BD2ECB9C00CA55E6AFDDA493044D8602` |
+| `paper\build\manuscript_build_wide.pdf` | `B3D39ED0D5F26CB42C1B436D43B9D5FFCC3C6FE613461C860561A0DBEBB788D3` |
+| `paper\latex_export\main.tex` | `4C27CB582582473B961C9DD7E7574D67BD2ECB9C00CA55E6AFDDA493044D8602` |
+| `paper\latex_export\main.pdf` | `5901ED2B13AC24C9536E41F313BD2A4BBF161F4BDF46E8A9D7D6FC11500492AE` |
+| `paper\arxiv_export\main.tex` | `82DF6A9A2E7AD7B59946C90D7878C8D0E26C9B3BF07FD98790A7C4C5DC83C934` |
+| `paper\arxiv_export\main.pdf` | `7022C36250F5E690E574CB2AF814A2BFD8C538FFBF2812AD156188192FE514D1` |
 | `paper\figures\figure_1_handoff_anatomy.svg` | `035902B00D700869806BF038F4CE6CBF0B30017BCDB50D3760C4D23F72B9A23C` |
 | `paper\figures\figure_1_handoff_anatomy.pdf` | `0AA8A365135AA4E11C5A0D7194FEB3C27947D00FAD8FEA703A1612987C3B90B1` |
-| `paper\figures\figure_2_repair_loci.svg` | `F80E70F44958BED3003CE42E7038685B9A66D368D47B9E9F063329B5C3BEBC4A` |
-| `paper\figures\figure_2_repair_loci.pdf` | `5ABCDD261C156CDFFF979B313131411FC811C9CFBF3FF4DE5CC95545A7F2C758` |
+| `paper\figures\figure_2_repair_loci.svg` | `B4C641CE07FB789C4E6D74D55E2092A698E256E374C87173D532A138066F3F88` |
+| `paper\figures\figure_2_repair_loci.pdf` | `43172412D0AE892C40B18C619EECD03F5A0DA863933E0523E6DFB4195D33867B` |
+| `paper\backups\MANUSCRIPT_REVISED_pre_audit_20261026.md` (archived) | `84648BDFF4CADF06DB8055EC2A51BC1D1A37FB9E12882BD506530349F0C2DB66` |
+| `paper\backups\latex_export_2026-10-23\main.tex` (archived) | `107BEF375982BF0120167F59F4C64662151C04B2CCB79AD0BDE3614E15EB786A` |
+| `paper\backups\latex_export_2026-10-23\main.pdf` (archived) | `1BBAD8114A771F710CDE01903ED4ECC2135F27E8ED13BF1DC99A24BA21500DAF` |
+| `paper\figures\superseded\figure_2_repair_loci_pre_audit_20261026.svg` (archived) | `F80E70F44958BED3003CE42E7038685B9A66D368D47B9E9F063329B5C3BEBC4A` |
+| `paper\figures\superseded\figure_2_repair_loci_pre_audit_20261026.pdf` (archived) | `5ABCDD261C156CDFFF979B313131411FC811C9CFBF3FF4DE5CC95545A7F2C758` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` (historical) | `D2F01F8F80BB9DCC43F59E6CF1763DDACEEA6341AAC0569B18B36C27DD1EA9CE` |
 
 ## Build status
 
-- 24 pages, letter paper, 10 pt, 0.75 in margins; 321,409 bytes.
-- 0 missing glyphs, 0 LaTeX errors, 0 overfull hboxes.
-- Three cosmetic underfull hboxes remain; no text loss or overflow. They are
-  not build blockers.
-- One stable `Label(s) may have changed` warning remains in the build log;
-  there is no unresolved-reference warning and no missing glyph. The warning
-  does not indicate a missing citation or figure.
-- Named-author build: the title page and PDF metadata name Prathamesh Patil.
-  The placeholder email is not printed. A double-blind venue would require
-  re-anonymization.
-- Table 15's caption and table body both appear on page 23; Table 12 spans
-  pages 16-17; Figure 1 is on page 3; Figure 2 is on page 16.
+- Canonical 26 October build: 25 pages, letter paper, 10 pt, 0.75 in margins;
+  327,382 bytes.
+- arXiv candidate: 28 pages, letter paper, 10 pt, 1 in margins; 329,328 bytes.
+- Canonical build: 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes,
+  3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage diagnostics,
+  and 1 stable `Label(s) may have changed` warning.
+- arXiv build: 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes, and
+  4 cosmetic underfull hboxes; 1 stable label warning.
+- Named-author build: the canonical title page and PDF metadata name
+  Prathamesh Patil; the arXiv candidate names Prathamesh N Patil. A double-blind
+  venue would require re-anonymization.
+- Table 2's caption and body are together; Table 3's Total row stays with the
+  ledger; Table 12 spans pages 16-17 and uses display-only artifact-root
+  abbreviations; Appendix Table A1 spans pages 24-25 in the canonical build.
 - All PDF fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
-- Figure 1: 239.76 x 171.828 pt, vector.
-- Figure 2: 504 x 300.24 pt, vector.
+- Figure 1: 239.76 x 171.828 pt, vector. Figure 2: 504 x 300.24 pt, vector.
 - `pdfimages` reports zero raster images in the manuscript and in both figures.
 - Standalone `paper\latex_export\main.tex` compiles independently with
-  XeLaTeX, producing a 24-page PDF.
-- The current 23 October zip was extracted to a clean directory and compiled
-  independently: 24 pages, 0 errors, 0 missing glyphs, 0 overfull hboxes.
-- The pre-638 23 October PDF/zip/source, the pre-F4F5 23 October PDF/zip, and
-  the 21 October PDF/zip remain archived.
+  XeLaTeX, producing a 25-page PDF with 0 overfull hboxes.
 
-## References
+## References and statuses
 
 - The manuscript contains a static eight-entry reference list after Section 9:
   `[APC]`, `[TraceGrant]`, `[SentinelAgent]`, `[Progent]`, `[MasDrift]`, Noma
   Security, the IETF individual Internet-Draft, and arXiv:2605.05440.
-- MasDrift (arXiv:2608.07556v3) was added on 22 October 2026 after arXiv
-  identity verification. It is confined to Section 6 and the reference list; it
-  introduces no comparison and changes no claim or experiment.
+- Abstract: 222 words, SHA-256
+  `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`.
+- H4 and H7 remain `UNTESTED`; no H4/H7 experiments are part of this package.
 - Progent is positioned as a close related work on monotonic confinement inside
   one privilege-control layer, not as an experimental baseline. Its reported
   results are not re-measured or compared here.
-- Bibliographic identities were checked on 20 October 2026 for the first seven
-  entries and on 22 October 2026 for MasDrift; the works were not reproduced and
-  their claims are not verified inputs.
-- The list is style-neutral. Venue-specific reference style remains open.
+- The legacy `tests\seam_pilot_v2\results\claims_update.md` old-H6 Progent
+  block is directional-only and is not used as evidence; Appendix Table A1
+  records the hypothesis-label lineage.
+
+## Correction-pass notes
+
+- H3 is narrowed to state/identity vocabulary gaps. Caught recipient/default
+  cases, the E1 action-family consumption failure, and the V1/V2 derivation
+  widening are reported under H1/H6 and the measured findings, not H3.
+- Section 1, Section 4.5, and Section 9 disclose that two of the three
+  pair-level zeroes are construction-forced and that E1 is the only genuine
+  composition-specific test.
+- The 638 non-vacuity count is stated against the 7-arm, 96-case matrix
+  (756 evaluated events): 488 admissions plus 150 token-attached denials, with
+  the no-token admitted and denied events identified separately.
+- Figure 2's Locus B connector points to the bridge-translation step; Locus A
+  points to the carried-record/read-set gap. The caption and SVG description
+  match the drawing.
+- `dist\sanitized` remains the stale 21 October 298-file tree and was not
+  regenerated or edited. The review package is not a public-release package.
 
 ## Notes
 
-- The current manuscript includes the spelled-out `Section` cross-references,
-  the one-sentence star definition at first use, both figure includes, the
-  H1-H7 status key, the eight-entry reference list, the corrected handoff-norm
-  sentence ("kept the 4 leaks"), the H6 row scoped to the disclosed E1
-  exception, and the corrected 638 non-vacuity count (488 admissions plus 150
-  token-attached denials over the full 96-case matrix).
-- The Table 15 suffix note is at `MANUSCRIPT_REVISED.md` line 521. It discloses
-  the 7-character row-3 suffix and the 9-character row-6 suffix; the full
-  values remain in `paper\hashes.txt`.
-- F2, F3, F6, F9, F13, and F14 are resolved in this build. F1 remains a minor
-  identifier line-break residual in Table 4: full identifiers are recoverable,
-  but the PDF breaks some of them at underscores. F4, F5, and the 638 wording
-  are corrected. F7, F8, F10-F12, and the listed NITs are accepted
-  minor/cosmetic residuals. F15 is an optional editorial note; the model
-  disclosure is already present.
-- The pre-638 source is preserved at
-  `paper\backups\MANUSCRIPT_REVISED_pre_638fix_20261023.md`; its rendered PDF
-  and zip are preserved in `paper\drafts` as the `_pre_638fix` files above.
-- The pre-F4F5 source and export are preserved in local commit `31843d3`; the
-  pre-F4F5 rendered PDF and zip are preserved in `paper\drafts` as the
-  `_pre_F4F5` files above.
-- The build preamble maps the source star to the Latin Modern Math `\star`
-  glyph. The PDF shows a star, not a platform symbol-font glyph.
-- The figures use Arial for labels and Cambria Math for the subset glyph only;
-  no Lucida or Segoe fallback remains.
-- References are set ragged-right to avoid stretched interword gaps.
-- The placeholder email is not printed in the PDF. The named author affiliation
-  is the one supplied; city/country and the final public email remain open.
-- `paper\MANUSCRIPT.md`, `paper\CONSOLIDATED_CLAIMS.md`, `paper\hashes.txt`,
-  locks, traces, and frozen artifacts remain untouched.
-- `paper\CONSOLIDATED_CLAIMS.md` is frozen but contains superseded
+- The frozen predecessor `MANUSCRIPT.md` and claim authority
+  `CONSOLIDATED_CLAIMS.md` remain in the project archive, not this repository;
+  they were not edited. `paper\hashes.txt`, locks, traces, and frozen artifacts
+  remain untouched.
+- The archived `CONSOLIDATED_CLAIMS.md` is frozen but contains superseded
   Progent/APC/SentinelAgent characterizations. It is not the current wording
-  authority; the correction record is
-  `paper\agent_reports\REVIEW_CORRECTIONS_2026-10-21.md`.
-- The proposed future full-paper build is separate at
-  `future_paper\FUTURE_PAPER_BUILD.md`; it is not part of this snapshot or the
-  current submission package.
+  authority; the correction records are in `docs\`.
+- The pre-edit source and export copies are under `paper\backups\`; the old
+  Figure 2 SVG/PDF are under `paper\figures\superseded\`.
+- The 23 October canonical PDF remains at
+  `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` and is not overwritten.

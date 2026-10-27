@@ -1,5 +1,9 @@
 ﻿# Figure PDF hashes
-# Generated: 2026-10-20T18:16:19.0322913+05:30
+# Generated: 2026-10-26
+# Relative paths; no machine-local path is recorded.
 
-5343A821F16F846C4645F73FCE036E1176F603070E5BFF89750E34E659D36AD9  C:\Users\prath\Downloads\RPaper\paper\figures\figure_1_handoff_anatomy.pdf
-96D0A84161EFF6DABF1F484FCF42802EC723B63CA4A98FE53FBD1ABBEB135E1A  C:\Users\prath\Downloads\RPaper\paper\figures\figure_2_repair_loci.pdf
+0AA8A365135AA4E11C5A0D7194FEB3C27947D00FAD8FEA703A1612987C3B90B1  paper/figures/figure_1_handoff_anatomy.pdf
+43172412D0AE892C40B18C619EECD03F5A0DA863933E0523E6DFB4195D33867B  paper/figures/figure_2_repair_loci.pdf
+
+# Figure 2 pre-26-October PDF (superseded; archived under paper/figures/superseded/):
+# 5ABCDD261C156CDFFF979B313131411FC811C9CFBF3FF4DE5CC95545A7F2C758

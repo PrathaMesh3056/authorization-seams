@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="7in" height="4.17in" viewBox="0 0 1008 600" font-family="Arial, Helvetica, sans-serif">
   <title>Figure 2 — the two repair loci</title>
-  <desc>Schematic of one delegated call through a five-step pipeline band: sender narrowing, bridge translation, carried record, receiver read set, admission decision. A short dashed stub from the carried record terminates at the X barrier between the carried record and the receiver read set, so the unread path stops before the read set. Locus A (receiver side) and Locus B (bridge side) face the carried-record to read-set gap from opposite sides. No data, no counts.</desc>
+  <desc>Schematic of one delegated call through a five-step pipeline band: sender narrowing, bridge translation, carried record, receiver read set, admission decision. A short dashed stub from the carried record terminates at the X barrier between the carried record and the receiver read set, so the unread path stops before the read set. Locus B points to the bridge-translation step; Locus A points to the carried-record to read-set gap. No data, no counts.</desc>
 
   <defs>
     <!-- Fixed-size arrowhead in viewBox units (does not scale with stroke width) -->
@@ -82,8 +82,8 @@
   <rect x="240" y="474" width="220" height="48" rx="6" fill="#FFFFFF" stroke="#666666" stroke-width="1.5" />
   <text x="350" y="503" text-anchor="middle" font-size="15" fill="#333333">narrowed manifest</text>
 
-  <!-- Facing elbow bracket from Locus B up to the carried-record/read-set gap -->
-  <path d="M 466 210 L 466 190 L 588 190" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <!-- Facing elbow bracket from Locus B up to the bridge-translation step -->
+  <path d="M 466 210 L 466 190 L 305 190" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
 
   <!-- ============ LOCUS A — receiver side (right) ============ -->
   <rect x="514" y="210" width="474" height="360" fill="#FFFFFF" stroke="#333333" stroke-width="1.5" />

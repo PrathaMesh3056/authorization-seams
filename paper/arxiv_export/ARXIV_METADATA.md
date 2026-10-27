@@ -12,7 +12,7 @@ public contact information remain owner decisions.
 | Affiliation | Department of Computer Engineering, Sardar Patel Institute of Technology |
 | Primary category | `cs.CR` (proposed) |
 | Cross-list | `cs.AI` (proposed) |
-| Comments | 27 pages, 2 figures, 15 tables. Artifact release pending. |
+| Comments | 28 pages, 2 figures, 16 tables. Artifact release pending. |
 | Journal reference | None |
 | DOI | arXiv-issued DOI after announcement; do not fabricate |
 | License | `TBD` - author choice; arXiv licenses are irrevocable per version |

@@ -4,7 +4,7 @@
 
 | Area | What is included | Why |
 |---|---|---|
-| Manuscript | Corrected Markdown source, canonical 24-page PDF, vector figures, table hashes | The artifact under review |
+| Manuscript | Corrected Markdown source, canonical 25-page PDF, vector figures, table hashes | The artifact under review |
 | LaTeX export | Single-file `main.tex` and reference PDF | Standalone rebuild without Pandoc |
 | Paper build | Hash-checking preprocess, table-width pass, code-span pass, preamble, build scripts | Reproduces the draft from source |
 | Pilot 1 | Cases, design notes, adapters, locks, stored results, traces | APC → TraceGrant evidence |

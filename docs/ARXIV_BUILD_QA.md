@@ -22,15 +22,16 @@ made.
 
 ## Why a separate build was needed
 
-The canonical 23 October PDF is a 24-page, single-column, named-author build
+The canonical 26 October PDF is a 25-page, single-column, named-author build
 with **0.75-inch margins**. arXiv requires a **minimum 1-inch page margin** and
 10-14 pt type. Uploading the canonical PDF as-is would risk a format
 correction. The canonical PDF and frozen LaTeX export are therefore unchanged;
-a separate arXiv candidate was generated.
+a separate arXiv candidate was generated. The 23 October 24-page PDF remains
+archived.
 
 The same review also confirmed that arXiv is named-author (no anonymity), while
 CODASPY 2027 requires a 12-page double-column anonymized research submission
-(abstract 16 November 2026; paper 23 November 2026). The current 24-page
+(abstract 16 November 2026; paper 23 November 2026). The current 25-page
 single-column paper is not a CODASPY-ready submission.
 
 ## Inputs and build
@@ -38,9 +39,9 @@ single-column paper is not a CODASPY-ready submission.
 | Item | Value |
 |---|---|
 | Frozen manuscript | `paper/MANUSCRIPT_REVISED.md` |
-| Manuscript SHA-256 | `84648BDFF4CADF06DB8055EC2A51BC1D1A37FB9E12882BD506530349F0C2DB66` |
+| Manuscript SHA-256 | `1732872C36D4AC5EAE349450ACA946120F0EA21A2C48235F58985167A414CCC2` |
 | Frozen LaTeX source | `paper/latex_export/main.tex` |
-| Frozen LaTeX SHA-256 | `107BEF375982BF0120167F59F4C64662151C04B2CCB79AD0BDE3614E15EB786A` |
+| Frozen LaTeX SHA-256 | `4C27CB582582473B961C9DD7E7574D67BD2ECB9C00CA55E6AFDDA493044D8602` |
 | Build script | `paper/build/build_arxiv.py` |
 | Output source | `paper/arxiv_export/main.tex` |
 | Output PDF | `paper/arxiv_export/main.pdf` |
@@ -64,18 +65,19 @@ reference, figure, or hypothesis status changed.
 
 | Check | Result |
 |---|---|
-| Pages | 27 |
+| Pages | 28 |
 | Page size | 612 x 792 pt (US Letter) |
 | Body type | 10 pt |
 | Margins | 1-inch geometry; text line boxes at 72 pt |
-| PDF SHA-256 | `6A023B39741D6F52852C7883EEA94EF3DA4108DB7B8AE10318272FC3B4D593E3` |
-| PDF size | 324,267 bytes |
-| Source SHA-256 | `C6C350D856DEA6F842F9B3A6F95E108643372BF9007616D0749A784038670C93` |
-| Source size | 135,931 bytes |
+| PDF SHA-256 | `7022C36250F5E690E574CB2AF814A2BFD8C538FFBF2812AD156188192FE514D1` |
+| PDF size | 329,328 bytes |
+| Source SHA-256 | `82DF6A9A2E7AD7B59946C90D7878C8D0E26C9B3BF07FD98790A7C4C5DC83C934` |
+| Source size | 141,104 bytes |
 | Missing glyphs | 0 |
-| LaTeX errors | 0 |
+| Fatal LaTeX errors | 0 |
 | Overfull hboxes | 0 |
 | Underfull hboxes | 4 cosmetic |
+| Ignored infinite-glue diagnostics | 3, non-fatal |
 | Label warning | 1 stable `Label(s) may have changed` warning |
 | Embedded fonts | All fonts embedded |
 | Raster images | 0; both figures are vector |
@@ -83,10 +85,10 @@ reference, figure, or hypothesis status changed.
 | Title page author | `Prathamesh N Patil` |
 | Public email printed | No |
 | Repository URL printed | No |
-| DOI printed | No |
+| Manuscript DOI printed | No; the reference list cites external DOIs |
 | License printed | No |
 
-The page count increased from 24 to 27 because the text measure narrowed from
+The page count increased from 25 to 28 because the text measure narrowed from
 7.0 to 6.5 inches. That is a deliberate layout consequence, not a content
 revision.
 
@@ -102,7 +104,8 @@ table overflows the page.
 - Static reference list: 8 entries.
 - H4 and H7: `UNTESTED` in the source and the PDF.
 - Progent: related work only; no reproduced figure or comparison.
-- The canonical 24-page PDF and frozen LaTeX source remain byte-identical.
+- The 26 October canonical PDF and frozen LaTeX export remain unchanged by
+  this export. The 23 October 24-page PDF remains archived.
 - Both arXiv figures are byte-identical copies of the canonical vector PDFs.
 - No internal placeholder email, local Windows path, or token-shaped secret
   appears in the generated source or PDF text.
@@ -110,24 +113,28 @@ table overflows the page.
 
 ## Visual review
 
-Pages 1, 4, 18, 23, and 27 were rendered at 110 dpi and inspected. The title
-page, a dense table page, Figure 2, the threats section, and the reference list
-show no clipping, overlap, missing glyph, or broken table. All 27 pages were
-checked mechanically for text presence, text bounds, embedded images, and
-drawing content.
+Pages 1, 7, 18, 27, and 28 were rendered at 150 dpi and inspected. The title
+page, the Table 2/Table 3 page, Figure 2 and Table 12, the Appendix A/Table A1
+page, and the reference list show no clipping, overlap, missing glyph, or
+broken table. Table 2's caption and body are together; Table 3's Total row
+stays with the ledger; Figure 2's Locus B connector points to the
+bridge-translation step. All 28 pages were checked mechanically for text
+presence, text bounds, embedded images, and drawing content.
 
 ## Packaging checks
 
 - arXiv source package:
-  `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip` (158,232 bytes;
-  SHA-256 `75CAFCA9C1D5E7CDFE49FAF0C05C3C2D30BBE6ACCB897933E2C01A74796EB417`).
+  `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip` (160,075 bytes;
+  SHA-256 `45774B48313002A5B80F560A14EF01BB3F4644440EF7F419005584863643581C`).
   It contains `main.tex` and the two vector figures. Extracted into a clean
-  temporary directory, it compiles to 27 pages with 0 missing glyphs, 0 LaTeX
-  errors, 0 overfull hboxes, 4 underfull hboxes, and 1 stable label warning.
-- Review package: `dist/seam-conformance-kit-20261026-review.zip`. It extracts,
-  verifies 306 tracked files, passes the 15 repository QA tests, and rebuilds
-  the arXiv candidate to 27 pages. The current checksum is in the adjacent
-  `.sha256` sidecar; it changes when tracked documentation changes.
+  temporary directory, it compiles to 28 pages with 0 missing glyphs, 0 fatal
+  LaTeX errors, 0 overfull hboxes, 4 underfull hboxes, 3 ignored
+  infinite-glue diagnostics, and 1 stable label warning.
+- Review package: `dist/seam-conformance-kit-20261026-review.zip`; regenerated
+  after the final manifest. It extracts, verifies the tracked files, passes the
+  repository QA suite, and rebuilds the arXiv candidate to 28 pages. The
+  current checksum is in the adjacent `.sha256` sidecar; it changes when
+  tracked documentation changes.
 - The review package is **not** a public-release package: frozen evidence and
   toolchain notes still contain machine-local paths. The sanitized tree remains
   the release path.

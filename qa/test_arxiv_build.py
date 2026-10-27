@@ -15,7 +15,7 @@ ARXIV_TEX = ROOT / "paper" / "arxiv_export" / "main.tex"
 ARXIV_PDF = ROOT / "paper" / "arxiv_export" / "main.pdf"
 ARXIV_METADATA = ROOT / "paper" / "arxiv_export" / "ARXIV_METADATA.md"
 
-EXPECTED_PAGES = 27
+EXPECTED_PAGES = 28
 EXPECTED_AUTHOR = "Prathamesh N Patil"
 EXPECTED_TITLE = (
     "The Handoff Nobody Owns: Measuring What Cross-Mechanism "

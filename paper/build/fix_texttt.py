@@ -87,6 +87,23 @@ while True:
     pos = close_pos + 1
 
 text = "".join(out)
+# Keep the Table 2 caption with its body in the narrower arXiv measure, and
+# keep the Table 3 Total row with the ledger body in the canonical build.
+# These are layout guards only; the caption and cell text are unchanged.
+text = text.replace(
+    r"\textbf{Table 2.}",
+    r"\needspace{10\baselineskip}\textbf{Table 2.}",
+    1,
+)
+text = text.replace(
+    r"\textbf{Table 3.}",
+    r"\needspace{12\baselineskip}\textbf{Table 3.}",
+    1,
+)
+# The preamble permits a break after every escaped underscore. That is useful
+# for long identifiers, but it splits the receiver-record symbol rho_R on the
+# title page. Keep this three-character symbol together.
+text = text.replace("\u03c1\\_R", "\\mbox{\u03c1\\_R}")
 # Pandoc's default template adds a table-caption setup even though all table
 # captions in this manuscript are ordinary body paragraphs. Remove the unused
 # setup so the build log is clean.

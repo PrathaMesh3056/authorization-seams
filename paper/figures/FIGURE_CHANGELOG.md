@@ -1,9 +1,28 @@
-# Figure change log — 20 Oct 2026
+# Figure change log - 20 October 2026, corrected 26 October 2026
 
 Scope: figure-only QA fixes after the camera-ready SVG review.
 
 No manuscript, frozen claim, lock, trace, evidence file, or Table 15 hash was changed.
 `paper\hashes.txt` was not touched.
+
+## 26 October 2026 correction
+
+The 20 October post-edit hash table below is a historical record and does not
+match the tracked figure files. The pre-correction Figure 2 SVG/PDF were archived
+at `superseded/figure_2_repair_loci_pre_audit_20261026.svg` and
+`superseded/figure_2_repair_loci_pre_audit_20261026.pdf`.
+
+The 26 October correction changed Figure 2's Locus B connector so it points to
+the bridge-translation step rather than into the carried-record/read-set gap;
+the SVG `<desc>` and the manuscript caption were updated to match. Figure 1 was
+not changed by this pass. Current tracked hashes:
+
+| File | SHA-256 |
+|---|---|
+| `figure_1_handoff_anatomy.svg` | `035902B00D700869806BF038F4CE6CBF0B30017BCDB50D3760C4D23F72B9A23C` |
+| `figure_1_handoff_anatomy.pdf` | `0AA8A365135AA4E11C5A0D7194FEB3C27947D00FAD8FEA703A1612987C3B90B1` |
+| `figure_2_repair_loci.svg` | `B4C641CE07FB789C4E6D74D55E2092A698E256E374C87173D532A138066F3F88` |
+| `figure_2_repair_loci.pdf` | `43172412D0AE892C40B18C619EECD03F5A0DA863933E0523E6DFB4195D33867B` |
 
 ## Pre-edit hashes
 
@@ -32,7 +51,11 @@ No manuscript, frozen claim, lock, trace, evidence file, or Table 15 hash was ch
 - Raised `repair at the bridge`, `bridge derivation`, and `narrowed manifest` from 14 to 15 units (7.5 pt).
 - Kept the X barrier, bracket tips, labels, and content unchanged.
 
-## Post-edit hashes
+## Post-edit hashes (historical 20 October record)
+
+> These values are preserved as the 20 October 2026 record. They are superseded
+> by the 26 October correction table above and do not describe the tracked
+> files.
 
 | File | SHA-256 |
 |---|---|
@@ -62,5 +85,7 @@ No manuscript, frozen claim, lock, trace, evidence file, or Table 15 hash was ch
 
 - Figure 1 v2 was promoted to canonical `figure_1_handoff_anatomy.svg`; the two files are byte-identical.
 - The superseded v1 is preserved at `superseded/figure_1_handoff_anatomy_v1.svg` and must not be embedded.
-- Figure 2 remains at its canonical path.
-- Vector PDF conversion is complete. Manuscript integration remains pending.
+- Figure 2 remains at its canonical path; its Locus B connector was corrected on
+  26 October 2026 as described above.
+- Vector PDF conversion is complete. Manuscript integration is complete; the
+  current figure PDFs are embedded in the canonical and arXiv builds.

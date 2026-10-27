@@ -1,4 +1,11 @@
-# Final build QA - 23 Oct 2026
+# Final build QA - 23 Oct 2026 (historical)
+
+> **Historical record.** This file documents the 23 October 2026 build. Its
+> hashes, page counts, and export values are intentionally preserved and are
+> not the current 26 October 2026 build. Current values are recorded in
+> `docs\ARTIFACT_SNAPSHOT.md` and `docs\ARXIV_BUILD_QA.md`; the 26 October
+> correction pass did not change any claim, experiment, reference, or H4/H7
+> status.
 
 ## Source
 

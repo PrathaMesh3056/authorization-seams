@@ -3,44 +3,63 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
-## [Unreleased]
+## [0.1.4] - 2026-10-26
 
 ### Added
 
-- arXiv-compliant named-author export under `paper/arxiv_export/`: 27 pages,
-  US Letter, 10 pt, 1-inch margins, both figures vector, zero missing glyphs,
-  zero LaTeX errors, and zero overfull hboxes.
-- Reproducible `paper/build/build_arxiv.py`, which verifies the frozen
-  `paper/latex_export/main.tex` SHA-256 before generating the candidate.
-- `docs/ARXIV_BUILD_QA.md`, `paper/arxiv_export/README.md`, and
-  `paper/arxiv_export/ARXIV_METADATA.md`.
+- 26 October 2026 audit correction pass: H3 narrowed to state/identity
+  vocabulary gaps; caught/E1/boundary findings rehomed under H1/H6 and the
+  measured findings; zero-seam construction-forced disclosure added to
+  Sections 1, 4.5, and 9; Appendix A/Table A1 hypothesis-lineage
+  reconciliation added; legacy Progent citation qualified; 638 arithmetic
+  wording corrected; Table 12 display-only artifact-root aliases added; and
+  Figure 2's Locus B connector corrected.
+- Pre-edit provenance copies archived under `paper/backups/` and
+  `paper/figures/superseded/`: the pre-audit manuscript, the 23 October
+  standalone export, and the pre-audit Figure 2 SVG/PDF. The 23 October
+  canonical PDF remains archived at
+  `paper/drafts/MANUSCRIPT_DRAFT_2026-10-23.pdf`.
+- New canonical 26 October PDF and refreshed standalone export:
+  `paper/drafts/MANUSCRIPT_DRAFT_2026-10-26.pdf` and
+  `paper/latex_export/main.pdf`.
+- 28-page arXiv-compliant named-author candidate under
+  `paper/arxiv_export/`, with 1-inch margins, both figures vector, zero
+  missing glyphs, zero fatal LaTeX errors, and zero overfull hboxes.
 
 ### Changed
 
-- Reconciled the author display metadata in `CITATION.cff`, `codemeta.json`,
-  `.zenodo.json`, `pyproject.toml`, and the arXiv candidate to
-  `Prathamesh N Patil`. The frozen canonical PDF remains unchanged with the
-  historical `Prathamesh Patil` string.
-- Updated the repository README, paper README, build README, toolchain notes,
-  submission checklist, release checklist, and documentation index for the
-  arXiv build.
+- `paper/MANUSCRIPT_REVISED.md` is now
+  `1732872C36D4AC5EAE349450ACA946120F0EA21A2C48235F58985167A414CCC2`;
+  the canonical PDF is
+  `B3D39ED0D5F26CB42C1B436D43B9D5FFCC3C6FE613461C860561A0DBEBB788D3`;
+  the standalone `main.tex` is
+  `4C27CB582582473B961C9DD7E7574D67BD2ECB9C00CA55E6AFDDA493044D8602`;
+  and the arXiv PDF is
+  `7022C36250F5E690E574CB2AF814A2BFD8C538FFBF2812AD156188192FE514D1`.
+- Updated the state docs, QA pins, build README, export READMEs, metadata
+  checklist, figure changelog, and artifact snapshot for the 26 October build.
+- The generated build excludes `paper/latex_export/main.aux` and
+  `paper/latex_export/main.log` as local compile output.
 
 ### Validation
 
-- Canonical manuscript, canonical PDF, frozen LaTeX export, figures, locks,
-  traces, and `dist/sanitized` remain unchanged.
+- Canonical build: 25 pages, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+  hboxes, 3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage
+  diagnostics, and 1 stable label warning.
+- arXiv build: 28 pages, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+  hboxes, 4 cosmetic underfull hboxes, 3 ignored infinite-glue diagnostics in
+  the extracted package compile, and 1 stable label warning.
 - Abstract remains 222 words with SHA-256
   `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`;
-  the static reference list remains eight entries; H4 and H7 remain `UNTESTED`.
-- The arXiv PDF differs from the canonical PDF only by the 1-inch layout,
-  author display string, and Figure 2 fit. The generated LaTeX source differs
-  from the frozen export only in six content lines plus the build header.
+  the static reference list remains eight entries; H4 and H7 remain
+  `UNTESTED`.
+- No new claims, experiments, or references were added by the correction pass.
+- The regenerated manifest verifies every tracked file; `python -m pytest -q
+  qa` passes 15 tests; the TraceGrant Task D suite passes 52 tests; the review
+  zip extracts, verifies, and rebuilds the 28-page arXiv candidate.
+  `dist/sanitized` remains untouched and verifies at 298 files.
 - No arXiv submission, public release, license, DOI, or repository visibility
   change has occurred.
-- `python scripts/verify_artifacts.py` verifies 306 files; `python -m pytest -q
-  qa` passes 15 tests; the TraceGrant Task D suite passes 52 tests. The review
-  zip extracts, verifies, passes QA, and rebuilds the 27-page arXiv candidate.
-  `dist/sanitized` remains untouched and verifies at 298 files.
 
 ## [0.1.3] - 2026-10-23
 

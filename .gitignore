@@ -19,6 +19,10 @@ paper/arxiv_export/main.aux
 paper/arxiv_export/main.log
 paper/arxiv_export/main.out
 paper/arxiv_export/main.synctex.gz
+paper/latex_export/main.aux
+paper/latex_export/main.log
+paper/latex_export/main.out
+paper/latex_export/main.synctex.gz
 paper/build/build_run.log
 paper/build/current_text.txt
 paper/build/final_qa_text.txt

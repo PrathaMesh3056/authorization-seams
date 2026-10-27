@@ -1,6 +1,6 @@
 # The Handoff Nobody Owns - standalone LaTeX source
 
-This package reproduces the 23 October 2026 named-author preprint of the
+This package reproduces the 26 October 2026 named-author preprint of the
 seam-research manuscript. It is a preprint source, not a peer-reviewed
 publication.
 
@@ -40,13 +40,17 @@ files and are not needed to compile the body.
 ## Provenance
 
 - Manuscript source: `paper\MANUSCRIPT_REVISED.md`
-- Manuscript SHA-256: `84648BDFF4CADF06DB8055EC2A51BC1D1A37FB9E12882BD506530349F0C2DB66`
-- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf`
-- Canonical PDF SHA-256: `D2F01F8F80BB9DCC43F59E6CF1763DDACEEA6341AAC0569B18B36C27DD1EA9CE`
-- Standalone `main.tex` SHA-256: `107BEF375982BF0120167F59F4C64662151C04B2CCB79AD0BDE3614E15EB786A`
-- Reference PDF SHA-256: `1BBAD8114A771F710CDE01903ED4ECC2135F27E8ED13BF1DC99A24BA21500DAF`
+- Manuscript SHA-256: `1732872C36D4AC5EAE349450ACA946120F0EA21A2C48235F58985167A414CCC2`
+- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf`
+- Canonical PDF SHA-256: `B3D39ED0D5F26CB42C1B436D43B9D5FFCC3C6FE613461C860561A0DBEBB788D3`
+- Standalone `main.tex` SHA-256: `4C27CB582582473B961C9DD7E7574D67BD2ECB9C00CA55E6AFDDA493044D8602`
+- Reference PDF SHA-256: `5901ED2B13AC24C9536E41F313BD2A4BBF161F4BDF46E8A9D7D6FC11500492AE`
 - Build: Pandoc 3.12.1 + XeLaTeX (MiKTeX 25.12)
-- Manuscript date in the PDF: 23 October 2026
+- Manuscript date in the PDF: 26 October 2026
+
+The 23 October 2026 canonical PDF and its export remain archived under
+`paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` and
+`paper\backups\latex_export_2026-10-23\`; neither is overwritten.
 
 ## References
 
@@ -72,16 +76,17 @@ style-neutral and must be adapted only after the target venue is selected.
 
 ## QA of the reference PDF
 
-- 24 pages, letter paper.
-- Zero missing glyphs, zero LaTeX errors, zero overfull hboxes in the build.
-- Three cosmetic underfull hboxes and one stable `Label(s) may have changed`
-  warning remain; both are non-blocking. The reference PDF has zero unresolved
-  references.
+- 25 pages, letter paper.
+- Zero missing glyphs, zero fatal LaTeX errors, zero overfull hboxes in the
+  build.
+- Three cosmetic underfull hboxes, six ignored infinite-glue-shrinkage
+  diagnostics, and one stable `Label(s) may have changed` warning remain; all
+  are non-blocking. The reference PDF has zero unresolved references.
 - All fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
 - Both figures are vector; `pdfimages` reports zero raster images.
 - Figure 1 is 239.76 x 171.828 pt; Figure 2 is 504 x 300.24 pt.
-- Table 15's caption and table body both appear on page 23 in the canonical
-  build; the caption orphan reported against the older 21 October snapshot is
-  resolved.
+- Table 2's caption and body are together; Table 3's Total row stays with the
+  ledger; Table 12 spans pages 16-17 with its alias note; Appendix Table A1
+  spans pages 24-25 in the canonical build.
 - The static eight-entry reference list appears after Section 9 and is set
   ragged-right to avoid stretched interword gaps.

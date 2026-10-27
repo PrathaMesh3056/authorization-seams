@@ -1,11 +1,11 @@
 # APC / Progent authorization handoff pilot
 
-The completed empirical manuscript is `paper/manuscript.tex`, with a readable
-review PDF at `output/pdf/manuscript-review.pdf` and a Markdown copy at
-`paper/manuscript.md`. `paper/evidence_map.json` ties its checked claims to the
-saved experiments. Read `RESEARCH_STATUS.md` for the evidence boundary and final
-validation. The PDF is a verified ReportLab review rendering; native LaTeX
-compilation was unavailable in this session.
+The completed empirical manuscript is `paper/MANUSCRIPT_REVISED.md`, with the
+canonical named-author PDF at
+`paper/drafts/MANUSCRIPT_DRAFT_2026-10-26.pdf` and the standalone LaTeX export
+at `paper/latex_export/`. Read `docs/RESEARCH_STATUS.md` for the evidence
+boundary and final validation. The canonical PDF is a native XeLaTeX build;
+the earlier ReportLab review rendering is not part of this package.
 
 This runnable local conformance study uses the authors' implementations at the
 commits in `pins.json`. No LLM, API key, or paid inference is required. Native code

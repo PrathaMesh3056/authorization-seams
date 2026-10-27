@@ -140,6 +140,7 @@
 %     such as SUPPORTED mid-word.
 \usepackage{seqsplit}
 \usepackage{url}
+\usepackage{needspace}
 \let\origtexttt\texttt
 \setlength{\emergencystretch}{4em}
 % Overfull boxes are counted from the log; do not print debug rules in the
@@ -173,7 +174,7 @@ conformance testing; locked-artifact methodology}},
 \title{The Handoff Nobody Owns: Measuring What Cross-Mechanism
 Authorization Seams Cannot Carry}
 \author{Prathamesh Patil}
-\date{23 October 2026}
+\date{26 October 2026}
 
 \begin{document}
 \maketitle
@@ -216,7 +217,7 @@ At every cross-mechanism handoff in agent authorization, three parties
 meet at a seam that nobody owns. The sender holds authority A over a
 call space C and narrows that authority to A′ ⊆ A before sending the
 call onward. The bridge translates the sender's narrowed decision and
-state into a receiver-side record ρ\_R = B(A′, state). The receiver,
+state into a receiver-side record \mbox{ρ\_R} = B(A′, state). The receiver,
 running its own mechanism M\_R = (V\_R, admit\_R), decides whether to
 admit the call. Each party can be faithful inside its own world: the
 sender's narrowing can be exact, the bridge's transport can be
@@ -268,16 +269,25 @@ composition itself, and it is disclosed here only as a condition,
 without numbers. Zero seam is therefore not universal in either
 direction: it does not assert seam safety, and it does not assert
 general seam failure. The star (★) marks the frozen cross-cutting claim,
-not a significance test.
+not a significance test. The zero is also partly construction-forced: in
+Pilot 1 and the SentinelAgent pair, the composed arm and the standalone
+receiving arm share the same contract and scoring, so their leak sets
+are identical by construction and carry no evidential weight about
+composition. E1 is the only genuine composition-specific test in this
+program; it is one design point × four attack cases and is
+convention-dependent. The zero is therefore a bounded design property,
+not an empirical discovery that composition cannot add authority.
 
 \textbf{Hypothesis key.} H1 --- trusted-request laundering / scope
 trust; H2 --- dynamic state, identity, and freshness do not cross and
-leak; H3 --- vocabulary mismatch is silence, not misparse; H4 --- no
-shared audit trail (\texttt{UNTESTED}); H5 --- verification attests key
-possession and integrity, not authority; H6 --- similar-pair vs
-dissimilar-pair failure shapes; H7 --- intent layer P2
+leak; H3 --- state/identity vocabulary gaps manifest as silence, not
+misparse; H4 --- no shared audit trail (\texttt{UNTESTED}); H5 ---
+verification attests key possession and integrity, not authority; H6 ---
+similar-pair vs dissimilar-pair failure shapes; H7 --- intent layer P2
 (\texttt{UNTESTED}); ★ --- the cross-cutting zero-under-preservation
-finding.
+finding. The frozen experiment artifacts predate this key and use some
+labels differently; Appendix Table A1 records the lineage, and a legacy
+label is not read as the current label with the same number.
 
 Scope-trust framing, carried as H1 \texttt{REFINED}: at a
 cross-mechanism handoff the receiving mechanism re-derives scope, or
@@ -341,7 +351,7 @@ The schematic carries no data and no numbers, and no labels beyond those
 defined here.
 
 Sender: call c ∈ C; authority A ⊆ C; narrows A → A′. Bridge (the seam)
-B: ρ\_R = B(A′, state) --- the receiver-side record built from the
+B: \mbox{ρ\_R} = B(A′, state) --- the receiver-side record built from the
 narrowed decision plus state. Receiver: mechanism M\_R = (V\_R,
 admit\_R); read set V\_read ⊆ V\_R --- the fields the decision consults,
 not what the record carries. Composition: admit\_C(c) ≔ admit\_R(c,
@@ -505,7 +515,7 @@ is frozen. The section proceeds from that discipline (Section 3.1)
 through the formal objects it measures (Section 3.2) and the seam-test
 predicate (Section 3.3) to the scoring conventions that govern every
 classification (Section 3.4), the execution program and its ledger
-(Section 3.5), and the scope the method accepts (Section 3.6). Outcomes
+(Section 3.5), and the scope the method accepts (Section 3.7). Outcomes
 are reported nowhere in this section; where a sentence might otherwise
 forecast what a run found, it is phrased as what the method does or as
 how a quantity is defined.
@@ -564,7 +574,7 @@ receiver-side record ρ. Authority A ⊆ C is the call set a principal
 confers; a sender narrows authority by taking the scope meet, so that A
 → A′ ⊆ A. A bridge B is the seam's translation step: it consumes the
 sender's narrowed decision together with state and writes the
-receiver-side record ρ\_R = B(A′, state). Composition is then evaluated
+receiver-side record \mbox{ρ\_R} = B(A′, state). Composition is then evaluated
 through the bridge: composed semantics admit\_C(c) ≔ admit\_R(c, B(A′)),
 and the composition's effective authority is A\_C ≔ \{ c: admit\_C(c) =
 allow \}. Finally, the read set V\_read ⊆ V\_R is the set of fields the
@@ -627,7 +637,7 @@ a boundary convention with a canonical member and a variant-manifest
 member; and an arm-invariant convention for the SentinelAgent pair.
 Table 2 states what each convention scores, at definition level.
 
-\textbf{Table 2.} Scoring-convention matrix --- the four classification
+\needspace{10\baselineskip}\textbf{Table 2.} Scoring-convention matrix --- the four classification
 conventions and what each scores (definitional rows; no run data).
 
 {\def\LTcaptype{none} % do not increment counter
@@ -682,7 +692,7 @@ latency records; these secondary records are listed in the footnote so
 that no execution is counted twice. Control executions pin the admission
 behaviors on their own records.
 
-\textbf{Table 3.} Matrix execution ledger --- the program's matrix
+\needspace{12\baselineskip}\textbf{Table 3.} Matrix execution ledger --- the program's matrix
 executions, stated as an explicit sum of its enumerated components.
 
 {\def\LTcaptype{none} % do not increment counter
@@ -796,14 +806,16 @@ sender's scope meet holds on the resource side and the narrowed set,
 once crossed, lets any downstream check see the widened call for what it
 is. The resource clause of the scope-trust claim (H1 \texttt{REFINED})
 is therefore \textbf{not supported}: trusting the upstream record on
-resources does not admit anything the upstream did not confer. For the
-same reason, the two vocabulary-mismatch attack classes that live inside
-the shared vocabulary --- recipient substitution and the
-omitted-forbidden default --- are caught (leaked 0), by mapping-side
-canonicalization and BIND constraints rather than by effect-time
-detection (H3 \texttt{SUPPORTED}). The one seeded exception is the
-unsatisfiable-VERIFY template, itself treated as a completion-integrity
-boundary rather than an unauthorized-effect leak.
+resources does not admit anything the upstream did not confer. The two
+representable attack classes inside the shared vocabulary --- recipient
+substitution and the omitted-forbidden default --- are caught (leaked 0)
+by mapping-side canonicalization and BIND constraints rather than by
+effect-time detection. They are caught-case and mapping-attribution
+findings, not silence instances; they do not support H3, and they are
+reported under H1 \texttt{REFINED} and the measured findings. The one
+seeded exception is the unsatisfiable-VERIFY template, treated as a
+completion-integrity boundary rather than an unauthorized-effect leak
+and also not an H3 instance.
 
 What leaks is the unrepresentable. Six of the ten templates leak 4 cases
 each under the composed M0 arm --- principal rebind, composition-history
@@ -942,11 +954,12 @@ Template
 \end{longtable}
 }
 
-The structure in Table 5 is the pilot's core observation: silent
-vocabulary/state gaps, not crashes or misparses (H3) --- the receiver
+The state/identity rows in Table 5 are the pilot's H3 observation:
+silent vocabulary/state gaps, not crashes or misparses --- the receiver
 admits these calls with no parse error, no gate code, and no effect-time
 detection, because the fact that should have been denied has no column
-in the receiver's decision.
+in the receiver's decision. The resource and caught-action rows are not
+H3 evidence.
 
 \textbf{Worked numeric trace (Pilot 1; existing numbers only).} The
 ledger entry is 80 cases × 7 arms = 560 executions, with 40 attack cases
@@ -1043,11 +1056,13 @@ confusion matrix on the eight-case family is TP \texttt{4}, FP
 \texttt{0}, FN \texttt{0}, TN \texttt{4} --- precision \texttt{1.0},
 recall \texttt{1.0} under this experiment's own contract, confirming the
 E1 construction detects the action-family leak exactly at the composed
-arm without dropping benign traffic (H3 \texttt{SUPPORTED}). Second, the
-evidence arm (\texttt{apc\_tracegrant\_retained}) denies all four
-attacks (\texttt{PROOF-GAP} after the shadow APC denies) while verifying
-the signed record on all four attack cases; the eight signed records
-across arm-6 runs --- four attack and four benign --- are all
+arm without dropping benign traffic. This is a representable-but-unread
+consumption failure, reported under H1 \texttt{REFINED} and the formal
+core, not H3. Second, the evidence arm
+(\texttt{apc\_tracegrant\_retained}) denies all four attacks
+(\texttt{PROOF-GAP} after the shadow APC denies) while verifying the
+signed record on all four attack cases; the eight signed records across
+arm-6 runs --- four attack and four benign --- are all
 \texttt{EVIDENCE-VERIFIED}. This cell is report-only in the frozen
 metrics output --- the raw field traces for signed-record admission
 codes are not stored in
@@ -1198,13 +1213,14 @@ as forced, not as evidence. The dynamic-state classes of the first pair
 repeat and dominate: 24 of the 28 leaks are principal/task identity (4
 cases), composition history (4), repeated calls (4 cases with 6 events),
 cumulative budget (4), expiry (4), and revocation (4). This is the
-structural account for which H3 \texttt{SUPPORTED} was frozen: the
-leaking classes are fields the receiving vocabulary cannot represent, so
-nothing fails loudly --- silent vocabulary/state gaps, not crashes or
-misparses. The seam test again returns zero under the locked conventions
---- no case is safe in both mechanism-alone arms and admitted under
-composition in this pair. The run's own integrity record is not
-uniformly green: \texttt{manifest.json} records
+structural account for H3 \texttt{SUPPORTED}: the state/identity leaking
+classes are fields the receiving vocabulary cannot represent, so nothing
+fails loudly --- silent vocabulary/state gaps, not crashes or misparses.
+The remaining 4 signature-family leaks are not H3 evidence; they are
+treated under H5/H6 below. The seam test again returns zero under the
+locked conventions --- no case is safe in both mechanism-alone arms and
+admitted under composition in this pair. The run's own integrity record
+is not uniformly green: \texttt{manifest.json} records
 \texttt{expected\_vs\_observed\_ok\ =\ false}, and \texttt{metrics.json}
 records \texttt{comparison.overall\_ok\ =\ false}. The two failed checks
 are the false-denial-event lock (26 locked, 28 observed) and the arm-5
@@ -1213,8 +1229,7 @@ attack-case basis); both are recorded verbatim in
 \path{sa\reconciliation.json} with
 \texttt{affects\_behavior\_cells:\ false}, and Section 7.2 gives the
 full reconciliation. Neither changes a behavior cell or a reported leak
-count. The remaining 4 leaks belong to the signature family and are
-treated below.
+count.
 
 The two remediations carry measurable prices, and the pair headline is
 the frozen H2 claim: the repair is carrying the upstream decision, not a
@@ -1377,12 +1392,14 @@ distribution the critical interface of this seam.
 Ten controls pass across the family --- signature-validity failure
 probes, foreign-key rejection, two-minter indistinguishability,
 attestation tamper and replay --- showing the checks are neither vacuous
-in the admit direction nor no-ops in the deny direction. Across the full
-96-case matrix, the non-vacuity count is 488 admissions plus 150 denials
-with a token event attached (638 counted events; 40 native P6/P7
-denials, 42 attestation-stage denials in arm 6, 68 pre-presentation
-refusals in arm 7). Table 9 reports the per-template codes; the ten
-controls follow.
+in the admit direction nor no-ops in the deny direction. Across the
+7-arm, 96-case matrix (756 evaluated events), the non-vacuity count is
+488 admissions plus 150 denials with a token event attached (638 counted
+events; 40 native P6/P7 denials, 42 attestation-stage denials in arm 6,
+68 pre-presentation refusals in arm 7). The 230 admitted events without
+a token key are included in the 488; the 118 denials without a token key
+are outside the 638 count. Table 9 reports the per-template codes; the
+ten controls follow.
 
 \textbf{Table 9.} SentinelAgent signature family - per-template codes
 and leaks in the four token arms. Arm 2 = standalone; arm 5 =
@@ -1523,14 +1540,15 @@ derivation-side clause. The claim readings move accordingly. H1
 --- the receiver reads the signed manifest as authority --- and the
 refinement lands on the derivation layer. H2 \texttt{SUPPORTED} is
 unchanged: V1 and V2 add no new dynamic-state class, and their new leaks
-are scope/manifest-derivation classes. H3 \texttt{SUPPORTED}: both
-mismatches are faithful to what the bridge wrote into the manifest --- a
-role scope exceeding the root grant under V1, a default-filled send
-endpoint under V2. H5 \texttt{REFINED} now covers the keyholder property
-at the bridge/manifest layer: a bridge holding the key can write a
-widened manifest or a default-filled endpoint, and the receiver admits
-what it verifies. H6 \texttt{SUPPORTED}: a bridge-design artifact, not a
-composition-specific failure.
+are scope/manifest-derivation classes. These are derivation-widening
+findings under H1 \texttt{REFINED} and H6 \texttt{SUPPORTED}, not H3:
+both mismatches are faithful to what the bridge wrote into the manifest
+--- a role scope exceeding the root grant under V1, a default-filled
+send endpoint under V2. H5 \texttt{REFINED} now covers the keyholder
+property at the bridge/manifest layer: a bridge holding the key can
+write a widened manifest or a default-filled endpoint, and the receiver
+admits what it verifies. H6 \texttt{SUPPORTED}: a bridge-design
+artifact, not a composition-specific failure.
 
 Arms 6 and 7 suppress the widened calls rather than repair them. The
 evidence arm denies the 4 variant cases as \texttt{APC-DENY} per
@@ -1705,7 +1723,10 @@ cases and 26/26 events in Pilot 1, arm 2 ≡ arm 5 at 28/28 in the
 SentinelAgent pair, and arm 2v ≡ arm 5 at 32/32 per variant in the
 boundary run --- carry no evidential weight about composition; the
 informative contrasts, restated from the preceding subsections, are
-canonical arm 2 versus composed arm 5, and arm 2v versus arm 2.
+canonical arm 2 versus composed arm 5, and arm 2v versus arm 2. The
+construction-forced identities leave E1 as the only composition-specific
+test in the program; its result is bounded to one design point × four
+attack cases and is convention-dependent.
 
 The formal core (Section 3.2) turns these observations into one account,
 with a different status vocabulary: the blindness lemma is definitional,
@@ -1720,12 +1741,13 @@ measured instances recur through this subsection with effective n
 attached: in the extension, the narrowed action set crossed the seam
 intact and the synthesis did not read it, and the consumption repair
 reversed the counts (Section 4.2, Table 7); in the SentinelAgent pair,
-the leaking classes are fields the receiver's vocabulary lacks, the
-witness set being 7 leak templates × 4 parameters = 28 attack cases of
-48; in the boundary run, the widened manifest is admitted by the
-receiver standalone and composed --- the bridge wrote the widened scope,
-so there is no consumption failure to repair at the receiver, and the
-derivation is the fault.
+the state/identity leaking classes are fields the receiver's vocabulary
+lacks, the witness set being 6 leak templates × 4 parameters = 24 attack
+cases of 48; the separate 4-case keyholder class is treated under H5/H6;
+in the boundary run, the widened manifest is admitted by the receiver
+standalone and composed --- the bridge wrote the widened scope, so there
+is no consumption failure to repair at the receiver, and the derivation
+is the fault.
 
 Those instances motivate the two repair loci. Receiver side, when the
 fact crossed intact: carry the upstream decision as evidence --- signed
@@ -1756,9 +1778,10 @@ derivation step and applies when the bridge itself widened: a
 narrowing-preserving manifest derivation, since no receiver-side
 consumption can recover a fact the bridge did not narrow. The annotation
 carried but unread = uncarried labels the gap between the carried record
-and the receiver's read set; the two loci face that gap from opposite
-sides. Content is definitional-plus-measured (Section 3.2; the measured
-repair instances above); the figure carries no numbers and asserts no
+and the receiver's read set; Locus B points to the bridge-translation
+step, and Locus A points to that gap. Content is
+definitional-plus-measured (Section 3.2; the measured repair instances
+above); the figure carries no numbers and asserts no
 statuses.}]{figures/figure_2_repair_loci.pdf}
 \caption{\textbf{Figure 2.} Where the decision can be rescued --- the
 two repair loci of the seam program (schematic; no data). The upper band
@@ -1774,10 +1797,11 @@ the bridge's derivation step and applies when the bridge itself widened:
 a narrowing-preserving manifest derivation, since no receiver-side
 consumption can recover a fact the bridge did not narrow. The annotation
 \protect\texttt{carried\ but\ unread\ =\ uncarried} labels the gap
-between the carried record and the receiver's read set; the two loci
-face that gap from opposite sides. Content is definitional-plus-measured
-(Section 3.2; the measured repair instances above); the figure carries
-no numbers and asserts no statuses.}\label{fig:figure2}
+between the carried record and the receiver's read set; Locus B points
+to the bridge-translation step, and Locus A points to that gap. Content
+is definitional-plus-measured (Section 3.2; the measured repair
+instances above); the figure carries no numbers and asserts no
+statuses.}\label{fig:figure2}
 \end{figure}
 
 Table 12 collects the claim ladder as this section measures it: each row
@@ -1790,10 +1814,10 @@ loci, and re-derivable evidence.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2871}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1188}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1386}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4554}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.5600}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 claim / finding
@@ -1810,91 +1834,110 @@ evidence (artifacts and cross-references)
 \endlastfoot
 H1 scope trust (action clause under M0; resource clause not supported;
 extended to the bridge's manifest derivation) & REFINED & Sections 4.1,
-4.2, 4.4 &
-\path{tests\seam_pilot_v2\results\raw_metrics.json}
+4.2, 4.4 & \path{v2\raw_metrics.json}
 (\texttt{per\_template.resource\_widen.leaked});
-\path{tests\seam_pilot_v2\results\extension_e1\metrics.json}
+\path{v2\extension_e1\metrics.json}
 (arm 2/5 leak fields);
-\path{tests\seam_pilot_v2\discriminating_tests\results\test1_rescored_arm2.json}
-(\texttt{counts}, \texttt{seam\_test});
-\path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json}
-(variant arms) \\
+\path{dt\test1_rescored_arm2.json} (\texttt{counts},
+\texttt{seam\_test}); \path{b\metrics.json} (variant
+arms) \\
 H2 dynamic state, identity, freshness leak; decision carriage closes &
 SUPPORTED & Sections 4.1, 4.3, 4.4 &
-\path{tests\seam_pilot_v2\results\raw_metrics.json}
+\path{v2\raw_metrics.json}
 (\texttt{tracegrant\_alone}, \texttt{apc\_tracegrant\_retained});
-\path{tests\seam_pilot_sentinelagent\results\sa\metrics.json}
+\path{sa\sa\metrics.json}
 (\texttt{sentinelagent\_alone}, \texttt{apc\_sentinelagent\_retained});
-\path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json} \\
-H3 mismatches manifest as silence, not misparse & SUPPORTED & Sections
-4.1, 4.2, 4.3, 4.4, 4.5 &
-\path{tests\seam_pilot_v2\results\raw_metrics.json}
-(\texttt{per\_template.recipient\_substitution},
-\texttt{per\_template.omitted\_forbidden\_default});
-\path{tests\seam_pilot_v2\results\EXTENSION_E1_RESULTS.md}
-Section 1;
-\path{tests\seam_pilot_sentinelagent\results\SA_RESULTS.md}
-Section 6;
-\path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json};
-Section 3.2 \\
+\path{b\metrics.json} \\
+H3 state/identity vocabulary gaps manifest as silence, not misparse &
+SUPPORTED & Sections 4.1, 4.3, 4.5 &
+\path{v2\raw_metrics.json}
+(\texttt{per\_template.principal\_rebind},
+\texttt{per\_template.composition\_history\_loss},
+\texttt{per\_template.repeated\_calls},
+\texttt{per\_template.budget\_reset},
+\texttt{per\_template.expired\_delegation},
+\texttt{per\_template.revoked\_envelope});
+\path{sa\SA_RESULTS.md} Section 6; Section 3.2. Legacy
+H4 tags on recipient/default cases are not H3 evidence (Appendix Table
+A1). \\
 H5 verification attests integrity and key possession, not authority &
 REFINED & Sections 4.3, 4.4 &
-\path{tests\seam_pilot_sentinelagent\results\sa\controls.json};
-\path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json};
-\path{tests\seam_pilot_sa_boundary\results\boundary\manifest.json} \\
+\path{sa\sa\controls.json};
+\path{b\metrics.json};
+\path{b\manifest.json} \\
 H6 failure shapes; no new composition-specific failure mode except the
 disclosed E1 exception & SUPPORTED & Sections 4.1, 4.2, 4.3, 4.4, 4.5 &
-\path{tests\seam_pilot_v2\results\raw_metrics.json};
-\path{tests\seam_pilot_sentinelagent\results\sa\metrics.json};
-\path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json};
-\path{tests\seam_pilot_v2\discriminating_tests\results\REPORT.md}
-Sections 1--3 \\
+\path{v2\raw_metrics.json};
+\path{sa\sa\metrics.json};
+\path{b\metrics.json};
+\path{dt\REPORT.md} Sections 1--3 \\
 ★ seam subtractive under narrowing-preserving mappings & SUPPORTED &
-Section 4.5 &
-\path{tests\seam_pilot_sentinelagent\results\SA_RESULTS.md}
-Section 1;
-\path{tests\seam_pilot_v2\results\EXTENSION_E1_RESULTS.md}
-Section 3.3;
-\path{tests\seam_pilot_v2\results\claims_update.md};
-\path{tests\seam_pilot_sa_boundary\results\boundary\manifest.json}
+Section 4.5 & \path{sa\SA_RESULTS.md} Section 1;
+\path{v2\EXTENSION_E1_RESULTS.md} Section 3.3;
+\path{v2\claims_update.md};
+\path{b\manifest.json}
 (\texttt{seam\_test.v1.seam\_count}) \\
 Zero-seam conditionality (cross-cutting finding) & measured --- no
 status token & Section 4.5 & Section 3.2;
-\path{tests\seam_pilot_v2\discriminating_tests\results\REPORT.md};
-\path{tests\seam_pilot_sa_boundary\results\boundary\manifest.json}
-(\texttt{seam\_test}) \\
+\path{dt\REPORT.md};
+\path{b\manifest.json} (\texttt{seam\_test}) \\
 E1 action-family exception (cross-cutting finding) & measured --- no
 status token & Sections 4.2, 4.5 &
-\path{tests\seam_pilot_v2\discriminating_tests\results\test1_rescored_arm2.json}
+\path{dt\test1_rescored_arm2.json}
 (\texttt{counts.arm2\_attack\_leaks\_handoff\_norm},
 \texttt{counts.arm2\_attack\_leaks\_root\_norm}, \texttt{seam\_test});
-\path{tests\seam_pilot_v2\discriminating_tests\results\test2_metrics.json};
-\path{tests\seam_pilot_v2\discriminating_tests\results\REPORT.md}
-Section 3 \\
+\path{dt\test2_metrics.json};
+\path{dt\REPORT.md} Section 3 \\
 Boundary bridge-layer attribution (cross-cutting finding) & measured ---
 no status token & Sections 4.4, 4.5 &
-\path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json}
+\path{b\metrics.json}
 (\texttt{sentinelagent\_alone\_variant::*},
 \texttt{apc\_sentinelagent\_scope\_only::*});
-\path{tests\seam_pilot_sa_boundary\results\boundary\reconciliation.json}
-item \texttt{arm2\_canonical\_leak\_scope\_overstated} \\
+\path{b\reconciliation.json} item
+\texttt{arm2\_canonical\_leak\_scope\_overstated} \\
 Repair patterns (cross-cutting finding) & measured --- no status token
 (instance claims carry their own statuses) & Sections 4.1, 4.2, 4.3,
-4.4, 4.5, 5 & Table 13;
-\path{tests\seam_pilot_v2\discriminating_tests\results\test2_metrics.json};
-\path{tests\seam_pilot_sentinelagent\results\sa\metrics.json};
-\path{tests\seam_pilot_v2\results\raw_metrics.json} \\
+4.4, 4.5, 5 & Table 13; \path{dt\test2_metrics.json};
+\path{sa\sa\metrics.json};
+\path{v2\raw_metrics.json} \\
 Keyholder finding (cross-cutting finding) & carried under H5 REFINED &
 Sections 4.3, 4.4 &
-\path{tests\seam_pilot_sentinelagent\results\sa\controls.json};
-\path{tests\seam_pilot_sa_boundary\results\boundary\metrics.json};
-\path{tests\seam_pilot_sa_boundary\results\boundary\manifest.json} \\
+\path{sa\sa\controls.json};
+\path{b\metrics.json};
+\path{b\manifest.json} \\
 Formal core (blindness lemma; seam proposition, both clauses measured;
 repair rule) & definitional lemma; measured proposition clauses --- no
 status token & Sections 3.2, 4.5 & definitions and lemma in Section 3.2;
 measured instances in Sections 4.2--4.4 \\
 \end{longtable}
 }
+
+\emph{Artifact-root abbreviations for Table 12 (display-only):}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{v2} =
+  \path{tests\seam_pilot_v2\results}
+\item
+  \texttt{dt} =
+  \path{tests\seam_pilot_v2\discriminating_tests\results}
+\item
+  \texttt{sa} =
+  \path{tests\seam_pilot_sentinelagent\results}
+\item
+  \texttt{b} =
+  \path{tests\seam_pilot_sa_boundary\results\boundary}
+\end{itemize}
+
+The full paths remain in the artifact tree and in the prose.
+
+\emph{Legacy-evidence note:}
+\path{tests\seam_pilot_v2\results\claims_update.md}
+is a legacy-key record. Its old-H6 block compares a local Task B fixture
+to Progent, is labeled directional-only, and is not used as evidence or
+as a baseline in this paper. The current H6 reading rests on the
+measured receiving pairs; Appendix Table A1 records the label lineage.
 
 No unconditional reading is available from these runs, and each sentence
 above is bounded the way its evidence is: by its scoring convention, by
@@ -2303,7 +2346,9 @@ test as operationalized measures more than where the composition widens;
 a zero where it does not would not by itself establish
 composition-independence. Not claimed: an unchallenged authority
 assignment for arm 2 in E1 --- the own-world norm is a disclosed
-convention.
+convention. Not claimed: that H3 covers caught representable cases, the
+E1 action-family consumption failure, or the V1/V2 derivation widening;
+those are reported under H1/H6 and the measured findings, not H3.
 
 Open hypotheses. Not claimed here: the shared-audit-trail hypothesis and
 the intent-layer hypothesis --- carried below as unbuilt instruments,
@@ -2480,20 +2525,24 @@ composition-specific exception was measured, in the E1 action family
 under arm-native scoring, and it is convention-scored --- the same
 records score 0 under the family-wide convention. The exception is one
 design point × four attack cases and is not generalizable beyond the
-frozen family. A receiver-side repair was measured alongside it: when
-the receiver consumes the narrowed fact rather than merely carrying it,
-the admitting calls stop; carriage and consumption are different things;
-receiver-side enforcement requires consumption, not carriage alone. At
-the boundary, two non-narrowing-preserving bridge designs produced
-failures that appear identically in the standalone variant arm --- a
-bridge-design artifact, not a composition-specific failure, with
-composition neither creating nor removing the fault. And the keyholder
-caveat stands across all of this: a signature verifies integrity and key
-possession, not the source of authority, so anyone holding the key can
-mint records the receiver cannot distinguish from the issuer's; the key
-distribution is where this seam's trust actually lives. Every positive
-sentence here is conditioned on the frozen sets, the locked mappings,
-and the scoring conventions under which the counts were produced.
+frozen family. Two of the three pair-level zeroes are
+construction-forced because the composed and standalone receiving arms
+share the same contract and scoring; E1 is the only genuine
+composition-specific test, and it is convention-dependent. A
+receiver-side repair was measured alongside it: when the receiver
+consumes the narrowed fact rather than merely carrying it, the admitting
+calls stop; carriage and consumption are different things; receiver-side
+enforcement requires consumption, not carriage alone. At the boundary,
+two non-narrowing-preserving bridge designs produced failures that
+appear identically in the standalone variant arm --- a bridge-design
+artifact, not a composition-specific failure, with composition neither
+creating nor removing the fault. And the keyholder caveat stands across
+all of this: a signature verifies integrity and key possession, not the
+source of authority, so anyone holding the key can mint records the
+receiver cannot distinguish from the issuer's; the key distribution is
+where this seam's trust actually lives. Every positive sentence here is
+conditioned on the frozen sets, the locked mappings, and the scoring
+conventions under which the counts were produced.
 
 The practical deliverable is the conformance kit of Section 8: frozen
 case sets, harnesses, and the locked-prediction protocol, packaged so
@@ -2513,6 +2562,78 @@ carried forward as instruments, not claims --- H4 \texttt{UNTESTED}, H7
 Continuation beyond the workshop decision point is not a commitment made
 here; any expansion is a post-workshop decision taken on its own
 evidence.
+
+\section{Appendix A. Hypothesis lineage and
+operationalization}\label{appendix-a.-hypothesis-lineage-and-operationalization}
+
+The frozen experiment artifacts predate the current hypothesis key, and
+some labels changed meaning between the pilot records and this
+manuscript. Table A1 records the lineage so that a legacy label is not
+read as the current label with the same number. It is provenance, not
+evidence, and it changes no status.
+
+\textbf{Table A1.} Hypothesis lineage --- legacy artifact labels, their
+operationalizations, and the current manuscript labels.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3400}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1800}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Legacy artifact label
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Legacy operationalization
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Current manuscript label
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status / provenance
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+H1 (all artifact sets) & Receiving mechanism re-derives scope or trusts
+the already-authorized caller & H1 & \texttt{REFINED}; unchanged
+label \\
+H2 (all artifact sets) & Dynamic state, identity, and freshness do not
+cross and leak & H2 & \texttt{SUPPORTED}; unchanged label \\
+H3 (v2 only) & VERIFY postconditions are an admission/completion
+boundary & No direct current-H3 equivalent; historical
+completion-integrity finding & Reported under H1/H6 and the measured
+findings, not current H3.
+\path{v2\results\claims_update.md} H3;
+\texttt{raw\_metrics.json} \texttt{unsatisfiable\_verify} \\
+H4 (v2 only) & Mapping choices decide whether a failure is a mechanism
+property or an artifact & No direct current-H4 equivalent; historical
+mapping-attribution finding & Reported under H1 \texttt{REFINED} and the
+measured findings, not current H4. \texttt{case\_generator.py} tags
+recipient/default cases old H4; those are caught-case evidence, not
+current H3 or H4 \\
+H6 (v2 only) & Comparison with the Progent reference numbers & No
+current-H6 equivalent; current H6 is similar-pair vs dissimilar-pair
+failure shapes & Historical, directional-only Progent block; not used as
+a comparison or baseline. Current H6 rests on the SA/boundary
+measurements \\
+H3--H6 (SA/boundary) & Vocabulary mismatch; no shared audit trail;
+verification gap; similar/dissimilar failure shapes & H3--H6 & H3
+\texttt{SUPPORTED} (narrowed to state/identity gaps); H4
+\texttt{UNTESTED}; H5 \texttt{REFINED}; H6 \texttt{SUPPORTED} \\
+H7 (manuscript only) & Intent layer P2 & H7 & \texttt{UNTESTED};
+\texttt{intent\_text} carried but never classified \\
+\end{longtable}
+}
+
+The frozen artifacts are not edited; this table is the reconciliation.
+In particular, recipient/default cases tagged old H4 in
+\path{v2\design\case_generator.py} are
+caught-case evidence and are not current H3 or current H4 evidence.
+
+\emph{Path abbreviation:} \texttt{v2} =
+\path{tests\seam_pilot_v2}; the full paths are in the
+artifact tree.
 
 \section{References}\label{references}
 
