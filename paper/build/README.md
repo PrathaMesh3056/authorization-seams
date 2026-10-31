@@ -18,7 +18,7 @@ generated, not tracked.
 
 ## Expected result
 
-- `manuscript_build_wide.pdf`: 25 pages.
+- `manuscript_build_wide.pdf`: 29 pages.
 - Build log: zero missing glyphs, zero fatal LaTeX errors, zero overfull
   hboxes, and six ignored infinite-glue-shrinkage diagnostics.
 - Three underfull hboxes and one `Label(s) may have changed` warning are

@@ -1,40 +1,36 @@
-# Research status - 28 October 2026
+# Research status - 31 October 2026
 
 ## Current position
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
-`5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32`;
-590 lines, 115,399 bytes). The reference list has eight entries: the seven
-frozen identities checked on 20 October 2026 plus MasDrift, added 22 October
-2026 after arXiv identity verification. The abstract remains 222 words and
-byte-identical to the frozen version
-(`CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`).
+`79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876`;
+687 lines, 129,935 bytes). The reference list has eight entries. The abstract
+is 278 words with SHA-256
+`060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7`.
 
-The canonical build is the 25-page single-column named-author preprint
-`paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` (SHA-256
-`92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3`):
-25 pages, 321,999 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
-hboxes, 3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage
-diagnostics, and 1 stable `Label(s) may have changed` warning. The title page
-and PDF metadata name Prathamesh Patil; this is the authorized named-author
-build, not a double-blind submission. The 23 October 24-page PDF remains
-archived and unchanged.
+The canonical build is the 29-page single-column named-author preprint
+`paper\drafts\MANUSCRIPT_DRAFT_2026-10-31.pdf` (SHA-256
+`F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D`):
+29 pages, 337,843 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+hboxes, 3 cosmetic underfull hboxes, and 1 stable `Label(s) may have changed`
+warning. The title page and PDF metadata name Prathamesh Patil; this is the
+authorized named-author build, not a double-blind submission.
 
 The standalone export is refreshed to the same source:
 `paper\latex_export\main.tex` (SHA-256
-`A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA`) and
+`0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA`) and
 reference PDF `paper\latex_export\main.pdf` (SHA-256
-`1430E2DBFF0A4658C72504731AA28F04B127BA4C6D4F7C04AAC0C59282916EDD`), 25
-pages, 322,001 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 6 ignored
-glue diagnostics. Both figures are vector PDFs and are included.
+`31F45A48ADFD4B0E16EA87727FEB740A22D33A4362C57D6161DF1E46F379E45A`), 29
+pages, 337,847 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 1 stable
+label warning. Both figures are vector PDFs and are included.
 
 The separate arXiv-compliant named-author candidate is
 `paper\arxiv_export\main.pdf` (SHA-256
-`E2939B632D2A5FAB2AC9BEAECC5084D0C556AFADE6BFFC97994532D310083430`):
-28 pages, 323,588 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
+`33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1`):
+32 pages, 340,381 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
 0 fatal LaTeX errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1
 stable label warning. Its source SHA-256 is
-`F1E614CE592CDDC058F90FDCCEF4651F42663DD164FD59FC02FD935FBC17F032`.
+`E309CB76E0CF00754F5A8F638B0E456D92CF1DE8E105FF00A7447AA0A8912194`.
 
 ## 26 October correction pass
 
@@ -94,6 +90,30 @@ status. It applied these presentation and disclosure fixes:
   The abstract remains 222 words with SHA-256
   `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`;
   the reference list remains eight entries.
+
+## 31 October 2026 review-correction pass
+
+The five-seat ARS review (Journal-Fit, Methodology, Domain/Security,
+Perspective, Devil's Advocate, plus editorial synthesis) returned Major
+Revision / Reject-full-paper-borderline-workshop. The manuscript was
+re-centered on E1, the method, the field-level failure map, and the repair
+taxonomy. Changes applied:
+
+- Abstract and Introduction rewritten; new two-reading seam test and threat
+  model (Section 3.8) added; hypothesis key and status vocabulary added
+  (Section 3.9).
+- Results rewritten with two-count framing (sender-relative violation vs
+  receiver-relative novelty), H3 narrowed to a field-level account, H1's
+  resource clause marked `UNTESTED`, H6 and ★ downgraded to `REFINED`.
+- Discussion reframed around repair loci and the replication package.
+- Threats, not-claimed canon, and open hypotheses H4/H7 restated.
+- Canonical, standalone, and arXiv builds regenerated: 29, 29, and 32 pages
+  respectively, 0 missing glyphs, 0 fatal errors, 0 overfull hboxes.
+
+No new experiments, references, or claims were added beyond the review
+corrections; H4 and H7 remain `UNTESTED`; frozen artifacts, locks, traces,
+`CONSOLIDATED_CLAIMS.md`, `hashes.txt`, and `dist\sanitized` remain
+untouched.
 
 ## Completed
 

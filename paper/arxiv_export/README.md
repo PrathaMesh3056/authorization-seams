@@ -42,7 +42,7 @@ only in those content lines plus the build header.
 
 ## Verified output
 
-- 28 pages, 323,588 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
+- 32 pages, 340,381 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
   geometry.
 - 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
 - 4 cosmetic underfull hboxes and 1 stable `Label(s) may have changed` warning.

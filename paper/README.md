@@ -10,7 +10,7 @@ and why.
 |---|---|
 | `MANUSCRIPT_REVISED.md` | Manuscript source; the only build input |
 | `hashes.txt` | Frozen Table 15 hashes; do not edit |
-| `drafts/MANUSCRIPT_DRAFT_2026-10-26.pdf` | Canonical 25-page named-author preprint PDF |
+| `drafts/MANUSCRIPT_DRAFT_2026-10-31.pdf` | Canonical 29-page named-author preprint PDF |
 | `drafts/MANUSCRIPT_DRAFT_2026-10-23.pdf` | Archived 23 October canonical PDF |
 | `drafts/MANUSCRIPT_DRAFT_2026-10-21.pdf` | Archived 21 October PDF |
 | `figures/` | Canonical vector figures and their recorded hashes |

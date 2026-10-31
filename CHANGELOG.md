@@ -3,6 +3,31 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.7] - 2026-10-31
+
+### Changed
+
+- Applied the five-seat ARS review correction pass to
+  `paper/MANUSCRIPT_REVISED.md`: rewrote Abstract, Introduction, Sections 2-9,
+  and Appendix A; added the two-reading seam test, threat model, hypothesis key,
+  claim synthesis, repair taxonomy, and field-level H3 audit. H3, H6, and ★
+  moved from `SUPPORTED` to `REFINED`; H1's resource clause is `UNTESTED`;
+  H4 and H7 remain `UNTESTED`. Receiver-relative novelty is reported
+  separately from sender-relative violation.
+- Regenerated canonical, standalone, and arXiv builds: 29, 29, and 32 pages;
+  0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
+- Updated QA hash pins, manifest, export READMEs, and research status.
+
+### Validation
+
+- `python scripts/verify_artifacts.py`: 319 files, all hashes match.
+- `python -m pytest -q qa`: 15 passed.
+- `python -m pytest -q qa/test_arxiv_build.py`: 6 passed.
+- TraceGrant Task D suite: 52 passed.
+- No new experiments, references, or claims beyond the review corrections.
+- `dist\sanitized` remains untouched; no submission, release, license, DOI,
+  or repository visibility change.
+
 ## [0.1.6] - 2026-10-28
 
 ### Changed

@@ -15,7 +15,7 @@ ARXIV_TEX = ROOT / "paper" / "arxiv_export" / "main.tex"
 ARXIV_PDF = ROOT / "paper" / "arxiv_export" / "main.pdf"
 ARXIV_METADATA = ROOT / "paper" / "arxiv_export" / "ARXIV_METADATA.md"
 
-EXPECTED_PAGES = 28
+EXPECTED_PAGES = 32
 EXPECTED_AUTHOR = "Prathamesh N Patil"
 EXPECTED_TITLE = (
     "The Handoff Nobody Owns: Measuring What Cross-Mechanism "
@@ -74,7 +74,7 @@ def test_arxiv_pdf_text_contains_title_author_and_untested_hypotheses():
 
 def test_arxiv_metadata_uses_frozen_abstract_hash():
     text = ARXIV_METADATA.read_text(encoding="utf-8")
-    assert "CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654" in text
-    assert "Abstract word count: 222" in text
+    assert "060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7" in text
+    assert "Abstract word count: 278" in text
     assert "cs.CR" in text
     assert "cs.AI" in text

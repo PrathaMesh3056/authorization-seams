@@ -23,8 +23,8 @@ stored artifacts.
 
 ## What is included
 
-- The manuscript source and the canonical 26 October 2026 named-author PDF,
-  refreshed on 28 October 2026 for inline code/path formatting.
+- The manuscript source and the canonical 31 October 2026 named-author PDF,
+  refreshed on 31 October 2026 for the five-seat review correction pass.
 - The locked-artifact harnesses for the APC → TraceGrant, APC → SentinelAgent,
   and bridge-boundary experiments, with their frozen cases, locks, and stored
   results.
@@ -83,7 +83,7 @@ python paper/build/build_arxiv.py
 ```
 
 The build writes generated files under `paper/build/`. The canonical PDF is
-`paper/drafts/MANUSCRIPT_DRAFT_2026-10-26.pdf`; the build does not overwrite it.
+`paper/drafts/MANUSCRIPT_DRAFT_2026-10-31.pdf`; the build does not overwrite it.
 The 23 October PDF remains archived. The arXiv candidate is
 `paper/arxiv_export/main.pdf`; its QA record is `docs/ARXIV_BUILD_QA.md`.
 
