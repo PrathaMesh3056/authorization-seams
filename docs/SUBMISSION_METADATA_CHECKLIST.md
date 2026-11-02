@@ -7,13 +7,13 @@
 | Field | Current value | Status |
 |---|---|---|
 | Title | *The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry* | Present |
-| Abstract | 222 words; no new numbers, claims, statuses, or citations | Present, frozen guardrail |
+| Abstract | 278 words; rewritten in the 31 October review-correction pass; no new experiments or references | Present |
 | Keywords | cross-mechanism authorization; agent authorization; authorization seams; scope narrowing; evidence carriage; conformance testing; locked-artifact methodology | Present |
-| Current draft | `paper\MANUSCRIPT_REVISED.md` | Present; SHA-256 `5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32` |
-| Current PDF | `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` | Present; 25 pages; 321,999 bytes; named-author build; SHA-256 `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3` |
-| Standalone LaTeX | `paper\latex_export\main.tex` | Present; SHA-256 `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA`; independent XeLaTeX compile verified (25 pages, 322,001 bytes) |
-| arXiv PDF | `paper\arxiv_export\main.pdf` | Present; 28 pages; 323,588 bytes; 1-inch margins; named-author `Prathamesh N Patil`; SHA-256 `E2939B632D2A5FAB2AC9BEAECC5084D0C556AFADE6BFFC97994532D310083430` |
-| arXiv LaTeX source | `paper\arxiv_export\main.tex` | Present; generated from the current export; SHA-256 `F1E614CE592CDDC058F90FDCCEF4651F42663DD164FD59FC02FD935FBC17F032` |
+| Current draft | `paper\MANUSCRIPT_REVISED.md` | Present; SHA-256 `79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876` |
+| Current PDF | `paper\drafts\MANUSCRIPT_DRAFT_2026-10-31.pdf` | Present; 29 pages; 337,843 bytes; named-author build; SHA-256 `F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D` |
+| Standalone LaTeX | `paper\latex_export\main.tex` | Present; SHA-256 `0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA`; independent XeLaTeX compile verified (29 pages, 337,847 bytes) |
+| arXiv PDF | `paper\arxiv_export\main.pdf` | Present; 32 pages; 340,381 bytes; 1-inch margins; named-author `Prathamesh N Patil`; SHA-256 `33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1` |
+| arXiv LaTeX source | `paper\arxiv_export\main.tex` | Present; generated from the current export; SHA-256 `52F399DBDC3B65B54B751A2D85ACCBD3ADB21E7F9EB77DDE33F239F0AF1818A5` |
 | References | Static eight-entry list after Section 9 | Present; first seven identities checked 20 October 2026, MasDrift checked 22 October 2026; claims not reproduced |
 | Base draft | archived `MANUSCRIPT.md` (project archive, not this repository) | Preserved, not for merge |
 
@@ -21,7 +21,7 @@
 
 | Field | Value | Status |
 |---|---|---|
-| Author order and legal names | Prathamesh N Patil (single author) | CFF and arXiv candidate use this form; the frozen 23 Oct canonical PDF retains the historical `Prathamesh Patil` string |
+| Author order and legal names | Prathamesh N Patil (single author) | CFF and arXiv candidate use this form; the canonical PDF retains the historical `Prathamesh Patil` string |
 | Affiliations | Department of Computer Engineering, Sardar Patel Institute of Technology | Provided 20 Oct 2026; printed in both named-author builds; city/country optional and not yet supplied |
 | Emails | `<public-email-unresolved>` (placeholder redacted; not printed on any PDF; replace before submission) | Final public address still needed |
 | ORCID iDs | Leave blank - none supplied | Optional; not required for arXiv/most workshops |
@@ -31,13 +31,13 @@
 
 Do not submit with placeholder authors. Do not infer affiliations from the filesystem or account name.
 
-**Named-author build:** the 26 October 2026 canonical PDF prints the author name
+**Named-author build:** the 31 October 2026 canonical PDF prints the author name
 and affiliation and carries matching PDF metadata. It is not anonymized; a
 double-blind venue requires re-anonymization. The 23 October PDF remains
 archived. The placeholder address is not printed and is redacted in this
 checklist.
 
-**Author note:** Prathamesh N Patil is an M.Tech. Computer Engineering student at Sardar Patel Institute of Technology. Student status is context for the affiliation; it is not normally printed as a separate title-page field. The affiliation confirms the academic base and does **not** imply that the institution funded, supervised, or endorsed the work. The canonical 26 Oct PDF retains the earlier `Prathamesh Patil` display string; the 23 Oct PDF remains archived; the arXiv candidate and CFF use `Prathamesh N Patil`.
+**Author note:** Prathamesh N Patil is an M.Tech. Computer Engineering student at Sardar Patel Institute of Technology. Student status is context for the affiliation; it is not normally printed as a separate title-page field. The affiliation confirms the academic base and does **not** imply that the institution funded, supervised, or endorsed the work. The canonical 31 Oct PDF retains the earlier `Prathamesh Patil` display string; the 23 Oct PDF remains archived; the arXiv candidate and CFF use `Prathamesh N Patil`.
 
 ### Affiliation and ORCID guidance
 
@@ -69,18 +69,18 @@ checklist.
 | Primary category | `cs.CR` (security) | Proposed; needs final choice |
 | Cross-list | `cs.AI` | Proposed; needs final choice |
 | License | `TBD` | Author choice; do not assume CC BY; irrevocable per announced version |
-| Comments | 28 pages, 2 figures, 16 tables; artifact release pending | Computed from the arXiv build; add a URL only after a public release |
+| Comments | 32 pages, 2 figures, 18 labeled tables; artifact release pending | Computed from the arXiv build; add a URL only after a public release |
 | Journal reference | None | Leave empty unless a venue accepts |
 | DOI | arXiv-issued DOI | Generated by arXiv; do not fabricate |
 | Endorsement | Check current arXiv policy and whether endorsement is needed | Open; 21 Jan 2026 policy requires institutional email plus prior arXiv authorship for automatic endorsement, otherwise personal endorsement |
-| Format | 1-inch margins, 10 pt, letter paper, no line numbers/watermark | Verified 26 Oct 2026; build refreshed 28 Oct 2026 in `docs/ARXIV_BUILD_QA.md` |
+| Format | 1-inch margins, 10 pt, letter paper, no line numbers/watermark | Verified 26 Oct 2026; build refreshed 31 Oct 2026 in `docs/ARXIV_BUILD_QA.md` |
 
 ## 5. Venue track
 
 | Field | Current state | Action |
 |---|---|---|
 | Strategy | arXiv first, then workshop/short or tool track; not main-track | Accepted strategy |
-| CODASPY 2027 lead | Verified 26 Oct 2026: research 12 pages, dataset/tool 6 pages, BlueSky 10 (invitation), SoK 15 (invitation); abstract 16 Nov 2026, paper 23 Nov 2026 | Official CFP checked; current 25-page single-column paper is not CODASPY-ready |
+| CODASPY 2027 lead | Verified 26 Oct 2026: research 12 pages, dataset/tool 6 pages, BlueSky 10 (invitation), SoK 15 (invitation); abstract 16 Nov 2026, paper 23 Nov 2026 | Official CFP checked; current 29-page single-column paper is not CODASPY-ready |
 | Target track | `TBD` | arXiv-first; choose a workshop/short or tool track after release decisions |
 | Page limit | arXiv has no page limit; CODASPY research is 12 pages double-column | Confirm the exact track before formatting |
 | Template | Standard `article` / arXiv-style single-column draft | Canonical format selected; use a venue template only after a specific CFP is chosen |
@@ -115,9 +115,9 @@ checklist.
 - [ ] AI-use disclosure checked against venue policy.
 - [ ] Release tree sanitized; license and repository URL assigned.
 - [x] Target CFP checked directly; CODASPY 2027 page limits, anonymity, and deadlines verified 26 Oct 2026; arXiv format verified 26 Oct 2026.
-- [x] Factual/traceability correction pass applied; no new claims, experiments, references, or H4/H7 work. The 23 Oct F1-F13 finalization pass, the F4/F5 wording corrections, the 638 non-vacuity wording correction, the 26 Oct audit correction pass, and the 28 Oct path-format correction are applied. See `docs\REVIEW_CORRECTIONS_2026-10-21.md`, `docs\FINAL_BUILD_QA.md`, `docs\ARTIFACT_SNAPSHOT.md`, and `docs\RESEARCH_STATUS.md`.
-- [x] Manuscript compiled; 0 overfull hboxes; 25 pages; standalone LaTeX export verified. The 28 Oct named-author build keeps Tables 2 and 3 with their bodies and Table 12 with its cross-reference to the Section 3.5 artifact-root key.
-- [x] arXiv-compliant build created: 28 pages, 1-inch margins, 10 pt, named author; 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes. See `docs\ARXIV_BUILD_QA.md`.
+- [x] Factual/traceability correction pass applied; no new claims, experiments, references, or H4/H7 work. The 23 Oct F1-F13 finalization pass, the F4/F5 wording corrections, the 638 non-vacuity wording correction, the 26 Oct audit correction pass, the 28 Oct path-format correction, and the 31 Oct review-correction pass are applied. See `docs\REVIEW_CORRECTIONS_2026-10-21.md`, `docs\FINAL_BUILD_QA.md`, `docs\ARTIFACT_SNAPSHOT.md`, and `docs\RESEARCH_STATUS.md`.
+- [x] Manuscript compiled; 0 overfull hboxes; 29 pages; standalone LaTeX export verified. The 31 Oct named-author build keeps Tables 2 and 3 with their bodies and Table 12 with its cross-reference to the Section 3.5 artifact-root key.
+- [x] arXiv-compliant build created: 32 pages, 1-inch margins, 10 pt, named author; 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes. See `docs\ARXIV_BUILD_QA.md`.
 - [ ] arXiv endorsement and license selected; public email and optional ORCID finalized.
 - [ ] Final QA pass completed after final email and venue metadata; no frozen file changed; no merge into `MANUSCRIPT.md` without approval.
 

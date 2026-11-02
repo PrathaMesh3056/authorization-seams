@@ -4,7 +4,7 @@
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
 `79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876`;
-687 lines, 129,935 bytes). The reference list has eight entries. The abstract
+687 lines, 129,248 bytes). The reference list has eight entries. The abstract
 is 278 words with SHA-256
 `060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7`.
 
@@ -29,8 +29,8 @@ The separate arXiv-compliant named-author candidate is
 `33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1`):
 32 pages, 340,381 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
 0 fatal LaTeX errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1
-stable label warning. Its source SHA-256 is
-`E309CB76E0CF00754F5A8F638B0E456D92CF1DE8E105FF00A7447AA0A8912194`.
+stable label warning. Its generated source SHA-256 is
+`52F399DBDC3B65B54B751A2D85ACCBD3ADB21E7F9EB77DDE33F239F0AF1818A5`.
 
 ## 26 October correction pass
 
@@ -147,6 +147,8 @@ untouched.
   code/paths, Section 3.5 artifact-root key, shortened path parentheticals,
   bold note labels, and an experiment/artifact-scoped Section 3.7 disclosure;
   canonical, export, and arXiv candidate rebuilt and rechecked.
+- 31 Oct 2026 review-correction pass applied as listed above; canonical,
+  standalone export, and arXiv candidate rebuilt and rechecked.
 - Six Table 15 hashes verified; `paper\hashes.txt` remains untouched.
 - Table 15 truncation gate closed (22 Oct 2026): all six printed fragments are
   exact substrings of the full 64-character values, including the 7-character
@@ -253,7 +255,8 @@ untouched.
 2. If a double-blind venue is chosen, re-anonymize the named-author build before
    submission; do not send the named-author PDF to a double-blind track.
 3. Add venue metadata only after a specific CFP is chosen.
-4. The 28 October path-format and disclosure rebuild, export refresh, arXiv
-   candidate, and repository refresh are complete. Leave `dist\sanitized` untouched;
-   publication is a separate owner decision.
+4. The 31 October review-correction rebuild, export refresh, arXiv candidate,
+   and repository refresh are complete; the 28 October pass remains recorded
+   above. Leave `dist\sanitized` untouched; publication is a separate owner
+   decision.
 5. Do not submit to a public venue until the relevant release checks close.

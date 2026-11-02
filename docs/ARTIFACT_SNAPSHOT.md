@@ -1,9 +1,8 @@
-# Working artifact snapshot - 28 October 2026
+# Working artifact snapshot - 31 October 2026
 
 This is a working snapshot, not the release manifest. It records the current
-manuscript, figures, builds, and standalone LaTeX export after the 28 October
-2026 path-format correction and AI-use disclosure revision to the 26 October
-2026 audit-corrected draft. It
+manuscript, figures, builds, and standalone LaTeX export after the 31 October
+2026 five-seat review correction pass. It
 does not replace `paper\hashes.txt` (the six Table 15 hashes) or any frozen
 source map. The 23 October 2026 canonical PDF and the pre-edit
 manuscript/export copies remain archived and unchanged.
@@ -12,14 +11,14 @@ manuscript/export copies remain archived and unchanged.
 
 | Artifact | SHA-256 |
 |---|---|
-| `paper\MANUSCRIPT_REVISED.md` | `5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-26.pdf` | `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3` |
-| `paper\build\manuscript_build_wide.tex` | `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA` |
-| `paper\build\manuscript_build_wide.pdf` | `92A3945281EC5155E2567232F3BA184C33554DD4FB02CCB80F8C793A139540F3` |
-| `paper\latex_export\main.tex` | `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA` |
-| `paper\latex_export\main.pdf` | `1430E2DBFF0A4658C72504731AA28F04B127BA4C6D4F7C04AAC0C59282916EDD` |
-| `paper\arxiv_export\main.tex` | `F1E614CE592CDDC058F90FDCCEF4651F42663DD164FD59FC02FD935FBC17F032` |
-| `paper\arxiv_export\main.pdf` | `E2939B632D2A5FAB2AC9BEAECC5084D0C556AFADE6BFFC97994532D310083430` |
+| `paper\MANUSCRIPT_REVISED.md` | `79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-31.pdf` | `F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D` |
+| `paper\build\manuscript_build_wide.tex` | `0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA` |
+| `paper\build\manuscript_build_wide.pdf` | `F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D` |
+| `paper\latex_export\main.tex` | `0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA` |
+| `paper\latex_export\main.pdf` | `31F45A48ADFD4B0E16EA87727FEB740A22D33A4362C57D6161DF1E46F379E45A` |
+| `paper\arxiv_export\main.tex` | `52F399DBDC3B65B54B751A2D85ACCBD3ADB21E7F9EB77DDE33F239F0AF1818A5` |
+| `paper\arxiv_export\main.pdf` | `33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1` |
 | `paper\figures\figure_1_handoff_anatomy.svg` | `035902B00D700869806BF038F4CE6CBF0B30017BCDB50D3760C4D23F72B9A23C` |
 | `paper\figures\figure_1_handoff_anatomy.pdf` | `0AA8A365135AA4E11C5A0D7194FEB3C27947D00FAD8FEA703A1612987C3B90B1` |
 | `paper\figures\figure_2_repair_loci.svg` | `B4C641CE07FB789C4E6D74D55E2092A698E256E374C87173D532A138066F3F88` |
@@ -33,12 +32,11 @@ manuscript/export copies remain archived and unchanged.
 
 ## Build status
 
-- Canonical 26 October build, refreshed 28 October: 25 pages, letter paper,
-  10 pt, 0.75 in margins; 321,999 bytes.
-- arXiv candidate, refreshed 28 October: 28 pages, letter paper, 10 pt, 1 in
-  margins; 323,588 bytes.
+- Canonical 31 October build: 29 pages, letter paper, 10 pt, 0.75 in margins;
+  337,843 bytes.
+- arXiv candidate: 32 pages, letter paper, 10 pt, 1 in margins; 340,381 bytes.
 - Canonical build: 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes,
-  3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage diagnostics,
+  3 cosmetic underfull hboxes, 4 ignored infinite-glue-shrinkage diagnostics,
   and 1 stable `Label(s) may have changed` warning.
 - arXiv build: 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes, and
   4 cosmetic underfull hboxes; 1 stable label warning.
@@ -48,22 +46,21 @@ manuscript/export copies remain archived and unchanged.
   Prathamesh Patil; the arXiv candidate names Prathamesh N Patil. A double-blind
   venue would require re-anonymization.
 - Table 2's caption and body are together; Table 3's Total row stays with the
-  ledger; Table 12 spans pages 16-17 and cross-references the Section 3.5
-  artifact-root key; Appendix Table A1 spans pages 24-25 in the canonical
-  build.
+  ledger; Table 12 cross-references the Section 3.5 artifact-root key; Appendix
+  Table A1 remains intact in the canonical build.
 - All PDF fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
 - Figure 1: 239.76 x 171.828 pt, vector. Figure 2: 504 x 300.24 pt, vector.
 - `pdfimages` reports zero raster images in the manuscript and in both figures.
 - Standalone `paper\latex_export\main.tex` compiles independently with
-  XeLaTeX, producing a 25-page, 322,001-byte PDF with 0 overfull hboxes.
+  XeLaTeX, producing a 29-page, 337,847-byte PDF with 0 overfull hboxes.
 
 ## References and statuses
 
 - The manuscript contains a static eight-entry reference list after Section 9:
   `[APC]`, `[TraceGrant]`, `[SentinelAgent]`, `[Progent]`, `[MasDrift]`, Noma
   Security, the IETF individual Internet-Draft, and arXiv:2605.05440.
-- Abstract: 222 words, SHA-256
-  `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`.
+- Abstract: 278 words, SHA-256
+  `060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7`.
 - H4 and H7 remain `UNTESTED`; no H4/H7 experiments are part of this package.
 - Progent is positioned as a close related work on monotonic confinement inside
   one privilege-control layer, not as an experimental baseline. Its reported
@@ -72,7 +69,7 @@ manuscript/export copies remain archived and unchanged.
   block is directional-only and is not used as evidence; Appendix Table A1
   records the hypothesis-label lineage.
 
-## 28 October path-format and disclosure revision
+## 28 October path-format and disclosure revision (historical)
 
 - Section 3.7 now limits AI-use disclosure to experiment implementation,
   artifact quality assurance, and the documented review passes; it no longer
@@ -89,10 +86,20 @@ manuscript/export copies remain archived and unchanged.
 - Long path parentheticals were shortened, and italic note lead-ins were
   converted to bold run-in labels. No claim, number, reference, table datum, or
   H4/H7 status changed.
-- The abstract remains 222 words with SHA-256
+- At that revision the abstract remained 222 words with SHA-256
   `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`.
 - The canonical and arXiv builds were regenerated, and the standalone export
   was recompiled. `dist\sanitized` remains untouched.
+
+## 31 October review-correction pass
+
+- The manuscript was re-centered on E1, the method, the field-level failure map,
+  and the repair taxonomy after the five-seat review.
+- H3, H6, and ★ are `REFINED`; H1's resource clause is `UNTESTED`; H4 and H7
+  remain `UNTESTED`.
+- Abstract: 278 words, SHA-256
+  `060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7`.
+- Canonical, standalone, and arXiv builds regenerated: 29, 29, and 32 pages.
 
 ## 26 October correction-pass notes
 

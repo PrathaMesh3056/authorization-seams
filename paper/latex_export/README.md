@@ -1,8 +1,8 @@
 # The Handoff Nobody Owns - standalone LaTeX source
 
-This package reproduces the 26 October 2026 named-author preprint of the
-seam-research manuscript, refreshed on 28 October 2026 for the inline
-code/path formatting correction and AI-use disclosure revision. It is a
+This package reproduces the 31 October 2026 named-author preprint of the
+seam-research manuscript, refreshed on 31 October 2026 for the five-seat
+review correction pass. It is a
 preprint source, not a peer-reviewed publication.
 
 ## Files
@@ -48,7 +48,7 @@ files and are not needed to compile the body.
 - Reference PDF: 29 pages, 337,847 bytes
 - Reference PDF SHA-256: `31F45A48ADFD4B0E16EA87727FEB740A22D33A4362C57D6161DF1E46F379E45A`
 - Build: Pandoc 3.12.1 + XeLaTeX (MiKTeX 25.12)
-- Manuscript date in the PDF: 26 October 2026
+- Manuscript date in the PDF: 31 October 2026
 
 The 23 October 2026 canonical PDF and its export remain archived under
 `paper\drafts\MANUSCRIPT_DRAFT_2026-10-23.pdf` and
@@ -78,10 +78,10 @@ style-neutral and must be adapted only after the target venue is selected.
 
 ## QA of the reference PDF
 
-- 25 pages, letter paper.
+- 29 pages, letter paper.
 - Zero missing glyphs, zero fatal LaTeX errors, zero overfull hboxes in the
   build.
-- Three cosmetic underfull hboxes, six ignored infinite-glue-shrinkage
+- Three cosmetic underfull hboxes, four ignored infinite-glue-shrinkage
   diagnostics, and one stable `Label(s) may have changed` warning remain; all
   are non-blocking. The reference PDF has zero unresolved references.
 - All fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
@@ -90,8 +90,7 @@ style-neutral and must be adapted only after the target venue is selected.
 - Both figures are vector; `pdfimages` reports zero raster images.
 - Figure 1 is 239.76 x 171.828 pt; Figure 2 is 504 x 300.24 pt.
 - Table 2's caption and body are together; Table 3's Total row stays with the
-  ledger; Table 12 spans pages 16-17 and cross-references the Section 3.5
-  artifact-root key; Appendix Table A1 spans pages 24-25 in the canonical
-  build.
+  ledger; Table 12 cross-references the Section 3.5 artifact-root key; Appendix
+  Table A1 remains intact in the canonical build.
 - The static eight-entry reference list appears after Section 9 and is set
   ragged-right to avoid stretched interword gaps.

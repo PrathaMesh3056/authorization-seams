@@ -15,7 +15,7 @@ This directory mixes two kinds of material:
 | `RELEASE_CHECKLIST.md` | new | Release checks before publishing/submitting |
 | `RELEASE_SANITIZATION.md` | new | Machine-local path and input review procedure |
 | `REPO_BUILD_QA.md` | new | Local build, integrity, and packaging validation record |
-| `ARXIV_BUILD_QA.md` | new | 26 Oct 2026 arXiv-compliant build and format/QA record |
+| `ARXIV_BUILD_QA.md` | new | 31 Oct 2026 arXiv-compliant build and format/QA record |
 | `RESEARCH_STATUS.md` | copied | Project status snapshot and release checks |
 | `FINAL_BUILD_QA.md` | copied | Build, font, reference, and export QA |
 | `FONT_QA_REPORT.md` | copied | Font embedding and fallback checks |

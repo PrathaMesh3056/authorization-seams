@@ -6,7 +6,7 @@ Research preprint and reproduction package for a measurement study of what
 happens when one authorization mechanism hands a narrowed decision to another.
 
 > **Status:** research preprint; not peer reviewed. The canonical manuscript is
-> a 25-page, single-column named-author build. A separate 28-page
+> a 29-page, single-column named-author build. A separate 32-page
 > arXiv-compliant candidate uses 1-inch margins and the `Prathamesh N Patil`
 > display name. Both are prepared for workshop/short-paper or tool-track
 > review. Hypotheses H4 and H7 remain `UNTESTED`. The builds print the author
@@ -50,7 +50,7 @@ stored artifacts.
 |---|---|
 | `paper/` | Manuscript, canonical PDF, figures, Pandoc/XeLaTeX build |
 | `paper/latex_export/` | Current standalone single-file LaTeX export of the manuscript |
-| `paper/arxiv_export/` | 28-page arXiv-compliant named-author build (1-inch margins) |
+| `paper/arxiv_export/` | 32-page arXiv-compliant named-author build (1-inch margins) |
 | `tests/` | Frozen experiment evidence: cases, locks, harnesses, and stored results |
 | `artifacts/` | Generated SHA-256 manifest and integrity metadata |
 | `docs/` | Method overview, reproducibility notes, project status, and QA records |
@@ -78,7 +78,7 @@ pwsh -File paper/build/build.ps1
 # paper build (Linux/macOS)
 bash paper/build/build.sh
 
-# arXiv-compliant candidate (1-inch margins, 28 pages)
+# arXiv-compliant candidate (1-inch margins, 32 pages)
 python paper/build/build_arxiv.py
 ```
 

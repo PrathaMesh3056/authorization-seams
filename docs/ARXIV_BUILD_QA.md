@@ -1,4 +1,4 @@
-# arXiv build QA - 28 October 2026
+# arXiv build QA - 31 October 2026
 
 **Target:** arXiv preprint, initial submission, named-author build.
 **Official sources checked 26 October 2026:**
@@ -22,17 +22,17 @@ made.
 
 ## Why a separate build was needed
 
-The canonical 26 October PDF is a 25-page, single-column, named-author build
+The canonical 31 October PDF is a 29-page, single-column, named-author build
 with **0.75-inch margins**. arXiv requires a **minimum 1-inch page margin** and
 10-14 pt type. Uploading the canonical PDF as-is would risk a format
 correction. The canonical PDF and standalone LaTeX export were refreshed for
-the 28 October path-format and AI-use disclosure revision, but the arXiv
-layout remains a separate candidate generated from that export. The 23 October 24-page PDF remains
+the 31 October review-correction pass, but the arXiv layout remains a separate
+candidate generated from that export. The 23 October 24-page PDF remains
 archived.
 
 The same review also confirmed that arXiv is named-author (no anonymity), while
 CODASPY 2027 requires a 12-page double-column anonymized research submission
-(abstract 16 November 2026; paper 23 November 2026). The current 25-page
+(abstract 16 November 2026; paper 23 November 2026). The current 29-page
 single-column paper is not a CODASPY-ready submission.
 
 ## Inputs and build
@@ -40,9 +40,9 @@ single-column paper is not a CODASPY-ready submission.
 | Item | Value |
 |---|---|
 | Current manuscript | `paper/MANUSCRIPT_REVISED.md` |
-| Manuscript SHA-256 | `5B85155C8A58185D1EE715A6F38150EFDA121F263E0C826984D0AF0A0CF2EF32` |
+| Manuscript SHA-256 | `79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876` |
 | Current LaTeX source | `paper/latex_export/main.tex` |
-| LaTeX source SHA-256 | `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA` |
+| LaTeX source SHA-256 | `0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA` |
 | Build script | `paper/build/build_arxiv.py` |
 | Output source | `paper/arxiv_export/main.tex` |
 | Output PDF | `paper/arxiv_export/main.pdf` |
@@ -66,19 +66,19 @@ table, reference, figure, or hypothesis status changed.
 
 | Check | Result |
 |---|---|
-| Pages | 28 |
+| Pages | 32 |
 | Page size | 612 x 792 pt (US Letter) |
 | Body type | 10 pt |
 | Margins | 1-inch geometry; text line boxes at 72 pt |
-| PDF SHA-256 | `E2939B632D2A5FAB2AC9BEAECC5084D0C556AFADE6BFFC97994532D310083430` |
-| PDF size | 323,588 bytes |
-| Source SHA-256 | `F1E614CE592CDDC058F90FDCCEF4651F42663DD164FD59FC02FD935FBC17F032` |
-| Source size | 141,592 bytes |
+| PDF SHA-256 | `33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1` |
+| PDF size | 340,381 bytes |
+| Source SHA-256 | `52F399DBDC3B65B54B751A2D85ACCBD3ADB21E7F9EB77DDE33F239F0AF1818A5` |
+| Source size | 159,328 bytes |
 | Missing glyphs | 0 |
 | Fatal LaTeX errors | 0 |
 | Overfull hboxes | 0 |
 | Underfull hboxes | 4 cosmetic |
-| Ignored infinite-glue diagnostics | 3, non-fatal |
+| Ignored infinite-glue diagnostics | 2, non-fatal |
 | Label warning | 1 stable `Label(s) may have changed` warning |
 | Embedded fonts | All fonts embedded |
 | Raster images | 0; both figures are vector |
@@ -89,7 +89,7 @@ table, reference, figure, or hypothesis status changed.
 | Manuscript DOI printed | No; the reference list cites external DOIs |
 | License printed | No |
 
-The page count increased from 25 to 28 because the text measure narrowed from
+The page count increased from 29 to 32 because the text measure narrowed from
 7.0 to 6.5 inches. That is a deliberate layout consequence, not a content
 revision.
 
@@ -100,19 +100,28 @@ table overflows the page.
 
 ## Content-preservation checks
 
-- Abstract: 222 words; SHA-256
-  `CD2278607B491BD49FE7A03585979B259BFD187B0E9C0F9D7D1D4181573B9654`.
+- Abstract: 278 words; SHA-256
+  `060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7`.
 - Static reference list: 8 entries.
 - H4 and H7: `UNTESTED` in the source and the PDF.
 - Progent: related work only; no reproduced figure or comparison.
-- The 26 October canonical PDF and current LaTeX export remain unchanged by
+- The 31 October canonical PDF and current LaTeX export remain unchanged by
   this export. The 23 October 24-page PDF remains archived.
 - Both arXiv figures are byte-identical copies of the canonical vector PDFs.
 - No internal placeholder email, local Windows path, or token-shaped secret
   appears in the generated source or PDF text.
 - No line numbers or watermark.
 
-## 28 October path-format and disclosure revision
+## 31 October review-correction pass
+
+- The manuscript was re-centered on E1, the method, the field-level failure map,
+  and the repair taxonomy after the five-seat review.
+- H3, H6, and ★ are `REFINED`; H1's resource clause is `UNTESTED`; H4 and H7
+  remain `UNTESTED`.
+- Abstract: 278 words; eight references.
+- The generated source and PDF above reflect this build.
+
+## 28 October path-format and disclosure revision (historical)
 
 - Section 3.7 now limits AI-use disclosure to experiment implementation,
   artifact quality assurance, and the documented review passes; it no longer
@@ -124,35 +133,32 @@ table overflows the page.
 - The artifact-root key is defined once in Section 3.5; Table 12 and the
   Appendix cross-reference it. Long path parentheticals were shortened, and
   italic note lead-ins became bold run-in labels.
-- The revision changes no claim, number, reference, table datum, figure, or
-  H4/H7 status. The abstract remains 222 words and the reference list remains
-  eight entries.
+- The revision changed no claim, number, reference, table datum, figure, or
+  H4/H7 status. At that revision the abstract remained 222 words and the
+  reference list remained eight entries.
 
 ## Visual review
 
-Pages 1, 7, 13, 16, 18, 27, and 28 were rendered at 150 dpi and inspected.
-The title page, the Table 2/Table 3 page, the SentinelAgent and boundary
+The 28 October build was visually reviewed on pages 1, 7, 13, 16, 18, 27, and
+28; the title page, the Table 2/Table 3 page, the SentinelAgent and boundary
 reconciliation notes, Figure 2 and Table 12, the Appendix A/Table A1 page, and
-the reference list show no clipping, overlap, missing glyph, or broken table.
-Table 2's caption and body are together; Table 3's Total row stays with the
-ledger; Figure 2's Locus B connector points to the bridge-translation step. All
-28 pages were checked mechanically for text presence, text bounds, embedded
-images, and drawing content.
+the reference list showed no clipping, overlap, missing glyph, or broken table.
+The 31 October build was checked mechanically on all 32 pages for page count,
+text presence, text bounds, embedded fonts, metadata, and zero raster images;
+no text block falls outside its page.
 
 ## Packaging checks
 
-- arXiv source package:
-  `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip` (160,358 bytes;
-  SHA-256 `615962B8590C830E92625EED88F40D42F3D6C1F4A8031B6975599A95192C030A`).
-  It contains `main.tex` and the two vector figures. Extracted into a clean
-  temporary directory, it compiles to 28 pages with 0 missing glyphs, 0 fatal
-  LaTeX errors, 0 overfull hboxes, 4 underfull hboxes, 3 ignored
-  infinite-glue diagnostics, and 1 stable label warning.
-- Review package: `dist/seam-conformance-kit-20261027-review.zip`; regenerated
-  after the final manifest. It extracts, verifies the tracked files, passes the
-  repository QA suite, and rebuilds the arXiv candidate to 28 pages. The
-  current checksum is in the adjacent `.sha256` sidecar; it changes when
-  tracked documentation changes.
+- The last generated arXiv source package is
+  `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip` (26 October; historical),
+  160,358 bytes, SHA-256
+  `615962B8590C830E92625EED88F40D42F3D6C1F4A8031B6975599A95192C030A`.
+  At that time it contained `main.tex` and the two vector figures, and extracted
+  cleanly to 28 pages. It predates the 31 October rebuild and was not
+  regenerated.
+- The last review package is `dist/seam-conformance-kit-20261027-review.zip`
+  (27 October; historical). It predates the 31 October review-correction pass;
+  no new package has been generated.
 - The review package is **not** a public-release package: frozen evidence and
   toolchain notes still contain machine-local paths. The sanitized tree remains
   the release path.

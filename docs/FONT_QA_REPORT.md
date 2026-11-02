@@ -1,12 +1,16 @@
 # Font consistency and PDF QA report
 
+> **Historical record (28 October 2026).** The font inventory below remains
+> current, but the build, hash, and page values refer to the 28 October
+> 25-page build. Current build values are in `docs\ARTIFACT_SNAPSHOT.md`.
+
 **Date:** 28 October 2026
 
-**Scope:** body typography and figure typography for the 25-page
-single-column named-author draft. No manuscript claim, number, status, table
-data, or frozen artifact was changed by the font pass. The current-build values
-below were refreshed for the 28 October path-format and AI-use disclosure
-revision; the font inventory itself is unchanged from the earlier font pass.
+**Scope:** body typography and figure typography for the 28 October 2026
+25-page single-column named-author draft. No manuscript claim, number, status,
+table data, or frozen artifact was changed by the font pass. The build values
+below record the 28 October path-format and AI-use disclosure revision; the font
+inventory itself is unchanged from the earlier font pass.
 
 ## Problem found
 
@@ -99,7 +103,7 @@ the body font, and the figure math glyphs did not match the figure labels.
 `paper\latex_export\main.tex` was compiled independently with XeLaTeX twice.
 It produced a 25-page PDF with no fatal errors and no missing characters. The
 export contains only `main.tex`, `figures/`, `main.pdf`, and `README.md`; no
-Poppler or QA tooling is bundled. The current export uses the same Latin Modern
+Poppler or QA tooling is bundled. The 28 October export used the same Latin Modern
 body and Arial/Cambria Math figures.
 
 - `main.tex` SHA-256: `A632B591801FA6E80D203E8D4D7085E2866A4EACF62F8C3CDF2908F08B0A68DA`

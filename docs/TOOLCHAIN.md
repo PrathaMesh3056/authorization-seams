@@ -1,4 +1,4 @@
-# Toolchain - verified 26 Oct 2026
+# Toolchain - verified 26 Oct 2026; builds refreshed 31 Oct 2026
 
 Local build tools used for the manuscript, figure, and PDF pass. These are
 development dependencies only; none is bundled into the paper or artifact
@@ -47,7 +47,7 @@ python paper\build\build_arxiv.py
 
 The script verifies the pinned LaTeX export hash, applies the 1-inch margin,
 author-name, and Figure 2 width changes, and compiles three times. It writes
-`paper\arxiv_export\main.tex` and `paper\arxiv_export\main.pdf` (28 pages, 0
+`paper\arxiv_export\main.tex` and `paper\arxiv_export\main.pdf` (32 pages, 0
 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes; 4 cosmetic underfull
 hboxes and 1 stable label warning). See `docs\ARXIV_BUILD_QA.md`.
 
@@ -78,8 +78,8 @@ font/image/text checks. Poppler is used locally for QA only.
   fallback.
 - Figure labels use Arial; the subset glyph is explicitly set in Cambria Math.
   No Lucida Sans Unicode or Segoe UI Symbol fallback remains.
-- The current canonical build produces 25 pages, 0 missing glyphs, 0 fatal
-  LaTeX errors, 0 overfull hboxes, and 6 ignored infinite-glue-shrinkage
+- The current canonical build produces 29 pages, 0 missing glyphs, 0 fatal
+  LaTeX errors, 0 overfull hboxes, and 4 ignored infinite-glue-shrinkage
   diagnostics. References are a static list embedded by Pandoc; no citeproc or
   BibTeX run is used.
 - Three cosmetic underfull hboxes remain; they do not affect text flow or the
