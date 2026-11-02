@@ -26,7 +26,7 @@ public release has occurred.
 | Format | ACM `sigconf`, double column | `\documentclass[sigconf,anonymous,nonacm]{acmart}`; US Letter 612x792 pt | PASS |
 | Anonymity | No authors, affiliations, emails, or identifying paths | `anonymous` option; `Anonymous Author(s)`; blank PDF author; token scan clean | PASS |
 | References | All cited; verified metadata; no inventions | 16 `\bibitem` entries; BibTeX used 16; DOI/RFC/JHU checks recorded below | PASS |
-| Layout | No overfull boxes, undefined references, missing glyphs | 0 overfull hbox; 0 overfull vbox; 0 undefined; 0 missing characters; 0 font warnings | PASS |
+| Layout | No overfull boxes, undefined references, missing glyphs | 0 overfull hbox; 0 overfull vbox; 0 undefined; 0 missing characters; 0 font or acmart warnings | PASS |
 | Claims | Frozen counts preserved; H4/H7 `UNTESTED` | Claim spot-check below | PASS |
 | Frozen evidence | Canonical artifacts and claim set untouched | Canonical hashes unchanged; 319-file manifest verified | PASS |
 | Submission | Not submitted | Local worktree only | NOT SUBMITTED |
@@ -146,6 +146,7 @@ Underfull \hbox:   139   (cosmetic; justified lines)
 Underfull \vbox:    15   (cosmetic; page fill)
 LaTeX Warning:       0
 Font Warning:        0
+Class acmart Warning: 0   (both figures carry \Description)
 Missing character:   0
 Undefined refs/cites: 0
 BibTeX warnings:     2   (metadata completeness, listed above)

@@ -169,7 +169,7 @@ The gate checks:
 - appendix at most 2 pages;
 - no overfull hboxes or vboxes;
 - no undefined references or citations;
-- no missing glyphs or font warnings;
+- no missing glyphs, font warnings, or acmart accessibility warnings;
 - 16 bibliography entries;
 - anonymous body and blank PDF author metadata;
 - every frozen claim string;

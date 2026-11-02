@@ -97,6 +97,7 @@ The observation is not an empirical result and is not tested by these experiment
 \centering
 \includegraphics[width=0.95\columnwidth]{figures/figure_1_handoff_anatomy.pdf}
 \caption{Anatomy of a cross-mechanism handoff. The sender narrows authority, the bridge translates it into a receiver-side record, and the receiver decides. The schematic distinguishes the record the bridge carries from the read set the receiver's decision actually consults; it carries no data and no numbers.}
+\Description{A schematic of a cross-mechanism handoff. A sender narrows authority, a bridge translates the narrowed decision and state into a receiver-side record, and a receiver decides using only its read set. The drawing distinguishes the carried record from the fields the decision reads and carries no data.}
 \label{fig:anatomy}
 \end{figure}
 
@@ -280,6 +281,7 @@ Those instances motivate the two repair loci. Receiver side, when the fact cross
 \centering
 \includegraphics[width=0.9\columnwidth]{figures/figure_2_repair_loci.pdf}
 \caption{Where the decision can be rescued: the two repair loci of the seam program (schematic; no data). Locus~A sits at the receiver's admission step and applies when the narrowed fact crossed intact; Locus~B sits at the bridge's derivation step and applies when the bridge itself widened. The annotation ``carried but unread = uncarried'' labels the gap between the carried record and the receiver's read set.}
+\Description{A schematic of two repair loci. Locus A is at the receiver's admission step and applies when the narrowed fact crossed intact; Locus B is at the bridge's derivation step and applies when the bridge itself widened. The drawing carries no data and no numbers.}
 \label{fig:repair}
 \end{figure}
 

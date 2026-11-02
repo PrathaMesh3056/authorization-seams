@@ -175,6 +175,7 @@ def check() -> int:
     missing_chars = count(r"Missing character", log)
     font_warnings = count(r"LaTeX Font Warning", log)
     latex_warnings = count(r"(?<!Package )LaTeX Warning", log)
+    acmart_warnings = count(r"Class acmart Warning", log)
 
     checks.require(overfull_h == 0, f"no overfull hboxes (got {overfull_h})")
     checks.require(overfull_v == 0, f"no overfull vboxes (got {overfull_v})")
@@ -183,6 +184,7 @@ def check() -> int:
     checks.require(missing_chars == 0, f"no missing characters (got {missing_chars})")
     checks.require(font_warnings == 0, f"no font warnings (got {font_warnings})")
     checks.require(latex_warnings == 0, f"no LaTeX warnings (got {latex_warnings})")
+    checks.require(acmart_warnings == 0, f"no acmart warnings (got {acmart_warnings})")
     checks.note(f"underfull hboxes: {underfull_h} (cosmetic justification, tolerated)")
     checks.note(f"underfull vboxes: {underfull_v} (cosmetic page fill, tolerated)")
 
