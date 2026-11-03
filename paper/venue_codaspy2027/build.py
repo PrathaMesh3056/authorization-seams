@@ -26,7 +26,7 @@ MAIN_BBL = ROOT / "main.bbl"
 
 MAIN_PAGE_LIMIT = 12
 APPENDIX_PAGE_LIMIT = 2
-EXPECTED_REFERENCES = 16
+EXPECTED_REFERENCES = 19
 
 # Frozen claim strings that must survive every venue edit. whitespace-normalised
 # page text is matched, so line breaks inside the PDF do not matter.
