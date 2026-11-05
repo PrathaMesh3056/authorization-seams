@@ -22,6 +22,7 @@ WIDTHS = {
     15: [0.21, 0.12, 0.17, 0.50],                               # Table 14
     16: [0.16, 0.34, 0.50],                                     # Table 15
     19: [0.18, 0.34, 0.18, 0.30],                               # Table A1 (appendix)
+    20: [0.13, 0.12, 0.20, 0.12, 0.22, 0.19],                   # Table A2 (appendix)
 }
 
 text = src.read_text(encoding="utf-8")

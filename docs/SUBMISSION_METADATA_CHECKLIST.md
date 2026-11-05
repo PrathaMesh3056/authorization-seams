@@ -7,14 +7,14 @@
 | Field | Current value | Status |
 |---|---|---|
 | Title | *The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry* | Present |
-| Abstract | 278 words; rewritten in the 31 October review-correction pass; no new experiments or references | Present |
+| Abstract | 222 words; rewritten in the 5 November declarations/positioning revision; no new experiments, numbers, or citations | Present |
 | Keywords | cross-mechanism authorization; agent authorization; authorization seams; scope narrowing; evidence carriage; conformance testing; locked-artifact methodology | Present |
-| Current draft | `paper\MANUSCRIPT_REVISED.md` | Present; SHA-256 `79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876` |
-| Current PDF | `paper\drafts\MANUSCRIPT_DRAFT_2026-10-31.pdf` | Present; 29 pages; 337,843 bytes; named-author build; SHA-256 `F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D` |
-| Standalone LaTeX | `paper\latex_export\main.tex` | Present; SHA-256 `0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA`; independent XeLaTeX compile verified (29 pages, 337,847 bytes) |
-| arXiv PDF | `paper\arxiv_export\main.pdf` | Present; 32 pages; 340,381 bytes; 1-inch margins; named-author `Prathamesh N Patil`; SHA-256 `33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1` |
-| arXiv LaTeX source | `paper\arxiv_export\main.tex` | Present; generated from the current export; SHA-256 `52F399DBDC3B65B54B751A2D85ACCBD3ADB21E7F9EB77DDE33F239F0AF1818A5` |
-| References | Static eight-entry list after Section 9 | Present; first seven identities checked 20 October 2026, MasDrift checked 22 October 2026; claims not reproduced |
+| Current draft | `paper\MANUSCRIPT_REVISED.md` | Present; SHA-256 `E7C3F227F4E79F2CCB0A162DF3411D7633130550C930897395795E91D161B854` |
+| Current PDF | `paper\drafts\MANUSCRIPT_DRAFT_2026-11-05.pdf` | Present; 31 pages; 348,663 bytes; named-author build; SHA-256 `7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F` |
+| Standalone LaTeX | `paper\latex_export\main.tex` | Present; SHA-256 `6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8`; independent XeLaTeX compile verified (31 pages, 348,668 bytes) |
+| arXiv PDF | `paper\arxiv_export\main.pdf` | Present; 34 pages; 351,679 bytes; 1-inch margins; named-author `Prathamesh N Patil`; SHA-256 `C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28` |
+| arXiv LaTeX source | `paper\arxiv_export\main.tex` | Present; generated from the current export; SHA-256 `B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2` |
+| References | Static eleven-entry list after Section 9 | Present; first seven identities checked 20 October 2026, MasDrift checked 22 October 2026, RFC 8693/Zanzibar/Macaroons checked 5 November 2026; claims not reproduced |
 | Base draft | archived `MANUSCRIPT.md` (project archive, not this repository) | Preserved, not for merge |
 
 ## 2. Authors and affiliations
@@ -31,13 +31,13 @@
 
 Do not submit with placeholder authors. Do not infer affiliations from the filesystem or account name.
 
-**Named-author build:** the 31 October 2026 canonical PDF prints the author name
+**Named-author build:** the 5 November 2026 canonical PDF prints the author name
 and affiliation and carries matching PDF metadata. It is not anonymized; a
-double-blind venue requires re-anonymization. The 23 October PDF remains
+double-blind venue requires re-anonymization. The 31 October PDF remains
 archived. The placeholder address is not printed and is redacted in this
 checklist.
 
-**Author note:** Prathamesh N Patil is an M.Tech. Computer Engineering student at Sardar Patel Institute of Technology. Student status is context for the affiliation; it is not normally printed as a separate title-page field. The affiliation confirms the academic base and does **not** imply that the institution funded, supervised, or endorsed the work. The canonical 31 Oct PDF retains the earlier `Prathamesh Patil` display string; the 23 Oct PDF remains archived; the arXiv candidate and CFF use `Prathamesh N Patil`.
+**Author note:** Prathamesh N Patil is an M.Tech. Computer Engineering student at Sardar Patel Institute of Technology. Student status is context for the affiliation; it is not normally printed as a separate title-page field. The affiliation confirms the academic base and does **not** imply that the institution funded, supervised, or endorsed the work. The canonical 5 Nov PDF retains the earlier `Prathamesh Patil` display string; the 31 Oct and 23 Oct PDFs remain archived; the arXiv candidate and CFF use `Prathamesh N Patil`.
 
 ### Affiliation and ORCID guidance
 
@@ -55,11 +55,13 @@ checklist.
 
 | Declaration | Current state | Action |
 |---|---|---|
-| Ethics / AI use | Section 3.7 describes AI use in the experiment/artifact pipeline and QA; no human-subjects data; synthetic/offline work | Confirm wording and placement for target venue |
-| Funding | `TBD` | Add or state "none" only if true |
-| Competing interests | `TBD` | Add or state "none" only if true |
-| Data availability | Artifact tree exists; release not sanitized | Add only after release gate |
+| Ethics / AI use | Manuscript `Declarations` section and Section 3.7 describe AI use in the experiment/artifact pipeline and QA; no human-subjects data; synthetic/offline work | Confirm wording and placement for target venue |
+| Funding | `Declarations` states no funding source is declared; final funding statement pending author confirmation | Confirm before submission |
+| Competing interests | `Declarations` states no competing interests are declared; final confirmation pending | Confirm before submission |
+| Author contributions (CRediT) | `Declarations` identifies the sole author and states CRediT roles are pending confirmation | Confirm role list before submission |
+| Data availability | `Declarations` describes the artifact tree and pending public archive; no URL/DOI/license asserted | Add release pointer only after the release gate |
 | Code availability | Conformance kit exists; repository URL/license/DOI unassigned | Add only after release gate |
+| Limitations | `Declarations` cross-references Section 7 and restates the scope limits | Keep synchronized with Section 7 |
 | Inclusive language / accessibility | Figures have `<title>`/`<desc>`; not a formal accessibility statement | Check venue requirements |
 
 ## 4. arXiv metadata (if arXiv-first)

@@ -10,13 +10,14 @@ and why.
 |---|---|
 | `MANUSCRIPT_REVISED.md` | Manuscript source; the only build input |
 | `hashes.txt` | Frozen Table 15 hashes; do not edit |
-| `drafts/MANUSCRIPT_DRAFT_2026-10-31.pdf` | Canonical 29-page named-author preprint PDF |
+| `drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf` | Canonical 31-page named-author preprint PDF |
+| `drafts/MANUSCRIPT_DRAFT_2026-10-31.pdf` | Archived 31 October canonical PDF |
 | `drafts/MANUSCRIPT_DRAFT_2026-10-23.pdf` | Archived 23 October canonical PDF |
 | `drafts/MANUSCRIPT_DRAFT_2026-10-21.pdf` | Archived 21 October PDF |
 | `figures/` | Canonical vector figures and their recorded hashes |
 | `build/` | Pandoc + XeLaTeX build scripts and preamble |
-| `latex_export/` | Frozen standalone single-file LaTeX source and reference PDF |
-| `arxiv_export/` | 32-page arXiv-compliant named-author build (1-inch margins) |
+| `latex_export/` | Standalone single-file LaTeX source and reference PDF |
+| `arxiv_export/` | 34-page arXiv-compliant named-author build (1-inch margins) |
 
 ## Build
 
@@ -40,10 +41,13 @@ deliberately if you intend to refresh the manuscript.
 ## Manuscript facts
 
 - Canonical build: single-column `article`-class, letter paper, 10 pt, 0.75 in
-  margins, 29 pages, 20 tables (18 labeled, including Appendix Table A1).
+  margins, 31 pages, 21 tables (19 labeled, including Appendix Tables A1 and
+  A2).
 - arXiv candidate: single-column `article`-class, letter paper, 10 pt, 1-inch
-  margins, 32 pages; see `arxiv_export/README.md` and `docs/ARXIV_BUILD_QA.md`.
-- 8 static reference entries, both figures vector in both builds.
+  margins, 34 pages; see `arxiv_export/README.md` and `docs/ARXIV_BUILD_QA.md`.
+- 11 static reference entries, both figures vector in both builds.
+- Abstract: 222 words; SHA-256
+  `35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`.
 - Named-author build: the canonical title page and PDF metadata name
   Prathamesh Patil; the arXiv candidate uses `Prathamesh N Patil` to match
   `CITATION.cff`. Public contact information is not printed. A double-blind
@@ -52,6 +56,9 @@ deliberately if you intend to refresh the manuscript.
   recorded canonical build; three cosmetic underfull hboxes, four ignored
   infinite-glue-shrinkage diagnostics, and one stable label warning remain.
 - The final public contact address is a pending release decision.
+- The mandatory Declarations section is present; author-specific CRediT,
+  competing-interest, and funding confirmations remain pending rather than
+  invented.
 
 ## Scope
 
@@ -60,3 +67,5 @@ deliberately if you intend to refresh the manuscript.
 - H4 and H7 remain `UNTESTED`; no H4/H7 experiment is part of this package.
 - Progent is related work only. No Progent figure is reproduced, re-measured,
   or compared.
+- RFC 8693, Zanzibar, and Macaroons are verified adjacent pointers only; none is
+  a baseline or a reproduced result.

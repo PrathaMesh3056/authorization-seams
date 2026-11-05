@@ -184,41 +184,35 @@ conformance testing; locked-artifact methodology}},
 \title{The Handoff Nobody Owns: Measuring What Cross-Mechanism
 Authorization Seams Cannot Carry}
 \author{Prathamesh Patil}
-\date{31 October 2026}
+\date{5 November 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 
-Agent authorization rarely stops at a mechanism boundary. A sender
-narrows its authority, a bridge translates the narrowed decision into a
-record the receiver can read, and the receiver applies its own admission
-rules. Each component can behave correctly in isolation while the
-composed system admits a call the sender never authorized. This paper
-treats that handoff as a measurement problem and separates two questions
-that are often conflated: whether the composed system commits a
-sender-relative violation, and whether composition adds a failure the
-standalone receiver does not already exhibit. We describe a
-locked-artifact method: predictions, cases, arms, and hashes are frozen
-before execution; runs are sequential, offline, and deterministic;
-discrepancies are reconciled verbatim; and reported values are generated
-from stored artifacts. Across three pilots and a boundary study totaling
-2,446 executions, the composed arms admit 24/40 and 28/48
-sender-unauthorized calls in the two pair pilots, but the standalone
-receivers admit the same calls; receiver-relative novelty is zero in
-both pair pilots, and both zeroes are construction-forced. The one
-genuine composition-specific test, an action-narrowing family, yields
-receiver-relative novelty of 4/4 under arm-native scoring and 0/4 under
-the frozen family-wide convention, while the composed arm admits 4/4
-attacks under both; making the receiver consume the carried action set
-denies 4/4 attacks and allows 4/4 benign calls. Non-narrowing-preserving
-bridge derivations leak four new cases per variant both standalone and
-composed, locating that fault at the bridge. We close with a replication
-package and a repair taxonomy: consumption or evidence carriage when the
-narrowed fact crosses intact, and derivation repair when the bridge
-itself widens. The zero is a recorded property of narrowing-preserving
-mappings on the frozen cases, not a theorem.
+Agent authorization rarely stops at a mechanism boundary: a sender
+narrows authority, a bridge translates it into a record the receiver can
+read, and the receiver applies admission rules. Each can be correct
+alone while the composition admits a call the sender never authorized.
+This paper treats that handoff as a measurement problem and separates
+two questions: whether the composed system commits a sender-relative
+violation, and whether composition adds a failure the standalone
+receiver does not exhibit. Predictions, cases, arms, and hashes are
+frozen before execution; values come from stored artifacts. Across 2,446
+executions, the composed arms admit 24/40 and 28/48 sender-unauthorized
+calls in the two pair pilots, but the standalone receivers admit the
+same calls; receiver-relative novelty is zero in both, both zeroes are
+construction-forced. One composition-specific test, an action-narrowing
+family, yields receiver-relative novelty of 4/4 under arm-native scoring
+and 0/4 under the frozen family-wide convention even as 4/4 attacks are
+admitted; consuming that set denies 4/4 attacks and allows 4/4 benign
+calls. Non-narrowing-preserving derivations leak four new cases per
+variant, standalone and composed, locating the fault at the bridge. We
+close with a replication package and repair taxonomy: consumption or
+evidence carriage when the narrowed fact crosses intact, derivation
+repair when the bridge widens. The zero is a recorded property of
+narrowing-preserving mappings on the frozen cases, not a theorem.
 
 \textbf{Keywords:} cross-mechanism authorization; agent authorization;
 authorization seams; scope narrowing; evidence carriage; conformance
@@ -453,16 +447,16 @@ no bibliographic detail is invented. The industry/standards citation
 layer belongs to Section 6 and is not invoked here.
 
 \textbf{Scope of positioning.} This is a measurement paper, not a survey
-of authorization theory. It does not position itself against OAuth token
-exchange and rich authorization requests, macaroons and biscuits,
-object-capability systems, relationship-based access control,
-delegation-chain formats, or policy-composition algebras; those
-literatures contain the established vocabulary for attenuation, caveat
-discharge, ambient authority, and policy intersection. The contribution
-is a cross-mechanism measurement of three specific mechanisms and their
-handoffs, plus a method and a replication package. A comparative
-treatment of the broader literature would require additional verified
-references and is not undertaken here.
+of authorization theory. Beyond the three verified pointers in Section
+6, it does not position itself against OAuth token exchange and rich
+authorization requests, macaroons and biscuits, object-capability
+systems, relationship-based access control, delegation-chain formats, or
+policy-composition algebras; those literatures contain the established
+vocabulary for attenuation, caveat discharge, ambient authority, and
+policy intersection. The contribution is a cross-mechanism measurement
+of three specific mechanisms and their handoffs, plus a method and a
+replication package. A comparative treatment of the broader literature
+would require additional verified references and is not undertaken here.
 
 Table 1 summarizes each formal spine and the scope of its composition
 claim.
@@ -671,6 +665,29 @@ E1 under arm-native scoring, arm 2 is safe and arm 5 admits, so both
 predicates fire. The result sections report both counts; a zero in the
 seam test is a statement about the conjunction, not about the absolute
 level of unauthorized admission.
+
+\textbf{Falsification and stop conditions.} The two readings are exposed
+to different disconfirmations. A sender-relative violation is counted
+only when arm 1 denies and arm 5 admits; a frozen case on which arm 1
+admits a call outside the sender's narrowed set would count against the
+premise that arm 1 carries the sender's narrowed decision on that case,
+and the case would be reclassified rather than scored as a violation,
+while a case on which both arms deny is not evidence that the
+composition enforces the narrowing. A receiver-relative novelty count is
+a count over the frozen cases: one locked case on which arm 2 denies and
+arm 5 admits in a set reported as zero-novelty would disconfirm that
+zero, while a case on which arm 2 also admits is the pair-pilot pattern
+and carries no composition-specific witness. A run stops rather than
+being scored if the lock or case-set hash does not match the executed
+inputs, if the scoring oracle cannot reproduce the locked labels, or if
+an arm's decisions cannot be reconstructed from its records. A
+derivation that is not narrowing-preserving is not scored as a seam
+failure; it is moved to the boundary condition and reported as a
+derivation-widening finding (Section 4.4). Because the seam test as
+operationalized is a widening test, a zero on a set where the
+composition does not widen is reported as construction-forced, not as
+confirmation of composition-independence. These conditions bind every
+count in Section 4 and leave H4 and H7 outside the test (Section 7.5).
 
 \subsection{3.4 Scoring conventions}\label{scoring-conventions}
 
@@ -2289,10 +2306,10 @@ on 4/4 attacks, 4 unauthorized-effect events in total. Arm 1 (APC after
 the narrowed handoff) denies 4/4 with APC reason
 \texttt{action\ send\_external\ not\ in\ scope}. Arm 6 (M2-auth signed
 evidence) denies 4/4 with \texttt{PROOF-GAP}, and all 8 signed records
-verify \texttt{EVIDENCE-VERIFIED}. Arm 7 (shadow denial retained) denies
-4/4. Benign calls are allowed 4/4 in every arm, zero false denials. The
-attributable locus is the receiver's synthesis: arm 5's snapshot carries
-the narrowed action set
+verify \texttt{EVIDENCE-VERIFIED} (report-only; Section 4.2). Arm 7
+(shadow denial retained) denies 4/4. Benign calls are allowed 4/4 in
+every arm, zero false denials. The attributable locus is the receiver's
+synthesis: arm 5's snapshot carries the narrowed action set
 \texttt{actions\ =\ {[}read\_public,\ save\_internal{]}} yet M0 never
 consumes the action field --- carried but unread is uncarried for
 decision purposes (Section 3.2). Under the frozen family-wide convention
@@ -2339,15 +2356,15 @@ carrying the upstream decision as evidence closes the measured leaks. In
 the SentinelAgent pair, arm 6 (signed attestation) closes all 28
 baseline leaks with 0 leaks and 0 false denials. In E1, arm 6 (M2-auth)
 denies 4/4 attacks; all 8 signed records verify
-\texttt{EVIDENCE-VERIFIED}. In Pilot 1, arm 6 carries the decision as a
-digest-only record and closes the 24/40 baseline leaks. The caveat is
-load-bearing: the signed arms assume the attestation is verified under
-the trusted key, and M2-auth narrows tamper and replay but does not
-establish authenticated transport --- the signer is the same harness
-that was the original trust anchor, and any holder of the public test
-key can mint valid records. Evidence carriage is therefore a fix only
-relative to a correctly deciding upstream: had the upstream APC admitted
-a widened scope, M2 would admit it too.
+\texttt{EVIDENCE-VERIFIED} (report-only). In Pilot 1, arm 6 carries the
+decision as a digest-only record and closes the 24/40 baseline leaks.
+The caveat is load-bearing: the signed arms assume the attestation is
+verified under the trusted key, and M2-auth narrows tamper and replay
+but does not establish authenticated transport --- the signer is the
+same harness that was the original trust anchor, and any holder of the
+public test key can mint valid records. Evidence carriage is therefore a
+fix only relative to a correctly deciding upstream: had the upstream APC
+admitted a widened scope, M2 would admit it too.
 
 \emph{Retain the upstream denial (receiver).} Keeping the sender's
 denial closes leaks at a measured utility cost. Pilot 1 arm 7
@@ -2470,8 +2487,9 @@ per variant \\
 
 \textbf{Purpose.} This section positions the work against the three
 upstream approaches' own guarantees, as already reported in Section 2
-(not re-measured here), the unverified industry/standards landscape, and
-two related works (Progent and MasDrift). It reports no new results;
+(not re-measured here), the unverified industry/standards landscape, two
+related works (Progent and MasDrift), and three verified adjacent
+pointers (RFC 8693, Zanzibar, and Macaroons). It reports no new results;
 guard language applies to others' numbers throughout. There are no
 tables and no figures in this section.
 
@@ -2510,6 +2528,22 @@ reproduced result, or a verified input to this manuscript; each citation
 is a pointer whose claims were not reproduced, and the frozen claim set
 governs if any pointer differs from it.
 
+\textbf{Adjacent standards and systems (pointers only).} Three verified
+pointers mark vocabulary this measurement does not re-derive. RFC 8693
+defines OAuth 2.0 token exchange, including delegation and impersonation
+semantics for security tokens; it specifies an exchange protocol, not
+enforcement of a narrowed decision inside a different receiver's
+vocabulary. Zanzibar describes a relationship-based authorization system
+and its consistency model for authorization checks; it addresses
+authorization within one relationship graph, not translation of a
+narrowed decision across mechanism vocabularies. Macaroons are
+decentralized bearer credentials whose contextual caveats attenuate
+authority before discharge; attenuation and caveat discharge are the
+established vocabulary for the receiver-side consumption problem
+measured here. These pointers are cited for definitions and contrast
+only. None is re-implemented, reproduced, or used as a baseline, and no
+result in this paper depends on any of their claims.
+
 \textbf{Progent (reference only).} Progent is cited as a close related
 work on monotonic confinement inside a single privilege-control layer.
 No Progent figure is reproduced, re-measured, or compared here; the
@@ -2532,17 +2566,21 @@ no vulnerability in any upstream mechanism as published is claimed. No
 production-safety claim; no benchmark comparability. No claims in this
 section go beyond the frozen sets. The single industry/standards pointer
 set (Noma, the IETF draft, arXiv 2605.05440) is described as pointers,
-not verified facts.
+not verified facts. The three adjacent standards/systems pointers (RFC
+8693, Zanzibar, Macaroons) are cited for definitions and contrast only;
+none is a baseline, a reproduced result, or a verified input.
 
 \textbf{Scope of positioning.} This section positions the paper against
-the three measured formal spines and two related works (Progent and
-MasDrift); it does not survey the broader delegation and capability
-literature (token exchange, macaroons, relationship-based authorization,
-capability systems). No novelty claim over that literature is made, and
-none of those systems is treated as a baseline; a comparative treatment
-would require additional verified references and is not undertaken here.
-The reference list is correspondingly short; it is a scope limitation,
-not a claim that the cited set is comprehensive.
+the three measured formal spines, two related works (Progent and
+MasDrift), and three verified adjacent pointers (RFC 8693, Zanzibar,
+Macaroons). It does not survey the broader delegation and capability
+literature beyond those pointers (token exchange, macaroons,
+relationship-based authorization, capability systems). No novelty claim
+over that literature is made, and none of those systems is treated as a
+baseline; a comparative treatment would require additional verified
+references and is not undertaken here. The reference list is
+deliberately bounded; it is a scope limitation, not a claim that the
+cited set is comprehensive.
 
 \section{7. Threats to validity}\label{threats-to-validity}
 
@@ -2726,6 +2764,13 @@ and this was not tested: P2's \texttt{intent\_text} was carried in the
 run records but never classified, and neither the E1 extension nor the
 boundary run exercised it. No probing instrument is introduced in this
 paper, and the hypothesis stands as open.
+
+\textbf{H4/H7 gate.} Neither hypothesis was exercised in this revision:
+no H4 or H7 experiment was designed, locked, or executed, and no result
+for either appears anywhere in this paper. Both remain
+\texttt{UNTESTED}; a future test would require a new pre-registered
+lock, a case set, and its own reconciliation before it could be
+reported. No claim in this paper depends on H4 or H7.
 
 \textbf{Table 16.} Threat ledger --- each threat and the section that
 raises it.
@@ -2918,6 +2963,47 @@ Continuation beyond the workshop decision point is not a commitment made
 here; any expansion is a post-workshop decision taken on its own
 evidence.
 
+\section{Declarations}\label{declarations}
+
+\textbf{Data availability.} The counts reported here are generated from
+the frozen artifact tree described in Section 8. The replication package
+is a release candidate: public archiving is pending, and no repository
+URL, DOI, license, or archival location is asserted because none has
+been assigned. The frozen case sets, harnesses, locks, and
+reconciliation records remain available for inspection on request to the
+author, subject to the release gates in Section 8. No new data were
+generated for this revision.
+
+\textbf{Ethics.} No human-subjects data were collected. The experiments
+are synthetic and offline, and no personally identifying data were
+processed. AI-assisted tools were used for implementation and quality
+assurance; their roles are described in Section 3.7. No AI system is an
+author, and the author remains responsible for all claims, artifacts,
+and errors.
+
+\textbf{Author contributions (CRediT).} The manuscript is
+single-authored. Prathamesh N. Patil is the sole author and is
+responsible for all claims, artifacts, and errors. CRediT roles are not
+asserted in this revision; a final role statement is pending author
+confirmation.
+
+\textbf{Competing interests.} No competing interests are declared in
+this revision. A final competing-interest confirmation is pending before
+submission; no financial or non-financial interest is asserted.
+
+\textbf{Funding.} No funding source is declared in this revision. A
+final funding statement is pending before submission; no grant, sponsor,
+or institutional support is asserted.
+
+\textbf{Limitations.} The claims are limited to the frozen case sets,
+mappings, and scoring conventions in Section 3 and the threats in
+Section 7. The case sets are constructed witnesses, not benchmarks; the
+E1 result is one design point × four attack cases; the boundary run has
+two design points; the two pair-pilot zeroes are construction-forced;
+and no production-safety or generalization claim is made. H4 and H7
+remain \texttt{UNTESTED}. The replication package is a release
+candidate, not a public conformance service.
+
 \section{Appendix A. Hypothesis lineage and
 operationalization}\label{appendix-a.-hypothesis-lineage-and-operationalization}
 
@@ -2998,6 +3084,69 @@ test. H1's resource clause moved from ``not supported'' to
 in every arm and do not exercise a resource-side trust failure. No
 frozen artifact was edited.
 
+\textbf{Table A2.} Effective witness sets behind the reported counts ---
+executions, case structure, and independent design points.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1327}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1224}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2041}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1224}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2245}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1939}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Experiment set
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Executions
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cases
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Attack cases
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Effective independent witness
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Construction note
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Pilot 1 (v2) & 560 & 80 = 10 templates × 8 runs (40 attack + 40 benign)
+& 40 = 10 templates × 4 parameters & 6 leak templates × 4 parameters =
+24 headline leak cases; one design point per template row & The 24/40
+headline counts template cases, not 24 independent designs. \\
+E1 extension & 46 = 40 + 6 control & 8 = 4 attack + 4 benign & 4 = 1
+design point × 4 cases & 1 design point × 4 attack cases & Recipient and
+budget axes neutralized; the four attacks are replicates of one design
+point. \\
+Discriminating Test 1 & 0 new & 4 frozen arm-2 attack records & 4 & 1
+scoring comparison (family-wide versus arm-native) over 4 cases &
+Scoring-only re-analysis; no new executions. \\
+Discriminating Test 2 & 16 & 8 = 4 attack + 4 benign; 2 arms & 4 = 1
+repair design × 4 cases & 1 repair design × 4 attack cases & Consumption
+repair; arm-2 control 8/8 gate and digest parity. \\
+SentinelAgent pair & 672 & 96 = 12 templates × 8 runs (48 attack + 48
+benign) & 48 = 12 templates × 4 parameters & 6 state/identity leak
+templates × 4 = 24 of 48; signature family 16 = 2 pairs × 4 document
+parameters × 2 variants & The 28/48 headline is 24 state/identity leaks
+plus 4 signature-family leaks. \\
+Boundary V1/V2 & 1,152 & 96 rows per arm-variant cell; 6 arms × 2
+variants & 8 = 2 design points × 4 cases & 1 design point × 4 cases per
+variant; 2 design points total & Four new cases per variant; not 8
+independent designs. \\
+\textbf{Total} & \textbf{2,446 = 560 + 46 + 0 + 16 + 672 + 1,152} & ---
+& --- & --- & E1's 46 includes its six control executions, as in Table
+3. \\
+\end{longtable}
+}
+
+\emph{Note:} every cell restates a design fact already stated in
+Sections 3.5 and 4.1--4.4; the table introduces no new measurement and
+no new count. Executions are matrix runs; the control and replay records
+excluded from the 2,446 total remain as stated in Section 3.5.
+
 \textbf{Path notation.} The roots \texttt{v2}, \texttt{dt}, \texttt{sa},
 and \texttt{b} are defined in Section 3.5; full paths remain in the
 artifact tree.
@@ -3050,12 +3199,37 @@ Systems: Identity Governance as Infrastructure.} arXiv:2605.05440v1, 6
 May 2026. DOI: 10.48550/arXiv.2605.05440.
 \url{https://arxiv.org/abs/2605.05440}.
 
+\textbf{M. Jones, A. Nadalin, B. Campbell, J. Bradley, and C.
+Mortimore.} \emph{OAuth 2.0 Token Exchange.} RFC 8693, Internet
+Engineering Task Force, January 2020. DOI: 10.17487/RFC8693.
+\url{https://www.rfc-editor.org/rfc/rfc8693}. Standards-Track RFC; not a
+measurement of this program.
+
+\textbf{Ruoming Pang, Ramon Caceres, Mike Burrows, Zhifeng Chen, Pratik
+Dave, Nathan Germer, Alexander Golynski, Kevin Graney, Nina Kang, Lea
+Kissner, Jeffrey L. Korn, Abhishek Parmar, Christina D. Richards, and
+Mengzhi Wang.} \emph{Zanzibar: Google's Consistent, Global Authorization
+System.} 2019 USENIX Annual Technical Conference (USENIX ATC 19),
+pp.~33--46, Renton, WA, July 2019.
+\url{https://www.usenix.org/conference/atc19/presentation/pang}.
+Peer-reviewed conference paper; not reproduced here.
+
+\textbf{Arnar Birgisson, Joe Gibbs Politz, Úlfar Erlingsson, Ankur Taly,
+Michael Vrable, and Mark Lentczner.} \emph{Macaroons: Cookies with
+Contextual Caveats for Decentralized Authorization in the Cloud.}
+Network and Distributed System Security Symposium (NDSS), 2014. DOI:
+10.14722/ndss.2014.23212.
+\url{https://www.ndss-symposium.org/ndss2014/programme/macaroons-cookies-contextual-caveats-decentralized-authorization-cloud/}.
+Peer-reviewed conference paper; not reproduced here.
+
 \emph{Reference status: APC, TraceGrant, SentinelAgent, Progent, and
 MasDrift are arXiv preprints; no peer-reviewed venue is asserted. Noma
-is an industry blog; the IETF entry is an active individual
-Internet-Draft, not an RFC. Bibliographic identities were checked on 20
-October 2026 (seven entries) and 22 October 2026 (MasDrift); the works
-were not reproduced, and none is treated as a verified input to the
-measurements.}
+is an industry blog; the IETF draft entry is an active individual
+Internet-Draft, not an RFC, while RFC 8693 is a Standards-Track RFC.
+Zanzibar and Macaroons are peer-reviewed conference papers.
+Bibliographic identities were checked on 20 October 2026 (seven
+entries), 22 October 2026 (MasDrift), and 5 November 2026 (RFC 8693,
+Zanzibar, Macaroons); the works were not reproduced, and none is treated
+as a verified input to the measurements.}
 
 \end{document}

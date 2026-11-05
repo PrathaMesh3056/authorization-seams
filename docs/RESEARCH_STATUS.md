@@ -1,36 +1,60 @@
-# Research status - 31 October 2026
+# Research status - 5 November 2026
 
 ## Current position
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
-`79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876`;
-687 lines, 129,248 bytes). The reference list has eight entries. The abstract
-is 278 words with SHA-256
-`060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7`.
+`E7C3F227F4E79F2CCB0A162DF3411D7633130550C930897395795E91D161B854`;
+727 lines, 137,757 bytes). The reference list has eleven entries. The abstract
+is 222 words with SHA-256
+`35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`.
 
-The canonical build is the 29-page single-column named-author preprint
-`paper\drafts\MANUSCRIPT_DRAFT_2026-10-31.pdf` (SHA-256
-`F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D`):
-29 pages, 337,843 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+The canonical build is the 31-page single-column named-author preprint
+`paper\drafts\MANUSCRIPT_DRAFT_2026-11-05.pdf` (SHA-256
+`7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F`):
+31 pages, 348,663 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
 hboxes, 3 cosmetic underfull hboxes, and 1 stable `Label(s) may have changed`
 warning. The title page and PDF metadata name Prathamesh Patil; this is the
 authorized named-author build, not a double-blind submission.
 
 The standalone export is refreshed to the same source:
 `paper\latex_export\main.tex` (SHA-256
-`0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA`) and
+`6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8`) and
 reference PDF `paper\latex_export\main.pdf` (SHA-256
-`31F45A48ADFD4B0E16EA87727FEB740A22D33A4362C57D6161DF1E46F379E45A`), 29
-pages, 337,847 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 1 stable
+`11FB860DF6398176735174B91F05C7C834F90523D1E77981ED3347F228D455E3`), 31
+pages, 348,668 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 1 stable
 label warning. Both figures are vector PDFs and are included.
 
 The separate arXiv-compliant named-author candidate is
 `paper\arxiv_export\main.pdf` (SHA-256
-`33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1`):
-32 pages, 340,381 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
+`C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28`):
+34 pages, 351,679 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
 0 fatal LaTeX errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1
 stable label warning. Its generated source SHA-256 is
-`52F399DBDC3B65B54B751A2D85ACCBD3ADB21E7F9EB77DDE33F239F0AF1818A5`.
+`B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2`.
+
+## 5 November 2026 declarations and positioning revision
+
+The revision changed no experiments, frozen artifacts, counts, sums, effective
+sample sizes, statuses, or H4/H7 state. It applied these manuscript and
+release-surface changes:
+
+- Abstract trimmed from 278 to 222 words with no new number, claim, status, or
+  citation.
+- Added the mandatory Declarations section: data availability, ethics, author
+  contributions/CRediT, competing interests, funding, and limitations.
+  Author-specific CRediT, competing-interest, and funding confirmations are
+  explicitly pending rather than invented.
+- Added a falsification/stop-condition paragraph in Section 3.3 and an explicit
+  H4/H7 gate in Section 7.5; no H4 or H7 experiment was designed, locked, or
+  run.
+- Added three verified adjacent pointers in Section 6: RFC 8693, Zanzibar, and
+  Macaroons. They are definitions/contrast only and not baselines.
+- Added Appendix Table A2, restating the effective witness sets behind the
+  reported counts; it introduces no new measurement.
+- Added `report-only` qualifiers to the two Section 5 references to the E1 8/8
+  `EVIDENCE-VERIFIED` cell.
+- The references grew from eight to eleven entries. No frozen authority file
+  was edited.
 
 ## 26 October correction pass
 
@@ -149,6 +173,12 @@ untouched.
   canonical, export, and arXiv candidate rebuilt and rechecked.
 - 31 Oct 2026 review-correction pass applied as listed above; canonical,
   standalone export, and arXiv candidate rebuilt and rechecked.
+- 5 Nov 2026 declarations and positioning revision applied: abstract trimmed
+  to 222 words, Declarations added, falsification/stop conditions and H4/H7
+  gate added, three verified adjacent pointers added, Table A2 added, and
+  report-only qualifiers added; canonical, standalone export, and arXiv
+  candidate rebuilt and rechecked. Frozen artifacts and authority files were
+  not edited.
 - Six Table 15 hashes verified; `paper\hashes.txt` remains untouched.
 - Table 15 truncation gate closed (22 Oct 2026): all six printed fragments are
   exact substrings of the full 64-character values, including the 7-character

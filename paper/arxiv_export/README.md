@@ -5,16 +5,16 @@ not a public release and it has not been submitted.
 
 It is generated from the current standalone LaTeX export by
 `paper/build/build_arxiv.py`. The canonical build remains
-`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-10-31.pdf`; neither
-is modified by this export. The export was refreshed on 31 October 2026 for
-the five-seat review correction pass.
+`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf`; neither
+is modified by this export. The export was rebuilt on 5 November 2026 for the
+declarations/positioning revision.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `main.tex` | Generated arXiv source: 1-inch margins, 10 pt, named author |
-| `main.pdf` | 32-page reference compile of this source |
+| `main.pdf` | 34-page reference compile of this source |
 | `figures/figure_1_handoff_anatomy.pdf` | Canonical Figure 1, vector PDF, byte-identical copy |
 | `figures/figure_2_repair_loci.pdf` | Canonical Figure 2, vector PDF, byte-identical copy |
 | `ARXIV_METADATA.md` | Proposed arXiv metadata and remaining author decisions |
@@ -29,7 +29,7 @@ python paper/build/build_arxiv.py
 ```
 
 The script verifies the pinned `paper/latex_export/main.tex` SHA-256
-(`0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA`), applies
+(`6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8`), applies
 only these changes, and compiles with XeLaTeX three times:
 
 - `margin=0.75in` becomes `margin=1in` (arXiv minimum);
@@ -42,7 +42,7 @@ only in those content lines plus the build header.
 
 ## Verified output
 
-- 32 pages, 340,381 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
+- 34 pages, 351,679 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
   geometry.
 - 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
 - 4 cosmetic underfull hboxes and 1 stable `Label(s) may have changed` warning.
@@ -51,41 +51,42 @@ only in those content lines plus the build header.
 - Inline code and artifact paths are upright monospace, including spans inside
   notes; zero `LMMono*-Italic` spans remain.
 - Title-page and PDF metadata author: `Prathamesh N Patil`.
-- Abstract: 278 words, SHA-256
-  `060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7`.
-- Twenty pipe tables (18 labeled, including Appendix Table A1); eight static reference
-  entries; H4 and H7 remain `UNTESTED`.
+- Abstract: 222 words, SHA-256
+  `35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`.
+- Twenty-one pipe tables (19 labeled, including Appendix Tables A1 and A2);
+  eleven static reference entries; H4 and H7 remain `UNTESTED`.
 - No public email, repository URL, DOI, or license is printed.
-- Generated source: 159,328 bytes, SHA-256
-  `52F399DBDC3B65B54B751A2D85ACCBD3ADB21E7F9EB77DDE33F239F0AF1818A5`.
-- Reference PDF: 340,381 bytes, SHA-256
-  `33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1`.
+- Generated source: 168,951 bytes, SHA-256
+  `B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2`.
+- Reference PDF: 351,679 bytes, SHA-256
+  `C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28`.
 
-The canonical 29-page PDF uses the historical `Prathamesh Patil`
+The canonical 31-page PDF uses the historical `Prathamesh Patil`
 title-page/metadata string. The arXiv candidate uses the `Prathamesh N Patil`
 form already recorded in `CITATION.cff`.
 
-## 28 October path-format and disclosure revision (historical)
+## 5 November 2026 revision
 
-- Section 3.7 now limits AI-use disclosure to experiment implementation,
-  artifact quality assurance, and the documented review passes; it no longer
-  claims AI-assisted drafting throughout the work. No new claim, experiment, or
-  reference was added.
-- The upstream export now forces upright `\texttt` and `\path` rendering, so
-inline code and paths inside notes are upright monospace. The artifact-root key
-is defined once in Section 3.5, Table 12 and the Appendix cross-reference it,
-and long path parentheticals were shortened. No claim, number, reference, table
-datum, figure, or H4/H7 status changed; at that revision the abstract remained
-222 words and the reference list remained eight entries.
+- Abstract trimmed from 278 to 222 words; no new number, claim, status, or
+  citation was added.
+- Added mandatory Declarations: data availability, ethics, author
+  contributions/CRediT, competing interests, funding, limitations. Author-specific
+  CRediT, competing-interest, and funding confirmations remain pending rather
+  than invented.
+- Added three verified adjacent pointers (RFC 8693, Zanzibar, Macaroons) and a
+  falsification/stop-condition paragraph; added effective-witness Appendix
+  Table A2; added `report-only` qualifiers to the E1 8/8 `EVIDENCE-VERIFIED`
+  cells; added an explicit H4/H7 gate.
+- The reference list grew from eight to eleven entries. No frozen artifact was
+  edited.
 
-## 31 October review-correction pass
+## 31 October review-correction pass (historical)
 
 - The manuscript was re-centered on E1, the method, the field-level failure map,
   and the repair taxonomy after the five-seat review.
-- H3, H6, and ★ are `REFINED`; H1's resource clause is `UNTESTED`; H4 and H7
-  remain `UNTESTED`.
-- The abstract is now 278 words; the reference list remains eight entries.
-- The generated source and reference PDF above reflect this build.
+- H3, H6, and the zero-novelty finding are `REFINED`; H1's resource clause is
+  `UNTESTED`; H4 and H7 remain `UNTESTED`.
+- The abstract was 278 words at that point.
 
 ## Remaining submission gates
 
