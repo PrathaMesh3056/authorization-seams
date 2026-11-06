@@ -32,7 +32,7 @@ Work top to bottom. Do not publish or submit while any required gate is open.
       disclosed.
 - [ ] The Test 2 runner-hash deviation remains disclosed.
 - [ ] The zero-seam caveat remains in the manuscript.
-- [ ] The eight-entry static reference list is unchanged or updated only after
+- [ ] The eleven-entry static reference list is unchanged or updated only after
       explicit approval and verification.
 - [ ] No merge into the frozen `MANUSCRIPT.md`.
 

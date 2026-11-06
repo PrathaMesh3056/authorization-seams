@@ -82,7 +82,7 @@ style-neutral and must be adapted only after the target venue is selected.
 - 31 pages, letter paper.
 - Zero missing glyphs, zero fatal LaTeX errors, zero overfull hboxes in the
   build.
-- Three cosmetic underfull hboxes, four ignored infinite-glue-shrinkage
+- Three cosmetic underfull hboxes, seven ignored infinite-glue-shrinkage
   diagnostics, and one stable `Label(s) may have changed` warning remain; all
   are non-blocking. The reference PDF has zero unresolved references.
 - All fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.

@@ -20,7 +20,7 @@ generated, not tracked.
 
 - `manuscript_build_wide.pdf`: 31 pages.
 - Build log: zero missing glyphs, zero fatal LaTeX errors, zero overfull
-  hboxes, and four ignored infinite-glue-shrinkage diagnostics.
+  hboxes, and seven ignored infinite-glue-shrinkage diagnostics.
 - Three underfull hboxes and one `Label(s) may have changed` warning are
   expected and cosmetic.
 - `build_arxiv.py` writes `paper/arxiv_export/main.pdf`: 34 pages, 1-inch

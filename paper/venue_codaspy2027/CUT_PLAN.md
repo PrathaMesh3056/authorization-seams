@@ -1,6 +1,7 @@
 # CODASPY 2027 Cut Plan
 
-**Canonical source:** `paper/MANUSCRIPT_REVISED.md` (29 pages, single column)
+**Canonical source:** `paper/MANUSCRIPT_REVISED.md` (31 pages as of the 5 November
+2026 revision; this cut was built against the 31 October 29-page snapshot)
 **Venue target:** `paper/venue_codaspy2027/main.tex` (13 pages, ACM `sigconf`
 double column)
 **Date:** 3 November 2026
@@ -9,8 +10,10 @@ double column)
 
 Produce a venue-ready CODASPY 2027 research-track cut that meets the 12-page
 double-column limit without changing the frozen evidence, the claim set, or the
-canonical preprint. The canonical 29-page build and the 32-page arXiv candidate
-remain stable and untouched.
+canonical preprint. The 31 October 29-page build and 32-page arXiv candidate
+were the stable inputs when this cut was made; the current 5 November canonical
+is 31 pages and the arXiv candidate is 34 pages. This venue cut has not been
+rebuilt against the 5 November source.
 
 This is a **separate cut**, not a backport. New positioning references,
 compressed prose, and renumbered tables exist only under
@@ -43,7 +46,8 @@ a copyright block; the gate must be re-run after final metadata is added.
   of authenticated transport, and the keyholder finding.
 - All hypothesis statuses, including H4 and H7 as `UNTESTED`.
 - The no-new-experiments, no-re-scoring, no-claim-upgrade rule.
-- The canonical 8-reference bibliography, unchanged in the canonical build.
+- The canonical bibliography as it stood when this cut was built (eight
+  references in the 31 October canonical), unchanged in the canonical build.
 
 ## Section mapping
 

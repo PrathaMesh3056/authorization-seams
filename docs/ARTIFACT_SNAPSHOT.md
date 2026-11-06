@@ -1,24 +1,24 @@
-# Working artifact snapshot - 31 October 2026
+# Working artifact snapshot - 5 November 2026
 
 This is a working snapshot, not the release manifest. It records the current
-manuscript, figures, builds, and standalone LaTeX export after the 31 October
-2026 five-seat review correction pass. It
+manuscript, figures, builds, and standalone LaTeX export after the 5 November
+2026 declarations and positioning revision. It
 does not replace `paper\hashes.txt` (the six Table 15 hashes) or any frozen
-source map. The 23 October 2026 canonical PDF and the pre-edit
-manuscript/export copies remain archived and unchanged.
+source map. The 31 October, 23 October, and 21 October canonical PDFs and the
+pre-edit manuscript/export copies remain archived and unchanged.
 
 ## Current artifacts
 
 | Artifact | SHA-256 |
 |---|---|
-| `paper\MANUSCRIPT_REVISED.md` | `79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-10-31.pdf` | `F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D` |
-| `paper\build\manuscript_build_wide.tex` | `0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA` |
-| `paper\build\manuscript_build_wide.pdf` | `F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D` |
-| `paper\latex_export\main.tex` | `0EDEC38B19B0836B5E52B0626C60CECCD7533665CD69BFDB19D5C6CCA468A1BA` |
-| `paper\latex_export\main.pdf` | `31F45A48ADFD4B0E16EA87727FEB740A22D33A4362C57D6161DF1E46F379E45A` |
-| `paper\arxiv_export\main.tex` | `52F399DBDC3B65B54B751A2D85ACCBD3ADB21E7F9EB77DDE33F239F0AF1818A5` |
-| `paper\arxiv_export\main.pdf` | `33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1` |
+| `paper\MANUSCRIPT_REVISED.md` | `E7C3F227F4E79F2CCB0A162DF3411D7633130550C930897395795E91D161B854` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-11-05.pdf` | `7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F` |
+| `paper\build\manuscript_build_wide.tex` | `6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8` |
+| `paper\build\manuscript_build_wide.pdf` | `7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F` |
+| `paper\latex_export\main.tex` | `6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8` |
+| `paper\latex_export\main.pdf` | `11FB860DF6398176735174B91F05C7C834F90523D1E77981ED3347F228D455E3` |
+| `paper\arxiv_export\main.tex` | `B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2` |
+| `paper\arxiv_export\main.pdf` | `C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28` |
 | `paper\figures\figure_1_handoff_anatomy.svg` | `035902B00D700869806BF038F4CE6CBF0B30017BCDB50D3760C4D23F72B9A23C` |
 | `paper\figures\figure_1_handoff_anatomy.pdf` | `0AA8A365135AA4E11C5A0D7194FEB3C27947D00FAD8FEA703A1612987C3B90B1` |
 | `paper\figures\figure_2_repair_loci.svg` | `B4C641CE07FB789C4E6D74D55E2092A698E256E374C87173D532A138066F3F88` |
@@ -32,11 +32,11 @@ manuscript/export copies remain archived and unchanged.
 
 ## Build status
 
-- Canonical 31 October build: 29 pages, letter paper, 10 pt, 0.75 in margins;
-  337,843 bytes.
-- arXiv candidate: 32 pages, letter paper, 10 pt, 1 in margins; 340,381 bytes.
+- Canonical 5 November build: 31 pages, letter paper, 10 pt, 0.75 in margins;
+  348,663 bytes.
+- arXiv candidate: 34 pages, letter paper, 10 pt, 1 in margins; 351,679 bytes.
 - Canonical build: 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes,
-  3 cosmetic underfull hboxes, 4 ignored infinite-glue-shrinkage diagnostics,
+  3 cosmetic underfull hboxes, 7 ignored infinite-glue-shrinkage diagnostics,
   and 1 stable `Label(s) may have changed` warning.
 - arXiv build: 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes, and
   4 cosmetic underfull hboxes; 1 stable label warning.
@@ -47,20 +47,21 @@ manuscript/export copies remain archived and unchanged.
   venue would require re-anonymization.
 - Table 2's caption and body are together; Table 3's Total row stays with the
   ledger; Table 12 cross-references the Section 3.5 artifact-root key; Appendix
-  Table A1 remains intact in the canonical build.
+  Tables A1 and A2 remain intact in the canonical build.
 - All PDF fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
 - Figure 1: 239.76 x 171.828 pt, vector. Figure 2: 504 x 300.24 pt, vector.
 - `pdfimages` reports zero raster images in the manuscript and in both figures.
 - Standalone `paper\latex_export\main.tex` compiles independently with
-  XeLaTeX, producing a 29-page, 337,847-byte PDF with 0 overfull hboxes.
+  XeLaTeX, producing a 31-page, 348,668-byte PDF with 0 overfull hboxes.
 
 ## References and statuses
 
-- The manuscript contains a static eight-entry reference list after Section 9:
+- The manuscript contains a static eleven-entry reference list after Section 9:
   `[APC]`, `[TraceGrant]`, `[SentinelAgent]`, `[Progent]`, `[MasDrift]`, Noma
-  Security, the IETF individual Internet-Draft, and arXiv:2605.05440.
-- Abstract: 278 words, SHA-256
-  `060C2D9F7A78D8E346DC4B8A3BA8278BFD5A34883E6B33CED33CAC90A0D57CD7`.
+  Security, the IETF individual Internet-Draft, arXiv:2605.05440, RFC 8693,
+  Zanzibar, and Macaroons.
+- Abstract: 222 words, SHA-256
+  `35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`.
 - H4 and H7 remain `UNTESTED`; no H4/H7 experiments are part of this package.
 - Progent is positioned as a close related work on monotonic confinement inside
   one privilege-control layer, not as an experimental baseline. Its reported
@@ -68,6 +69,27 @@ manuscript/export copies remain archived and unchanged.
 - The legacy `tests\seam_pilot_v2\results\claims_update.md` old-H6 Progent
   block is directional-only and is not used as evidence; Appendix Table A1
   records the hypothesis-label lineage.
+- The E1 8/8 `EVIDENCE-VERIFIED` cell remains report-only; the raw
+  `extension_e1\metrics.json` does not carry that field.
+
+## 5 November declarations and positioning revision
+
+- Abstract trimmed from 278 to 222 words with no new number, claim, status, or
+  citation.
+- Added the mandatory Declarations section: data availability, ethics, author
+  contributions/CRediT, competing interests, funding, and limitations.
+  Author-specific CRediT, competing-interest, and funding confirmations are
+  explicitly pending rather than invented.
+- Added falsification/stop conditions in Section 3.3 and an explicit H4/H7 gate
+  in Section 7.5; no H4 or H7 experiment was designed, locked, or run.
+- Added three verified adjacent pointers in Section 6: RFC 8693, Zanzibar, and
+  Macaroons. They are definitions/contrast only and not baselines.
+- Added Appendix Table A2, restating the effective witness sets behind the
+  reported counts without introducing a new measurement.
+- Added `report-only` qualifiers to the two Section 5 references to the E1 8/8
+  `EVIDENCE-VERIFIED` cell.
+- Canonical, standalone, and arXiv builds regenerated: 31, 31, and 34 pages.
+- `dist\sanitized` remains untouched.
 
 ## 28 October path-format and disclosure revision (historical)
 
@@ -91,7 +113,7 @@ manuscript/export copies remain archived and unchanged.
 - The canonical and arXiv builds were regenerated, and the standalone export
   was recompiled. `dist\sanitized` remains untouched.
 
-## 31 October review-correction pass
+## 31 October review-correction pass (historical)
 
 - The manuscript was re-centered on E1, the method, the field-level failure map,
   and the repair taxonomy after the five-seat review.

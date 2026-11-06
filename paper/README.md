@@ -53,7 +53,7 @@ deliberately if you intend to refresh the manuscript.
   `CITATION.cff`. Public contact information is not printed. A double-blind
   venue would require re-anonymization.
 - Zero missing glyphs, zero fatal LaTeX errors, zero overfull hboxes in the
-  recorded canonical build; three cosmetic underfull hboxes, four ignored
+  recorded canonical build; three cosmetic underfull hboxes, seven ignored
   infinite-glue-shrinkage diagnostics, and one stable label warning remain.
 - The final public contact address is a pending release decision.
 - The mandatory Declarations section is present; author-specific CRediT,

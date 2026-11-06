@@ -28,7 +28,7 @@ public release has occurred.
 | References | All cited; verified metadata; no inventions | 16 `\bibitem` entries; BibTeX used 16; DOI/RFC/JHU checks recorded below | PASS |
 | Layout | No overfull boxes, undefined references, missing glyphs | 0 overfull hbox; 0 overfull vbox; 0 undefined; 0 missing characters; 0 font or acmart warnings | PASS |
 | Claims | Frozen counts preserved; H4/H7 `UNTESTED` | Claim spot-check below | PASS |
-| Frozen evidence | Canonical artifacts and claim set untouched | Canonical hashes unchanged; 319-file manifest verified | PASS |
+| Frozen evidence | Canonical artifacts and claim set untouched | Canonical hashes unchanged at this build; 319-file manifest verified (current 5 Nov manifest: 320 files) | PASS |
 | Submission | Not submitted | Local worktree only | NOT SUBMITTED |
 
 ## Page accounting
@@ -65,7 +65,8 @@ The venue cut is a new file tree. It does not modify the canonical manuscript,
 the canonical PDF, the standalone export, the arXiv export, `paper/hashes.txt`,
 `paper/CONSOLIDATED_CLAIMS.md`, or `dist/sanitized`.
 
-Canonical hashes at this build:
+Canonical hashes when this venue cut was built (31 October 2026 snapshot, now
+superseded by the 5 November revision):
 
 ```text
 79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876  paper/MANUSCRIPT_REVISED.md
@@ -74,7 +75,18 @@ F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D  paper/drafts/M
 33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1  paper/arxiv_export/main.pdf
 ```
 
-The 319-file manifest check reports `verified 319 files; all hashes match`.
+Current canonical hashes as of 5 November 2026 (the venue cut has not been
+rebuilt against this source):
+
+```text
+E7C3F227F4E79F2CCB0A162DF3411D7633130550C930897395795E91D161B854  paper/MANUSCRIPT_REVISED.md
+7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F  paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf
+11FB860DF6398176735174B91F05C7C834F90523D1E77981ED3347F228D455E3  paper/latex_export/main.pdf
+C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28  paper/arxiv_export/main.pdf
+```
+
+The 319-file manifest check at this build reported `verified 319 files; all
+hashes match`; the current 5 November manifest covers 320 files.
 The manifest intentionally excludes `paper/venue_codaspy2027/` because the venue
 cut is a derivative workspace with its own `build.py` gate; this keeps the
 canonical file count and frozen artifact inventory unchanged. No experiment was
@@ -118,10 +130,12 @@ was invented.
 | `rfc2693` | SPKI Certificate Theory | doi:10.17487/RFC2693 | RFC Editor |
 | `miller` | Robust Composition (JHU PhD thesis, 2006) | JHU JScholarship item `b8376e55-208e-4fcc-81a2-ad5a7de0acbb` | Johns Hopkins University, Baltimore, MD; no DOI |
 
-The existing 8 entries are the frozen canonical references: APC, TraceGrant,
+The existing 8 entries at this build are the frozen canonical references: APC, TraceGrant,
 SentinelAgent, Progent, MasDrift, Noma, the IETF draft, and Tallam. Their
 bibliographic identities were already checked for the canonical build and were
-not changed here.
+not changed here. The 5 November canonical later added RFC 8693, Zanzibar, and
+Macaroons (11 entries total); this venue cut has not been rebuilt against that
+source.
 
 BibTeX uses all 16 entries. Two completeness warnings remain and are disclosed
 rather than papered over:

@@ -31,7 +31,7 @@ EXCLUDED_DIR_NAMES = {
 EXCLUDED_DIR_SUFFIXES = (".venv",)
 EXCLUDED_RELATIVE_PREFIXES = (
     # Separate CODASPY venue cut: derivative workspace with its own build.py
-    # gate, intentionally outside the canonical 319-file artifact manifest.
+    # gate, intentionally outside the current artifact manifest.
     "paper/venue_codaspy2027",
     "tests/authorization_pilot/vendor",
     "tests/sentinelagent_audit_20261014/upstream/.git",

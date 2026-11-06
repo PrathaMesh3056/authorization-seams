@@ -3,6 +3,48 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.8] - 2026-11-05
+
+### Changed
+
+- Applied the 5 November 2026 declarations and positioning revision to
+  `paper/MANUSCRIPT_REVISED.md`: abstract trimmed from 278 to 222 words;
+  structured Declarations section added (data availability, ethics, author
+  contributions/CRediT, competing interests, funding, limitations);
+  falsification/stop conditions and an explicit H4/H7 gate added in Sections 3.3
+  and 7.5; three verified adjacent pointers added in Section 6 (RFC 8693,
+  Zanzibar, Macaroons); Appendix Table A2 added; and `report-only` qualifiers
+  added to the E1 8/8 `EVIDENCE-VERIFIED` references.
+- No experiments, frozen artifacts, counts, sums, effective sample sizes,
+  statuses, or H4/H7 state changed. H4 and H7 remain `UNTESTED`.
+- Regenerated canonical, standalone, and arXiv builds: 31, 31, and 34 pages;
+  0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
+- Updated build pins, QA page/abstract/reference/hash pins, manifest, export
+  READMEs, artifact snapshot, submission checklist, and research status.
+
+### Validation
+
+- `python scripts/verify_artifacts.py`: 320 files, all hashes match.
+- `python -m pytest -q qa`: 16 passed.
+- `python -m pytest -q qa/test_arxiv_build.py`: 6 passed.
+- TraceGrant Task D suite: 52 passed.
+- Canonical PDF: `paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf`, 31 pages,
+  348,663 bytes, SHA-256
+  `7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F`.
+- Standalone export: 31 pages, 348,668 bytes, SHA-256
+  `11FB860DF6398176735174B91F05C7C834F90523D1E77981ED3347F228D455E3`;
+  source SHA-256
+  `6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8`.
+- arXiv candidate: 34 pages, 351,679 bytes, SHA-256
+  `C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28`;
+  source SHA-256
+  `B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2`.
+- Abstract: 222 words, SHA-256
+  `35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`;
+  references: 11 entries.
+- `dist/sanitized` remains untouched; no submission, release, license, DOI, or
+  repository visibility change.
+
 ## [0.1.7] - 2026-10-31
 
 ### Changed

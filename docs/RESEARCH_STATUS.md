@@ -32,6 +32,19 @@ The separate arXiv-compliant named-author candidate is
 stable label warning. Its generated source SHA-256 is
 `B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2`.
 
+## Review assessment - 5 November 2026
+
+The revision improves presentation, positioning, and reviewer-defensibility
+without adding experiments, external baselines, or generalization. Scores are
+bounded assessments on a 10-point scale, not venue decisions.
+
+| Target | Prior | Revised | Basis |
+|---|---:|---:|---|
+| arXiv preprint | 6.5 | 7.0 | Clearer abstract, declarations, falsification/stop conditions, and three verified adjacent pointers; still a narrow single-author measurement package with a short related-work base. |
+| Workshop / short / tool track | 5.5 | 6.0 | Stronger artifact story and explicit H4/H7 gate; the 34-page preprint still needs a venue cut, and the 13-page CODASPY cut was not rebuilt against this source. |
+| Main research track | 3.0 | 3.0 | Empirical breadth, external baselines, and generalization remain unchanged; this is not a main-track paper. |
+| Future full paper | 6.5 | 6.5 | The full-paper path still requires more design points, a second receiver family, and H4/H7 instruments. |
+
 ## 5 November 2026 declarations and positioning revision
 
 The revision changed no experiments, frozen artifacts, counts, sums, effective
@@ -285,8 +298,8 @@ untouched.
 2. If a double-blind venue is chosen, re-anonymize the named-author build before
    submission; do not send the named-author PDF to a double-blind track.
 3. Add venue metadata only after a specific CFP is chosen.
-4. The 31 October review-correction rebuild, export refresh, arXiv candidate,
-   and repository refresh are complete; the 28 October pass remains recorded
-   above. Leave `dist\sanitized` untouched; publication is a separate owner
-   decision.
+4. The 5 November declarations and positioning revision, including the
+   canonical rebuild, export refresh, arXiv candidate, and repository refresh,
+   is complete; the 31 October and 28 October passes remain recorded above.
+   Leave `dist\sanitized` untouched; publication is a separate owner decision.
 5. Do not submit to a public venue until the relevant release checks close.
