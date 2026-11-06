@@ -2,7 +2,7 @@
 
 The completed empirical manuscript is `paper/MANUSCRIPT_REVISED.md`, with the
 canonical named-author PDF at
-`paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf` and the standalone LaTeX export
+`paper/drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf` and the standalone LaTeX export
 at `paper/latex_export/`. Read `docs/RESEARCH_STATUS.md` for the evidence
 boundary and final validation. The canonical PDF is a native XeLaTeX build;
 the earlier ReportLab review rendering is not part of this package.

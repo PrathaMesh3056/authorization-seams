@@ -1,51 +1,75 @@
-# Research status - 5 November 2026
+# Research status - 6 November 2026
 
 ## Current position
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
-`E7C3F227F4E79F2CCB0A162DF3411D7633130550C930897395795E91D161B854`;
-727 lines, 137,757 bytes). The reference list has eleven entries. The abstract
-is 222 words with SHA-256
+`76E9E8F6F7233121277B97C0363DF38AC05284F71CD52D26E33D6A8E098B1A98`;
+753 lines, 143,816 bytes). The reference list has twenty-one entries. The
+abstract is 222 words with SHA-256
 `35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`.
 
-The canonical build is the 31-page single-column named-author preprint
-`paper\drafts\MANUSCRIPT_DRAFT_2026-11-05.pdf` (SHA-256
-`7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F`):
-31 pages, 348,663 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
-hboxes, 3 cosmetic underfull hboxes, and 1 stable `Label(s) may have changed`
-warning. The title page and PDF metadata name Prathamesh Patil; this is the
-authorized named-author build, not a double-blind submission.
+The canonical build is the 32-page single-column named-author preprint
+`paper\drafts\MANUSCRIPT_DRAFT_2026-11-06.pdf` (SHA-256
+`08752FEED7AA766DA8D4ABDF7FCBDD7907F35A6C53D2E235D57C0A8B6B51C256`):
+32 pages, 355,310 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+hboxes, 3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage
+diagnostics, and 1 stable `Label(s) may have changed` warning. The title page
+and PDF metadata name Prathamesh Patil; this is the authorized named-author
+build, not a double-blind submission.
 
 The standalone export is refreshed to the same source:
 `paper\latex_export\main.tex` (SHA-256
-`6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8`) and
+`C4BBBD28A189E8ED461CD0E246FA2E7B3054D3ED7B1765DC270C47EF800B5139`) and
 reference PDF `paper\latex_export\main.pdf` (SHA-256
-`11FB860DF6398176735174B91F05C7C834F90523D1E77981ED3347F228D455E3`), 31
-pages, 348,668 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 1 stable
+`F13D7EA29D4136101CFA44D07F31A1F4C56B09F05AC48CE0E7122AC06FCDB7BC`), 32
+pages, 355,310 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 1 stable
 label warning. Both figures are vector PDFs and are included.
 
 The separate arXiv-compliant named-author candidate is
 `paper\arxiv_export\main.pdf` (SHA-256
-`C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28`):
-34 pages, 351,679 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
+`84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0`):
+35 pages, 358,240 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
 0 fatal LaTeX errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1
 stable label warning. Its generated source SHA-256 is
-`B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2`.
+`2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`.
 
-## Review assessment - 5 November 2026
+## Review assessment - 6 November 2026
 
-The revision improves presentation, positioning, and reviewer-defensibility
+The 6 November revision strengthens positioning and reviewer-defensibility
 without adding experiments, external baselines, or generalization. Scores are
 bounded assessments on a 10-point scale, not venue decisions.
 
-| Target | Prior | Revised | Basis |
-|---|---:|---:|---|
-| arXiv preprint | 6.5 | 7.0 | Clearer abstract, declarations, falsification/stop conditions, and three verified adjacent pointers; still a narrow single-author measurement package with a short related-work base. |
-| Workshop / short / tool track | 5.5 | 6.0 | Stronger artifact story and explicit H4/H7 gate; the 34-page preprint still needs a venue cut, and the 13-page CODASPY cut was not rebuilt against this source. |
-| Main research track | 3.0 | 3.0 | Empirical breadth, external baselines, and generalization remain unchanged; this is not a main-track paper. |
-| Future full paper | 6.5 | 6.5 | The full-paper path still requires more design points, a second receiver family, and H4/H7 instruments. |
+| Target | Prior | 5 Nov | 6 Nov | Basis |
+|---|---:|---:|---:|---|
+| arXiv preprint | 6.5 | 7.0 | 7.5 | The related-work base is no longer thin: 21 verified entries, including the closest 2026 agent-delegation work, the standards vocabulary, and the foundational systems. Section 6 is deduplicated, and Section 7.3 now explains the design space. Still a single-author measurement package with a narrow empirical base and no external baselines. |
+| Workshop / short / tool track | 5.5 | 6.0 | 6.5 | Stronger positioning and an explicit design-space rationale improve fit and reviewer-defensibility. The 35-page preprint still needs a venue cut; the 13-page CODASPY cut predates the 6 November source and was not rebuilt. |
+| Main research track | 3.0 | 3.0 | 3.0 | Empirical breadth, external baselines, and generalization remain unchanged; this is not a main-track paper. |
+| Future full paper | 6.5 | 6.5 | 6.5 | The full-paper path still requires more design points, a second receiver family, and H4/H7 instruments. |
 
-## 5 November 2026 declarations and positioning revision
+## 6 November 2026 positioning and related-work revision
+
+The revision changed no experiments, frozen artifacts, counts, sums, effective
+sample sizes, statuses, or H4/H7 state. It applied these manuscript changes:
+
+- Restructured Section 6 into upstream formal spines, standards and credential
+  vocabularies, systems and foundations, recent 2026 agent-delegation work,
+  industry pointers, Progent, and MasDrift. Removed the duplicated restatement
+  of the three upstream guarantees.
+- Added ten verified references: RFC 9396, RFC 2693, Miller's *Robust
+  Composition*, Blaze et al., Appel and Felten, Fong, Parisel's least-autonomy
+  theory, ChainCaps, Overlaying Governance, and Local Allow, Global Deny.
+  Reference count: 21.
+- Aligned the Introduction's scope paragraph with the expanded positioning and
+  replaced the defensive "deliberately bounded" wording with a positive scope
+  statement.
+- Added a design-space rationale in Section 7.3: one sender fixed at APC, two
+  receiver vocabularies, selection by vocabulary contrast and public
+  availability rather than representativeness; the instrument generalizes, the
+  measured rates do not.
+- Abstract unchanged at 222 words. H4 and H7 remain `UNTESTED`.
+- Canonical, standalone, and arXiv builds regenerated: 32, 32, and 35 pages.
+
+## 5 November 2026 declarations and positioning revision (historical)
 
 The revision changed no experiments, frozen artifacts, counts, sums, effective
 sample sizes, statuses, or H4/H7 state. It applied these manuscript and
@@ -298,8 +322,9 @@ untouched.
 2. If a double-blind venue is chosen, re-anonymize the named-author build before
    submission; do not send the named-author PDF to a double-blind track.
 3. Add venue metadata only after a specific CFP is chosen.
-4. The 5 November declarations and positioning revision, including the
+4. The 6 November positioning and related-work revision, including the
    canonical rebuild, export refresh, arXiv candidate, and repository refresh,
-   is complete; the 31 October and 28 October passes remain recorded above.
-   Leave `dist\sanitized` untouched; publication is a separate owner decision.
+   is complete; the 5 November, 31 October, and 28 October passes remain
+   recorded above. Leave `dist\sanitized` untouched; publication is a separate
+   owner decision.
 5. Do not submit to a public venue until the relevant release checks close.

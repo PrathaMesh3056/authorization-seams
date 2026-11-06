@@ -1,7 +1,7 @@
 # arXiv metadata candidate
 
-Status: prepared 26 October 2026; rebuilt 5 November 2026 for the
-declarations/positioning revision. Not submitted. License, endorsement, and
+Status: prepared 26 October 2026; rebuilt 6 November 2026 for the positioning
+and related-work revision. Not submitted. License, endorsement, and
 public contact information remain owner decisions.
 
 ## Core metadata
@@ -13,7 +13,7 @@ public contact information remain owner decisions.
 | Affiliation | Department of Computer Engineering, Sardar Patel Institute of Technology |
 | Primary category | `cs.CR` (proposed) |
 | Cross-list | `cs.AI` (proposed) |
-| Comments | 34 pages, 2 figures, 19 labeled tables. Artifact release pending. |
+| Comments | 35 pages, 2 figures, 19 labeled tables. Artifact release pending. |
 | Journal reference | None |
 | DOI | arXiv-issued DOI after announcement; do not fabricate |
 | License | `TBD` - author choice; arXiv licenses are irrevocable per version |
@@ -35,8 +35,9 @@ figures/figure_1_handoff_anatomy.pdf
 figures/figure_2_repair_loci.pdf
 ```
 
-`main.tex` uses a static eleven-entry reference list; no BibTeX run is required.
-The PDF is a reference compile, not a substitute for the source package.
+`main.tex` uses a static twenty-one-entry reference list; no BibTeX run is
+required. The PDF is a reference compile, not a substitute for the source
+package.
 
 ## Pre-upload checks
 

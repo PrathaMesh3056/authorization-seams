@@ -1,19 +1,19 @@
 # CODASPY 2027 Cut Plan
 
-**Canonical source:** `paper/MANUSCRIPT_REVISED.md` (31 pages as of the 5 November
+**Canonical source:** `paper/MANUSCRIPT_REVISED.md` (32 pages as of the 6 November
 2026 revision; this cut was built against the 31 October 29-page snapshot)
 **Venue target:** `paper/venue_codaspy2027/main.tex` (13 pages, ACM `sigconf`
 double column)
-**Date:** 3 November 2026
+**Date:** 3 November 2026 (positioning hardened 4 November 2026)
 
 ## Purpose
 
 Produce a venue-ready CODASPY 2027 research-track cut that meets the 12-page
 double-column limit without changing the frozen evidence, the claim set, or the
 canonical preprint. The 31 October 29-page build and 32-page arXiv candidate
-were the stable inputs when this cut was made; the current 5 November canonical
-is 31 pages and the arXiv candidate is 34 pages. This venue cut has not been
-rebuilt against the 5 November source.
+were the stable inputs when this cut was made; the current 6 November canonical
+is 32 pages and the arXiv candidate is 35 pages. This venue cut has not been
+rebuilt against the 6 November source.
 
 This is a **separate cut**, not a backport. New positioning references,
 compressed prose, and renumbered tables exist only under
@@ -29,7 +29,7 @@ compressed prose, and renumbered tables exist only under
 | Main tables | No fixed limit | 4 |
 | Figures | No fixed limit | 2 |
 | Appendix tables | No fixed limit | 4 |
-| References | No fixed limit | 16, all cited |
+| References | No fixed limit | 19, all cited |
 
 The main limit is met exactly. There is no spare page for added front matter or
 a copyright block; the gate must be re-run after final metadata is added.
@@ -46,8 +46,9 @@ a copyright block; the gate must be re-run after final metadata is added.
   of authenticated transport, and the keyholder finding.
 - All hypothesis statuses, including H4 and H7 as `UNTESTED`.
 - The no-new-experiments, no-re-scoring, no-claim-upgrade rule.
-- The canonical bibliography as it stood when this cut was built (eight
-  references in the 31 October canonical), unchanged in the canonical build.
+- The canonical bibliography as it stood when this cut was built, plus the
+  positioning anchors described under Reference changes; the 6 November
+  canonical revision has not been back-ported.
 
 ## Section mapping
 
@@ -117,8 +118,10 @@ repair loci.
 
 ## Reference changes
 
-The canonical build keeps its 8 references. The venue cut adds 8 verified
-positioning anchors:
+The venue cut carries 19 entries: six core mechanism or standards entries (APC,
+TraceGrant, SentinelAgent, Progent, MasDrift, and the IETF individual
+Internet-Draft) plus thirteen positioning anchors. The first eight anchors were
+added with the original cut:
 
 1. Macaroons (NDSS 2014), DOI `10.14722/ndss.2014.23212`
 2. Fong, relationship-based access control (CODASPY 2011), DOI
@@ -132,11 +135,21 @@ positioning anchors:
 7. RFC 2693, DOI `10.17487/RFC2693`
 8. Miller, robust composition (JHU PhD thesis, 2006; no DOI)
 
+The 4 November hardening added five 2026 anchors:
+
+9. Parisel, A Theory of Least Autonomy in AI (arXiv:2607.09744)
+10. ChainCaps (arXiv:2605.26542)
+11. Overlaying Governance (arXiv:2606.03518)
+12. PEDIGREE (IETF draft-rampalli-pedigree-00; expired)
+13. Local Allow, Global Deny (arXiv:2610.27620)
+
 These anchors answer the "positioning is thin" review concern without turning
 the paper into a survey. They are cited in Section 6 and are not baselines; no
 numbers are compared. Verification is recorded in `COMPLIANCE.md`.
 
-The canonical and arXiv bibliographies are unchanged. Back-porting the anchors
+The venue cut has not been rebuilt against the 5 November or 6 November
+canonical revisions. The 6 November canonical has 21 entries and contains all
+19 venue entries except PEDIGREE, plus Noma, Tallam, and Zanzibar. A rebuild
 would change frozen hashes and page counts and is a separate approval decision.
 
 ## Compression decisions
@@ -174,7 +187,7 @@ The gate checks:
 - no overfull hboxes or vboxes;
 - no undefined references or citations;
 - no missing glyphs, font warnings, or acmart accessibility warnings;
-- 16 bibliography entries;
+- 19 bibliography entries;
 - anonymous body and blank PDF author metadata;
 - every frozen claim string;
 - H4 and H7 `UNTESTED`;

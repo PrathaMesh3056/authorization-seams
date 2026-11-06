@@ -3,6 +3,53 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.9] - 2026-11-06
+
+### Changed
+
+- Expanded and restructured Section 6 of `paper/MANUSCRIPT_REVISED.md`:
+  removed the duplicated restatement of the three upstream guarantees; split
+  positioning into standards and credential vocabularies, systems and
+  foundations, and recent 2026 agent-delegation work; retained the industry
+  pointers, Progent, MasDrift, disclosures, and a positive scope statement.
+- Added ten verified references: RFC 9396, RFC 2693, Miller's *Robust
+  Composition*, Blaze et al., Appel and Felten, Fong, Parisel's least-autonomy
+  theory, ChainCaps, Overlaying Governance, and Local Allow, Global Deny.
+  Reference list is now 21 entries.
+- Aligned the Introduction's scope paragraph with the expanded positioning and
+  added a design-space rationale to Section 7.3 explaining the one-sender,
+  two-receiver design and what does and does not generalize.
+- No experiment, frozen artifact, count, sum, effective sample size, hypothesis
+  status, abstract word, or measured claim changed. H4 and H7 remain `UNTESTED`.
+- Regenerated canonical, standalone, and arXiv builds: 32, 32, and 35 pages;
+  0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
+- Updated build pins, QA page/reference/hash pins, manifest, export READMEs,
+  artifact snapshot, submission checklist, research status, and the human-facing
+  `RPaper(user)` guide.
+
+### Validation
+
+- `python scripts/verify_artifacts.py`: 322 files, all hashes match.
+- `python -m pytest -q qa`: 16 passed.
+- `python -m pytest -q qa/test_arxiv_build.py`: 6 passed.
+- TraceGrant Task D suite: 52 passed.
+- Canonical PDF: `paper/drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf`, 32 pages,
+  355,310 bytes, SHA-256
+  `08752FEED7AA766DA8D4ABDF7FCBDD7907F35A6C53D2E235D57C0A8B6B51C256`.
+- Standalone export: 32 pages, 355,310 bytes, SHA-256
+  `F13D7EA29D4136101CFA44D07F31A1F4C56B09F05AC48CE0E7122AC06FCDB7BC`;
+  source SHA-256
+  `C4BBBD28A189E8ED461CD0E246FA2E7B3054D3ED7B1765DC270C47EF800B5139`.
+- arXiv candidate: 35 pages, 358,240 bytes, SHA-256
+  `84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0`;
+  source SHA-256
+  `2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`.
+- Abstract: 222 words, SHA-256
+  `35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`;
+  references: 21 entries.
+- `dist/sanitized` remains untouched; no submission, release, license, DOI, or
+  repository visibility change.
+
 ## [0.1.8] - 2026-11-05
 
 ### Changed

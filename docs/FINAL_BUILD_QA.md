@@ -2,10 +2,10 @@
 
 > **Historical record.** This file documents the 23 October 2026 build. Its
 > hashes, page counts, and export values are intentionally preserved and are
-> not the current 5 November 2026 build. Current values are recorded in
+> not the current 6 November 2026 build. Current values are recorded in
 > `docs\ARTIFACT_SNAPSHOT.md` and `docs\ARXIV_BUILD_QA.md`; the later
-> correction and revision passes did not change any claim, experiment,
-> reference, or H4/H7 status beyond the documented 5 November additions.
+> correction and revision passes did not change any claim, experiment, or
+> H4/H7 status beyond the documented 5 November and 6 November additions.
 
 ## Source
 

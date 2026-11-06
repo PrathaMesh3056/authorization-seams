@@ -5,16 +5,16 @@ not a public release and it has not been submitted.
 
 It is generated from the current standalone LaTeX export by
 `paper/build/build_arxiv.py`. The canonical build remains
-`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf`; neither
-is modified by this export. The export was rebuilt on 5 November 2026 for the
-declarations/positioning revision.
+`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf`; neither
+is modified by this export. The export was rebuilt on 6 November 2026 for the
+positioning and related-work revision.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `main.tex` | Generated arXiv source: 1-inch margins, 10 pt, named author |
-| `main.pdf` | 34-page reference compile of this source |
+| `main.pdf` | 35-page reference compile of this source |
 | `figures/figure_1_handoff_anatomy.pdf` | Canonical Figure 1, vector PDF, byte-identical copy |
 | `figures/figure_2_repair_loci.pdf` | Canonical Figure 2, vector PDF, byte-identical copy |
 | `ARXIV_METADATA.md` | Proposed arXiv metadata and remaining author decisions |
@@ -29,7 +29,7 @@ python paper/build/build_arxiv.py
 ```
 
 The script verifies the pinned `paper/latex_export/main.tex` SHA-256
-(`6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8`), applies
+(`C4BBBD28A189E8ED461CD0E246FA2E7B3054D3ED7B1765DC270C47EF800B5139`), applies
 only these changes, and compiles with XeLaTeX three times:
 
 - `margin=0.75in` becomes `margin=1in` (arXiv minimum);
@@ -42,7 +42,7 @@ only in those content lines plus the build header.
 
 ## Verified output
 
-- 34 pages, 351,679 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
+- 35 pages, 358,240 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
   geometry.
 - 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
 - 4 cosmetic underfull hboxes and 1 stable `Label(s) may have changed` warning.
@@ -54,18 +54,29 @@ only in those content lines plus the build header.
 - Abstract: 222 words, SHA-256
   `35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`.
 - Twenty-one pipe tables (19 labeled, including Appendix Tables A1 and A2);
-  eleven static reference entries; H4 and H7 remain `UNTESTED`.
+  twenty-one static reference entries; H4 and H7 remain `UNTESTED`.
 - No public email, repository URL, DOI, or license is printed.
-- Generated source: 168,951 bytes, SHA-256
-  `B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2`.
-- Reference PDF: 351,679 bytes, SHA-256
-  `C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28`.
+- Generated source: 175,158 bytes, SHA-256
+  `2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`.
+- Reference PDF: 358,240 bytes, SHA-256
+  `84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0`.
 
-The canonical 31-page PDF uses the historical `Prathamesh Patil`
+The canonical 32-page PDF uses the historical `Prathamesh Patil`
 title-page/metadata string. The arXiv candidate uses the `Prathamesh N Patil`
 form already recorded in `CITATION.cff`.
 
-## 5 November 2026 revision
+## 6 November 2026 revision
+
+- Section 6 restructured and deduplicated. Ten verified references added:
+  RFC 9396, RFC 2693, Miller's *Robust Composition*, Blaze et al., Appel and
+  Felten, Fong, Parisel, ChainCaps, Overlaying Governance, and Local Allow,
+  Global Deny. The reference list grew from eleven to twenty-one entries.
+- The Introduction's scope paragraph now matches the expanded positioning;
+  Section 7.3 gained a design-space rationale.
+- Abstract unchanged at 222 words; no new experiment, count, claim, status, or
+  frozen artifact changed. H4 and H7 remain `UNTESTED`.
+
+## 5 November 2026 revision (historical)
 
 - Abstract trimmed from 278 to 222 words; no new number, claim, status, or
   citation was added.

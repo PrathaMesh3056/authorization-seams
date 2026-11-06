@@ -1,6 +1,6 @@
 # The Handoff Nobody Owns - standalone LaTeX source
 
-This package reproduces the 5 November 2026 named-author preprint of the
+This package reproduces the 6 November 2026 named-author preprint of the
 seam-research manuscript. It is a preprint source, not a peer-reviewed
 publication.
 
@@ -27,7 +27,7 @@ The compile may print a stable `Label(s) may have changed` warning; the
 reference build has zero unresolved references and should be checked by the
 page-count and text QA below rather than by warning count alone.
 
-No BibTeX run is required. References are a static, verified 11-entry list
+No BibTeX run is required. References are a static, verified 21-entry list
 embedded in `main.tex`; `references.bib` is not needed for this compile. The
 source uses a single-column `article` class, 10 pt, letter paper, 0.75 in
 margins. Figure 1 is included at 3.33 in wide; Figure 2 is included at 7.0 in
@@ -40,28 +40,31 @@ files and are not needed to compile the body.
 ## Provenance
 
 - Manuscript source: `paper\MANUSCRIPT_REVISED.md`
-- Manuscript SHA-256: `E7C3F227F4E79F2CCB0A162DF3411D7633130550C930897395795E91D161B854`
-- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-11-05.pdf`
-- Canonical PDF SHA-256: `7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F`
-- Standalone `main.tex` SHA-256: `6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8`
-- Reference PDF: 31 pages, 348,668 bytes
-- Reference PDF SHA-256: `11FB860DF6398176735174B91F05C7C834F90523D1E77981ED3347F228D455E3`
+- Manuscript SHA-256: `76E9E8F6F7233121277B97C0363DF38AC05284F71CD52D26E33D6A8E098B1A98`
+- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-11-06.pdf`
+- Canonical PDF SHA-256: `08752FEED7AA766DA8D4ABDF7FCBDD7907F35A6C53D2E235D57C0A8B6B51C256`
+- Standalone `main.tex` SHA-256: `C4BBBD28A189E8ED461CD0E246FA2E7B3054D3ED7B1765DC270C47EF800B5139`
+- Reference PDF: 32 pages, 355,310 bytes
+- Reference PDF SHA-256: `F13D7EA29D4136101CFA44D07F31A1F4C56B09F05AC48CE0E7122AC06FCDB7BC`
 - Build: Pandoc 3.12.1 + XeLaTeX (MiKTeX 25.12)
-- Manuscript date in the PDF: 5 November 2026
+- Manuscript date in the PDF: 6 November 2026
 
-The 23 October and 31 October 2026 canonical PDFs and their exports remain
-archived under `paper\drafts\` and `paper\backups\`; neither is overwritten.
+The 5 November, 31 October, and 23 October 2026 canonical PDFs and their exports
+remain archived under `paper\drafts\` and `paper\backups\`; none is overwritten.
 
 ## References
 
-The manuscript now contains a static list of eleven entries: `[APC]`,
+The manuscript now contains a static list of twenty-one entries: `[APC]`,
 `[TraceGrant]`, `[SentinelAgent]`, `[Progent]`, `[MasDrift]`, Noma Security,
-the IETF individual Internet-Draft, arXiv:2605.05440, RFC 8693, Zanzibar, and
-Macaroons. Bibliographic identities were checked on 20 October 2026 for the
-first seven entries, on 22 October 2026 for MasDrift (arXiv:2608.07556v3), and
-on 5 November 2026 for RFC 8693, Zanzibar, and Macaroons; the works were not
-reproduced, and their claims are not treated as verified inputs. The list is
-style-neutral and must be adapted only after the target venue is selected.
+the IETF individual Internet-Draft, arXiv:2605.05440, RFC 8693, Zanzibar,
+Macaroons, RFC 9396, RFC 2693, Miller, Blaze et al., Appel and Felten, Fong,
+Parisel, ChainCaps, Overlaying Governance, and Local Allow, Global Deny.
+Bibliographic identities were checked on 20 October 2026 for the first seven
+entries, on 22 October 2026 for MasDrift (arXiv:2608.07556v3), on 5 November
+2026 for RFC 8693, Zanzibar, and Macaroons, and on 6 November 2026 for the ten
+entries added in this revision; the works were not reproduced, and their claims
+are not treated as verified inputs. The list is style-neutral and must be
+adapted only after the target venue is selected.
 
 ## Release notes
 
@@ -79,10 +82,10 @@ style-neutral and must be adapted only after the target venue is selected.
 
 ## QA of the reference PDF
 
-- 31 pages, letter paper.
+- 32 pages, letter paper.
 - Zero missing glyphs, zero fatal LaTeX errors, zero overfull hboxes in the
   build.
-- Three cosmetic underfull hboxes, seven ignored infinite-glue-shrinkage
+- Three cosmetic underfull hboxes, six ignored infinite-glue-shrinkage
   diagnostics, and one stable `Label(s) may have changed` warning remain; all
   are non-blocking. The reference PDF has zero unresolved references.
 - All fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
@@ -93,5 +96,5 @@ style-neutral and must be adapted only after the target venue is selected.
 - Table 2's caption and body are together; Table 3's Total row stays with the
   ledger; Table 12 cross-references the Section 3.5 artifact-root key; Appendix
   Tables A1 and A2 remain intact in the canonical build.
-- The static eleven-entry reference list appears after Section 9 and is set
+- The static twenty-one-entry reference list appears after Section 9 and is set
   ragged-right to avoid stretched interword gaps.

@@ -1,4 +1,4 @@
-# Repository build and QA record - 5 November 2026
+# Repository build and QA record - 6 November 2026
 
 Windows (Python 3.12.7, Pandoc 3.12.1, MiKTeX 25.12 XeLaTeX). This is a local
 validation record. The repository has a private `origin` remote; local `main`
@@ -11,19 +11,19 @@ occurred.
 |---|---|
 | Local repository | `RPaper-repo` (working copy; `RPaper` archive untouched) |
 | Local branch | `main` |
-| Tracked files | 331 |
-| Manifest coverage | 320 selected files; see `artifacts/manifest.json` |
+| Tracked files | 333 |
+| Manifest coverage | 322 selected files; see `artifacts/manifest.json` |
 | Remote | private `origin` |
-| Canonical PDF | `paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf` |
-| Canonical PDF SHA-256 | `7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F` |
+| Canonical PDF | `paper/drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf` |
+| Canonical PDF SHA-256 | `08752FEED7AA766DA8D4ABDF7FCBDD7907F35A6C53D2E235D57C0A8B6B51C256` |
 | arXiv candidate | `paper/arxiv_export/main.pdf` |
-| arXiv PDF SHA-256 | `C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28` |
+| arXiv PDF SHA-256 | `84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0` |
 
 ## Integrity
 
 | Check | Result |
 |---|---|
-| `python scripts/verify_artifacts.py` | 320 selected files match; no missing or unexpected files |
+| `python scripts/verify_artifacts.py` | 322 selected files match; no missing or unexpected files |
 | `python -m pytest -q qa` | 16 passed |
 | TraceGrant Task D tests (`cd tests/tracegrant_task_d_20261014 && python -m pytest -q tests`) | 52 passed |
 | E1 lock check (`run_extension_e1.py --check`) | dataset/lock SHA match, OK |
@@ -34,24 +34,24 @@ occurred.
 
 `paper/build/build.ps1` completed:
 
-- 31 pages;
+- 32 pages;
 - 0 missing glyphs;
 - 0 fatal LaTeX errors;
 - 0 overfull hboxes;
 - 3 cosmetic underfull hboxes;
-- 7 ignored infinite-glue-shrinkage diagnostics;
+- 6 ignored infinite-glue-shrinkage diagnostics;
 - 1 stable `Label(s) may have changed` warning.
 
 Canonical PDF:
-`paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf`, 348,663 bytes, SHA-256
-`7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F`.
+`paper/drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf`, 355,310 bytes, SHA-256
+`08752FEED7AA766DA8D4ABDF7FCBDD7907F35A6C53D2E235D57C0A8B6B51C256`.
 
 Standalone export:
 
 - `paper/latex_export/main.tex` SHA-256
-  `6E17B5407C9BEC96F69BF011ED535014024C7BF89A1CAD2688FD7628016AECD8`;
-- `paper/latex_export/main.pdf` 31 pages, 348,668 bytes, SHA-256
-  `11FB860DF6398176735174B91F05C7C834F90523D1E77981ED3347F228D455E3`;
+  `C4BBBD28A189E8ED461CD0E246FA2E7B3054D3ED7B1765DC270C47EF800B5139`;
+- `paper/latex_export/main.pdf` 32 pages, 355,310 bytes, SHA-256
+  `F13D7EA29D4136101CFA44D07F31A1F4C56B09F05AC48CE0E7122AC06FCDB7BC`;
 - independent XeLaTeX compile: 0 fatal errors, 0 overfull hboxes, 3 underfull
   hboxes, and 1 stable label warning.
 
@@ -59,35 +59,54 @@ Standalone export:
 
 `python paper/build/build_arxiv.py` completed:
 
-- 34 pages, US Letter, 10 pt, 1-inch margins;
+- 35 pages, US Letter, 10 pt, 1-inch margins;
 - 0 missing glyphs;
 - 0 fatal LaTeX errors;
 - 0 overfull hboxes;
 - 4 cosmetic underfull hboxes;
 - 1 stable label warning;
 - source SHA-256
-  `B803242D7A54C6260CE94A0D638384E053B3BF95D17B981198E1612AA42A9AA2`;
-- 351,679-byte PDF with SHA-256
-  `C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28`.
+  `2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`;
+- 358,240-byte PDF with SHA-256
+  `84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0`.
 
 The last generated source package (26 October; historical) compiled to 28 pages;
-the current 5 November source has not been repackaged.
+the current 6 November source has not been repackaged.
 
 ## Release helpers
 
 - The last review package is `dist/seam-conformance-kit-20261027-review.zip`
-  (27 October; historical). It predates the 31 October review-correction pass
-  and the 5 November declarations revision; no new package has been generated.
+  (27 October; historical). It predates the 31 October review-correction pass,
+  the 5 November declarations revision, and the 6 November positioning revision;
+  no new package has been generated.
 - The last arXiv package is
   `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip` (26 October; historical),
   160,358 bytes, SHA-256
   `615962B8590C830E92625EED88F40D42F3D6C1F4A8031B6975599A95192C030A`.
-  It predates the 31 October and 5 November rebuilds and was not regenerated.
+  It predates the 31 October, 5 November, and 6 November rebuilds and was not
+  regenerated.
 - `dist/sanitized` was not regenerated or edited; it verifies independently at
   298 files and remains the stale 21 October tree, not a public-release
   candidate.
 
-## 5 November declarations and positioning revision
+## 6 November positioning and related-work revision
+
+- Section 6 restructured and deduplicated; ten verified references added
+  (RFC 9396, RFC 2693, Miller, Blaze et al., Appel and Felten, Fong, Parisel,
+  ChainCaps, Overlaying Governance, Local Allow, Global Deny).
+- The Introduction scope paragraph now matches the expanded positioning;
+  Section 7.3 gained a design-space rationale.
+- Abstract unchanged at 222 words; no measured claim, count, status, or frozen
+  artifact changed. H4 and H7 remain `UNTESTED`.
+- References: 21 entries.
+- Canonical, standalone, and arXiv builds regenerated: 32, 32, and 35 pages;
+  0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
+- `python scripts/verify_artifacts.py`: 322 files, all hashes match.
+- `python -m pytest -q qa`: 16 passed.
+- `python -m pytest -q qa/test_arxiv_build.py`: 6 passed.
+- TraceGrant Task D suite: 52 passed.
+
+## 5 November declarations and positioning revision (historical)
 
 - Abstract trimmed to 222 words; Declarations, falsification/stop conditions,
   H4/H7 gate, three adjacent pointers, Appendix Table A2, and E1 8/8

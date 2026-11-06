@@ -1,8 +1,8 @@
 {
   "algorithm": "sha256",
-  "file_count": 320,
+  "file_count": 322,
   "generated_by": "scripts/write_manifest.py",
   "manifest": "artifacts/sha256sums.txt",
   "notes": "Excludes .git, virtual environments, caches, dist/release staging, bootstrap vendor clones, and generated paper build output.",
-  "total_bytes": 19632359
+  "total_bytes": 20165723
 }

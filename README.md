@@ -6,7 +6,7 @@ Research preprint and reproduction package for a measurement study of what
 happens when one authorization mechanism hands a narrowed decision to another.
 
 > **Status:** research preprint; not peer reviewed. The canonical manuscript is
-> a 31-page, single-column named-author build. A separate 34-page
+> a 32-page, single-column named-author build. A separate 35-page
 > arXiv-compliant candidate uses 1-inch margins and the `Prathamesh N Patil`
 > display name. Both are prepared for workshop/short-paper or tool-track
 > review. Hypotheses H4 and H7 remain `UNTESTED`. The builds print the author
@@ -23,8 +23,8 @@ stored artifacts.
 
 ## What is included
 
-- The manuscript source and the canonical 5 November 2026 named-author PDF,
-  rebuilt for the declarations/positioning revision.
+- The manuscript source and the canonical 6 November 2026 named-author PDF,
+  rebuilt for the positioning/related-work revision.
 - The locked-artifact harnesses for the APC → TraceGrant, APC → SentinelAgent,
   and bridge-boundary experiments, with their frozen cases, locks, and stored
   results.
@@ -50,7 +50,7 @@ stored artifacts.
 |---|---|
 | `paper/` | Manuscript, canonical PDF, figures, Pandoc/XeLaTeX build |
 | `paper/latex_export/` | Current standalone single-file LaTeX export of the manuscript |
-| `paper/arxiv_export/` | 34-page arXiv-compliant named-author build (1-inch margins) |
+| `paper/arxiv_export/` | 35-page arXiv-compliant named-author build (1-inch margins) |
 | `tests/` | Frozen experiment evidence: cases, locks, harnesses, and stored results |
 | `artifacts/` | Generated SHA-256 manifest and integrity metadata |
 | `docs/` | Method overview, reproducibility notes, project status, and QA records |
@@ -78,14 +78,15 @@ pwsh -File paper/build/build.ps1
 # paper build (Linux/macOS)
 bash paper/build/build.sh
 
-# arXiv-compliant candidate (1-inch margins, 34 pages)
+# arXiv-compliant candidate (1-inch margins, 35 pages)
 python paper/build/build_arxiv.py
 ```
 
 The build writes generated files under `paper/build/`. The canonical PDF is
-`paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf`; the build does not overwrite it.
-The 31 October and 23 October PDFs remain archived. The arXiv candidate is
-`paper/arxiv_export/main.pdf`; its QA record is `docs/ARXIV_BUILD_QA.md`.
+`paper/drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf`; the build does not overwrite it.
+The 5 November, 31 October, and 23 October PDFs remain archived. The arXiv
+candidate is `paper/arxiv_export/main.pdf`; its QA record is
+`docs/ARXIV_BUILD_QA.md`.
 
 To rerun the experiments, first fetch the two pinned upstream repositories:
 

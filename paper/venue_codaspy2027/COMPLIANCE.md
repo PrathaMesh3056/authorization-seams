@@ -2,7 +2,7 @@
 
 **Artifact:** `paper/venue_codaspy2027/main.pdf`
 **Source:** `paper/venue_codaspy2027/main.tex`
-**Date:** 3 November 2026
+**Date:** 3 November 2026 (positioning hardened 4 November 2026)
 **Target:** CODASPY 2027 research track
 **Requirements checked:** CODASPY 2027 call for papers, verified 2 November 2026
 
@@ -11,7 +11,7 @@
 **Local compliance pass.** The venue cut is 13 pages: pages 1-12 are the
 double-column main body plus references, and page 13 is a one-column appendix.
 This meets the 12-page main limit and the 2-page appendix allowance. The build
-is anonymized, all 16 references are cited, the frozen claim counts are
+is anonymized, all 19 references are cited, the frozen claim counts are
 present, and H4/H7 remain `UNTESTED`.
 
 This is a local build record, not a submission record. No push, submission, or
@@ -25,10 +25,10 @@ public release has occurred.
 | Appendix | At most 2 pages, separate from the main limit | One page, one column, four tables | PASS |
 | Format | ACM `sigconf`, double column | `\documentclass[sigconf,anonymous,nonacm]{acmart}`; US Letter 612x792 pt | PASS |
 | Anonymity | No authors, affiliations, emails, or identifying paths | `anonymous` option; `Anonymous Author(s)`; blank PDF author; token scan clean | PASS |
-| References | All cited; verified metadata; no inventions | 16 `\bibitem` entries; BibTeX used 16; DOI/RFC/JHU checks recorded below | PASS |
+| References | All cited; verified metadata; no inventions | 19 `\bibitem` entries; BibTeX used 19; DOI/RFC/JHU checks recorded below | PASS |
 | Layout | No overfull boxes, undefined references, missing glyphs | 0 overfull hbox; 0 overfull vbox; 0 undefined; 0 missing characters; 0 font or acmart warnings | PASS |
 | Claims | Frozen counts preserved; H4/H7 `UNTESTED` | Claim spot-check below | PASS |
-| Frozen evidence | Canonical artifacts and claim set untouched | Canonical hashes unchanged at this build; 319-file manifest verified (current 5 Nov manifest: 320 files) | PASS |
+| Frozen evidence | Canonical artifacts and claim set untouched | Canonical hashes unchanged at this build; 319-file manifest verified (current 6 Nov manifest: 322 files) | PASS |
 | Submission | Not submitted | Local worktree only | NOT SUBMITTED |
 
 ## Page accounting
@@ -66,7 +66,7 @@ the canonical PDF, the standalone export, the arXiv export, `paper/hashes.txt`,
 `paper/CONSOLIDATED_CLAIMS.md`, or `dist/sanitized`.
 
 Canonical hashes when this venue cut was built (31 October 2026 snapshot, now
-superseded by the 5 November revision):
+superseded by the 5 November and 6 November revisions):
 
 ```text
 79CB8E608CD516B18077943E10433A8F22C834B05AD5D19156330B53B258A876  paper/MANUSCRIPT_REVISED.md
@@ -75,18 +75,18 @@ F2A3AB17565AF888D23687C5D207DC86C7A6BFE4B58E249608AEF43B607EBE9D  paper/drafts/M
 33207E1E00DB205F3C123C763EDC8FC978C959C2417EB2B4AC4B68D304933CE1  paper/arxiv_export/main.pdf
 ```
 
-Current canonical hashes as of 5 November 2026 (the venue cut has not been
+Current canonical hashes as of 6 November 2026 (the venue cut has not been
 rebuilt against this source):
 
 ```text
-E7C3F227F4E79F2CCB0A162DF3411D7633130550C930897395795E91D161B854  paper/MANUSCRIPT_REVISED.md
-7CF87221C4DA167074893FBCCA90EE236577C4BCAAD85DF3BCB50DFE7944815F  paper/drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf
-11FB860DF6398176735174B91F05C7C834F90523D1E77981ED3347F228D455E3  paper/latex_export/main.pdf
-C67939B0F2F4F9E6F4E2A59953CB45FC838A101FF8AC2811A53E44B0DD09AF28  paper/arxiv_export/main.pdf
+76E9E8F6F7233121277B97C0363DF38AC05284F71CD52D26E33D6A8E098B1A98  paper/MANUSCRIPT_REVISED.md
+08752FEED7AA766DA8D4ABDF7FCBDD7907F35A6C53D2E235D57C0A8B6B51C256  paper/drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf
+F13D7EA29D4136101CFA44D07F31A1F4C56B09F05AC48CE0E7122AC06FCDB7BC  paper/latex_export/main.pdf
+84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0  paper/arxiv_export/main.pdf
 ```
 
 The 319-file manifest check at this build reported `verified 319 files; all
-hashes match`; the current 5 November manifest covers 320 files.
+hashes match`; the current 6 November manifest covers 322 files.
 The manifest intentionally excludes `paper/venue_codaspy2027/` because the venue
 cut is a derivative workspace with its own `build.py` gate; this keeps the
 canonical file count and frozen artifact inventory unchanged. No experiment was
@@ -114,10 +114,11 @@ section, the conclusion, and Appendix A1.
 
 ## Reference verification
 
-The canonical preprint keeps its original 8 references. The venue cut adds 8
-positioning anchors, all cited in Section 6. Metadata was checked through
-Crossref, the RFC Editor/DOI resolver, or the JHU scholarship record; no field
-was invented.
+The venue cut carries a 19-entry bibliography. Six are core mechanism or
+standards entries (APC, TraceGrant, SentinelAgent, Progent, MasDrift, and the
+IETF individual Internet-Draft); thirteen are positioning anchors cited in
+Section 6. Metadata was checked through Crossref, the RFC Editor/DOI resolver,
+or the JHU scholarship record; no field was invented.
 
 | Key | Reference | Identifier | Verified metadata |
 |---|---|---|---|
@@ -129,15 +130,18 @@ was invented.
 | `rfc9396` | OAuth 2.0 Rich Authorization Requests | doi:10.17487/RFC9396 | RFC Editor |
 | `rfc2693` | SPKI Certificate Theory | doi:10.17487/RFC2693 | RFC Editor |
 | `miller` | Robust Composition (JHU PhD thesis, 2006) | JHU JScholarship item `b8376e55-208e-4fcc-81a2-ad5a7de0acbb` | Johns Hopkins University, Baltimore, MD; no DOI |
+| `leastautonomy` | A Theory of Least Autonomy in AI (arXiv:2607.09744) | doi:10.48550/arXiv.2607.09744 | arXiv preprint, 3 July 2026 |
+| `chaincaps` | ChainCaps: Composition-Safe Tool-Using Agents via Monotonic Capability Attenuation (arXiv:2605.26542) | doi:10.48550/arXiv.2605.26542 | arXiv v4, 1 July 2026; workshop paper at AIWILD, ICML 2026 |
+| `overlaying` | Overlaying Governance: A Compositional Authorization Framework for Delegation and Scope in Agentic AI (arXiv:2606.03518) | doi:10.48550/arXiv.2606.03518 | arXiv preprint, 2 June 2026 |
+| `pedigree` | PEDIGREE: Verifiable Delegation Identity for Agentic AI Systems | IETF draft-rampalli-pedigree-00 | Individual Internet-Draft; **expired**, retained only in this not-rebuilt venue cut |
+| `localallow` | Local Allow, Global Deny: Why Per-Action Authorization Does Not Compose in LLM Agents (arXiv:2610.27620) | doi:10.48550/arXiv.2610.27620 | arXiv preprint, 20 October 2026; TPS 2026 extended version |
 
-The existing 8 entries at this build are the frozen canonical references: APC, TraceGrant,
-SentinelAgent, Progent, MasDrift, Noma, the IETF draft, and Tallam. Their
-bibliographic identities were already checked for the canonical build and were
-not changed here. The 5 November canonical later added RFC 8693, Zanzibar, and
-Macaroons (11 entries total); this venue cut has not been rebuilt against that
-source.
+The 6 November canonical revision has 21 entries: it contains all 19 venue
+entries except PEDIGREE (excluded because its draft is expired) plus Noma,
+Tallam, and Zanzibar. This venue cut has not been rebuilt against the
+5 November or 6 November canonical source.
 
-BibTeX uses all 16 entries. Two completeness warnings remain and are disclosed
+BibTeX uses all 19 entries. Two completeness warnings remain and are disclosed
 rather than papered over:
 
 - `macaroons`: no page numbers in the Crossref record, so none are asserted.
@@ -151,13 +155,13 @@ their DOI or URL only. The complete list is
 
 ## Layout QA
 
-Recorded on the 3 November 2026 build:
+Recorded on the 4 November 2026 build:
 
 ```text
 Overfull \hbox:      0
 Overfull \vbox:      0
-Underfull \hbox:   139   (cosmetic; justified lines)
-Underfull \vbox:    15   (cosmetic; page fill)
+Underfull \hbox:   125   (cosmetic; justified lines)
+Underfull \vbox:    12   (cosmetic; page fill)
 LaTeX Warning:       0
 Font Warning:        0
 Class acmart Warning: 0   (both figures carry \Description)
@@ -204,11 +208,13 @@ PASS: all venue checks satisfied (13 pages; 12 main + 1 appendix)
    inside, the cut would be over length.
 3. **Template drift.** `acmart` v2.20 (2026/08/16) is installed locally. A
    different version may change spacing and page breaks.
-4. **Cosmetic warnings.** The 139 underfull hboxes, 15 underfull vboxes, and two
+4. **Cosmetic warnings.** The 125 underfull hboxes, 12 underfull vboxes, and two
    BibTeX completeness warnings are documented; none is a correctness or
    anonymity failure.
-5. **Backport not approved.** The 8 new references are venue-only. Moving them
-   into the canonical or arXiv build would change frozen hashes and page counts
-   and requires a separate decision.
+5. **Backport not approved.** The venue cut's 19-entry list overlaps the
+   canonical 21-entry list except PEDIGREE (expired draft) and the three
+   canonical-only entries (Noma, Tallam, Zanzibar). Rebuilding the venue cut
+   against the 6 November source would change frozen hashes and page counts and
+   requires a separate decision.
 6. **Release not approved.** Public contact, license, repository URL, DOI,
    arXiv endorsement, and release sanitization remain open.
