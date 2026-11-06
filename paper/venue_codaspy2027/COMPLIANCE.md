@@ -14,8 +14,8 @@ This meets the 12-page main limit and the 2-page appendix allowance. The build
 is anonymized, all 19 references are cited, the frozen claim counts are
 present, and H4/H7 remain `UNTESTED`.
 
-This is a local build record, not a submission record. No push, submission, or
-public release has occurred.
+This is a local build record, not a submission record. No submission or public
+release has occurred.
 
 ## Requirements and evidence
 
