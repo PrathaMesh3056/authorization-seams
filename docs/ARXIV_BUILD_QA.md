@@ -165,13 +165,31 @@ pages; no text block falls outside its page.
 
 ## Packaging checks
 
-- The last generated arXiv source package is
-  `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip` (26 October; historical),
-  160,358 bytes, SHA-256
-  `615962B8590C830E92625EED88F40D42F3D6C1F4A8031B6975599A95192C030A`.
-  At that time it contained `main.tex` and the two vector figures, and extracted
-  cleanly to 28 pages. It predates the 31 October and 5 November rebuilds and
-  was not regenerated.
+- **Current source package:** `dist/arxiv/authorization-seams-arxiv-2026-11-06.zip`,
+  169,835 bytes, SHA-256
+  `DED4065954CFE8538D58057D8948F66A65BBCA978C738801320514733C083483`.
+  It contains only `main.tex` (175,158 bytes; pinned SHA-256
+  `2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`) and
+  the two byte-identical vector figures under `figures/`. The archive is
+  deterministic: sorted entries, fixed 6 November 2026 timestamps, no build
+  artifacts.
+- **Clean-room test (7 November 2026):** the zip was extracted into an empty
+  temporary directory and compiled three times with pdfTeX 1.40.28
+  (MiKTeX 25.12), using `-interaction=nonstopmode -halt-on-error`. All three
+  runs exited 0. The resulting PDF is 35 pages, US Letter (612 x 792 pt),
+  10 pt, with 0 fatal errors, 0 overfull hboxes, 2 cosmetic underfull hboxes,
+  0 missing characters, and embedded subset fonts. Page 1 carries the title,
+  `Prathamesh N Patil`, the SPIT affiliation, and the 222-word abstract;
+  `UNTESTED` still appears for H4/H7; extracted text contains no public email,
+  repository URL, or local Windows path.
+- The clean-room PDF is a test artifact and is not committed. arXiv receives
+  source only. `paper/arxiv_export/main.pdf` remains the XeLaTeX reference
+  build (`84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0`).
+- **Historical:** `dist/arxiv/authorization-seams-arxiv-2026-10-26.zip`
+  (160,358 bytes; SHA-256
+  `615962B8590C830E92625EED88F40D42F3D6C1F4A8031B6975599A95192C030A`)
+  was the last package before the 6 November revision. It extracted cleanly to
+  28 pages and predates the 31 October and 5 November rebuilds.
 - The last review package is `dist/seam-conformance-kit-20261027-review.zip`
   (27 October; historical). It predates the 31 October review-correction pass
   and the 5 November declarations revision; no new package has been generated.
@@ -185,7 +203,11 @@ pages; no text block falls outside its page.
 
 - arXiv endorsement: the 21 January 2026 policy requires **both** an
   institutional email and prior arXiv authorship for automatic endorsement;
-  otherwise personal endorsement from an established `cs.CR` author is needed.
+  otherwise personal endorsement is needed. `cs.CR` is **not** a separate
+  endorsement domain: every `cs.*` category maps to `cs`, whose threshold is
+  three papers. Prof. Sudhir Dhage (SPIT, HOD Computer) has four countable
+  `cs.*` papers and is the first ask; confirm with the logged-in "Which authors
+  of this paper are endorsers?" link before sending.
 - arXiv license: author choice; irrevocable per announced version. CC BY 4.0 is
   a common manuscript choice if there is no publisher conflict; the arXiv
   perpetual non-exclusive license is the restrictive fallback.

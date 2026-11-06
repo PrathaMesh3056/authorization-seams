@@ -33,6 +33,27 @@ The separate arXiv-compliant named-author candidate is
 stable label warning. Its generated source SHA-256 is
 `2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`.
 
+## 7 November 2026 source package and endorsement-domain check
+
+- Built the current arXiv upload candidate:
+  `dist\arxiv\authorization-seams-arxiv-2026-11-06.zip`, 169,835 bytes,
+  SHA-256
+  `DED4065954CFE8538D58057D8948F66A65BBCA978C738801320514733C083483`.
+  It contains `main.tex` (pinned SHA-256
+  `2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`) and the
+  two vector figures only.
+- Extracted the zip into an empty directory and compiled it three times with
+  pdfTeX 1.40.28: 35 pages, 0 fatal errors, 0 overfull hboxes, 2 cosmetic
+  underfull hboxes, 0 missing characters, embedded subset fonts. The abstract
+  remains 222 words; H4/H7 remain `UNTESTED`; no public email, repository URL,
+  or local path appears in the extracted text.
+- Confirmed that `cs.CR` is **not** a separate arXiv endorsement domain. Every
+  `cs.*` category maps to the `cs` domain, whose threshold is three papers.
+  Prof. Sudhir Dhage has four countable `cs.*` papers and is the first endorser
+  ask; Dr. Nimkar, Dr. Devadkar, and Dr. Bide have two countable papers each.
+- No arXiv submission, license selection, public release, or account action
+  occurred.
+
 ## Review assessment - 6 November 2026
 
 The 6 November revision strengthens positioning and reviewer-defensibility

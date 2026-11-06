@@ -65,6 +65,18 @@ The canonical 32-page PDF uses the historical `Prathamesh Patil`
 title-page/metadata string. The arXiv candidate uses the `Prathamesh N Patil`
 form already recorded in `CITATION.cff`.
 
+## Source package
+
+`dist/arxiv/authorization-seams-arxiv-2026-11-06.zip` is the upload candidate.
+It is 169,835 bytes, SHA-256
+`DED4065954CFE8538D58057D8948F66A65BBCA978C738801320514733C083483`, and
+contains only `main.tex` (pinned SHA-256
+`2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`) plus the
+two vector figures. It was extracted into an empty directory and compiled three
+times with pdfTeX 1.40.28; the clean-room PDF is 35 pages with 0 fatal errors,
+0 overfull hboxes, 2 cosmetic underfull hboxes, and 0 missing characters. The
+zip does not include the reference PDF or any build artifacts.
+
 ## 6 November 2026 revision
 
 - Section 6 restructured and deduplicated. Ten verified references added:
