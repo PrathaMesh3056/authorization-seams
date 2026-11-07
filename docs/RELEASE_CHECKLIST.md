@@ -15,6 +15,11 @@ Work top to bottom. Do not publish or submit while any required gate is open.
       availability section and arXiv comments/metadata.
 - [ ] **Archival DOI** obtained (Zenodo/OSF or equivalent) and added; the
       `.zenodo.json` note removed once the record is intentional.
+- [ ] **Repository visibility and data-availability wording reconciled.**
+      The reviewed tree has a publicly reachable repository while the release
+      documents described a private repository, and `LICENSE` grants no
+      redistribution rights. Record the intended state before asserting a URL
+      or license in the manuscript or metadata.
 - [ ] **Release sanitization** run and reviewed; publish `dist/sanitized/`, not
       the working tree, if machine paths must not be public.
 - [ ] **Manifest regenerated** after the final content change; verifier passes.

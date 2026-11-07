@@ -16,7 +16,7 @@ import sys
 HERE = Path(__file__).resolve().parent
 SRC = HERE.parent / "MANUSCRIPT_REVISED.md"
 OUT = HERE / "manuscript_build.md"
-EXPECTED_SHA = "76E9E8F6F7233121277B97C0363DF38AC05284F71CD52D26E33D6A8E098B1A98"
+EXPECTED_SHA = "117A229932806A7E4D6205581A7E90FC276C838867BEEBFF7F972E561ABF7722"
 
 text = SRC.read_text(encoding="utf-8")
 sha = hashlib.sha256(text.encode("utf-8")).hexdigest().upper()
@@ -40,10 +40,10 @@ replace_once(
     TITLE,
     "---\n"
     'title: "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry"\n'
-    'author: "Prathamesh Patil"\n'
-    'pdfauthor: "Prathamesh Patil"\n'
+    'author: "Prathamesh N Patil"\n'
+    'pdfauthor: "Prathamesh N Patil"\n'
     'keywords: "cross-mechanism authorization; agent authorization; authorization seams; scope narrowing; evidence carriage; conformance testing; locked-artifact methodology"\n'
-    'date: "6 November 2026"\n'
+    'date: "7 November 2026"\n'
     "---",
     "title",
 )

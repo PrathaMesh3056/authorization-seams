@@ -61,13 +61,18 @@
 \renewcommand{\textfraction}{0.08}
 \renewcommand{\floatpagefraction}{0.75}
 
+% Keep mechanism names whole; the Section 2 heading otherwise breaks
+% SentinelAgent as "Sen-tinelAgent".
+\hyphenation{sentinelagent}
+\hyphenation{tracegrant}
+
 % ---------------------------------------------------------------------
 % 5. Author block. Pandoc escapes backslashes in YAML author metadata,
 %    so set the multi-line display form after the template has run.
 % ---------------------------------------------------------------------
 \AtBeginDocument{%
-  \author{Prathamesh Patil\\Department of Computer Engineering\\Sardar Patel Institute of Technology}%
-  \hypersetup{pdfauthor={Prathamesh Patil}}%
+  \author{Prathamesh N Patil\\Department of Computer Engineering\\Sardar Patel Institute of Technology}%
+  \hypersetup{pdfauthor={Prathamesh N Patil}}%
 }
 
 % --- variant B: long code spans are wrapped selectively by the build
@@ -90,9 +95,10 @@
 % candidate PDF (they read as black artifacts in narrow table columns).
 \overfullrule=0pt
 
-% --- variant C: allow a break after escaped underscores in plain text
+% --- variant C: allow a break before escaped underscores in plain text
+%     so lines do not end with a trailing underscore.
 \let\origunderscore\_
-\renewcommand{\_}{\origunderscore\allowbreak}
+\renewcommand{\_}{\allowbreak\origunderscore}
 
 % --- variant F: inside longtables, use the original \texttt so cells
 %     break only at separators, not mid-token.

@@ -16,7 +16,8 @@ problem**: what can and cannot be carried across the seam?
 
 For each experiment set:
 
-1. Predictions, cases, arms, and input hashes are frozen before execution.
+1. Predictions, cases, arms, and input hashes are locked before execution; the
+   locks are internally time-stamped, with no external registry anchor.
 2. Runs are strictly sequential, offline, and deterministic.
 3. Predicted-versus-observed discrepancies are reconciled verbatim into files
    that are not edited afterward.
@@ -59,10 +60,13 @@ verified guarantees about the seam.
 
 ## Reading the result
 
-- Under narrowing-preserving bridge mappings on the frozen case families,
-  composition adds no admission beyond the receiver's own, **with one measured
-  exception** in an action-narrowing family whose attribution depends on the
-  scoring convention.
+- Under narrowing-preserving bridge mappings on the frozen case families, the
+  pair pilots add no receiver-relative admission beyond the receiver's own. The
+  E1 action-narrowing family is the only candidate exception, and its 4/4
+  receiver-relative novelty is scoring-dependent: arms 2 and 5 decide
+  identically on all eight cases, and the arm-native norm was locked after the
+  E1 run. E1 is reported as a candidate/scoring-dependent instance, not as
+  evidence that composition adds an admission.
 - Forced and contingent identities are labeled separately; do not pool them.
 - A zero-seam outcome in Pilot 1 is a property of the frozen case family and
   the arm identities, not evidence of universal safety. The manuscript states

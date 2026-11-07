@@ -40,6 +40,9 @@ EXCLUDED_RELATIVE_PREFIXES = (
 EXCLUDED_RELATIVE_FILES = {
     "artifacts/sha256sums.txt",
     "artifacts/manifest.json",
+    # Local archived package: *.zip is gitignored, so a fresh clone cannot
+    # reproduce it and the tracked-file manifest must not require it.
+    "paper/backups/authorization-seams-arxiv-2026-11-07_pre_review_fixes.zip",
 }
 GENERATED_BUILD_FILES = {
     "paper/build/build_run.log",
@@ -54,6 +57,11 @@ GENERATED_BUILD_FILES = {
     "paper/latex_export/main.log",
     "paper/latex_export/main.out",
     "paper/latex_export/main.synctex.gz",
+    "paper/latex_export/pass1.log",
+    "paper/latex_export/pass2.log",
+    "paper/arxiv_export/pass1.log",
+    "paper/arxiv_export/pass2.log",
+    "paper/arxiv_export/pass3.log",
 }
 
 

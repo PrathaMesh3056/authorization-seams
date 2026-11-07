@@ -9,8 +9,8 @@ separate `paper/arxiv_export/` package. It never edits the pinned source.
 Layout changes:
   - 1-inch margins (arXiv minimum; the canonical draft uses 0.75 in);
   - Figure 2 is fitted to the text measure instead of a fixed 7 in width;
-  - the author display name and PDF metadata use `Prathamesh N Patil`, matching
-    `CITATION.cff`.
+  - verifies the unified author display name and PDF metadata
+    (`Prathamesh N Patil`, matching `CITATION.cff`).
 
 No manuscript text, claim, reference, table, or figure content is changed.
 """
@@ -27,15 +27,14 @@ HERE = Path(__file__).resolve().parent
 PAPER = HERE.parent
 ROOT = PAPER.parent
 SOURCE = PAPER / "latex_export" / "main.tex"
-EXPECTED_SOURCE_SHA = "C4BBBD28A189E8ED461CD0E246FA2E7B3054D3ED7B1765DC270C47EF800B5139"
+EXPECTED_SOURCE_SHA = "FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32"
 OUTDIR = PAPER / "arxiv_export"
 FIGURES = PAPER / "figures"
 OUT_FIGURES = OUTDIR / "figures"
 OUT_TEX = OUTDIR / "main.tex"
 OUT_PDF = OUTDIR / "main.pdf"
 
-AUTHOR_OLD = "Prathamesh Patil"
-AUTHOR_NEW = "Prathamesh N Patil"
+AUTHOR = "Prathamesh N Patil"
 MARGIN_OLD = r"\usepackage[margin=0.75in,letterpaper]{geometry}"
 MARGIN_NEW = r"\usepackage[margin=1in,letterpaper]{geometry}"
 FIG2_OLD = r"\includegraphics[width=7in,height=\textheight,keepaspectratio,alt={Figure"
@@ -67,13 +66,15 @@ def main() -> int:
     text = replace_once(text, MARGIN_OLD, MARGIN_NEW, "geometry")
     text = replace_once(text, FIG2_OLD, FIG2_NEW, "figure-2-width")
 
-    # All occurrences are title-page/PDF metadata occurrences.
-    author_count = text.count(AUTHOR_OLD)
+    # All occurrences are title-page/PDF metadata occurrences. The canonical
+    # source now carries the unified name, so this is a verification only.
+    author_count = text.count(AUTHOR)
     if author_count < 4:
         raise SystemExit(
-            f"author metadata: expected at least 4 occurrences, found {author_count}"
+            f"author metadata: expected at least 4 occurrences of {AUTHOR!r}, found {author_count}"
         )
-    text = text.replace(AUTHOR_OLD, AUTHOR_NEW)
+    if "Prathamesh Patil" in text:
+        raise SystemExit("author metadata: ununified 'Prathamesh Patil' variant remains")
 
     OUTDIR.mkdir(parents=True, exist_ok=True)
     OUT_FIGURES.mkdir(parents=True, exist_ok=True)

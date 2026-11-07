@@ -1,4 +1,4 @@
-"""Checks for the 26 October 2026 arXiv-compliant candidate.
+"""Checks for the 7 November 2026 arXiv-compliant candidate.
 
 These tests protect the separate 1-inch-margin build. They do not alter the
 pinned canonical PDF or the current LaTeX export.
@@ -15,7 +15,7 @@ ARXIV_TEX = ROOT / "paper" / "arxiv_export" / "main.tex"
 ARXIV_PDF = ROOT / "paper" / "arxiv_export" / "main.pdf"
 ARXIV_METADATA = ROOT / "paper" / "arxiv_export" / "ARXIV_METADATA.md"
 
-EXPECTED_PAGES = 35
+EXPECTED_PAGES = 37
 EXPECTED_AUTHOR = "Prathamesh N Patil"
 EXPECTED_TITLE = (
     "The Handoff Nobody Owns: Measuring What Cross-Mechanism "
@@ -74,7 +74,7 @@ def test_arxiv_pdf_text_contains_title_author_and_untested_hypotheses():
 
 def test_arxiv_metadata_uses_frozen_abstract_hash():
     text = ARXIV_METADATA.read_text(encoding="utf-8")
-    assert "35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45" in text
+    assert "B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38" in text
     assert "Abstract word count: 222" in text
     assert "cs.CR" in text
     assert "cs.AI" in text

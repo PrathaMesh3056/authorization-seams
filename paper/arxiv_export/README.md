@@ -5,16 +5,16 @@ not a public release and it has not been submitted.
 
 It is generated from the current standalone LaTeX export by
 `paper/build/build_arxiv.py`. The canonical build remains
-`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf`; neither
-is modified by this export. The export was rebuilt on 6 November 2026 for the
-positioning and related-work revision.
+`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-07.pdf`; neither
+is modified by this export. The export was rebuilt on 7 November 2026 for the
+writing-style and content-audit revision.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `main.tex` | Generated arXiv source: 1-inch margins, 10 pt, named author |
-| `main.pdf` | 35-page reference compile of this source |
+| `main.pdf` | 37-page reference compile of this source |
 | `figures/figure_1_handoff_anatomy.pdf` | Canonical Figure 1, vector PDF, byte-identical copy |
 | `figures/figure_2_repair_loci.pdf` | Canonical Figure 2, vector PDF, byte-identical copy |
 | `ARXIV_METADATA.md` | Proposed arXiv metadata and remaining author decisions |
@@ -29,55 +29,88 @@ python paper/build/build_arxiv.py
 ```
 
 The script verifies the pinned `paper/latex_export/main.tex` SHA-256
-(`C4BBBD28A189E8ED461CD0E246FA2E7B3054D3ED7B1765DC270C47EF800B5139`), applies
+(`FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32`), applies
 only these changes, and compiles with XeLaTeX three times:
 
 - `margin=0.75in` becomes `margin=1in` (arXiv minimum);
-- the author display name and PDF metadata become `Prathamesh N Patil`;
 - Figure 2 is fitted to `\linewidth` instead of a fixed 7-inch width.
 
-This export changes no manuscript sentence, number, table, reference, figure,
-or hypothesis status. The generated `main.tex` differs from the source export
-only in those content lines plus the build header.
+The author display name and PDF metadata are already `Prathamesh N Patil` in
+the pinned source; the script verifies that form and rejects the older
+`Prathamesh Patil` variant. This export changes no manuscript sentence, number,
+table, reference, figure, or hypothesis status. The generated `main.tex`
+differs from the source export only in those two content lines plus the build
+header.
 
 ## Verified output
 
-- 35 pages, 358,240 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
+- 37 pages, 363,591 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
   geometry.
 - 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
 - 4 cosmetic underfull hboxes and 1 stable `Label(s) may have changed` warning.
 - All fonts embedded; both figures are vector; `pdfimages` reports zero raster
   images.
 - Inline code and artifact paths are upright monospace, including spans inside
-  notes; zero `LMMono*-Italic` spans remain.
+  notes; zero `LMMono*-Italic` spans remain; no printed line ends with a
+  trailing underscore.
 - Title-page and PDF metadata author: `Prathamesh N Patil`.
 - Abstract: 222 words, SHA-256
-  `35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`.
+  `B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`.
 - Twenty-one pipe tables (19 labeled, including Appendix Tables A1 and A2);
-  twenty-one static reference entries; H4 and H7 remain `UNTESTED`.
+  twenty-one static bracketed reference entries; H4 and H7 remain `UNTESTED`.
 - No public email, repository URL, DOI, or license is printed.
-- Generated source: 175,158 bytes, SHA-256
-  `2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`.
-- Reference PDF: 358,240 bytes, SHA-256
-  `84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0`.
+- Generated source: 181,289 bytes, SHA-256
+  `299EB14C9730AF5D22E44AB2E743E690649EDA659BA71B254E0EEE7F86BBBE9C`.
+- Reference PDF: 363,591 bytes, SHA-256
+  `3FB05353E40CE4E504D384A68B8F8FE524F3546D4B32C498C12D03736FBE8F3A`.
 
-The canonical 32-page PDF uses the historical `Prathamesh Patil`
-title-page/metadata string. The arXiv candidate uses the `Prathamesh N Patil`
-form already recorded in `CITATION.cff`.
+Both the canonical build and the arXiv candidate now use the unified
+`Prathamesh N Patil` form recorded in `CITATION.cff`.
 
 ## Source package
 
-`dist/arxiv/authorization-seams-arxiv-2026-11-06.zip` is the upload candidate.
-It is 169,835 bytes, SHA-256
-`DED4065954CFE8538D58057D8948F66A65BBCA978C738801320514733C083483`, and
+`dist/arxiv/authorization-seams-arxiv-2026-11-07.zip` is the upload candidate.
+It is 171,996 bytes, SHA-256
+`F6BD655B5C3F3CBA7F48EE2F09CCD786D874A6C1886311AACCB22B18AA41DCCF`, and
 contains only `main.tex` (pinned SHA-256
-`2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`) plus the
+`299EB14C9730AF5D22E44AB2E743E690649EDA659BA71B254E0EEE7F86BBBE9C`) plus the
 two vector figures. It was extracted into an empty directory and compiled three
-times with pdfTeX 1.40.28; the clean-room PDF is 35 pages with 0 fatal errors,
-0 overfull hboxes, 2 cosmetic underfull hboxes, and 0 missing characters. The
-zip does not include the reference PDF or any build artifacts.
+times with XeLaTeX 4.16; the clean-room PDF is 37 pages with 0 fatal errors,
+0 overfull hboxes, 0 missing characters, and 4 cosmetic underfull hboxes. The
+zip does not include the reference PDF or any build artifacts. The pre-review
+package is archived at
+`paper/backups/authorization-seams-arxiv-2026-11-07_pre_review_fixes.zip`.
 
-## 6 November 2026 revision
+## 7 November 2026 external-review reconciliation
+
+The manuscript was revised after an external review of public HEAD `b3c0c15`.
+The revision reports E1 as candidate/scoring-dependent, discloses that arms 2
+and 5 decide identically on all eight cases and that the arm-native norm was
+locked after the E1 run, reports Pilot 1's 8/40 falsified predictions, restores
+H1's resource clause to "not supported", corrects the Table 12 boundary
+denominator to 32/48, and adds the lock-before-run and `hashes.txt` renumbering
+notes. No experiment, frozen artifact, count, sum, or effective sample size
+changed; H4 and H7 remain `UNTESTED`. The abstract remains 222 words with
+SHA-256 `B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`.
+The source and PDF above reflect this rebuild.
+
+## 7 November 2026 writing-style revision (historical, pre-review)
+
+- All 21 references now use bracketed keys; no reference was added or removed.
+  The Pandey entry reports acceptance at IEEE TPS 2026, marked as reported and
+  not independently verified here.
+- Declarations completed: no external funding, no competing interests, full
+  single-author CRediT roles, author-retained data availability, and an
+  acknowledgments note.
+- Author unified to `Prathamesh N Patil`; Table 5 headers are
+  `SA`/`M0`/`Retained` with an explicit column key; body voice is impersonal.
+- Typography fixes removed the last Table 13 overfull hbox at the arXiv
+  measure. No experiment, count, claim, status, or frozen artifact changed.
+- Abstract unchanged at 222 words; H4 and H7 remain `UNTESTED`.
+- The source and PDF in this section were the pre-review build; the
+  external-review reconciliation above superseded them.
+
+## 6 November 2026 revision (historical)
 
 - Section 6 restructured and deduplicated. Ten verified references added:
   RFC 9396, RFC 2693, Miller's *Robust Composition*, Blaze et al., Appel and
@@ -114,6 +147,6 @@ zip does not include the reference PDF or any build artifacts.
 ## Remaining submission gates
 
 arXiv endorsement, license selection, public contact email, ORCID (optional),
-repository URL, archival DOI, and release sanitization remain owner decisions.
-A double-blind venue would require a separate anonymized build; this one is
-named-author.
+repository visibility/URL, archival DOI, and release sanitization remain owner
+decisions. A double-blind venue would require a separate anonymized build; this
+one is named-author.

@@ -3,6 +3,64 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.10] - 2026-11-07
+
+### Changed
+
+- Applied the 7 November 2026 external-review reconciliation to
+  `paper/MANUSCRIPT_REVISED.md`. E1 is now reported as a
+  candidate/scoring-dependent instance: arms 2 and 5 decide identically on all
+  eight cases, and the arm-native norm was locked at `2026-10-19T12:52:51Z`
+  after the E1 run began at `2026-10-19T07:12:26Z`. The manuscript no longer
+  claims that composition adds an admission.
+- Pilot 1 now reports 8/40 falsified arm-5 attack predictions and 32/40
+  matched, naming the four `resource_widen` and four `unsatisfiable_verify`
+  cases verbatim.
+- H1's resource clause follows the frozen authority: "not supported", because
+  the locked C1a prediction was falsified on 4/4 cases. It is no longer
+  relabeled `UNTESTED`.
+- Corrected Table 12's boundary denominator to 32/48 attack cases (28
+  pre-existing + 4 new), not 32/96; the 96-case matrix includes benign cases.
+- Replaced "pre-registration" with an internally time-stamped lock-before-run
+  description and disclosed the absence of an external anchor.
+- Added the Section 3.7/3.8 cross-reference fix, the `hashes.txt` "Table 15"
+  renumbering note, and the Table 17 report-only label.
+- No experiment, frozen artifact, count, sum, effective sample size, or H4/H7
+  status changed. H4 and H7 remain `UNTESTED`.
+- Regenerated canonical, standalone, and arXiv builds: 33, 33, and 37 pages;
+  0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
+- Updated build pins, QA pins, manifest, export READMEs, arXiv metadata,
+  artifact snapshot, submission checklist, research status, method overview,
+  toolchain, release checklist, and repository README.
+- Bumped `CITATION.cff` to 0.1.5. No public email, repository URL, license,
+  DOI, or venue was invented.
+
+### Validation
+
+- `python scripts/write_manifest.py`: 330 files, 21,159,478 bytes. The\n  five XeLaTeX pass logs and the gitignored pre-fix zip are excluded from the\n  tracked-file inventory; the logs were deleted.
+- `python scripts/verify_artifacts.py`: 336 files, all hashes match.
+- `python -m pytest -q qa`: 16 passed.
+- Canonical PDF: `paper/drafts/MANUSCRIPT_DRAFT_2026-11-07.pdf`, 33 pages,
+  360,634 bytes, SHA-256
+  `D8F80E8B9384BB352C440E48EDB0BD3534CBD38CEEE55D942CF8C8F07D7A348F`.
+- Standalone export: 33 pages, 360,637 bytes, SHA-256
+  `A56FF2B9CEC2EABFC92D0C7ECEBB26FBD7401473BF91FA97074A76989FEF9413`;
+  source SHA-256
+  `FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32`.
+- arXiv candidate: 37 pages, 363,591 bytes, SHA-256
+  `3FB05353E40CE4E504D384A68B8F8FE524F3546D4B32C498C12D03736FBE8F3A`;
+  source SHA-256
+  `299EB14C9730AF5D22E44AB2E743E690649EDA659BA71B254E0EEE7F86BBBE9C`.
+- arXiv source package: 171,996 bytes, SHA-256
+  `F6BD655B5C3F3CBA7F48EE2F09CCD786D874A6C1886311AACCB22B18AA41DCCF`;
+  clean-room XeLaTeX compile 37 pages, 0 errors, 0 overfull, 4 cosmetic
+  underfull boxes.
+- Abstract: 222 words, SHA-256
+  `B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`;
+  references: 21 entries.
+- `dist/sanitized` remains untouched; no submission, release, license, DOI,
+  repository-visibility, or public-contact change.
+
 ## [0.1.9] - 2026-11-06
 
 ### Changed

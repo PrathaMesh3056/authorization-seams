@@ -1,47 +1,128 @@
-# Research status - 6 November 2026
+# Research status - 7 November 2026
 
 ## Current position
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
-`76E9E8F6F7233121277B97C0363DF38AC05284F71CD52D26E33D6A8E098B1A98`;
-753 lines, 143,816 bytes). The reference list has twenty-one entries. The
-abstract is 222 words with SHA-256
-`35C17A00CBB3A15B5C67298F45E37FE7D663275A65A1CB38DA78BB84FDF89F45`.
+`117A229932806A7E4D6205581A7E90FC276C838867BEEBFF7F972E561ABF7722`;
+791 lines, 149,452 bytes). The reference list has twenty-one entries, all with
+bracketed keys. The abstract is 222 words with SHA-256
+`B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`.
 
-The canonical build is the 32-page single-column named-author preprint
-`paper\drafts\MANUSCRIPT_DRAFT_2026-11-06.pdf` (SHA-256
-`08752FEED7AA766DA8D4ABDF7FCBDD7907F35A6C53D2E235D57C0A8B6B51C256`):
-32 pages, 355,310 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
-hboxes, 3 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage
+The canonical build is the 33-page single-column named-author preprint
+`paper\drafts\MANUSCRIPT_DRAFT_2026-11-07.pdf` (SHA-256
+`D8F80E8B9384BB352C440E48EDB0BD3534CBD38CEEE55D942CF8C8F07D7A348F`):
+33 pages, 360,634 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+hboxes, 6 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage
 diagnostics, and 1 stable `Label(s) may have changed` warning. The title page
-and PDF metadata name Prathamesh Patil; this is the authorized named-author
+and PDF metadata name `Prathamesh N Patil`; this is the authorized named-author
 build, not a double-blind submission.
 
 The standalone export is refreshed to the same source:
 `paper\latex_export\main.tex` (SHA-256
-`C4BBBD28A189E8ED461CD0E246FA2E7B3054D3ED7B1765DC270C47EF800B5139`) and
+`FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32`) and
 reference PDF `paper\latex_export\main.pdf` (SHA-256
-`F13D7EA29D4136101CFA44D07F31A1F4C56B09F05AC48CE0E7122AC06FCDB7BC`), 32
-pages, 355,310 bytes, 0 fatal errors, 0 overfull, 3 underfull, and 1 stable
-label warning. Both figures are vector PDFs and are included.
+`A56FF2B9CEC2EABFC92D0C7ECEBB26FBD7401473BF91FA97074A76989FEF9413`), 33
+pages, 360,637 bytes, 0 fatal errors, 0 overfull, 0 missing glyphs, 4 underfull,
+and 1 stable label warning. Both figures are vector PDFs and are included.
 
 The separate arXiv-compliant named-author candidate is
 `paper\arxiv_export\main.pdf` (SHA-256
-`84DADE9A8B83EB5C8D0DCEED975A15984B63DC0CCBB7BC07E471067D18DEDAF0`):
-35 pages, 358,240 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
+`3FB05353E40CE4E504D384A68B8F8FE524F3546D4B32C498C12D03736FBE8F3A`):
+37 pages, 363,591 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
 0 fatal LaTeX errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1
 stable label warning. Its generated source SHA-256 is
-`2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`.
+`299EB14C9730AF5D22E44AB2E743E690649EDA659BA71B254E0EEE7F86BBBE9C`
+(181,289 bytes).
 
-## 7 November 2026 source package and endorsement-domain check
+## External review reconciliation - 7 November 2026
 
-- Built the current arXiv upload candidate:
+An external review of public HEAD `b3c0c15` returned scores of arXiv 5.0,
+workshop 4.0, main track 2.0, and future full paper 6.0 on its 10-point rubric.
+The scores describe the reviewed HEAD, not the revised tree; no re-review has
+occurred. The review confirmed the artifact discipline and hash reproduction,
+but found the central composition-specific result unsupported as written. The
+revision addressed the findings without new experiments:
+
+- **E1 scoring dependence (P0).** Arms 2 and 5 make identical allow/deny
+  decisions on all eight cases, and the arm-native norm was locked at
+  `2026-10-19T12:52:51Z`, after the E1 run began at `2026-10-19T07:12:26Z`.
+  E1 is now reported as a candidate/scoring-dependent instance of the blindness
+  observation, not evidence that composition adds an admission. The identical
+  decisions and the post-data lock are disclosed in Sections 3.4, 4.2, 4.4,
+  5, 7.4, 9, and Appendix A.
+- **Pilot 1 reconciliation (P0).** The frozen record lists eight false-positive
+  predictions among the 40 locked arm-5 attack predictions: 32/40 matched and
+  8/40 were falsified (four `resource_widen`, four `unsatisfiable_verify`).
+  Section 4.1 now reports this verbatim and explains the two falsified clauses.
+- **H1 resource clause (P0).** The frozen authority says "not supported"; the
+  manuscript had relabeled it `UNTESTED`. The manuscript now follows the frozen
+  authority: the locked C1a prediction was falsified on 4/4 cases.
+- **Table 12 denominator (P0/P1).** The boundary cells now read 32/48 attack
+  cases (28 pre-existing + 4 new), not 32/96; 96 is the full matrix including
+  benign cases.
+- **Secondary fixes (P1).** Corrected the Section 3.7/3.8 cross-reference, added
+  the `hashes.txt` "Table 15" renumbering note, labeled the Table 17 report-only
+  rows, and replaced "pre-registration" with an internally time-stamped
+  lock-before-run description that discloses the absence of an external anchor.
+
+The P0 repository/license/data-availability contradiction remains an owner
+decision: a public repository is reachable at the reviewed HEAD while the
+release documents described a private repository, and `LICENSE` grants no
+redistribution rights. No repository URL, license, DOI, or public email was
+invented. H4 and H7 remain `UNTESTED`; no H4/H7 experiment was designed,
+locked, or executed. The canonical, standalone, and arXiv builds were
+regenerated at 33, 33, and 37 pages, and the source package was rebuilt.
+
+## 7 November 2026 writing-style and audit revision (historical, pre-review)
+
+The revision changed no experiments, frozen artifacts, counts, sums, effective
+sample sizes, statuses, or H4/H7 state. It applied these manuscript and
+presentation changes:
+
+- All 21 references now use bracketed keys in the body; the previous hybrid
+  name-only/bracket style is superseded. No reference was added or removed.
+- The Pandey entry reports acceptance at IEEE TPS 2026, marked "acceptance
+  reported, not independently verified here"; the unregistered DOI was dropped.
+- Declarations completed: no external funding, no competing interests, full
+  single-author CRediT roles, author-retained data availability, and an
+  acknowledgments note. No public email, repository URL, or DOI was invented.
+- Author name unified to `Prathamesh N Patil` in the manuscript, canonical
+  build, arXiv build, and `CITATION.cff`.
+- Table 5 headers are `SA`/`M0`/`Retained`, with an explicit column key; no cell
+  value changed. The body voice is impersonal, and the abstract's closing "We"
+  was retained to preserve the 222-word abstract.
+- Typography: `SentinelAgent` and `TraceGrant` are protected from hyphenation,
+  escaped underscores break before the underscore rather than after it, and
+  Tables 4, 5, and 13 were rebalanced. One Table 13 overfull hbox at the arXiv
+  measure was removed by widening its first column.
+- The numeric surface was diffed against the pre-edit backup. Every delta traces
+  to formatting: the `SA`/`M0`/`Retained` headers and column key, the dropped
+  Pandey DOI, the RFC keys, and "7 controls" rewritten as "Seven controls." No
+  claim or count moved.
+- Canonical, standalone, and arXiv builds regenerated for that revision: 32,
+  32, and 36 pages. These were the pre-review outputs; the external-review
+  reconciliation rebuilt them at 33, 33, and 37 pages.
+- Source package built for that revision:
+  `dist\arxiv\authorization-seams-arxiv-2026-11-07.zip`, 170,315 bytes,
+  SHA-256
+  `D13D4169AA16996AC391FAB370238D12ED21E7232DC4F1AF0B9A37588EA774D9`.
+  Extracted into an empty directory and compiled three times: 36 pages, 0 fatal
+  errors, 0 overfull hboxes, 0 missing characters, 4 cosmetic underfull hboxes.
+  That pre-review zip is archived at
+  `paper\backups\authorization-seams-arxiv-2026-11-07_pre_review_fixes.zip`;
+  the current package is 171,996 bytes, SHA-256
+  `F6BD655B5C3F3CBA7F48EE2F09CCD786D874A6C1886311AACCB22B18AA41DCCF`.
+- `dist\sanitized` remains untouched.
+
+## Earlier 7 November 2026 package and endorsement-domain check
+
+- Built the earlier arXiv upload candidate:
   `dist\arxiv\authorization-seams-arxiv-2026-11-06.zip`, 169,835 bytes,
   SHA-256
   `DED4065954CFE8538D58057D8948F66A65BBCA978C738801320514733C083483`.
   It contains `main.tex` (pinned SHA-256
   `2E0C4C858E3CD941D0FEDE1E0FB78CF6C607547BFA49738DB2886C151D298D25`) and the
-  two vector figures only.
+  two vector figures only. It was superseded by the 7 November style revision.
 - Extracted the zip into an empty directory and compiled it three times with
   pdfTeX 1.40.28: 35 pages, 0 fatal errors, 0 overfull hboxes, 2 cosmetic
   underfull hboxes, 0 missing characters, embedded subset fonts. The abstract
@@ -54,7 +135,10 @@ stable label warning. Its generated source SHA-256 is
 - No arXiv submission, license selection, public release, or account action
   occurred.
 
-## Review assessment - 6 November 2026
+## Review assessment - 6 November 2026 (superseded)
+
+Superseded by the 7 November external review above. Retained as a historical
+internal assessment; it was not an independent review.
 
 The 6 November revision strengthens positioning and reviewer-defensibility
 without adding experiments, external baselines, or generalization. Scores are
@@ -301,22 +385,30 @@ untouched.
 ## Release decisions
 
 1. **Author block and public contact.** The named-author block is printed
-   (Prathamesh Patil; Department of Computer Engineering, Sardar Patel
+   (`Prathamesh N Patil`; Department of Computer Engineering, Sardar Patel
    Institute of Technology), and the PDF metadata carries the same author. The
    final public contact address is still needed; the internal placeholder must
    not appear on the PDF (it does not). A double-blind venue would require
    re-anonymizing this build.
 2. **Venue metadata.** Venue, page limit, anonymity rule, reference style,
    license, repository URL, archival DOI, and release sanitization are pending.
-3. **Release package.** The repository manifest is regenerated and verified;
-   `dist\sanitized` remains intentionally untouched. Public-release
-   sanitization, license, repository URL, and DOI are pending.
-4. **Merge/submission.** The manuscript remains separate from the frozen
+3. **Release package.** The repository manifest will be regenerated after the
+   documentation freeze and verified; `dist\sanitized` remains intentionally
+   untouched. Public-release sanitization, license, repository URL, and DOI are
+   pending.
+4. **Repository visibility, license, and data availability.** The external
+   review found a public repository reachable at the reviewed HEAD while the
+   release documents described a private repository, and `LICENSE` grants no
+   redistribution rights. This is an owner decision: either align the release
+   documents and data-availability wording with the intended public state, or
+   change the repository visibility. Do not assert a public URL or license
+   until the decision is recorded.
+5. **Merge/submission.** The manuscript remains separate from the frozen
    predecessor; no peer-reviewed submission has occurred.
-5. **Frozen authority.** The archived `CONSOLIDATED_CLAIMS.md` remains frozen
+6. **Frozen authority.** The archived `CONSOLIDATED_CLAIMS.md` remains frozen
    and contains superseded Progent/APC/SentinelAgent characterizations. It must
    not be used as the current wording authority until separately reconciled.
-6. **Deferred expansions.** Classic-literature expansion, the 40-50 percent
+7. **Deferred expansions.** Classic-literature expansion, the 40-50 percent
    length cut, and any new data figure need explicit approval and new
    verification. The MasDrift citation was authorized and added on 22 October
    2026 after arXiv verification; further new references still require explicit
@@ -343,9 +435,13 @@ untouched.
 2. If a double-blind venue is chosen, re-anonymize the named-author build before
    submission; do not send the named-author PDF to a double-blind track.
 3. Add venue metadata only after a specific CFP is chosen.
-4. The 6 November positioning and related-work revision, including the
-   canonical rebuild, export refresh, arXiv candidate, and repository refresh,
-   is complete; the 5 November, 31 October, and 28 October passes remain
-   recorded above. Leave `dist\sanitized` untouched; publication is a separate
-   owner decision.
-5. Do not submit to a public venue until the relevant release checks close.
+4. The 7 November external-review reconciliation is complete: manuscript,
+   canonical PDF, standalone export, arXiv candidate, and source package are
+   rebuilt and documented. Commit the working tree locally; pushing requires
+   explicit owner authorization. The 6 November positioning revision and the
+   5 November, 31 October, and 28 October passes remain recorded above under
+   their historical headings. Leave `dist\sanitized` untouched; publication is a
+   separate owner decision.
+5. Rebuild a fresh workshop/short/tool-track cut only after the target CFP and
+   license/repository decisions are made.
+6. Do not submit to a public venue until the relevant release checks close.

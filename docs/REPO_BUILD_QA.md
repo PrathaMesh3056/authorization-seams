@@ -1,5 +1,9 @@
 # Repository build and QA record - 6 November 2026
 
+> **Historical snapshot.** The visibility statement below reflects the date of
+> this QA run. Repository visibility is currently unresolved; see the note in
+> `README.md` and `docs/RESEARCH_STATUS.md`.
+
 Windows (Python 3.12.7, Pandoc 3.12.1, MiKTeX 25.12 XeLaTeX). This is a local
 validation record. The repository has a private `origin` remote; `main` was
 pushed to `origin/main` on 6 November 2026 at `76ab8d3`. No public release has
