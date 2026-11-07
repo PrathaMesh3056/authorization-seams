@@ -1,15 +1,16 @@
 # Paper sources
 
 This directory contains the manuscript source and canonical build. The frozen
-predecessor (`MANUSCRIPT.md`) and the frozen claim authority
-(`CONSOLIDATED_CLAIMS.md`) are **not** included here; they remain in the project
-archive. See `docs/REVIEW_CORRECTIONS_2026-10-21.md` for what was superseded
-and why.
+claim authority (`CONSOLIDATED_CLAIMS.md`) is mirrored read-only under
+`paper/authority/`; the frozen predecessor (`MANUSCRIPT.md`) remains in the
+project archive. See `docs/REVIEW_CORRECTIONS_2026-10-21.md` for what was
+superseded and why.
 
 | Path | Contents |
 |---|---|
 | `MANUSCRIPT_REVISED.md` | Manuscript source; the only build input |
 | `hashes.txt` | Frozen Table 15 hashes; do not edit |
+| `authority/` | Frozen claim authority and reference-verification records; internal review only |
 | `drafts/MANUSCRIPT_DRAFT_2026-11-06.pdf` | Canonical 32-page named-author preprint PDF |
 | `drafts/MANUSCRIPT_DRAFT_2026-11-05.pdf` | Archived 5 November canonical PDF |
 | `drafts/MANUSCRIPT_DRAFT_2026-10-31.pdf` | Archived 31 October canonical PDF |
