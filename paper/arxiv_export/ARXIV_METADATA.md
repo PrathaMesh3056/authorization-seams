@@ -1,8 +1,8 @@
 # arXiv metadata candidate
 
-Status: prepared 26 October 2026; rebuilt 7 November 2026 for the external-review
-reconciliation. Not submitted. License, endorsement, repository visibility,
-and public contact information remain owner decisions.
+Status: prepared 26 October 2026; rebuilt 8 November 2026 for the second
+external-review correction pass. Not submitted. License, endorsement, repository
+visibility, and public contact information remain owner decisions.
 
 ## Core metadata
 
@@ -13,7 +13,7 @@ and public contact information remain owner decisions.
 | Affiliation | Department of Computer Engineering, Sardar Patel Institute of Technology |
 | Primary category | `cs.CR` (proposed) |
 | Cross-list | `cs.AI` (proposed) |
-| Comments | 37 pages, 2 figures, 19 labeled tables. Artifact release pending. |
+| Comments | 40 pages, 2 figures, 19 numbered tables plus Appendix Tables A1 and A2. Artifact release pending. |
 | Journal reference | None |
 | DOI | arXiv-issued DOI after announcement; do not fabricate |
 | License | `TBD` - author choice; arXiv licenses are irrevocable per version |
@@ -21,9 +21,9 @@ and public contact information remain owner decisions.
 
 ## Abstract (verbatim from the frozen manuscript)
 
-Agent authorization rarely stops at a mechanism boundary: a sender narrows authority, a bridge translates it into a record the receiver can read, and the receiver applies admission rules. Each can be correct alone while the composition admits a call the sender never authorized. This paper treats that handoff as a measurement problem and separates two questions: whether the composed system commits a sender-relative violation, and whether composition adds a failure the standalone receiver does not exhibit. Predictions, cases, arms, and hashes are frozen before execution; values come from stored artifacts. Across 2,446 executions, the composed arms admit 24/40 and 28/48 sender-unauthorized calls in the two pair pilots, but the standalone receivers admit the same calls; receiver-relative novelty is zero in both; both zeroes are construction-forced. One scoring-dependent test, an action-narrowing family, yields receiver-relative novelty of 4/4 under arm-native scoring and 0/4 under the frozen family-wide convention even as 4/4 attacks are admitted; consuming that set denies 4/4 attacks and allows 4/4 benign calls. Non-narrowing-preserving derivations leak four new cases per variant, standalone and composed, locating the fault at the bridge. We close with a replication package and repair taxonomy: consumption or evidence carriage when the narrowed fact crosses intact, derivation repair when the bridge widens. The zero is a recorded property of narrowing-preserving mappings on the frozen cases, not a theorem.
+Agent authorization rarely stops at a mechanism boundary: a sender narrows authority, a bridge translates it into a record the receiver can read, and the receiver applies admission rules. Each can be correct alone while the composition admits a call the sender never authorized. This paper treats that handoff as a measurement problem, separating two questions: whether the composed system commits a sender-relative violation, and whether composition adds a failure the receiver-only arm does not exhibit. Predictions, cases, arms, and hashes are recorded in internal locks before execution; values are script-checked against stored artifacts. Across 2,446 executions, the composed arms admit 24/40 and 28/48 sender-unauthorized calls in the two pair pilots, but the receiver-only arms admit the same calls; receiver-relative novelty is zero in both, and both zeroes are forced by our translation layers: the TraceGrant-side contract is built per call from the requested tool, and the SentinelAgent-side token is minted directly into a fresh registry. An action-narrowing family illustrates the limit: the receiver contracts are byte-identical in the receiver-only and composed arms, and a 4/4 receiver-relative count appears only under a scoring rule recorded after the data. Non-narrowing-preserving derivations leak four new cases per variant, standalone and composed, locating the fault at the bridge. We close with a replication package and a repair taxonomy: consumption or evidence carriage when the narrowed fact reaches the decision, derivation repair when the bridge widens. The zero is a recorded property of narrowing-preserving mappings on the frozen cases, not a theorem.
 
-Abstract word count: 222. Abstract SHA-256: `B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`.
+Abstract word count: 248. Abstract SHA-256: `7378BB42967D994DF547DF3E860D2AE213F6244F8FB2E244BED0C778B646F768`.
 
 ## Source package
 
@@ -55,5 +55,5 @@ package.
   display.
 - Keep the named-author build separate from any future double-blind venue
   submission.
-- A workshop/short/tool-track cut must be rebuilt from the 7 November source;
+- A workshop/short/tool-track cut must be rebuilt from the 8 November source;
   the old 13-page CODASPY cut predates this revision.

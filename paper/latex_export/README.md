@@ -1,6 +1,6 @@
 # The Handoff Nobody Owns - standalone LaTeX source
 
-This package reproduces the 7 November 2026 named-author preprint of the
+This package reproduces the 8 November 2026 named-author preprint of the
 seam-research manuscript. It is a preprint source, not a peer-reviewed
 publication.
 
@@ -39,19 +39,18 @@ files and are not needed to compile the body.
 ## Provenance
 
 - Manuscript source: `paper\MANUSCRIPT_REVISED.md`
-- Manuscript SHA-256: `117A229932806A7E4D6205581A7E90FC276C838867BEEBFF7F972E561ABF7722`
-- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-11-07.pdf`
-- Canonical PDF SHA-256: `D8F80E8B9384BB352C440E48EDB0BD3534CBD38CEEE55D942CF8C8F07D7A348F`
-- Standalone `main.tex` SHA-256: `FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32`
-- Reference PDF: 33 pages, 360,637 bytes
-- Reference PDF SHA-256: `A56FF2B9CEC2EABFC92D0C7ECEBB26FBD7401473BF91FA97074A76989FEF9413`
+- Manuscript SHA-256: `4F6732F91DAFB34F7C4A89390F4B0E037F5BB8A5A1E844707C6A2884F0BE9FE4`
+- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-11-08.pdf`
+- Canonical PDF SHA-256: `909AAAE751CEE9149097D51148C539641F0632ED1E2A154E70E2B5C1476DBB75`
+- Standalone `main.tex` SHA-256: `3679E5178CBDC041B1FF63E7CE9F930A613DCE255D3BB762B769DB1F06CAB468`
+- Reference PDF: 36 pages, 373,757 bytes
+- Reference PDF SHA-256: `EB48C763A98C3148EF651969E08A6289DC208F44282CE5D046AFF496821AEE41`
 - Build: Pandoc 3.12.1 + XeLaTeX (MiKTeX 25.12)
-- Manuscript date in the PDF: 7 November 2026
+- Manuscript date in the PDF: 8 November 2026
 
-The 6 November, 5 November, 31 October, and 23 October 2026 canonical PDFs and
-their exports remain archived under `paper\drafts\` and `paper\backups\`; none
-is overwritten. The pre-review 7 November canonical PDF is archived at
-`paper\backups\MANUSCRIPT_DRAFT_2026-11-07_pre_review_fixes.pdf`.
+The 7 November, 6 November, 5 November, 31 October, and 23 October 2026
+canonical PDFs and their exports remain archived under `paper\drafts\` and
+`paper\backups\`; none is overwritten.
 
 ## References
 
@@ -87,12 +86,12 @@ venue is selected.
 
 ## QA of the reference PDF
 
-- 33 pages, letter paper.
+- 36 pages, letter paper.
 - Zero missing glyphs, zero fatal LaTeX errors, zero overfull hboxes in the
   build.
-- Six cosmetic underfull hboxes, six ignored infinite-glue-shrinkage
-  diagnostics, and one stable `Label(s) may have changed` warning remain; all
-  are non-blocking. The reference PDF has zero unresolved references.
+- Four cosmetic underfull hboxes and one stable `Label(s) may have changed`
+  warning remain; all are non-blocking. The reference PDF has zero unresolved
+  references.
 - All fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
 - Inline code and artifact paths are upright monospace, including spans inside
   notes; zero `LMMono*-Italic` spans remain. No printed line ends with a

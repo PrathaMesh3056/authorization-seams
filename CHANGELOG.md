@@ -3,6 +3,52 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.11] - 2026-11-08
+
+### Changed
+
+- Applied the second external-review correction pass to
+  `paper/MANUSCRIPT_REVISED.md` (independent 3/10; panel 4,4,4,5,4). E1 is now
+  reported as a scoring-only/bridge-construction illustration: the receiver
+  contracts are byte-identical in arms 2 and 5 on all eight cases, and the 4/4
+  receiver-relative count appears only under a norm recorded after the E1 run.
+- Corrected Test 2 to its actual mechanism: a receiver-side pre-synthesis check
+  reading `snapshot.actions`, decision-equivalent to restricting the contract's
+  MAY set. Contract synthesis is unchanged; the measured repair is receiver-side
+  consumption.
+- Disclosed the author-built translation layers as the source of the two
+  construction-forced pair-pilot zeroes: the TraceGrant-side contract is built
+  per call from the requested tool, and the SentinelAgent-side token is minted
+  directly with a fresh DAS check.
+- Added Table 16 (pre-run commitments, deviations, and dispositions) and Table
+  17 (the eight failed boundary-lock cells); renumbered the threat and artifact
+  ledgers to Tables 18 and 19.
+- Disclosed the 8 SentinelAgent prediction overrides (case-level leak-set
+  accuracy 96/96 with them, 8/48 attack predictions failing without them), the
+  late E1 arm-native norm, the Pilot-1 stop-rule continuation, the missing M3
+  diagnostic, and the unapplied §10 classification rule.
+- Applied all 21 reference corrections.
+- Replaced the AI-use statement with a short first-person disclosure.
+- No experiment, frozen artifact, count, sum, or effective sample size changed;
+  H4 and H7 remain `UNTESTED`.
+
+### Validation
+
+- Canonical PDF: `paper/drafts/MANUSCRIPT_DRAFT_2026-11-08.pdf`, 36 pages,
+  373,752 bytes, SHA-256
+  `909AAAE751CEE9149097D51148C539641F0632ED1E2A154E70E2B5C1476DBB75`.
+- Standalone export: 36 pages, 373,757 bytes, SHA-256
+  `EB48C763A98C3148EF651969E08A6289DC208F44282CE5D046AFF496821AEE41`;
+  source SHA-256
+  `3679E5178CBDC041B1FF63E7CE9F930A613DCE255D3BB762B769DB1F06CAB468`.
+- arXiv candidate: 40 pages, 376,744 bytes, SHA-256
+  `85E287E55A5187BE3652F7D0173ACCF8326AA69338356141D88B5164CBCF6AF9`;
+  source SHA-256
+  `CE72A7F50D18DAFAAC0B50981226D64A663E41899811AFDA28F7AF5804358E67`.
+- Abstract: 248 words, SHA-256
+  `7378BB42967D994DF547DF3E860D2AE213F6244F8FB2E244BED0C778B646F768`;
+  references: 21 entries.
+
 ## [0.1.10] - 2026-11-07
 
 ### Changed

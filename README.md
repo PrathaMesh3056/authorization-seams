@@ -6,7 +6,7 @@ Research preprint and reproduction package for a measurement study of what
 happens when one authorization mechanism hands a narrowed decision to another.
 
 > **Status:** research preprint; not peer reviewed. The canonical manuscript is
-> a 33-page, single-column named-author build. A separate 37-page
+> a 36-page, single-column named-author build. A separate 40-page
 > arXiv-compliant candidate uses 1-inch margins and the `Prathamesh N Patil`
 > display name. Both are prepared for workshop/short-paper or tool-track
 > review. Hypotheses H4 and H7 remain `UNTESTED`. The builds print the author
@@ -18,13 +18,13 @@ The repository contains the manuscript, its canonical PDF, the standalone LaTeX
 export, and the frozen experiment evidence behind the reported measurements.
 The experiments use a locked-prediction protocol: cases, arms, inputs, and
 hashes are fixed before execution; runs are local and deterministic;
-discrepancies are reconciled verbatim; and reported values are generated from
-stored artifacts.
+discrepancies are reconciled verbatim; and reported values are transcribed and
+script-checked against stored artifacts.
 
 ## What is included
 
-- The manuscript source and the canonical 7 November 2026 named-author PDF,
-  rebuilt after the external-review reconciliation.
+- The manuscript source and the canonical 8 November 2026 named-author PDF,
+  rebuilt after the second external-review correction pass.
 - The locked-artifact harnesses for the APC → TraceGrant, APC → SentinelAgent,
   and bridge-boundary experiments, with their frozen cases, locks, and stored
   results.
@@ -78,13 +78,14 @@ pwsh -File paper/build/build.ps1
 # paper build (Linux/macOS)
 bash paper/build/build.sh
 
-# arXiv-compliant candidate (1-inch margins, 37 pages)
+# arXiv-compliant candidate (1-inch margins, 40 pages)
 python paper/build/build_arxiv.py
 ```
 
 The build writes generated files under `paper/build/`. The canonical PDF is
-`paper/drafts/MANUSCRIPT_DRAFT_2026-11-07.pdf`; the build does not overwrite it.
-The 6 November, 5 November, 31 October, and 23 October PDFs remain archived. The
+`paper/drafts/MANUSCRIPT_DRAFT_2026-11-08.pdf`; the build does not overwrite it.
+The 7 November, 6 November, 5 November, 31 October, and 23 October PDFs remain
+archived. The
 arXiv candidate is `paper/arxiv_export/main.pdf`; its QA record is
 `docs/ARXIV_BUILD_QA.md`.
 

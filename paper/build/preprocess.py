@@ -16,7 +16,7 @@ import sys
 HERE = Path(__file__).resolve().parent
 SRC = HERE.parent / "MANUSCRIPT_REVISED.md"
 OUT = HERE / "manuscript_build.md"
-EXPECTED_SHA = "117A229932806A7E4D6205581A7E90FC276C838867BEEBFF7F972E561ABF7722"
+EXPECTED_SHA = "4F6732F91DAFB34F7C4A89390F4B0E037F5BB8A5A1E844707C6A2884F0BE9FE4"
 
 text = SRC.read_text(encoding="utf-8")
 sha = hashlib.sha256(text.encode("utf-8")).hexdigest().upper()
@@ -43,7 +43,7 @@ replace_once(
     'author: "Prathamesh N Patil"\n'
     'pdfauthor: "Prathamesh N Patil"\n'
     'keywords: "cross-mechanism authorization; agent authorization; authorization seams; scope narrowing; evidence carriage; conformance testing; locked-artifact methodology"\n'
-    'date: "7 November 2026"\n'
+    'date: "8 November 2026"\n'
     "---",
     "title",
 )

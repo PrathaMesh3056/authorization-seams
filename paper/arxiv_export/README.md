@@ -5,16 +5,16 @@ not a public release and it has not been submitted.
 
 It is generated from the current standalone LaTeX export by
 `paper/build/build_arxiv.py`. The canonical build remains
-`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-07.pdf`; neither
-is modified by this export. The export was rebuilt on 7 November 2026 for the
-writing-style and content-audit revision.
+`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-08.pdf`; neither
+is modified by this export. The export was rebuilt on 8 November 2026 for the
+second external-review correction pass.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `main.tex` | Generated arXiv source: 1-inch margins, 10 pt, named author |
-| `main.pdf` | 37-page reference compile of this source |
+| `main.pdf` | 40-page reference compile of this source |
 | `figures/figure_1_handoff_anatomy.pdf` | Canonical Figure 1, vector PDF, byte-identical copy |
 | `figures/figure_2_repair_loci.pdf` | Canonical Figure 2, vector PDF, byte-identical copy |
 | `ARXIV_METADATA.md` | Proposed arXiv metadata and remaining author decisions |
@@ -44,7 +44,7 @@ header.
 
 ## Verified output
 
-- 37 pages, 363,591 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
+- 40 pages, 376,744 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
   geometry.
 - 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
 - 4 cosmetic underfull hboxes and 1 stable `Label(s) may have changed` warning.
@@ -54,34 +54,42 @@ header.
   notes; zero `LMMono*-Italic` spans remain; no printed line ends with a
   trailing underscore.
 - Title-page and PDF metadata author: `Prathamesh N Patil`.
-- Abstract: 222 words, SHA-256
-  `B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`.
-- Twenty-one pipe tables (19 labeled, including Appendix Tables A1 and A2);
+- Abstract: 248 words, SHA-256
+  `7378BB42967D994DF547DF3E860D2AE213F6244F8FB2E244BED0C778B646F768`.
+- Twenty-one pipe tables (19 numbered, including Appendix Tables A1 and A2);
   twenty-one static bracketed reference entries; H4 and H7 remain `UNTESTED`.
 - No public email, repository URL, DOI, or license is printed.
-- Generated source: 181,289 bytes, SHA-256
-  `299EB14C9730AF5D22E44AB2E743E690649EDA659BA71B254E0EEE7F86BBBE9C`.
-- Reference PDF: 363,591 bytes, SHA-256
-  `3FB05353E40CE4E504D384A68B8F8FE524F3546D4B32C498C12D03736FBE8F3A`.
+- Generated source: 194,829 bytes, SHA-256
+  `CE72A7F50D18DAFAAC0B50981226D64A663E41899811AFDA28F7AF5804358E67`.
+- Reference PDF: 376,744 bytes, SHA-256
+  `85E287E55A5187BE3652F7D0173ACCF8326AA69338356141D88B5164CBCF6AF9`.
 
 Both the canonical build and the arXiv candidate now use the unified
 `Prathamesh N Patil` form recorded in `CITATION.cff`.
 
 ## Source package
 
-`dist/arxiv/authorization-seams-arxiv-2026-11-07.zip` is the upload candidate.
-It is 171,996 bytes, SHA-256
-`F6BD655B5C3F3CBA7F48EE2F09CCD786D874A6C1886311AACCB22B18AA41DCCF`, and
-contains only `main.tex` (pinned SHA-256
-`299EB14C9730AF5D22E44AB2E743E690649EDA659BA71B254E0EEE7F86BBBE9C`) plus the
-two vector figures. It was extracted into an empty directory and compiled three
-times with XeLaTeX 4.16; the clean-room PDF is 37 pages with 0 fatal errors,
-0 overfull hboxes, 0 missing characters, and 4 cosmetic underfull hboxes. The
-zip does not include the reference PDF or any build artifacts. The pre-review
-package is archived at
-`paper/backups/authorization-seams-arxiv-2026-11-07_pre_review_fixes.zip`.
+The previous upload candidate,
+`dist/arxiv/authorization-seams-arxiv-2026-11-07.zip`, is archived and predates
+this correction pass. A new zip must be generated from the 8 November source
+before submission; no new archive is committed here.
 
-## 7 November 2026 external-review reconciliation
+## 8 November 2026 correction pass
+
+The manuscript was corrected after a second external review (independent 3/10;
+panel 4,4,4,5,4). E1 is now a scoring-only/bridge-construction illustration:
+the receiver contracts are byte-identical in arms 2 and 5 on all eight cases,
+and the 4/4 count appears only under a norm recorded after the E1 run. Test 2 is
+reported as a receiver-side pre-synthesis check over `snapshot.actions`,
+decision-equivalent to restricting the contract's MAY set, not as a bridge-side
+contract repair. The two pair-pilot zeroes are attributed to the author-built
+translation layers. Tables 16 and 17 disclose the pre-run commitments that were
+not met and the eight failed boundary cells. No experiment, frozen artifact,
+count, sum, or effective sample size changed; H4 and H7 remain `UNTESTED`.
+Abstract: 248 words with SHA-256
+`7378BB42967D994DF547DF3E860D2AE213F6244F8FB2E244BED0C778B646F768`.
+
+## 7 November 2026 external-review reconciliation (superseded)
 
 The manuscript was revised after an external review of public HEAD `b3c0c15`.
 The revision reports E1 as candidate/scoring-dependent, discloses that arms 2
@@ -92,7 +100,7 @@ denominator to 32/48, and adds the lock-before-run and `hashes.txt` renumbering
 notes. No experiment, frozen artifact, count, sum, or effective sample size
 changed; H4 and H7 remain `UNTESTED`. The abstract remains 222 words with
 SHA-256 `B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`.
-The source and PDF above reflect this rebuild.
+The source and PDF above reflect the later rebuild.
 
 ## 7 November 2026 writing-style revision (historical, pre-review)
 
