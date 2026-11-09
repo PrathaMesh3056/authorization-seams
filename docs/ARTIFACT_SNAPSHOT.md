@@ -1,25 +1,27 @@
-# Working artifact snapshot - 7 November 2026
+# Working artifact snapshot - 9 November 2026
 
 This is a working snapshot, not the release manifest. It records the current
-manuscript, figures, builds, and standalone LaTeX export after the 7 November
-2026 external-review reconciliation. It does not replace `paper\hashes.txt`
-(the six Table 15 hashes) or any frozen source map. The pre-review 7 November
-canonical PDF and arXiv zip are archived under `paper\backups\`; the 6 November,
-5 November, 31 October, 23 October, and 21 October canonical PDFs and the
-pre-edit manuscript/export copies remain archived and unchanged.
+manuscript, figures, builds, and standalone LaTeX export after the second
+external-review completion pass of 8-9 November 2026. It does not replace
+`paper\hashes.txt` (the six Table 15 hashes) or any frozen source map. The
+8 November canonical PDF remains in `paper\drafts\`; the 7 November pre-review
+canonical PDF and arXiv zip are archived under `paper\backups\`; the 7 November,
+6 November, 5 November, 31 October, 23 October, and 21 October canonical PDFs and
+the pre-edit manuscript/export copies remain archived and unchanged.
 
 ## Current artifacts
 
 | Artifact | SHA-256 |
 |---|---|
-| `paper\MANUSCRIPT_REVISED.md` | `117A229932806A7E4D6205581A7E90FC276C838867BEEBFF7F972E561ABF7722` |
-| `paper\drafts\MANUSCRIPT_DRAFT_2026-11-07.pdf` | `D8F80E8B9384BB352C440E48EDB0BD3534CBD38CEEE55D942CF8C8F07D7A348F` |
-| `paper\build\manuscript_build_wide.tex` | `FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32` |
-| `paper\build\manuscript_build_wide.pdf` | `D8F80E8B9384BB352C440E48EDB0BD3534CBD38CEEE55D942CF8C8F07D7A348F` |
-| `paper\latex_export\main.tex` | `FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32` |
-| `paper\latex_export\main.pdf` | `A56FF2B9CEC2EABFC92D0C7ECEBB26FBD7401473BF91FA97074A76989FEF9413` |
-| `paper\arxiv_export\main.tex` | `299EB14C9730AF5D22E44AB2E743E690649EDA659BA71B254E0EEE7F86BBBE9C` |
-| `paper\arxiv_export\main.pdf` | `3FB05353E40CE4E504D384A68B8F8FE524F3546D4B32C498C12D03736FBE8F3A` |
+| `paper\MANUSCRIPT_REVISED.md` | `CD47F151913AAB5422E26059EE4C474FB703B2254831CA274035C58682B695C7` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-11-08.pdf` (previous build) | `909AAAE751CEE9149097D51148C539641F0632ED1E2A154E70E2B5C1476DBB75` |
+| `paper\drafts\MANUSCRIPT_DRAFT_2026-11-09.pdf` | `70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80` |
+| `paper\build\manuscript_build_wide.tex` | `0E2FCB09DE5ABEA5DF5459B21D961244D67CBBAC9A4D629DC3D6AAF431BFF26D` |
+| `paper\build\manuscript_build_wide.pdf` | `70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80` |
+| `paper\latex_export\main.tex` | `0E2FCB09DE5ABEA5DF5459B21D961244D67CBBAC9A4D629DC3D6AAF431BFF26D` |
+| `paper\latex_export\main.pdf` | `70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80` |
+| `paper\arxiv_export\main.tex` | `3C2D57A352F632EEADF9FD30E6B974DF6B5BCE8006EFE37CD7A4151F232381A8` |
+| `paper\arxiv_export\main.pdf` | `F3C4C9EB5F8E5E385CC2098286F08CE0A57E7E1AAB4CA4F1B202F06CF23AD093` |
 | `dist\arxiv\authorization-seams-arxiv-2026-11-07.zip` | `F6BD655B5C3F3CBA7F48EE2F09CCD786D874A6C1886311AACCB22B18AA41DCCF` |
 | `paper\backups\MANUSCRIPT_DRAFT_2026-11-07_pre_review_fixes.pdf` (archived) | `63058C852A17A1820A1001FFA24988632DF043E8CEE1C8D1AEFA4153C1C1AC12` |
 | `paper\backups\authorization-seams-arxiv-2026-11-07_pre_review_fixes.zip` (archived) | `D13D4169AA16996AC391FAB370238D12ED21E7232DC4F1AF0B9A37588EA774D9` |

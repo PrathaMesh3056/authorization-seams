@@ -1,5 +1,5 @@
 {
-  "title": "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry",
+  "title": "The Handoff Nobody Owns: A Locked-Artifact Study of Cross-Mechanism Authorization Seams",
   "description": "Locked-artifact reproduction package and research manuscript for a study of cross-mechanism authorization seams. Not peer reviewed. Hypotheses H4 and H7 remain untested.",
   "creators": [
     {
@@ -8,8 +8,8 @@
     }
   ],
   "upload_type": "software",
-  "publication_date": "2026-10-23",
-  "version": "0.1.3",
+  "publication_date": "2026-11-09",
+  "version": "0.1.12",
   "language": "eng",
   "keywords": [
     "cross-mechanism authorization",

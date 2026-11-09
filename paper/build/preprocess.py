@@ -16,7 +16,7 @@ import sys
 HERE = Path(__file__).resolve().parent
 SRC = HERE.parent / "MANUSCRIPT_REVISED.md"
 OUT = HERE / "manuscript_build.md"
-EXPECTED_SHA = "4F6732F91DAFB34F7C4A89390F4B0E037F5BB8A5A1E844707C6A2884F0BE9FE4"
+EXPECTED_SHA = "CD47F151913AAB5422E26059EE4C474FB703B2254831CA274035C58682B695C7"
 
 text = SRC.read_text(encoding="utf-8")
 sha = hashlib.sha256(text.encode("utf-8")).hexdigest().upper()
@@ -33,17 +33,17 @@ def replace_once(old: str, new: str, label: str) -> None:
 
 
 TITLE = (
-    "# The Handoff Nobody Owns: Measuring What Cross-Mechanism "
-    "Authorization Seams Cannot Carry"
+    "# The Handoff Nobody Owns: A Locked-Artifact Study of Cross-Mechanism "
+    "Authorization Seams"
 )
 replace_once(
     TITLE,
     "---\n"
-    'title: "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry"\n'
+    'title: "The Handoff Nobody Owns: A Locked-Artifact Study of Cross-Mechanism Authorization Seams"\n'
     'author: "Prathamesh N Patil"\n'
     'pdfauthor: "Prathamesh N Patil"\n'
     'keywords: "cross-mechanism authorization; agent authorization; authorization seams; scope narrowing; evidence carriage; conformance testing; locked-artifact methodology"\n'
-    'date: "8 November 2026"\n'
+    'date: "9 November 2026"\n'
     "---",
     "title",
 )

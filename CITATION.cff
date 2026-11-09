@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this research artifact, please cite the manuscript below. No archival DOI is assigned yet; cite the repository as an unpublished preprint."
-title: "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry"
+title: "The Handoff Nobody Owns: A Locked-Artifact Study of Cross-Mechanism Authorization Seams"
 type: software
 authors:
   - family-names: Patil
     given-names: Prathamesh N
     affiliation: "Department of Computer Engineering, Sardar Patel Institute of Technology"
-version: 0.1.6
-date-released: "2026-11-08"
+version: 0.1.12
+date-released: "2026-11-09"
 abstract: >-
   Locked-artifact measurement harness and research manuscript for a study of
   cross-mechanism authorization seams. Predictions, cases, arms, locks, and
@@ -25,7 +25,7 @@ keywords:
 license: "LicenseRef-proprietary"
 preferred-citation:
   type: article
-  title: "The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry"
+  title: "The Handoff Nobody Owns: A Locked-Artifact Study of Cross-Mechanism Authorization Seams"
   authors:
     - family-names: Patil
       given-names: Prathamesh N

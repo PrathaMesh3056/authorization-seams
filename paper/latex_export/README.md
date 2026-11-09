@@ -1,6 +1,6 @@
 # The Handoff Nobody Owns - standalone LaTeX source
 
-This package reproduces the 8 November 2026 named-author preprint of the
+This package reproduces the 9 November 2026 named-author preprint of the
 seam-research manuscript. It is a preprint source, not a peer-reviewed
 publication.
 
@@ -39,18 +39,18 @@ files and are not needed to compile the body.
 ## Provenance
 
 - Manuscript source: `paper\MANUSCRIPT_REVISED.md`
-- Manuscript SHA-256: `4F6732F91DAFB34F7C4A89390F4B0E037F5BB8A5A1E844707C6A2884F0BE9FE4`
-- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-11-08.pdf`
-- Canonical PDF SHA-256: `909AAAE751CEE9149097D51148C539641F0632ED1E2A154E70E2B5C1476DBB75`
-- Standalone `main.tex` SHA-256: `3679E5178CBDC041B1FF63E7CE9F930A613DCE255D3BB762B769DB1F06CAB468`
-- Reference PDF: 36 pages, 373,757 bytes
-- Reference PDF SHA-256: `EB48C763A98C3148EF651969E08A6289DC208F44282CE5D046AFF496821AEE41`
+- Manuscript SHA-256: `CD47F151913AAB5422E26059EE4C474FB703B2254831CA274035C58682B695C7`
+- Canonical PDF: `paper\drafts\MANUSCRIPT_DRAFT_2026-11-09.pdf`
+- Canonical PDF SHA-256: `70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80`
+- Standalone `main.tex` SHA-256: `0E2FCB09DE5ABEA5DF5459B21D961244D67CBBAC9A4D629DC3D6AAF431BFF26D`
+- Reference PDF: 38 pages, 385,242 bytes
+- Reference PDF SHA-256: `70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80`
 - Build: Pandoc 3.12.1 + XeLaTeX (MiKTeX 25.12)
-- Manuscript date in the PDF: 8 November 2026
+- Manuscript date in the PDF: 9 November 2026
 
-The 7 November, 6 November, 5 November, 31 October, and 23 October 2026
-canonical PDFs and their exports remain archived under `paper\drafts\` and
-`paper\backups\`; none is overwritten.
+The 8 November, 7 November, 6 November, 5 November, 31 October, and 23 October
+2026 canonical PDFs and their exports remain archived under `paper\drafts\`
+and `paper\backups\`; none is overwritten.
 
 ## References
 
@@ -86,10 +86,10 @@ venue is selected.
 
 ## QA of the reference PDF
 
-- 36 pages, letter paper.
+- 38 pages, letter paper.
 - Zero missing glyphs, zero fatal LaTeX errors, zero overfull hboxes in the
   build.
-- Four cosmetic underfull hboxes and one stable `Label(s) may have changed`
+- Five cosmetic underfull hboxes and one stable `Label(s) may have changed`
   warning remain; all are non-blocking. The reference PDF has zero unresolved
   references.
 - All fonts embedded; no Segoe UI Symbol or Lucida Sans Unicode fallback.
@@ -104,6 +104,20 @@ venue is selected.
   and A2 remain intact in the canonical build.
 - The static twenty-one-entry bracketed reference list appears after Section 9
   and is set ragged-right to avoid stretched interword gaps.
+
+## 9 November 2026 completion pass
+
+This build completes the second external-review correction pass. The title is
+now *The Handoff Nobody Owns: A Locked-Artifact Study of Cross-Mechanism
+Authorization Seams*; the abstract no longer presents E1 as a composition
+result and states the by-construction limit directly. E1 is reported as a
+widened derivation with byte-identical receiver contracts in arms 2 and 5; Test
+2 is reported as a pre-synthesis translation-layer action-scope check; the
+fail-closed utility cost is reported as a test-design label count; evidence
+carriage is stated to admit exactly arm 1's calls by construction; and the
+absence of a native receiver baseline is disclosed in Sections 3.3, 3.5, 7.1,
+and 7.4. Every table now carries a source line. No experiment, frozen artifact,
+count, sum, or effective sample size changed; H4 and H7 remain `UNTESTED`.
 
 ## 7 November external-review reconciliation
 

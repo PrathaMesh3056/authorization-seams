@@ -1,38 +1,73 @@
-# Research status - 7 November 2026
+# Research status - 9 November 2026
 
 ## Current position
 
 The manuscript source is `paper\MANUSCRIPT_REVISED.md` (SHA-256
-`117A229932806A7E4D6205581A7E90FC276C838867BEEBFF7F972E561ABF7722`;
-791 lines, 149,452 bytes). The reference list has twenty-one entries, all with
-bracketed keys. The abstract is 222 words with SHA-256
-`B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`.
+`CD47F151913AAB5422E26059EE4C474FB703B2254831CA274035C58682B695C7`;
+884 lines, 171,853 bytes). The reference list has twenty-one entries, all with
+bracketed keys. The abstract is 230 words with SHA-256
+`3BDB1BA2BA53DBC95BB96DE5C950B5498E6F1C0742F3C67EE87C61559A211D92`.
 
-The canonical build is the 33-page single-column named-author preprint
-`paper\drafts\MANUSCRIPT_DRAFT_2026-11-07.pdf` (SHA-256
-`D8F80E8B9384BB352C440E48EDB0BD3534CBD38CEEE55D942CF8C8F07D7A348F`):
-33 pages, 360,634 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
-hboxes, 6 cosmetic underfull hboxes, 6 ignored infinite-glue-shrinkage
+The canonical build is the 38-page single-column named-author preprint
+`paper\drafts\MANUSCRIPT_DRAFT_2026-11-09.pdf` (SHA-256
+`70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80`):
+38 pages, 385,242 bytes, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull
+hboxes, 5 cosmetic underfull hboxes, 8 ignored infinite-glue-shrinkage
 diagnostics, and 1 stable `Label(s) may have changed` warning. The title page
 and PDF metadata name `Prathamesh N Patil`; this is the authorized named-author
 build, not a double-blind submission.
 
 The standalone export is refreshed to the same source:
 `paper\latex_export\main.tex` (SHA-256
-`FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32`) and
+`0E2FCB09DE5ABEA5DF5459B21D961244D67CBBAC9A4D629DC3D6AAF431BFF26D`) and
 reference PDF `paper\latex_export\main.pdf` (SHA-256
-`A56FF2B9CEC2EABFC92D0C7ECEBB26FBD7401473BF91FA97074A76989FEF9413`), 33
-pages, 360,637 bytes, 0 fatal errors, 0 overfull, 0 missing glyphs, 4 underfull,
+`70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80`), 38
+pages, 385,242 bytes, 0 fatal errors, 0 overfull, 0 missing glyphs, 5 underfull,
 and 1 stable label warning. Both figures are vector PDFs and are included.
 
 The separate arXiv-compliant named-author candidate is
 `paper\arxiv_export\main.pdf` (SHA-256
-`3FB05353E40CE4E504D384A68B8F8FE524F3546D4B32C498C12D03736FBE8F3A`):
-37 pages, 363,591 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
-0 fatal LaTeX errors, 0 overfull hboxes, 4 cosmetic underfull hboxes, and 1
+`F3C4C9EB5F8E5E385CC2098286F08CE0A57E7E1AAB4CA4F1B202F06CF23AD093`):
+42 pages, 388,934 bytes, US Letter, 10 pt, 1-inch margins, 0 missing glyphs,
+0 fatal LaTeX errors, 0 overfull hboxes, 3 cosmetic underfull hboxes, and 1
 stable label warning. Its generated source SHA-256 is
-`299EB14C9730AF5D22E44AB2E743E690649EDA659BA71B254E0EEE7F86BBBE9C`
-(181,289 bytes).
+`3C2D57A352F632EEADF9FD30E6B974DF6B5BCE8006EFE37CD7A4151F232381A8`
+(206,374 bytes).
+
+## Second external review and completion pass - 8-9 November 2026
+
+A second cold review of the 8 November preprint returned 3/10. The completion
+pass addresses the findings without new experiments:
+
+- **Title.** Retitled *The Handoff Nobody Owns: A Locked-Artifact Study of
+  Cross-Mechanism Authorization Seams*, removing the "Cannot Carry" overclaim.
+- **E1.** Reported as a widened derivation, not a composition-specific result:
+  the receiver contracts are byte-identical in arms 2 and 5 on all eight cases
+  (`f6d94263...`), and the 4/4 receiver-relative count appears only under an
+  arm-native norm recorded after the E1 records existed.
+- **Arm 2.** Disclosed as the receiver under this program's root-scope
+  translation layer, not a native receiver baseline; no native baseline was run.
+- **Test 2.** Reported as a pre-synthesis translation-layer action-scope check,
+  decision-equivalent to restricting the contract's MAY set; no native receiver
+  was modified.
+- **Repair accounting.** Evidence carriage is stated to admit exactly arm 1's
+  calls by construction; the fail-closed arms read `case.exercised_aspects`, a
+  test-design label, so the 20 benign refusals and 28 false-denial events are a
+  label count, not a measured utility cost.
+- **Progent.** Disclosed as a planned pilot that was not run; no trace or
+  metrics exist, and no result is claimed.
+- **Tables and abstract.** Every table now carries a source line; the abstract
+  is 230 words and no longer presents E1 as a composition result.
+
+The P0 repository/license/data-availability contradiction remains an owner
+decision: a public repository is reachable at the reviewed HEAD while the
+release documents described a private repository, and `LICENSE` grants no
+redistribution rights. No repository URL, license, DOI, or public email was
+invented. H4 and H7 remain `UNTESTED`; no H4/H7 experiment was designed,
+locked, or executed. The canonical, standalone, and arXiv builds were
+regenerated at 38, 38, and 42 pages.
+
+## External review reconciliation - 7 November 2026
 
 ## External review reconciliation - 7 November 2026
 

@@ -1,6 +1,7 @@
 # Read-only reviewer prompt - seam manuscript
 
-Status: prepared 7 November 2026 for an author-authorized internal review.
+Status: prepared 7 November 2026; refreshed 9 November 2026 for an
+author-authorized internal review.
 This prompt is for a reviewer working directly in the repository. It is not a
 public release document and it does not assert peer-review status.
 
@@ -59,8 +60,8 @@ PDF and arXiv zip are archived under `paper/backups/` for comparison.
 ## Hard constraints to verify
 
 1. H4 and H7 remain `UNTESTED`. No H4/H7 experiment is present or implied.
-2. The abstract is 222 words and its SHA-256 is
-   `B93412AC45C73A9692F33E6B765959C581231BF93DE65F0D6C2BC8CBC460AF38`.
+2. The abstract is 230 words and its SHA-256 is
+   `3BDB1BA2BA53DBC95BB96DE5C950B5498E6F1C0742F3C67EE87C61559A211D92`.
 3. The reference list has exactly 21 entries and all body citations use
    bracketed keys that resolve to those entries.
 4. The frozen spines are present and unchanged:
@@ -84,12 +85,13 @@ PDF and arXiv zip are archived under `paper/backups/` for comparison.
    single-author CRediT roles, author-retained data availability, and an
    acknowledgments note. No public email, venue, DOI, license, repository URL,
    funding, competing interest, or peer-review status is invented.
-9. The canonical PDF is 33 pages; the arXiv candidate is 37 pages; both have
+9. The canonical PDF is 38 pages; the arXiv candidate is 42 pages; both have
    0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes, and 1 stable
-   label warning. The canonical build has 6 cosmetic underfull hboxes; the
-   arXiv build has 4.
-10. The recorded artifact hashes in `docs/ARTIFACT_SNAPSHOT.md` and
-    `docs/ARXIV_BUILD_QA.md` match the files in the repository.
+   label warning. The canonical build has 5 cosmetic underfull hboxes; the
+   arXiv build has 3.
+10. The recorded artifact hashes in `docs/ARTIFACT_SNAPSHOT.md` match the
+    current files in the repository; `docs/ARXIV_BUILD_QA.md` is a dated
+    historical record, not a current hash table.
 11. The arXiv builder verifies the unified author and rejects the older
     `Prathamesh Patil` variant; the arXiv diff is limited to the margin and
     Figure 2 width plus the generated header.

@@ -48,7 +48,7 @@ python paper\build\build_arxiv.py
 The script verifies the pinned LaTeX export hash and the unified author name,
 applies the 1-inch margin and Figure 2 width changes, and compiles three times.
 It writes `paper\arxiv_export\main.tex` and `paper\arxiv_export\main.pdf`
-(37 pages, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes; 4 cosmetic
+(42 pages, 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes; 3 cosmetic
 underfull hboxes and 1 stable label warning). See `docs\ARXIV_BUILD_QA.md`.
 
 ### Figure conversion
@@ -78,9 +78,9 @@ font/image/text checks. Poppler is used locally for QA only.
   fallback.
 - Figure labels use Arial; the subset glyph is explicitly set in Cambria Math.
   No Lucida Sans Unicode or Segoe UI Symbol fallback remains.
-- The current canonical build produces 33 pages, 360,634 bytes, 0 missing
-  glyphs, 0 fatal LaTeX errors, 0 overfull hboxes, 6 cosmetic underfull hboxes,
-  and 6 ignored infinite-glue-shrinkage diagnostics. References are a static
+- The current canonical build produces 38 pages, 385,242 bytes, 0 missing
+  glyphs, 0 fatal LaTeX errors, 0 overfull hboxes, 5 cosmetic underfull hboxes,
+  and 8 ignored infinite-glue-shrinkage diagnostics. References are a static
   bracketed list embedded by Pandoc; no citeproc or BibTeX run is used.
 - One stable `Label(s) may have changed` warning remains after the three-pass
   build. It is not an unresolved-reference warning and is documented as a

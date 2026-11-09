@@ -5,16 +5,16 @@ not a public release and it has not been submitted.
 
 It is generated from the current standalone LaTeX export by
 `paper/build/build_arxiv.py`. The canonical build remains
-`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-08.pdf`; neither
-is modified by this export. The export was rebuilt on 8 November 2026 for the
-second external-review correction pass.
+`paper/latex_export/` and `paper/drafts/MANUSCRIPT_DRAFT_2026-11-09.pdf`; neither
+is modified by this export. The export was rebuilt on 9 November 2026 after the
+second external-review completion pass.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `main.tex` | Generated arXiv source: 1-inch margins, 10 pt, named author |
-| `main.pdf` | 40-page reference compile of this source |
+| `main.pdf` | 42-page reference compile of this source |
 | `figures/figure_1_handoff_anatomy.pdf` | Canonical Figure 1, vector PDF, byte-identical copy |
 | `figures/figure_2_repair_loci.pdf` | Canonical Figure 2, vector PDF, byte-identical copy |
 | `ARXIV_METADATA.md` | Proposed arXiv metadata and remaining author decisions |
@@ -29,7 +29,7 @@ python paper/build/build_arxiv.py
 ```
 
 The script verifies the pinned `paper/latex_export/main.tex` SHA-256
-(`FC2618112D3CE711FEE9B327665527E66664DFE9FF1D8A21AE96BAD327008F32`), applies
+(`0E2FCB09DE5ABEA5DF5459B21D961244D67CBBAC9A4D629DC3D6AAF431BFF26D`), applies
 only these changes, and compiles with XeLaTeX three times:
 
 - `margin=0.75in` becomes `margin=1in` (arXiv minimum);
@@ -44,25 +44,25 @@ header.
 
 ## Verified output
 
-- 40 pages, 376,744 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
+- 42 pages, 388,934 bytes, US Letter (612 x 792 pt), 10 pt body type, 1-inch
   geometry.
 - 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes.
-- 4 cosmetic underfull hboxes and 1 stable `Label(s) may have changed` warning.
+- 3 cosmetic underfull hboxes and 1 stable `Label(s) may have changed` warning.
 - All fonts embedded; both figures are vector; `pdfimages` reports zero raster
   images.
 - Inline code and artifact paths are upright monospace, including spans inside
   notes; zero `LMMono*-Italic` spans remain; no printed line ends with a
   trailing underscore.
 - Title-page and PDF metadata author: `Prathamesh N Patil`.
-- Abstract: 248 words, SHA-256
-  `7378BB42967D994DF547DF3E860D2AE213F6244F8FB2E244BED0C778B646F768`.
+- Abstract: 230 words, SHA-256
+  `3BDB1BA2BA53DBC95BB96DE5C950B5498E6F1C0742F3C67EE87C61559A211D92`.
 - Twenty-one pipe tables (19 numbered, including Appendix Tables A1 and A2);
   twenty-one static bracketed reference entries; H4 and H7 remain `UNTESTED`.
 - No public email, repository URL, DOI, or license is printed.
-- Generated source: 194,829 bytes, SHA-256
-  `CE72A7F50D18DAFAAC0B50981226D64A663E41899811AFDA28F7AF5804358E67`.
-- Reference PDF: 376,744 bytes, SHA-256
-  `85E287E55A5187BE3652F7D0173ACCF8326AA69338356141D88B5164CBCF6AF9`.
+- Generated source: 206,374 bytes, SHA-256
+  `3C2D57A352F632EEADF9FD30E6B974DF6B5BCE8006EFE37CD7A4151F232381A8`.
+- Reference PDF: 388,934 bytes, SHA-256
+  `F3C4C9EB5F8E5E385CC2098286F08CE0A57E7E1AAB4CA4F1B202F06CF23AD093`.
 
 Both the canonical build and the arXiv candidate now use the unified
 `Prathamesh N Patil` form recorded in `CITATION.cff`.
@@ -71,22 +71,35 @@ Both the canonical build and the arXiv candidate now use the unified
 
 The previous upload candidate,
 `dist/arxiv/authorization-seams-arxiv-2026-11-07.zip`, is archived and predates
-this correction pass. A new zip must be generated from the 8 November source
+the correction passes. A new zip must be generated from the 9 November source
 before submission; no new archive is committed here.
 
-## 8 November 2026 correction pass
+## 9 November 2026 completion pass
+
+This rebuild completes the correction pass. The title is now *The Handoff
+Nobody Owns: A Locked-Artifact Study of Cross-Mechanism Authorization Seams*.
+E1 is reported as a widened derivation with byte-identical receiver contracts
+in arms 2 and 5; Test 2 is a pre-synthesis translation-layer action-scope check;
+the fail-closed cost is a test-design label count; evidence carriage admits
+exactly arm 1's calls by construction; and no native receiver baseline is
+claimed. Every table carries a source line. No experiment, frozen artifact,
+count, sum, or effective sample size changed; H4 and H7 remain `UNTESTED`.
+Abstract: 230 words with SHA-256
+`3BDB1BA2BA53DBC95BB96DE5C950B5498E6F1C0742F3C67EE87C61559A211D92`.
+
+## 8 November 2026 correction pass (preceding)
 
 The manuscript was corrected after a second external review (independent 3/10;
-panel 4,4,4,5,4). E1 is now a scoring-only/bridge-construction illustration:
-the receiver contracts are byte-identical in arms 2 and 5 on all eight cases,
-and the 4/4 count appears only under a norm recorded after the E1 run. Test 2 is
-reported as a receiver-side pre-synthesis check over `snapshot.actions`,
+panel 4,4,4,5,4). E1 is now a scoring-only/bridge-construction illustration: the
+receiver contracts are byte-identical in arms 2 and 5 on all eight cases, and
+the 4/4 count appears only under a norm recorded after the E1 run. Test 2 is
+reported as a translation-layer pre-synthesis check over `snapshot.actions`,
 decision-equivalent to restricting the contract's MAY set, not as a bridge-side
 contract repair. The two pair-pilot zeroes are attributed to the author-built
 translation layers. Tables 16 and 17 disclose the pre-run commitments that were
 not met and the eight failed boundary cells. No experiment, frozen artifact,
 count, sum, or effective sample size changed; H4 and H7 remain `UNTESTED`.
-Abstract: 248 words with SHA-256
+Abstract at that pass: 248 words with SHA-256
 `7378BB42967D994DF547DF3E860D2AE213F6244F8FB2E244BED0C778B646F768`.
 
 ## 7 November 2026 external-review reconciliation (superseded)

@@ -3,6 +3,58 @@
 All notable changes to this repository are recorded here. The experiment
 artifacts themselves are frozen; changes to them are never made in place.
 
+## [0.1.12] - 2026-11-09
+
+### Changed
+
+- Completed the second external-review correction pass in
+  `paper/MANUSCRIPT_REVISED.md`. Retitled the manuscript *The Handoff Nobody
+  Owns: A Locked-Artifact Study of Cross-Mechanism Authorization Seams*,
+  removing the "Cannot Carry" overclaim.
+- Rewrote the abstract to 230 words. E1 no longer appears as a composition
+  result; the abstract states the by-construction limit directly.
+- Reported E1 as a widened derivation: the receiver contracts are byte-identical
+  in arms 2 and 5 on all eight cases (`f6d94263...`), and the 4/4
+  receiver-relative count appears only under an arm-native norm recorded after
+  the E1 records existed.
+- Disclosed that arm 2 is the receiver under the program's root-scope
+  translation layer, not a native receiver baseline. No native baseline was run
+  in any set; receiver-side findings are stated as translation-layer findings.
+- Corrected Test 2 to a pre-synthesis translation-layer action-scope check,
+  decision-equivalent to restricting the contract's MAY set. No native receiver
+  was modified.
+- Stated that evidence carriage admits exactly arm 1's calls by construction,
+  and that the fail-closed arms read `case.exercised_aspects`, a test-design
+  label. The 20 benign refusals and 28 false-denial events are a label count,
+  not a measured utility cost.
+- Disclosed the Progent pilot as planned but not run; no Progent trace, metric,
+  or result exists.
+- Added a source line under every table (Tables 1-19, A1, A2).
+- Updated `CITATION.cff`, `.zenodo.json`, `codemeta.json`, `ARXIV_METADATA.md`,
+  the root README, and the export READMEs to version 0.1.12 and the new title.
+- No experiment, frozen artifact, count, sum, or effective sample size changed;
+  H4 and H7 remain `UNTESTED`.
+
+### Validation
+
+- Canonical PDF: `paper/drafts/MANUSCRIPT_DRAFT_2026-11-09.pdf`, 38 pages,
+  385,242 bytes, SHA-256
+  `70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80`.
+- Standalone export: 38 pages, 385,242 bytes, SHA-256
+  `70F73059168C330703F138404C2F298F7BCE5803CFC749CC27269CBDC3D6FA80`;
+  source SHA-256
+  `0E2FCB09DE5ABEA5DF5459B21D961244D67CBBAC9A4D629DC3D6AAF431BFF26D`.
+- arXiv candidate: 42 pages, 388,934 bytes, SHA-256
+  `F3C4C9EB5F8E5E385CC2098286F08CE0A57E7E1AAB4CA4F1B202F06CF23AD093`;
+  source SHA-256
+  `3C2D57A352F632EEADF9FD30E6B974DF6B5BCE8006EFE37CD7A4151F232381A8`.
+- Abstract: 230 words, SHA-256
+  `3BDB1BA2BA53DBC95BB96DE5C950B5498E6F1C0742F3C67EE87C61559A211D92`;
+  references: 21 entries.
+- Build: 0 missing glyphs, 0 fatal LaTeX errors, 0 overfull hboxes, 5 cosmetic
+  underfull hboxes (canonical) and 3 (arXiv), 8 ignored infinite-glue-shrinkage
+  diagnostics, 1 stable label warning.
+
 ## [0.1.11] - 2026-11-08
 
 ### Changed

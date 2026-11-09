@@ -1,19 +1,19 @@
 # arXiv metadata candidate
 
-Status: prepared 26 October 2026; rebuilt 8 November 2026 for the second
-external-review correction pass. Not submitted. License, endorsement, repository
+Status: prepared 26 October 2026; rebuilt 9 November 2026 after the second
+external-review completion pass. Not submitted. License, endorsement, repository
 visibility, and public contact information remain owner decisions.
 
 ## Core metadata
 
 | Field | Value |
 |---|---|
-| Title | The Handoff Nobody Owns: Measuring What Cross-Mechanism Authorization Seams Cannot Carry |
+| Title | The Handoff Nobody Owns: A Locked-Artifact Study of Cross-Mechanism Authorization Seams |
 | Author | Prathamesh N Patil |
 | Affiliation | Department of Computer Engineering, Sardar Patel Institute of Technology |
 | Primary category | `cs.CR` (proposed) |
 | Cross-list | `cs.AI` (proposed) |
-| Comments | 40 pages, 2 figures, 19 numbered tables plus Appendix Tables A1 and A2. Artifact release pending. |
+| Comments | 42 pages, 2 figures, 19 numbered tables plus Appendix Tables A1 and A2. Artifact release pending. |
 | Journal reference | None |
 | DOI | arXiv-issued DOI after announcement; do not fabricate |
 | License | `TBD` - author choice; arXiv licenses are irrevocable per version |
@@ -21,9 +21,9 @@ visibility, and public contact information remain owner decisions.
 
 ## Abstract (verbatim from the frozen manuscript)
 
-Agent authorization rarely stops at a mechanism boundary: a sender narrows authority, a bridge translates it into a record the receiver can read, and the receiver applies admission rules. Each can be correct alone while the composition admits a call the sender never authorized. This paper treats that handoff as a measurement problem, separating two questions: whether the composed system commits a sender-relative violation, and whether composition adds a failure the receiver-only arm does not exhibit. Predictions, cases, arms, and hashes are recorded in internal locks before execution; values are script-checked against stored artifacts. Across 2,446 executions, the composed arms admit 24/40 and 28/48 sender-unauthorized calls in the two pair pilots, but the receiver-only arms admit the same calls; receiver-relative novelty is zero in both, and both zeroes are forced by our translation layers: the TraceGrant-side contract is built per call from the requested tool, and the SentinelAgent-side token is minted directly into a fresh registry. An action-narrowing family illustrates the limit: the receiver contracts are byte-identical in the receiver-only and composed arms, and a 4/4 receiver-relative count appears only under a scoring rule recorded after the data. Non-narrowing-preserving derivations leak four new cases per variant, standalone and composed, locating the fault at the bridge. We close with a replication package and a repair taxonomy: consumption or evidence carriage when the narrowed fact reaches the decision, derivation repair when the bridge widens. The zero is a recorded property of narrowing-preserving mappings on the frozen cases, not a theorem.
+Agent authorization rarely stops at a mechanism boundary: a sender narrows authority, a bridge translates it into a record the receiver can read, and the receiver applies admission rules. Each can be correct alone while the composition admits a call the sender never authorized. This paper treats that handoff as a measurement problem, separating two questions: whether the composed system commits a sender-relative violation, and whether composition adds a failure the receiver-only arm does not exhibit. Predictions, cases, arms, and hashes are recorded in internal locks before execution; values are script-checked against stored artifacts. Across 2,446 executions, the composed arms admit 24/40 and 28/48 sender-unauthorized calls in the two pair pilots, but the receiver-only arms admit the same calls; receiver-relative novelty is zero in both, and both zeroes are forced by our translation layers: the TraceGrant-side contract is built per call from the requested tool, and the SentinelAgent-side token is minted directly into a fresh registry. Non-narrowing-preserving derivations leak four new cases per variant, in the receiver-only variant arm and in the composed arm, locating the fault at the bridge. We close with a replication package and a repair taxonomy: evidence carriage when the upstream decision reaches the receiver, and derivation repair when the bridge widens. The zero is a recorded property of narrowing-preserving mappings on the frozen cases, not a theorem. This is a by-construction measurement, not a benchmark.
 
-Abstract word count: 248. Abstract SHA-256: `7378BB42967D994DF547DF3E860D2AE213F6244F8FB2E244BED0C778B646F768`.
+Abstract word count: 230. Abstract SHA-256: `3BDB1BA2BA53DBC95BB96DE5C950B5498E6F1C0742F3C67EE87C61559A211D92`.
 
 ## Source package
 
@@ -55,5 +55,5 @@ package.
   display.
 - Keep the named-author build separate from any future double-blind venue
   submission.
-- A workshop/short/tool-track cut must be rebuilt from the 8 November source;
+- A workshop/short/tool-track cut must be rebuilt from the 9 November source;
   the old 13-page CODASPY cut predates this revision.

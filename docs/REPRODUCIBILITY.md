@@ -29,8 +29,8 @@ Expected:
 - QA checks the manuscript and canonical PDF hashes, the page count, the
   abstract word count, the reference entry count, banned placeholder strings,
   and `UNTESTED` status for H4/H7.
-- The paper build produces a 33-page PDF with zero missing glyphs, zero fatal
-  LaTeX errors, zero overfull hboxes, six cosmetic underfull hboxes, and six
+- The paper build produces a 38-page PDF with zero missing glyphs, zero fatal
+  LaTeX errors, zero overfull hboxes, five cosmetic underfull hboxes, and eight
   ignored infinite-glue-shrinkage diagnostics.
 
 Toolchain used for the reference build is recorded in `docs/TOOLCHAIN.md`
